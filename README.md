@@ -1,4 +1,5 @@
 # PrintBuddy
+<<<<<<< HEAD
 
                        .s$$$Ss.
             .8,         $$$. _. .              ..sS$$$$$"  ...,.;
@@ -40,3 +41,6 @@
 
 FULASTE ART JAG SETT!
 123 lets go nu kör vi 
+=======
+The greatest webapp in the history of webapps.
+>>>>>>> refs/remotes/origin/master
