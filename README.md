@@ -1,4 +1,3 @@
 # PrintBuddy
 
-
-# Hallå hörni
+Hallå hörni
