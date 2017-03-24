@@ -53,6 +53,7 @@ launch-screen@1.1.1
 livedata@1.0.18
 localstorage@1.0.12
 logging@1.1.17
+materialize:materialize@0.97.6
 mdg:validated-method@1.1.0
 mdg:validation-error@0.5.1
 meteor@1.6.1

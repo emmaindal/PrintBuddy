@@ -21,6 +21,7 @@ static-html@1.1.12_1
 react-meteor-data
 fourseven:scss
 seba:minifiers-autoprefixer
+materialize:materialize
 
 # data
 mongo@1.1.15
@@ -67,3 +68,4 @@ audit-argument-checks@1.0.7
 
 # not yet sorted
 themeteorchef:bert
+
