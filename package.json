@@ -1,0 +1,26 @@
+{
+  "name": "PrintBuddy",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "autoprefixer": "^6.4.1",
+    "babel-runtime": "^6.18.0",
+    "bcrypt": "^1.0.2",
+    "classnames": "^2.2.5",
+    "faker": "^3.1.0",
+    "react": "^15.4.2",
+    "react-addons-css-transition-group": "^15.4.2",
+    "react-addons-pure-render-mixin": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-router": "^2.8.1",
+    "react-tap-event-plugin": "^2.0.1"
+  },
+  "devDependencies": {
+    "enzyme": "^2.7.1",
+    "meteor-node-stubs": "^0.2.3",
+    "react-addons-test-utils": "^15.4.2",
+    "shelljs": "^0.7.4"
+  }
+}
