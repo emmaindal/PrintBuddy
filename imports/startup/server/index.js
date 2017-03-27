@@ -2,7 +2,7 @@ import './accounts.js';
 
 import  './email.js';
 
-import './reset-password-email.js';
+import './template-email.js';
 
 import './security.js';
 

@@ -17,7 +17,7 @@ Accounts.validateNewUser((user) => {
     return true;
 });
 
-// Ska vi ha att man måste verifierar?
+// Ska vi ha att man måste verifierar via email?
 Accounts.urls.verifyEmail = function(token) {
     return Meteor.absoluteUrl("login?token="+token)
 }

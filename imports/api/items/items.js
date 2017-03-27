@@ -11,8 +11,11 @@ const ItemsSchema = new SimpleSchema({
 });
 
 
+Items.re
 Items.attachSchema(ItemsSchema);
 
+// skapar hjälp-metoder för att kunna lättare hämta data från dina collections
+// https://github.com/dburles/meteor-collection-helpers
 Items.helpers({
     test(){
         return this.desc + " from helpers";

@@ -6,7 +6,8 @@ import { _ } from 'meteor/underscore';
 
 import { Items } from './items.js';
 
-
+// ValidatedMethod hjälper en att definera metoder bättre.
+// https://github.com/meteor/validated-method
 export const insert = new ValidatedMethod({
     name: 'items.insert',
     validate: new SimpleSchema({
@@ -14,10 +15,11 @@ export const insert = new ValidatedMethod({
         desc:  { type: String },
     }).validator(),
     run({ title, desc }) {
-        if (!this.userId) {
+        // Om man måste logga in funkar detta
+       /* if (!this.userId) {
             throw new Meteor.Error('items.insert.notLoggedIn',
                 'Must be logged to add item.');
-        }
+        } */
 
         const item = {
             title,
@@ -27,3 +29,22 @@ export const insert = new ValidatedMethod({
         return Items.insert(item);
     },
 });
+
+
+
+export const removeAll = new ValidatedMethod({
+    name: 'items.removeAll',
+    validate:null,
+    run() {
+        // Om man måste logga in funkar detta
+        /* if (!this.userId) {
+         throw new Meteor.Error('items.insert.notLoggedIn',
+         'Must be logged to add item.');
+         } */
+
+
+        return Items.remove({});
+    },
+});
+
+
