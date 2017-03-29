@@ -1,0 +1,14 @@
+@import "../variables";
+
+nav {
+    background-color: $color-secondary;
+
+    .brand-logo {
+        color: $text-nav;
+    }
+
+    .active,
+    a {
+        color: $text-nav;
+    }
+}

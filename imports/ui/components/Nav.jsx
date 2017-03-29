@@ -9,7 +9,7 @@ export default class Nav extends React.Component {
 		return (
 			<nav>
 				<div className="nav-wrapper">
-					<a href="#" className="brand-logo">printBuddy</a>
+					<a href="#" className="brand-logo">PrintBuddy</a>
 					<a href="#" data-activates="mobile-nav" className="button-collapse"><i className="material-icons">menu</i></a>
 					<ul className="right hide-on-med-and-down">
 						<li><IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Home</IndexLink></li>
