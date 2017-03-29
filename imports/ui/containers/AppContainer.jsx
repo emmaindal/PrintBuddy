@@ -2,6 +2,7 @@ import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
 
+import Nav from '../components/Nav';
 import TestComponent from '../components/TestComponent';
 import {displayAlert}from '../helpers/alerts';
 import {Items} from '../../api/items/items.js';
@@ -42,6 +43,7 @@ class App extends React.Component {
 
         return (
             <div id="container">
+				<Nav/>
                 <h1>PrintBuddy</h1>
                 <TestComponent title='Test title' onClick={this.testClick} add={this.testClick2} remove={this.testClick3} items={items} ></TestComponent>
             </div>
