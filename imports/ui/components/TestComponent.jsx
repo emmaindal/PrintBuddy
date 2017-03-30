@@ -3,6 +3,7 @@ import i18n from 'meteor/universe:i18n';
 
 const TestComponent = ({title, onClick, add,remove, items}) =>
     <div className="test-component">
+		
         <h3>{title}</h3>
         <button onClick={onClick}> Klicka på mig</button>
         <button onClick={add}> Klicka på mig för att lägga till</button>
