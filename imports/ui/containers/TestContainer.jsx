@@ -5,6 +5,7 @@ import React from 'react';
 import Nav from '../components/Nav';
 import TestComponent from '../components/TestComponent';
 import {StepByStep} from '../components/StepByStepComponent';
+import {JobList} from '../components/JobListComponent';
 import {displayAlert}from '../helpers/alerts';
 import {Items} from '../../api/items/items.js';
 import {insert} from '../../api/items/methods';
@@ -97,16 +98,49 @@ class Test extends React.Component {
 
     render() {
         const {items} = this.props;
+		const dummyJobList = [
+			{
+				id: 1,
+				requestor: "Anna1337",
+				delivery: "Yes",
+				reward: 100,
+				currency: "SEK",
+				distance: 500,
+			},
+			{
+				id: 2,
+				requestor: "PelleSvanslös",
+				delivery: "no",
+				reward: 20,
+				currency: "SEK",
+				distance: 700,
+			},
+			{
+				id: 3,
+				requestor: "Kringlan75",
+				delivery: "Yes",
+				reward: 500,
+				currency: "SEK",
+				distance: 1500,
+			},
+		];
 
         return (
 			<div>
-				<StepByStep step1={this.state.step1} step2={this.state.step2} step3={this.state.step3} step4={this.state.step4}/>
-				<h3>Test Step By Step</h3>
-				<button className="btn" onClick={this.step1Click}> Step 1</button>
-				<button className="btn" onClick={this.step2Click}> Step 2</button>
-				<button className="btn" onClick={this.step3Click}> Step 3</button>
-				<button className="btn" onClick={this.step4Click}> Step 4</button>
-				<button className="btn" onClick={this.stepClear}> Clear</button>
+				<div id="test-stepbystep">
+					<StepByStep step1={this.state.step1} step2={this.state.step2} step3={this.state.step3} step4={this.state.step4}/>
+					<h3>Test Step By Step</h3>
+					<button className="btn waves-effect waves-light" onClick={this.step1Click}> Step 1</button>
+					<button className="btn waves-effect waves-light" onClick={this.step2Click}> Step 2</button>
+					<button className="btn waves-effect waves-light" onClick={this.step3Click}> Step 3</button>
+					<button className="btn waves-effect waves-light" onClick={this.step4Click}> Step 4</button>
+					<button className="btn waves-effect waves-light" onClick={this.stepClear}> Clear</button>
+				</div>
+
+				<div id="test-joblist" className="row">
+					<JobList listofjobs={dummyJobList}/>
+				</div>
+				
 				<TestComponent title='Test title' onClick={this.testClick} add={this.testClick2} remove={this.testClick3} items={items} ></TestComponent>
 			</div>
              
