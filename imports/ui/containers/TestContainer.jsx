@@ -5,7 +5,6 @@ import React from 'react';
 import Nav from '../components/Nav';
 import TestComponent from '../components/TestComponent';
 import {StepByStep} from '../components/StepByStepComponent';
-import {JobList} from '../components/JobListComponent';
 import {displayAlert}from '../helpers/alerts';
 import {Items} from '../../api/items/items.js';
 import {insert} from '../../api/items/methods';
@@ -98,32 +97,6 @@ class Test extends React.Component {
 
     render() {
         const {items} = this.props;
-		const dummyJobList = [
-			{
-				id: 1,
-				requestor: "Anna1337",
-				delivery: "Yes",
-				reward: 100,
-				currency: "SEK",
-				distance: 500,
-			},
-			{
-				id: 2,
-				requestor: "PelleSvanslös",
-				delivery: "no",
-				reward: 20,
-				currency: "SEK",
-				distance: 700,
-			},
-			{
-				id: 3,
-				requestor: "Kringlan75",
-				delivery: "Yes",
-				reward: 500,
-				currency: "SEK",
-				distance: 1500,
-			},
-		];
 
         return (
 			<div>
@@ -135,10 +108,6 @@ class Test extends React.Component {
 					<button className="btn waves-effect waves-light" onClick={this.step3Click}> Step 3</button>
 					<button className="btn waves-effect waves-light" onClick={this.step4Click}> Step 4</button>
 					<button className="btn waves-effect waves-light" onClick={this.stepClear}> Clear</button>
-				</div>
-
-				<div id="test-joblist" className="row">
-					<JobList listofjobs={dummyJobList}/>
 				</div>
 				
 				<TestComponent title='Test title' onClick={this.testClick} add={this.testClick2} remove={this.testClick3} items={items} ></TestComponent>
