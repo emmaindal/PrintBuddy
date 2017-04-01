@@ -100,13 +100,16 @@ class Test extends React.Component {
 
         return (
 			<div>
-				<StepByStep step1={this.state.step1} step2={this.state.step2} step3={this.state.step3} step4={this.state.step4}/>
-				<h3>Test Step By Step</h3>
-				<button className="btn" onClick={this.step1Click}> Step 1</button>
-				<button className="btn" onClick={this.step2Click}> Step 2</button>
-				<button className="btn" onClick={this.step3Click}> Step 3</button>
-				<button className="btn" onClick={this.step4Click}> Step 4</button>
-				<button className="btn" onClick={this.stepClear}> Clear</button>
+				<div id="test-stepbystep">
+					<StepByStep step1={this.state.step1} step2={this.state.step2} step3={this.state.step3} step4={this.state.step4}/>
+					<h3>Test Step By Step</h3>
+					<button className="btn waves-effect waves-light" onClick={this.step1Click}> Step 1</button>
+					<button className="btn waves-effect waves-light" onClick={this.step2Click}> Step 2</button>
+					<button className="btn waves-effect waves-light" onClick={this.step3Click}> Step 3</button>
+					<button className="btn waves-effect waves-light" onClick={this.step4Click}> Step 4</button>
+					<button className="btn waves-effect waves-light" onClick={this.stepClear}> Clear</button>
+				</div>
+				
 				<TestComponent title='Test title' onClick={this.testClick} add={this.testClick2} remove={this.testClick3} items={items} ></TestComponent>
 			</div>
              
