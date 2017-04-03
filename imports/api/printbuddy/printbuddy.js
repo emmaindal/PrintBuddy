@@ -5,8 +5,8 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 export const PrintBuddy = new Mongo.Collection('printbuddy');
 
 const PrintBuddySchema = new SimpleSchema({
-    title: { type: String },
-    desc: { type: String }
+    userId: { type: String },
+    canColor: { type: String }
 });
 
 PrintBuddy.attachSchema(PrintBuddySchema);
