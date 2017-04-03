@@ -18,7 +18,15 @@ export const InitialMap = withGoogleMap(props => {
 				key={index}
 				position={marker.position}
 				onClick={() => props.onMarkerClick(marker)}
-			/>
+			>
+			{marker.showInfo && (
+				<InfoWindow onCloseClick={() => props.onCloseClick(marker)}>
+					{
+						<div id="infowindow">{marker.message}</div>
+					}
+				</InfoWindow>
+			)}
+			</Marker>
 		))}	
 		</GoogleMap>
 	);

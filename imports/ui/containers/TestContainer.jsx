@@ -140,12 +140,9 @@ class Test extends React.Component {
 
 				<div id="test-joblist" className="row">
 					<JobList listofjobs={dummyJobList}/>
-				</div>
-				
-
-				<div id="test-map">
 					<MapContainer/>
 				</div>
+				
 				<TestComponent title='Test title' onClick={this.testClick} add={this.testClick2} remove={this.testClick3} items={items} ></TestComponent>
 			</div>
              
