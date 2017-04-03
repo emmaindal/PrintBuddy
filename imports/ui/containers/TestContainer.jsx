@@ -1,11 +1,14 @@
 import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
+import { Accounts } from 'meteor/accounts-base';
+import {browserHistory} from 'react-router'
 
 import Nav from '../components/Nav';
 import TestComponent from '../components/TestComponent';
 import {StepByStep} from '../components/StepByStepComponent';
 import {displayAlert}from '../helpers/alerts';
+import {displayError}from '../helpers/errors';
 import {Items} from '../../api/items/items.js';
 import {insert} from '../../api/items/methods';
 import {removeAll} from '../../api/items/methods';
@@ -21,6 +24,8 @@ class Test extends React.Component {
 		this.step3Click = this.step3Click.bind(this);
 		this.step4Click = this.step4Click.bind(this);
 		this.stepClear = this.stepClear.bind(this);
+        this.registerUser = this.registerUser.bind(this);
+        this.loginUser = this.loginUser.bind(this);
     }
 	getInitialState() {
 		return {
@@ -95,6 +100,49 @@ class Test extends React.Component {
 		});
 	}
 
+	registerUser(){
+        const email = "mikael.carlstein@gmail.com";
+        const password = "123456";
+        const username = "mikael";
+        const position = {address: "fasfasf", lat: 1, lng: 2};
+
+        Accounts.createUser({
+            email,
+            password,
+            username,
+            position
+        }, (err) => {
+            if (err) {
+                displayError("Error",err.reason)
+                console.log(err);
+            }else {
+                Meteor.call( 'sendVerificationLink', ( error, response ) => {
+                    if ( error ) {
+                        displayError("Error",error);
+                        console.log(error);
+                    } else {
+                        browserHistory.push('/');
+                    }
+                });
+            }
+        });
+
+	}
+    loginUser(){
+
+        const email = "mikael.carlstein@gmail.com";
+        const password = "123456";
+
+        Meteor.loginWithPassword(email, password, function(error) {
+            if (error) {
+                displayError("Error:",  error.reason);
+            } else {
+                browserHistory.push('/');
+            }
+        });
+
+	}
+
     render() {
         const {items} = this.props;
 
@@ -109,10 +157,12 @@ class Test extends React.Component {
 					<button className="btn waves-effect waves-light" onClick={this.step4Click}> Step 4</button>
 					<button className="btn waves-effect waves-light" onClick={this.stepClear}> Clear</button>
 				</div>
-				
+				<button className="btn waves-effect waves-light" onClick={this.registerUser}> Reg</button>
+				<button className="btn waves-effect waves-light" onClick={this.loginUser}> Login</button>
+
 				<TestComponent title='Test title' onClick={this.testClick} add={this.testClick2} remove={this.testClick3} items={items} ></TestComponent>
 			</div>
-             
+
         );
     }
 }
