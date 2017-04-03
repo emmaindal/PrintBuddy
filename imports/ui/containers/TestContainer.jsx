@@ -1,12 +1,15 @@
-import {Meteor} from 'meteor/meteor';
+﻿import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
+import {Accounts} from 'meteor/accounts-base';
+import {browserHistory} from 'react-router'
 
 import Nav from '../components/Nav';
 import TestComponent from '../components/TestComponent';
 import {StepByStep} from '../components/StepByStepComponent';
 import {JobList} from '../components/JobListComponent';
 import {displayAlert}from '../helpers/alerts';
+import {displayError}from '../helpers/errors';
 import {Items} from '../../api/items/items.js';
 import {insert} from '../../api/items/methods';
 import {removeAll} from '../../api/items/methods';
@@ -18,20 +21,23 @@ class Test extends React.Component {
         this.state = {};
         this.testClick = this.testClick.bind(this);
         this.testClick2 = this.testClick2.bind(this);
-		this.step1Click = this.step1Click.bind(this);
-		this.step2Click = this.step2Click.bind(this);
-		this.step3Click = this.step3Click.bind(this);
-		this.step4Click = this.step4Click.bind(this);
-		this.stepClear = this.stepClear.bind(this);
+        this.step1Click = this.step1Click.bind(this);
+        this.step2Click = this.step2Click.bind(this);
+        this.step3Click = this.step3Click.bind(this);
+        this.step4Click = this.step4Click.bind(this);
+        this.stepClear = this.stepClear.bind(this);
+        this.registerUser = this.registerUser.bind(this);
+        this.loginUser = this.loginUser.bind(this);
     }
-	getInitialState() {
-		return {
-			step1: "",
-			step2: "",
-			step3: "",
-			step4: "",
-		}
-	}
+
+    getInitialState() {
+        return {
+            step1: "",
+            step2: "",
+            step3: "",
+            step4: "",
+        }
+    }
 
     componentDidMount() {
     }
@@ -53,78 +59,127 @@ class Test extends React.Component {
     testClick3() {
         removeAll.call();
     }
-	step1Click() {
-		this.setState({
-			step1: "active",
-			step2: "",
-			step3: "",
-			step4: "",
-		})
 
-	}
-	step2Click() {
-		this.setState({
-			step1: "finished",
-			step2: "active",
-			step3: "",
-			step4: "",
-		})
+    step1Click() {
+        this.setState({
+            step1: "active",
+            step2: "",
+            step3: "",
+            step4: "",
+        })
 
-	}
-	step3Click() {
-		this.setState({
-			step1: "finished",
-			step2: "finished",
-			step3: "active",
-			step4: "",
-		})
+    }
 
-	}
-	step4Click() {
-		this.setState({
-			step1: "finished",
-			step2: "finished",
-			step3: "finished",
-			step4: "active",
-		});
-	}
-	stepClear() {
-		this.setState({
-			step1: "",
-			step2: "",
-			step3: "",
-			step4: "",
-		});
-	}
+    step2Click() {
+        this.setState({
+            step1: "finished",
+            step2: "active",
+            step3: "",
+            step4: "",
+        })
+
+    }
+
+    step3Click() {
+        this.setState({
+            step1: "finished",
+            step2: "finished",
+            step3: "active",
+            step4: "",
+        })
+
+    }
+
+    step4Click() {
+        this.setState({
+            step1: "finished",
+            step2: "finished",
+            step3: "finished",
+            step4: "active",
+        });
+    }
+
+    stepClear() {
+        this.setState({
+            step1: "",
+            step2: "",
+            step3: "",
+            step4: "",
+        });
+    }
+
+    registerUser() {
+        const email = "mikael.carlstein@gmail.com";
+        const password = "123456";
+        const username = "mikael";
+        const position = {address: "fasfasf", lat: 1, lng: 2};
+
+        Accounts.createUser({
+            email,
+            password,
+            username,
+            position
+        }, (err) => {
+            if (err) {
+                displayError("Error", err.reason)
+                console.log(err);
+            } else {
+                Meteor.call('sendVerificationLink', (error, response) => {
+                    if (error) {
+                        displayError("Error", error);
+                        console.log(error);
+                    } else {
+                        browserHistory.push('/');
+                    }
+                });
+            }
+        });
+
+    }
+
+    loginUser() {
+
+        const email = "mikael.carlstein@gmail.com";
+        const password = "123456";
+
+        Meteor.loginWithPassword(email, password, function (error) {
+            if (error) {
+                displayError("Error:", error.reason);
+            } else {
+                browserHistory.push('/');
+            }
+        });
+
+    }
 
     render() {
         const {items} = this.props;
-		const dummyJobList = [
-			{
-				id: 1,
-				requestor: "Anna1337",
-				delivery: "Yes",
-				reward: 100,
-				currency: "SEK",
-				distance: 500,
-			},
-			{
-				id: 2,
-				requestor: "PelleSvanslös",
-				delivery: "no",
-				reward: 20,
-				currency: "SEK",
-				distance: 700,
-			},
-			{
-				id: 3,
-				requestor: "Kringlan75",
-				delivery: "Yes",
-				reward: 500,
-				currency: "SEK",
-				distance: 1500,
-			},
-		];
+        const dummyJobList = [
+            {
+                id: 1,
+                requestor: "Anna1337",
+                delivery: "Yes",
+                reward: 100,
+                currency: "SEK",
+                distance: 500,
+            },
+            {
+                id: 2,
+                requestor: "PelleSvanslös",
+                delivery: "no",
+                reward: 20,
+                currency: "SEK",
+                distance: 700,
+            },
+            {
+                id: 3,
+                requestor: "Kringlan75",
+                delivery: "Yes",
+                reward: 500,
+                currency: "SEK",
+                distance: 1500,
+            },
+        ];
 
         return (
 			<div>
@@ -142,10 +197,11 @@ class Test extends React.Component {
 					<JobList listofjobs={dummyJobList}/>
 					<MapContainer/>
 				</div>
+        <button className="btn waves-effect waves-light" onClick={this.registerUser}> Reg</button>
+        <button className="btn waves-effect waves-light" onClick={this.loginUser}> Login</button>
 				
 				<TestComponent title='Test title' onClick={this.testClick} add={this.testClick2} remove={this.testClick3} items={items} ></TestComponent>
 			</div>
-             
         );
     }
 }
