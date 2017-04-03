@@ -2,10 +2,12 @@
 
 
 footer.page-footer{
-    background-color: $color-secondary;
+    background-color: $color-navbar;
     bottom: 0;
     right: 0;
     left: 0;
+    position: absolute;
+    width: 100%;
 
     .container{
         width: 90%;
@@ -22,7 +24,7 @@ footer.page-footer{
     }
 
     .footer-copyright{
-        background-color: $color-tertiary;
+        background-color: $color-navbar;
     }
 
 }

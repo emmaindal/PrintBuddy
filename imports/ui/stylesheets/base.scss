@@ -1,11 +1,18 @@
 @import "variables";
 
 
-html, body {
-    height: 100%;
-    background: $gradiant-primary;    
+html {
+    background: $nice-color-emma;
+    min-height: 100%;
+    position: relative;
+}
+body {
+    margin: 0 0 300px; /* bottom = footer height */
 }
 
 .container{
     width: 100%;
 }
+
+
+
