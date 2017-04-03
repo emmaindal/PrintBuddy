@@ -1,9 +1,14 @@
 $gradiant-primary: linear-gradient(446deg, #6cc0e9, #4aafe3);
+$nice-color-emma: -webkit-gradient(linear, left top, right top, color-stop(0%, #2193b0), color-stop(100%, #6dd5ed));
 $color-primary: #64b5de;
 $color-secondary: darken($color-primary, 10%);
 $color-tertiary: darken($color-secondary, 5%);
 $text-primary: rgb(255, 255, 255);
 $text-active: rgba(5, 87, 129, 0.87);
+
+//navbar
+$color-navbar: rgba(4,87,129,0.2);
+$color-navbar-two: rgba(97,103,105,0.1);
 
 
 //Step by Step colors
@@ -14,4 +19,4 @@ $color-step-icon: rgba(0,0,0,0.3);
 $color-step-font: white;
 
 //create Request
-$color-create-request-component: #fdfdfd;
+$color-create-request-component: rgba(255,255,255,0.8);

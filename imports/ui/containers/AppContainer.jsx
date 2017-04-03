@@ -31,9 +31,9 @@ class App extends React.Component {
             <div>
 				<Nav/>
                 <main>
-                <h1>PrintBuddy</h1>
-				<h4>Under Development</h4>
-				{this.props.children}
+                    <h1>PrintBuddy</h1>
+				    <h4>Under Development</h4>
+				    {this.props.children}
                 </main>
                 <Footer/>
 			</div>
