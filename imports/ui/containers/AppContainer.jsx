@@ -4,6 +4,7 @@ import React from 'react';
 
 import Nav from '../components/Nav';
 import TestComponent from '../components/TestComponent';
+import Footer from '../components/Footer';
 import {displayAlert}from '../helpers/alerts';
 import {Items} from '../../api/items/items.js';
 import {insert} from '../../api/items/methods';
@@ -27,11 +28,14 @@ class App extends React.Component {
         const {items} = this.props;
 
         return (
-            <div id="container">
+            <div id="container" className="container">
 				<Nav/>
+                <main>
                 <h1>PrintBuddy</h1>
 				<h4>Under Development</h4>
 				{this.props.children}
+                </main>
+                <Footer/>
 			</div>
         );
     }

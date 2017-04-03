@@ -1,11 +1,14 @@
-$color-primary: #6cbdff;
-$color-secondary: #9ed3ff;
-$text-nav: #00559d;
+$gradiant-primary: linear-gradient(446deg, #6cc0e9, #4aafe3);
+$color-primary: #64b5de;
+$color-secondary: darken($color-primary, 10%);
+$color-tertiary: darken($color-secondary, 5%);
+$text-primary: rgb(255, 255, 255);
+$text-active: rgba(5, 87, 129, 0.87);
 
 
-//Step by Step colors 
-$color-active-step: #2196f3;
-$color-finished-step: #00bfa5;
+//Step by Step colors
+$color-active-step: rgba(5, 87, 129, 0.87);
+$color-finished-step: rgba(67, 210, 112, 0.87);
 $color-next-step: rgba(0,0,0,0.3);
 $color-step-icon: rgba(0,0,0,0.3);
 $color-step-font: white;

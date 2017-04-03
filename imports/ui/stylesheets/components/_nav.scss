@@ -4,11 +4,11 @@ nav {
     background-color: $color-secondary;
 
     .brand-logo {
-        color: $text-nav;
+        color: $text-primary;
     }
 
     .active,
     a {
-        color: $text-nav;
+        color: $text-active;
     }
 }
