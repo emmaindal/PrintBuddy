@@ -11,7 +11,6 @@ const ItemsSchema = new SimpleSchema({
 });
 
 
-Items.re
 Items.attachSchema(ItemsSchema);
 
 // skapar hjälp-metoder för att kunna lättare hämta data från dina collections
