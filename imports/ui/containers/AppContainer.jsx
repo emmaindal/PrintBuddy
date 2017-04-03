@@ -28,7 +28,7 @@ class App extends React.Component {
         const {items} = this.props;
 
         return (
-            <div id="container" className="container">
+            <div>
 				<Nav/>
                 <main>
                 <h1>PrintBuddy</h1>
