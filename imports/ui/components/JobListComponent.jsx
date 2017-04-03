@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const JobList = ({listofjobs}) =>
-	<div className="col s12 m12 l6">
+	<div className="col s12 m10 offset-m1 l6">
 		<ul className="collection with-header">
 			<li className="collection-header"><h5>Nearby printjobs</h5></li>
 			{listofjobs.map((job) => {
