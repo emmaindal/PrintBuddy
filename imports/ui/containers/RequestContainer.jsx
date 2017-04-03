@@ -12,7 +12,7 @@ class Request extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1>Request Component</h1>
+				<h1>Request Container</h1>
 				{this.props.children}
 			</div>
 		);
