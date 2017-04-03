@@ -3,7 +3,7 @@ import React from 'react';
 import {InitialMap} from '../components/InitialMapComponent';
 
 
-export class MapContainer extends React.Component {
+export default class MapContainer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -25,18 +25,23 @@ export class MapContainer extends React.Component {
 
 	render() {
 		return (
-			<div style={{height: "100%"}}>
-				<InitialMap
-					containerElement={
-						<div style={{ height: "100%", width: "auto" }} />
-					}
-					mapElement={
-						<div style={{ height: "100%", width: "auto" }} />
-					}
-					markers={this.state.markers}
-					onMarkerClick={this.handleMarkerClick}
-				/>
+			<div className="col s12 m10 l6">
+				<div className="collection" style={{ height: "500px"}}>
+					<div style={{height: "100%"}}>
+						<InitialMap
+							containerElement={
+								<div style={{ height: "100%", width: "auto" }} />
+							}
+							mapElement={
+								<div style={{ height: "100%", width: "auto" }} />
+							}
+							markers={this.state.markers}
+							onMarkerClick={this.handleMarkerClick}
+						/>
+					</div>
+				</div>
 			</div>
+			
 		);
 	}
 }
