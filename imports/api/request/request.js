@@ -2,9 +2,9 @@
 import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
-export const Reqeust = new Mongo.Collection('request');
+export const Request = new Mongo.Collection('request');
 
-const ReqeustSchema = new SimpleSchema({
+const RequestSchema = new SimpleSchema({
     userReqId: { type: String },
     delivery: { type: Boolean },
     needColor: { type: Boolean },
@@ -17,10 +17,10 @@ const ReqeustSchema = new SimpleSchema({
     isDone:{type:Boolean}
 });
 
-Reqeust.attachSchema(ReqeustSchema);
+Request.attachSchema(RequestSchema);
 
 // skapar hjälp-metoder för att kunna lättare hämta data från dina collections
 // https://github.com/dburles/meteor-collection-helpers
-Reqeust.helpers({
+Request.helpers({
 
 });
