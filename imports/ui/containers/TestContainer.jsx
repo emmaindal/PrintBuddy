@@ -10,6 +10,7 @@ import {displayAlert}from '../helpers/alerts';
 import {Items} from '../../api/items/items.js';
 import {insert} from '../../api/items/methods';
 import {removeAll} from '../../api/items/methods';
+import {MapComponent} from '../components/MapComponent';
 
 class Test extends React.Component {
     constructor(props) {
@@ -141,6 +142,10 @@ class Test extends React.Component {
 					<JobList listofjobs={dummyJobList}/>
 				</div>
 				
+
+				<div id="test-map">
+					<MapComponent/>
+				</div>
 				<TestComponent title='Test title' onClick={this.testClick} add={this.testClick2} remove={this.testClick3} items={items} ></TestComponent>
 			</div>
              
