@@ -1,0 +1,39 @@
+@import "../variables";
+
+.create-request {
+    background-color: $color-create-request-component;
+    border-radius: 5px;
+    /*-webkit-box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
+    -moz-box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
+    box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);*/
+    p {
+        padding: 0;
+        margin: 0;
+    }
+    .btn {
+        width: 18% !important;
+        padding: 0;
+        letter-spacing: 0.2rem;
+    }
+    .btn-large {
+        width: 25%;
+        padding: 0;
+        letter-spacing: 0.3rem;
+    }
+    .file-row {
+        margin-bottom: 2rem;
+    }
+    .switch {
+        margin-bottom: 2.5rem;
+        .first-switch {
+            margin-right: 50px;
+        }
+    }
+    input[type=range] {
+        border: none;
+    }
+}
+
+.margin-bottom-after {
+    margin-bottom: 50px !important;
+}

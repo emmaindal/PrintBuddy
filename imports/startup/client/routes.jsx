@@ -17,6 +17,8 @@ import DoneContainer from '../../ui/containers/DoneContainer';
 import JobsContainer from '../../ui/containers/JobsContainer';
 import MyJobsContainer from '../../ui/containers/MyJobsContainer';
 import MyJobListContainer from '../../ui/containers/MyJobListContainer';
+import VerifiedContainer from '../../ui/containers/VerifiedContainer';
+
 import TestContainer from '../../ui/containers/TestContainer';
 
 i18n.setLocale('en');
@@ -39,6 +41,8 @@ export const renderRoutes = () => (
         <Route path="/Register" component={RegisterContainer}/>
         <Route path="/login" component={LoginContainer}/>
         <Route path="/start" component={StartContainer}/>
+		<Route path="/verified" component={VerifiedContainer}/>
+		<Route path="/start" component={StartContainer}/>
 		<Route path="/" component={AppContainer}>
 			<Route path="request" component={RequestContainer}>
 				<Route path="create" component={CreateRequestContainer}/>

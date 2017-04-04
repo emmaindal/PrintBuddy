@@ -1,0 +1,30 @@
+@import "../variables";
+
+
+footer.page-footer{
+    background-color: $color-navbar;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+
+    .container{
+        width: 90%;
+        margin-left: 10%;
+    }
+
+    .row{
+        margin-left: -0.75rem;
+        margin-right: 4rem;
+    }
+
+    p, a, i {
+        color: $text-primary;
+    }
+
+    .footer-copyright{
+        background-color: $color-navbar;
+    }
+
+}
