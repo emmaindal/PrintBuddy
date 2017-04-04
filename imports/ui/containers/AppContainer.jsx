@@ -28,7 +28,7 @@ class App extends React.Component {
 
         return (
             <div id="container">
-				<Nav/>
+                <Nav/>
                 <h1>PrintBuddy</h1>
 				<h4>Under Development</h4>
 				{this.props.children}

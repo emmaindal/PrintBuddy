@@ -3,9 +3,10 @@ $color-secondary: #9ed3ff;
 $text-nav: #00559d;
 
 
-//Step by Step colors 
+//Step by Step colors
 $color-active-step: #2196f3;
 $color-finished-step: #00bfa5;
 $color-next-step: rgba(0,0,0,0.3);
 $color-step-icon: rgba(0,0,0,0.3);
 $color-step-font: white;
+$printer: color("green", "base") !default;

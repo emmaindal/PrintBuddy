@@ -3,12 +3,6 @@ import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
 
 import Nav from '../components/Nav';
-import TestComponent from '../components/TestComponent';
-import {StepByStep} from '../components/StepByStepComponent';
-import {displayAlert}from '../helpers/alerts';
-import {Items} from '../../api/items/items.js';
-import {insert} from '../../api/items/methods';
-import {removeAll} from '../../api/items/methods';
 
 class Test extends React.Component {
     constructor(props) {
@@ -109,7 +103,7 @@ class Test extends React.Component {
 				<button className="btn" onClick={this.stepClear}> Clear</button>
 				<TestComponent title='Test title' onClick={this.testClick} add={this.testClick2} remove={this.testClick3} items={items} ></TestComponent>
 			</div>
-             
+
         );
     }
 }
