@@ -1,8 +1,8 @@
 import { Accounts } from 'meteor/accounts-base';
 
 
-Accounts.emailTemplates.siteName = 'Meteor Guide Todos Example';
-Accounts.emailTemplates.from = 'Meteor Todos Accounts <accounts@example.com>';
+Accounts.emailTemplates.siteName = 'PrintBuddy';
+Accounts.emailTemplates.from = 'NOREPLY <noreply@printbuddy.se>';
 
 Accounts.emailTemplates.resetPassword = {
     subject() {
