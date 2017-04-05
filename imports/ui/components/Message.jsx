@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class AddPlayer extends React.Component {
+export default class Message extends React.Component {
     render() {
         let messageClassName = `collection-item avatar message-user-${this.props.user.number}`
 
