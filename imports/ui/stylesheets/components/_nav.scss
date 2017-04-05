@@ -2,7 +2,7 @@
 
 nav {
     background-color: $color-navbar-two;
-    
+
 
     .brand-logo {
         color: $text-primary;
@@ -10,6 +10,6 @@ nav {
 
     .active,
     a {
-        color: $text-active;
+        color: $text-secondary;
     }
 }

@@ -4,7 +4,12 @@ $color-primary: #64b5de;
 $color-secondary: darken($color-primary, 10%);
 $color-tertiary: darken($color-secondary, 5%);
 $text-primary: rgb(255, 255, 255);
-$text-active: rgba(5, 87, 129, 0.87);
+$text-secondary: rgba(5, 87, 129, 0.87);
+
+//Content
+$background-color: rgba(#ffffff, 0.72);
+$border-color: rgba(#f4f4f4, 0.82);
+
 
 //navbar
 $color-navbar: rgba(4,87,129,0.2);

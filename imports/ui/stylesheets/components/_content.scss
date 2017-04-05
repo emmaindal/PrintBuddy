@@ -1,15 +1,15 @@
 @import "../variables";
 
 .col.grid-example {
-    border: 0.5px solid rgba(#f4f4f4, 0.82);
+    border: 0.5px solid $border-color;
     border-radius: 2px;
     margin: 5px 0;
     text-align: center;
     line-height: 50px;
     font-size: 28px;
-    background-color: rgba(#ffffff, 0.72) ;
+    background-color: $background-color;
     -webkit-transition: width 2s;
-    color: $text-active;
+    color: $text-secondary;
     padding: 2%;
 }
 
@@ -34,6 +34,6 @@ a {
 
 .btn-floating.btn-large.waves-effect.waves-light{
     margin-top: 30px;
-    background-color: $text-active;
+    background-color: $text-secondary;
 
 }
