@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class AddPlayer extends React.Component {
+export default class ChatSendMessage extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         
