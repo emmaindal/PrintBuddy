@@ -28,17 +28,13 @@ class Test extends React.Component {
         this.step3Click = this.step3Click.bind(this);
         this.step4Click = this.step4Click.bind(this);
         this.stepClear = this.stepClear.bind(this);
-
-		//login / register test buttons
-        this.registerUser = this.registerUser.bind(this);
-        this.loginUser = this.loginUser.bind(this);
-
+		
 		//printbuddies list
-		    this.onChoose = this.onChoose.bind(this);
+		this.onChoose = this.onChoose.bind(this);
 
 		//joblist
-		    this.onApply = this.onApply.bind(this);
-		    this.onViewLocation = this.onViewLocation.bind(this);
+		this.onApply = this.onApply.bind(this);
+		this.onViewLocation = this.onViewLocation.bind(this);
 
     }
 
