@@ -3,14 +3,14 @@
 .col.grid-example {
     border: 0.5px solid $border-color;
     border-radius: 2px;
-    margin: 5px 0;
+    margin: 3px 0;
     text-align: center;
     line-height: 50px;
     font-size: 28px;
     background-color: $background-color;
     -webkit-transition: width 2s;
     color: $text-secondary;
-    padding: 2%;
+    padding: 3%;
 }
 
 p {
@@ -33,7 +33,21 @@ a {
 }
 
 .btn-floating.btn-large.waves-effect.waves-light{
-    margin-top: 30px;
-    background-color: $text-secondary;
+    display: block;
+    margin-top: 26px;
+    margin-bottom: -26px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $scroll-btn-background;
+    border: 1px solid $scroll-btn-border;
+    color: $text-secondary;
 
+}
+
+.btn-large i,{
+    font-size: 2rem;
+    color: $text-secondary;
+}
+.btn-floating i{
+    width: auto;
 }

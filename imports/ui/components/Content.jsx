@@ -10,7 +10,8 @@ export default class Content extends React.Component {
                     <h1>PrintBuddy</h1>
                     <h4>Under Development</h4>
                     <h4>Test</h4>
-                    <a href="#second-content-row" className="btn-floating btn-large waves-effect waves-light">Scroll here</a>
+
+                    <a href="#second-content-row" className="btn-floating btn-large waves-effect waves-light"><i className="material-icons">expand_more</i></a>
                 </div>
 
                 <div className="col s6 grid-example" id="second-content-row">
@@ -35,7 +36,7 @@ export default class Content extends React.Component {
                         Excepteur sint occaecat cupidatat non proident, sunt in culpa
                         qui officia deserunt mollit anim id est laborum."
                     </p>
-                    <a href="#third-content-row" className="btn-floating btn-large waves-effect waves-light">Scroll here</a>
+                    <a href="#third-content-row" className="btn-floating btn-large waves-effect waves-light"><i className="material-icons">expand_more</i></a>
 
                 </div>
                 <div className="col s6 grid-example" id="second-content-row">
@@ -60,7 +61,7 @@ export default class Content extends React.Component {
                         Excepteur sint occaecat cupidatat non proident, sunt in culpa
                         qui officia deserunt mollit anim id est laborum."
                     </p>
-                    <a href="#third-content-row" className="btn-floating btn-large waves-effect waves-light">Scroll here</a>
+                    <a href="#third-content-row" className="btn-floating btn-large waves-effect waves-light"><i className="material-icons">expand_more</i></a>
 
                 </div>
                 <div className="col s12 grid-example" id="third-content-row">
