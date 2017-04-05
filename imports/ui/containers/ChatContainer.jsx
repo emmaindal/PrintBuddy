@@ -2,6 +2,8 @@ import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
 
+import ChatComponent from "../components/ChatComponent";
+
 
 class Chat extends React.Component {
 	constructor(props) {
@@ -12,7 +14,8 @@ class Chat extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1>Chat Component</h1>
+				<h1>Chat Container</h1>
+                <ChatComponent/>
 			</div>
 		);
 	}
