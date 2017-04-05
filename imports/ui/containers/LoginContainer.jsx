@@ -1,30 +1,39 @@
 import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
-
-import {LoginComponent} from '../components/LoginComponent';
-import Nav from '../components/Nav';
+import {browserHistory} from 'react-router';
+import {displayError} from '../helpers/errors';
+import LoginComponent from '../components/LoginComponent';
 
 class Login extends React.Component {
-	constructor(props) {
+    constructor(props) {
         super(props);
         this.state = {};
+        this.onSubmit = this.onSubmit.bind(this);
     }
 
-	render() {
-		return (
-			<div>
-				<Nav/>
-                <LoginComponent/>
-			</div>
-		);
-	}
+    onSubmit(formData) {
+        Meteor.loginWithPassword(formData.email, formData.password, function (error) {
+            if (error) {
+                displayError("Error:", error.reason);
+            } else {
+                browserHistory.push('/');
+            }
+        });
+    }
+
+    render() {
+        return (
+            <div>
+                <LoginComponent submit={this.onSubmit}/>
+            </div>
+        );
+    }
 }
 
 const LoginContainer = createContainer(() => {
 
-    return {
-    };
+    return {};
 }, Login);
 
 
