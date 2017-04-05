@@ -7,6 +7,3 @@ Meteor.startup(() => {
     render(renderRoutes(), document.getElementById('app'));
 });
 
-$(document).ready(function() {
-    $('select').material_select();
-  });
