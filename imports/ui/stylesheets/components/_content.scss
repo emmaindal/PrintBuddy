@@ -1,0 +1,39 @@
+@import "../variables";
+
+.col.grid-example {
+    border: 0.5px solid rgba(#f4f4f4, 0.82);
+    border-radius: 2px;
+    margin: 5px 0;
+    text-align: center;
+    line-height: 50px;
+    font-size: 28px;
+    background-color: rgba(#ffffff, 0.72) ;
+    -webkit-transition: width 2s;
+    color: $text-active;
+    padding: 2%;
+}
+
+p {
+    font-size: 14px;
+    line-height: 30px;
+}
+
+a {
+    font-size: 14px;
+}
+
+.promo-caption{
+    font-size: 18px;
+}
+
+.promo i{
+    margin: 40px 0;
+    font-size: 5rem;
+    display: block;
+}
+
+.btn-floating.btn-large.waves-effect.waves-light{
+    margin-top: 30px;
+    background-color: $text-active;
+
+}
