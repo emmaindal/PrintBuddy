@@ -16,7 +16,7 @@ export default class AddPlayer extends React.Component {
             <div className="i">
                 <form className="form" onSubmit={this.handleSubmit.bind(this)}>
 					<input className="form-input" ref="message" type="text" name="message" placeholder="Type a message..."/>
-					<button className="button">Add Player</button>
+					<button className="btn-large waves-effect waves-light" type="submit" name="action">SEND</button>
 				</form>
             </div>
         );
