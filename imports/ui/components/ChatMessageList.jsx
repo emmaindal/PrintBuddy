@@ -4,7 +4,7 @@ import React from "react";
 
 import Message from "./Message";
 
-export default class PlayerList extends React.Component {
+export default class ChatMessageList extends React.Component {
     renderMessages() {
         const users = [
             {
