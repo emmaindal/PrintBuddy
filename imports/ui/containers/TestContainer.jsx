@@ -8,6 +8,7 @@ import Nav from '../components/Nav';
 import TestComponent from '../components/TestComponent';
 import {StepByStep} from '../components/StepByStepComponent';
 import {JobList} from '../components/JobListComponent';
+import {PendingBuddiesList} from '../components/PendingBuddiesListComponent';
 import {displayAlert}from '../helpers/alerts';
 import {displayError}from '../helpers/errors';
 import {Items} from '../../api/items/items.js';
@@ -21,13 +22,24 @@ class Test extends React.Component {
         this.state = {};
         this.testClick = this.testClick.bind(this);
         this.testClick2 = this.testClick2.bind(this);
+
+		//stepbystep component tests
         this.step1Click = this.step1Click.bind(this);
         this.step2Click = this.step2Click.bind(this);
         this.step3Click = this.step3Click.bind(this);
         this.step4Click = this.step4Click.bind(this);
         this.stepClear = this.stepClear.bind(this);
+
+		//login / register test buttons
         this.registerUser = this.registerUser.bind(this);
         this.loginUser = this.loginUser.bind(this);
+
+		//printbuddies list
+		this.onChoose = this.onChoose.bind(this);
+
+		//joblist
+		this.onApply = this.onApply.bind(this);
+		this.onViewLocation = this.onViewLocation.bind(this);
     }
 
     getInitialState() {
@@ -151,6 +163,17 @@ class Test extends React.Component {
         });
 
     }
+	// joblist knapp för att ansöka om jobb
+	onApply(clickedId) {
+		alert(`You clicked APPLY for job: ${clickedId}`);
+	}
+	// printbuddy listknapp för att välja printbuddy
+	onChoose(clickedId) {
+		alert(`You clicked onChoose for buddy: ${clickedId}`);
+	}
+	onViewLocation(clickedLocation) {
+		alert(`You clicked to view location for ${clickedLocation}! This should update the map to show it`);
+	}
 
     render() {
         const {items} = this.props;
@@ -180,6 +203,20 @@ class Test extends React.Component {
                 distance: 1500,
             },
         ];
+		const dummyBuddiesList = [
+			{
+				_id: 241,
+				email: "bengan@test.se", 
+				username:"Bengan75",
+				address: "Testvägen 7, Malmö",
+			},
+			{
+				_id: 41,
+				email: "micke_cyklar@test.se", 
+				username:"Micke91",
+				address: "Mickesgränd 1337, Malmö",
+			},
+		];
 
         return (
 			<div>
@@ -194,11 +231,21 @@ class Test extends React.Component {
 				</div>
 
 				<div id="test-joblist" className="row">
-					<JobList listofjobs={dummyJobList}/>
-					<MapContainer/>
+					<div className="col l10 offset-l1">
+						<JobList listofjobs={dummyJobList} onApply={this.onApply} onView={this.onViewLocation}/>
+						<MapContainer/>
+					</div>
 				</div>
-        <button className="btn waves-effect waves-light" onClick={this.registerUser}> Reg</button>
-        <button className="btn waves-effect waves-light" onClick={this.loginUser}> Login</button>
+
+				<div id="test-pendinglist" className="row">
+					<div className="col l10 offset-l1">
+						<PendingBuddiesList buddylist={dummyBuddiesList} onChoose={this.onChoose} onView={this.onViewLocation}/>
+						<MapContainer/>
+					</div>
+				</div>
+
+        		<button className="btn waves-effect waves-light" onClick={this.registerUser}> Reg</button>
+        		<button className="btn waves-effect waves-light" onClick={this.loginUser}> Login</button>
 				
 				<TestComponent title='Test title' onClick={this.testClick} add={this.testClick2} remove={this.testClick3} items={items} ></TestComponent>
 			</div>
