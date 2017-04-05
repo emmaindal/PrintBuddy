@@ -4,7 +4,6 @@ import React from 'react';
 import {Accounts} from 'meteor/accounts-base';
 import {browserHistory} from 'react-router'
 
-import Nav from '../components/Nav';
 import TestComponent from '../components/TestComponent';
 import {StepByStep} from '../components/StepByStepComponent';
 import {JobList} from '../components/JobListComponent';
@@ -35,11 +34,12 @@ class Test extends React.Component {
         this.loginUser = this.loginUser.bind(this);
 
 		//printbuddies list
-		this.onChoose = this.onChoose.bind(this);
+		    this.onChoose = this.onChoose.bind(this);
 
 		//joblist
-		this.onApply = this.onApply.bind(this);
-		this.onViewLocation = this.onViewLocation.bind(this);
+		    this.onApply = this.onApply.bind(this);
+		    this.onViewLocation = this.onViewLocation.bind(this);
+
     }
 
     getInitialState() {
@@ -120,60 +120,19 @@ class Test extends React.Component {
         });
     }
 
-    registerUser() {
-        const email = "mikael.carlstein@gmail.com";
-        const password = "123456";
-        const username = "mikael";
-        const position = {address: "fasfasf", lat: 1, lng: 2};
 
-        Accounts.createUser({
-            email,
-            password,
-            username,
-            position
-        }, (err) => {
-            if (err) {
-                displayError("Error", err.reason)
-                console.log(err);
-            } else {
-                Meteor.call('sendVerificationLink', (error, response) => {
-                    if (error) {
-                        displayError("Error", error);
-                        console.log(error);
-                    } else {
-                        browserHistory.push('/');
-                    }
-                });
-            }
-        });
-
-    }
-
-    loginUser() {
-
-        const email = "mikael.carlstein@gmail.com";
-        const password = "123456";
-
-        Meteor.loginWithPassword(email, password, function (error) {
-            if (error) {
-                displayError("Error:", error.reason);
-            } else {
-                browserHistory.push('/');
-            }
-        });
-
-    }
 	// joblist knapp för att ansöka om jobb
 	onApply(clickedId) {
-		alert(`You clicked APPLY for job: ${clickedId}`);
+		    alert(`You clicked APPLY for job: ${clickedId}`);
 	}
 	// printbuddy listknapp för att välja printbuddy
 	onChoose(clickedId) {
-		alert(`You clicked onChoose for buddy: ${clickedId}`);
+		    alert(`You clicked onChoose for buddy: ${clickedId}`);
 	}
 	onViewLocation(clickedLocation) {
-		alert(`You clicked to view location for ${clickedLocation}! This should update the map to show it`);
+		    alert(`You clicked to view location for ${clickedLocation}! This should update the map to show it`);
 	}
+
 
     render() {
         const {items} = this.props;
@@ -243,9 +202,6 @@ class Test extends React.Component {
 						<MapContainer/>
 					</div>
 				</div>
-
-        		<button className="btn waves-effect waves-light" onClick={this.registerUser}> Reg</button>
-        		<button className="btn waves-effect waves-light" onClick={this.loginUser}> Login</button>
 				
 				<TestComponent title='Test title' onClick={this.testClick} add={this.testClick2} remove={this.testClick3} items={items} ></TestComponent>
 			</div>
