@@ -1,10 +1,11 @@
 import React from "react";
 
-export default class CreateRequest extends React.Component {
+class CreateRequest extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            range: 50,
+            range: "50",
+            dateClassName: "datepicker"
         }
     }
     componentDidMount() {
@@ -15,6 +16,8 @@ export default class CreateRequest extends React.Component {
             today: "Today"
         });
     }
+
+
     changeRange() {
         const range = this.refs.range.value;
         this.setState({
@@ -23,6 +26,18 @@ export default class CreateRequest extends React.Component {
     }
     onSubmit(e) {
         e.preventDefault();
+        if (!this.refs.lastDate.value){
+            this.setState({dateClassName:"datepicker invalid"});
+        }else{
+            const request ={
+                delivery : this.refs.delivery.checked,
+                needColor: this.refs.needColor.checked,
+                radius: parseInt(this.state.range),
+                lastDate: new Date(this.refs.lastDate.value),
+                reward: parseInt(this.refs.reward.value)
+            }
+            this.props.submit(request)
+        }
     }
     render() {
         return (
@@ -46,7 +61,7 @@ export default class CreateRequest extends React.Component {
                         <div className="switch center-align">
                             <label className="first-switch">
                                 Black/White
-                                <input type="checkbox" />
+                                <input type="checkbox" ref="needColor" />
                                 <span className="lever"></span>
                                 Color
                             </label>
@@ -54,7 +69,7 @@ export default class CreateRequest extends React.Component {
                         <div className="switch center-align margin-bottom-after">
                             <label className="second-switch">
                                 No Delivery
-                                <input type="checkbox" />
+                                <input type="checkbox" ref="delivery" />
                                 <span className="lever"></span>
                                 Home Delivery
                             </label>
@@ -63,19 +78,19 @@ export default class CreateRequest extends React.Component {
                         <div className="row margin-bottom-after">
                             <p className="center-align col s2">{this.state.range} m</p>
                             <p className="range-field col s8">
-                                <input onChange={this.changeRange.bind(this)} ref="range" type="range" id="test5" min="1" max="10000" />
+                                <input onChange={this.changeRange.bind(this)} ref="range" type="range" id="test5" min="1" max="10000"  />
                             </p>
                         </div>
                         <p className="center-align">Set a last date for pick-up/delivery</p>
                         <div className="row">
                             <div className="col s8 offset-s2 input-field inline">
-                                <input type="date" id="date" className="datepicker" />
+                                <input id="date" type="date" ref="lastDate" className={this.state.dateClassName} />
                                 <label htmlFor="date">Date</label>
                             </div>
                         </div>
-                        <div className="row margin-bottom-after">
-                            <div className="input-field inline col s8 offset-s2">
-                                <input id="number" type="number" className="validate" />
+                        <div className="row margin-bottom-after" >
+                            <div className="input-field inline col s8 offset-s2" >
+                                <input id="number" type="number" ref="reward" className="validate"  required/>
                                 <label htmlFor="number">Offer</label>
                             </div>
 
@@ -90,3 +105,11 @@ export default class CreateRequest extends React.Component {
         );
     }
 }
+
+CreateRequest.propTypes = {
+    submit: React.PropTypes.func,
+}
+
+
+
+export default CreateRequest;

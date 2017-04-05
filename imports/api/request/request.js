@@ -5,15 +5,16 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 export const Request = new Mongo.Collection('request');
 
 const RequestSchema = new SimpleSchema({
-    userReqId: { type: String },
+    userReqId: { type: String,optional:true  },
     delivery: { type: Boolean },
     needColor: { type: Boolean },
     reward: { type: Number },
-    currency: { type: String },
+    currency: { type: String,optional:true  },
     radius: { type: Number },
-    possibleOnes: { type: [String] },
-    chosenOne: { type: String },
-    docURL: { type: String },
+    lastDate:{type: Date},
+    possibleOnes: { type: [String], optional:true },
+    chosenOne: { type: String, optional:true },
+    docURL: { type: String,optional:true  },
     isDone:{type:Boolean}
 });
 
