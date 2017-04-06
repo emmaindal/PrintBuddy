@@ -14,7 +14,6 @@ import {Items} from '../../api/items/items.js';
 import {insert} from '../../api/items/methods';
 import {removeAll} from '../../api/items/methods';
 import MapContainer from './MapContainer';
-import Geocode from '../helpers/Geocode';
 import GeoCoder from './GeoCodeContainer';
 
 class Test extends React.Component {
@@ -33,9 +32,6 @@ class Test extends React.Component {
 		
 		//printbuddies list
 		this.onChoose = this.onChoose.bind(this);
-
-		//joblist
-		this.onApply = this.onApply.bind(this);
 		this.onViewLocation = this.onViewLocation.bind(this);
 
     }
@@ -55,12 +51,6 @@ class Test extends React.Component {
     componentWillUnmount() {
 
     }
-
-	testGeo(adress) {
-		Geocode(adress).then((response) => {
-			console.log(response);
-		});
-	}
 
     testClick() {
         displayAlert("title", "message");
@@ -124,11 +114,6 @@ class Test extends React.Component {
         });
     }
 
-
-	// joblist knapp för att ansöka om jobb
-	onApply(clickedId) {
-		    alert(`You clicked APPLY for job: ${clickedId}`);
-	}
 	// printbuddy listknapp för att välja printbuddy
 	onChoose(clickedId) {
 		    alert(`You clicked onChoose for buddy: ${clickedId}`);
@@ -140,32 +125,6 @@ class Test extends React.Component {
 
     render() {
         const {items} = this.props;
-        const dummyJobList = [
-            {
-                id: 1,
-                requestor: "Anna1337",
-                delivery: "Yes",
-                reward: 100,
-                currency: "SEK",
-                distance: 500,
-            },
-            {
-                id: 2,
-                requestor: "PelleSvanslös",
-                delivery: "no",
-                reward: 20,
-                currency: "SEK",
-                distance: 700,
-            },
-            {
-                id: 3,
-                requestor: "Kringlan75",
-                delivery: "Yes",
-                reward: 500,
-                currency: "SEK",
-                distance: 1500,
-            },
-        ];
 		const dummyBuddiesList = [
 			{
 				_id: 241,
@@ -193,13 +152,6 @@ class Test extends React.Component {
 					<button className="btn waves-effect waves-light" onClick={this.stepClear}> Clear</button>
 				</div>
 
-				<div id="test-joblist" className="row">
-					<div className="col l10 offset-l1">
-						<JobList listofjobs={dummyJobList} onApply={this.onApply} onView={this.onViewLocation}/>
-						<MapContainer/>
-					</div>
-				</div>
-
 				<div id="test-pendinglist" className="row">
 					<div className="col l10 offset-l1">
 						<PendingBuddiesList buddylist={dummyBuddiesList} onChoose={this.onChoose} onView={this.onViewLocation}/>
@@ -209,11 +161,7 @@ class Test extends React.Component {
 
 				<div id="test-geocode" className="row">
 					<div className="col l10 offset-l1">
-						<h3>Test Geocode (fixed Adress)</h3>
-						<button className="btn waves-effect waves-light" onClick={() => {
-							this.testGeo("Drottninggatan 1");
-						}}> GeoCode It!</button>
-						<br/>
+						<h3>Test Geocode</h3>
 						<GeoCoder onPickAdress={(adress) => {console.log(adress)}}/>
 					</div>
 				</div>
