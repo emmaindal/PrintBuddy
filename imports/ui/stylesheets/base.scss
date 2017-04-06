@@ -2,6 +2,7 @@
 
 
 html {
+    font-family: 'Source Sans Pro', sans-serif;
     background: $nice-color-emma;
     min-height: 100%;
     position: relative;
@@ -61,7 +62,6 @@ a {
 button {
     cursor: pointer;
 }
-
 // SCROLL BAR CUMSTOMIZE 
 
 /* Let's get this party started */
@@ -83,3 +83,4 @@ button {
     background: rgba(0,180,220,0.2); 
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
+
