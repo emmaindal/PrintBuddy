@@ -1,21 +1,26 @@
 $gradiant-primary: linear-gradient(446deg, #6cc0e9, #4aafe3);
-$nice-color-emma: -webkit-gradient(linear, left top, right top, color-stop(0%, #2193b0), color-stop(100%, #6dd5ed));
-$color-primary: #64b5de;
+$nice-color-alex: -webkit-gradient(linear, left top, right top, color-stop(0%, #2193b0), color-stop(100%, #6dd5ed));
+$nice-color-emma: -webkit-gradient(linear, left top, right top, color-stop(0%, #38a3fa), color-stop(100%, #058df9));
+$color-primary: #2196F3;
 $color-secondary: darken($color-primary, 10%);
 $color-tertiary: darken($color-secondary, 5%);
 $text-primary: rgb(255, 255, 255);
-$text-secondary: rgba(5, 87, 129, 0.87);
+$text-secondary: rgba(#0369ba, 0.87);
+$text-tertiary: white;
+
+//media screen
+$break-medium: 1085px;
 
 //Content
 $background-color: rgba(#ffffff, 0.72);
 $border-color: rgba(#f4f4f4, 0.82);
-$scroll-btn-background: rgba(143, 217, 236, 0.25);
-$scroll-btn-border: rgba(33, 147, 176, 0.89);
+$scroll-btn-background: rgba(#ff9800, 0.98);
+$scroll-btn-border: rgba(#ffa520, 1);
 
 
 //navbar
-$color-navbar: rgba(4,87,129,0.2);
-$color-navbar-two: rgba(97,103,105,0.1);
+$color-navbar: rgba(#0d75c8, 0.31);
+$color-navbar-two: rgba(#0579d6, 0.39);
 
 
 //Step by Step colors

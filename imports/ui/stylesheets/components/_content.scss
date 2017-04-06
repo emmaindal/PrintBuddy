@@ -13,6 +13,24 @@
     padding: 3%;
 }
 
+.col.grid-example.first {
+    border: 0;
+    background-color: $color-primary;
+    height: 50%;
+
+    h1 {
+        margin-top: 4%;
+        color: $text-tertiary;
+    }
+
+    .waves-effect.waves-light.btn-large {
+        border-radius: 3px;
+        margin-top: 2%;
+        background-color: white;
+        color: $color-primary;
+    }
+}
+
 p {
     font-size: 14px;
     line-height: 30px;
@@ -22,32 +40,71 @@ a {
     font-size: 14px;
 }
 
-.promo-caption{
+.promo-caption {
     font-size: 18px;
 }
 
-.promo i{
+.promo i {
     margin: 40px 0;
     font-size: 5rem;
     display: block;
 }
 
-.btn-floating.btn-large.waves-effect.waves-light{
+.btn-floating.btn-large.waves-effect.waves-light {
     display: block;
-    margin-top: 26px;
-    margin-bottom: -26px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 26px auto -26px;
     background-color: $scroll-btn-background;
     border: 1px solid $scroll-btn-border;
-    color: $text-secondary;
-
+    color: $text-tertiary;
 }
 
-.btn-large i,{
+,
+.btn-large i {
     font-size: 2rem;
-    color: $text-secondary;
+    color: $text-tertiary;
 }
-.btn-floating i{
+
+.btn-floating i {
     width: auto;
+}
+
+.our-team-heading {
+    text-align: center;
+    padding-top: 2%;
+}
+
+.card.card-avatar {
+    position: relative;
+    overflow: hidden;
+    margin: 0.5rem 0 1rem;
+    background-color: #fff;
+    transition: box-shadow 0.25s;
+    border-radius: 4px;
+    width: 100%;
+
+    .card-content {
+        padding: 5px;
+    }
+
+    .material-icons.person {
+        font-size: 128px;
+        color: #ff9800;
+    }
+}
+
+.card-container {
+    width: 19%;
+    float: left;
+    margin: 0.5%;
+    padding: 1%;
+    @media screen and (max-width: $break-medium) {
+        width: 100%;
+        float: none;
+        margin: 0.5%;
+    }
+}
+
+.is-hidden,
+.is-visible {
+    opacity: 1;
 }
