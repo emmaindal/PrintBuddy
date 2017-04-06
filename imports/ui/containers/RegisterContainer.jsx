@@ -15,7 +15,7 @@ class Register extends React.Component {
     onSubmit(formData){
 
         // Todo fixa i register så man kan söka på sin address via gogole api och lägga till det
-        const position = {address: "fasfasf", lat: 1, lng: 2};
+        const position = {address: "Gatan 13", lat: 55.606068, lng: 13.000383}; // 55.606068, 13.000383
 
         Accounts.createUser({
             email: formData.email,

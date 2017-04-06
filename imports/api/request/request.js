@@ -20,8 +20,33 @@ const RequestSchema = new SimpleSchema({
 
 Request.attachSchema(RequestSchema);
 
+// Deny all client-side updates since we will be using methods to manage this collection
+Request.deny({
+    insert() { return true; },
+    update() { return true; },
+    remove() { return true; },
+});
+
+
+// This represents the keys from Lists objects that should be published
+// to the client. If we add secret properties to List objects, don't list
+// them here to keep them private to the server.
+/*Request.publicFields = {
+    userReqId: 1,
+    delivery: 1,
+    needColor: 1,
+    checked: 1,
+}; */
+
 // skapar hjälp-metoder för att kunna lättare hämta data från dina collections
 // https://github.com/dburles/meteor-collection-helpers
 Request.helpers({
+    requestorName(){
+        return Meteor.users.findOne(this.userReqId).username
+    },
+    requestorPosition(){
+        return Meteor.users.findOne(this.userReqId).position
+    }
 
 });
+

@@ -48,10 +48,9 @@ App.propTypes = {
 // Create container är en hjälp class för att binda meteor data till react komponents
 // https://atmospherejs.com/meteor/react-meteor-data
 const AppContainer = createContainer(() => {
-    Meteor.subscribe('items');
+    Meteor.subscribe('userData');
 
     return {
-        items: Items.find({}).fetch()
     };
 }, App);
 

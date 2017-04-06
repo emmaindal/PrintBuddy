@@ -3,8 +3,8 @@ import { Accounts } from 'meteor/accounts-base';
 Accounts.validateNewUser((user) => {
     var positionSchema =  new SimpleSchema({
         address: {type:String},
-        lat: {type:Number},
-        lng: {type:Number},
+        lat: {type:Number,decimal: true},
+        lng: {type:Number,decimal: true},
     });
     new SimpleSchema({
         _id: { type: String },
@@ -15,7 +15,7 @@ Accounts.validateNewUser((user) => {
         username:{type:String, optional:false},
         createdAt: { type: Date },
         services: { type: Object, blackbox: true },
-        position:{type: positionSchema, optional: true}
+        position:{type: positionSchema, optional: false}
     }).validate(user);
 
     // Return true to allow user creation to proceed
@@ -35,3 +35,6 @@ Accounts.onCreateUser((options, user) => {
 Accounts.urls.verifyEmail = function(token) {
     return Meteor.absoluteUrl("verified?token="+token)
 }
+
+// So we can access position field
+Meteor.publish('userData', function () { return Meteor.users.find({}, {fields: {position: 1}}); });
