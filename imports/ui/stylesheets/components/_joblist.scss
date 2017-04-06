@@ -1,0 +1,36 @@
+@import "../variables";
+
+#joblist {
+	.content-for-li {
+		display: inline-flex;
+		justify-content: space-between;
+		width: 100%;
+		p {
+			margin: 0.5em 0 0.5em 0;
+			padding-right: 1em;
+		}
+		#nojobsmessage {
+			margin-left: auto;
+			margin-right: auto;
+			font-size: 1.4rem;
+		}
+		.buttongroup {
+		display: inline-flex;
+		margin-top: auto;
+		margin-bottom: auto;
+		}
+		.btn:first-of-type {
+			margin-right: 0.5rem;
+		}
+		.btn {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+		.location-btn {
+				background-color: $color-location-btn;		
+		}
+		.location-btn:hover {
+				background-color: lighten($color-location-btn, 15%);
+		}
+	}
+}

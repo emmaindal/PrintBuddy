@@ -1,0 +1,71 @@
+@import "../variables";
+
+.chat-container {
+    -webkit-box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
+    -moz-box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
+    box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
+}
+
+.chat {
+    background: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    min-height: 150px;
+    max-height: 600px;
+    overflow-y: scroll;
+    position: relative;
+    
+    .collection .collection-item {
+        padding: 20px 20px;
+        position: relative;
+    }
+    .form {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 20px;
+        margin-top: 40px;
+        position: relative;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+    .btn-large {
+        letter-spacing: 2px;
+        height: 40px;
+        line-height: 30px;
+        margin-right: 10px;
+        transition: 0.2s all ease-in-out;
+        &:hover {
+            letter-spacing: 4px;
+        }
+    }
+    .message-username {
+        font-weight: bold;
+    }
+    .message-user-one {
+        background: $color-message-one;
+    }
+    .message-user-two {
+        background: $color-message-two;
+    }
+    
+   
+}
+
+.chat-row {
+    .col {
+        padding: 0 0 0rem !important;
+    }
+}
+
+.chat-header {
+    background: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 4rem;
+}
+
+.collection {
+    margin: 0.0rem 0 1rem 0; 
+}
+
