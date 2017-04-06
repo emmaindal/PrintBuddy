@@ -7,7 +7,7 @@ export default class Content extends React.Component {
             <div className="row">
                 <div className="col s12 grid-example first">
                     <h1>Welcome to PrintBuddy</h1>
-                    <a className="waves-effect waves-light btn- large">Get started</a>
+                    <a className="waves-effect waves-light btn-large">Get started</a>
                 </div>
                 <a href="#second-content-row" className="btn-floating btn-large waves-effect waves-light">
                     <i className="material-icons">expand_more</i>
