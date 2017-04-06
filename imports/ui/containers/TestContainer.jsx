@@ -14,6 +14,8 @@ import {Items} from '../../api/items/items.js';
 import {insert} from '../../api/items/methods';
 import {removeAll} from '../../api/items/methods';
 import MapContainer from './MapContainer';
+import Geocode from '../helpers/Geocode';
+import GeoCoder from './GeoCodeContainer';
 
 class Test extends React.Component {
     constructor(props) {
@@ -53,6 +55,12 @@ class Test extends React.Component {
     componentWillUnmount() {
 
     }
+
+	testGeo(adress) {
+		Geocode(adress).then((response) => {
+			console.log(response);
+		});
+	}
 
     testClick() {
         displayAlert("title", "message");
@@ -175,7 +183,7 @@ class Test extends React.Component {
 
         return (
 			<div>
-				<div id="test-stepbystep">
+				<div id="test-stepbystep" className="row">
 					<StepByStep step1={this.state.step1} step2={this.state.step2} step3={this.state.step3} step4={this.state.step4}/>
 					<h3>Test Step By Step</h3>
 					<button className="btn waves-effect waves-light" onClick={this.step1Click}> Step 1</button>
@@ -196,6 +204,17 @@ class Test extends React.Component {
 					<div className="col l10 offset-l1">
 						<PendingBuddiesList buddylist={dummyBuddiesList} onChoose={this.onChoose} onView={this.onViewLocation}/>
 						<MapContainer/>
+					</div>
+				</div>
+
+				<div id="test-geocode" className="row">
+					<div className="col l10 offset-l1">
+						<h3>Test Geocode (fixed Adress)</h3>
+						<button className="btn waves-effect waves-light" onClick={() => {
+							this.testGeo("Drottninggatan 1");
+						}}> GeoCode It!</button>
+						<br/>
+						<GeoCoder onPickAdress={(adress) => {console.log(adress)}}/>
 					</div>
 				</div>
 				
