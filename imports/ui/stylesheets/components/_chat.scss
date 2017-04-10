@@ -16,8 +16,10 @@
     position: relative;
     
     .collection .collection-item {
-        padding: 20px 20px;
+        padding: 7px 10px;
         position: relative;
+        min-height: 0;
+        border-bottom: 0;
     }
     .form {
         display: flex;
@@ -44,11 +46,24 @@
     }
     .message-user-one {
         background: $color-message-one;
+        padding-left: 15px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-right: 10px;
+        border-radius: 8px;
     }
     .message-user-two {
         background: $color-message-two;
+        padding-left: 15px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-right: 10px;
+        border-radius: 8px;
     }
-    
+    .secondary-content {
+        right: 28px !important;
+        top: 14px !important;
+    }
    
 }
 
@@ -68,4 +83,3 @@
 .collection {
     margin: 0.0rem 0 1rem 0; 
 }
-
