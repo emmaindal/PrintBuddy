@@ -5,10 +5,8 @@ export default class AboutComponent extends React.Component {
     render() {
         return(
             <div>
-                <h1>About Component</h1>
                 <div className="slider fullscreen">
                     <ul className="slides">
-
                         <li>
                             <img src="https://static.pexels.com/photos/273238/pexels-photo-273238.jpeg" />
                             <div className="caption center-align">
