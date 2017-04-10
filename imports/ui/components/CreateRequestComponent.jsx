@@ -15,6 +15,7 @@ class CreateRequest extends React.Component {
             format: 'yyyy-mm-dd',
             today: "Today"
         });
+
         $('select').material_select();
     }
 
@@ -64,7 +65,7 @@ class CreateRequest extends React.Component {
                         </div>
                         <div className="row margin-bottom-after" >
                             <div className="input-field col s8 offset-s2" >
-                                <input ref="title" className="validate" id="input-text" type="text" maxLength="40" required/>
+                                <input ref="title" className="validate" id="input-text" type="text" maxLength="40" required />
                                 <label htmlFor="input-text">Job title</label>
                             </div>
                         </div>
@@ -85,20 +86,18 @@ class CreateRequest extends React.Component {
                             </label>
                         </div>
                         <div className="row" >
-                            <div className="input-field inline col s8 offset-s2" >
+                            <div className="input-field inline col s4 offset-s2" >
                                 <input id="number" type="number" ref="pages" className="validate" required />
                                 <label htmlFor="number">Nr of Pages</label>
                             </div>
-                        </div>
-                        <div className="row margin-bottom-after" >
-                            <div className="input-field inline col s8 offset-s2" >
+                            <div className="input-field inline col s4" >
                                 <input id="number" type="number" ref="copies" className="validate" required />
                                 <label htmlFor="number">Nr of Copies</label>
                             </div>
                         </div>
                         <div className="row margin-bottom-after" >
                             <div className="input-field col s4 offset-s2" >
-                                <input id="number" type="number" ref="reward" className="validate" required/>
+                                <input id="number" type="number" ref="reward" className="validate" required />
                                 <label htmlFor="number">Reward</label>
                             </div>
                             <div className="input-field col s4">
@@ -112,9 +111,13 @@ class CreateRequest extends React.Component {
                         </div>
                         <p className="center-align">Set a last date for pick-up/delivery</p>
                         <div className="row margin-bottom-after">
-                            <div className="col s8 offset-s2 input-field inline">
+                            <div className="col s4 offset-s2 input-field inline">
                                 <input id="date" type="date" ref="lastDate" className={this.state.dateClassName} />
                                 <label htmlFor="date">Date</label>
+                            </div>
+                            <div className="input-field col s4">
+                                <input id="timepicker" type="time" />
+                                <label htmlFor="timepicker"></label>
                             </div>
                         </div>
                         <p className="center-align">Set a max distance</p>
