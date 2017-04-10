@@ -7,6 +7,7 @@ class RequestCollection extends Mongo.Collection {
     insert(doc, callback) {
         const ourDoc = doc;
         ourDoc.createdAt = ourDoc.createdAt || new Date();
+        ourDoc.possibleOnes = [];
         const result = super.insert(ourDoc, callback);
         return result;
     }
@@ -24,7 +25,7 @@ const RequestSchema = new SimpleSchema({
     currency: { type: String,optional:true  },
     radius: { type: Number },
     lastDate:{type: Date},
-    possibleOnes: { type: [String], optional:true },
+    possibleOnes: { type: [String], optional:false },
     chosenOne: { type: String, optional:true },
     docURL: { type: String,optional:true  },
     isDone:{type:Boolean},
@@ -60,8 +61,11 @@ Request.helpers({
     requestorPosition(){
         return Meteor.users.findOne(this.userReqId).position
     },
-    latestRequest(){
-        return Meteor.users.findOne(this.userReqId).position
+    possiblePrintBuddies(){
+        const users = this.possibleOnes.map((id) =>{
+            return Meteor.users.findOne(id);
+        });
+        return users;
     }
 });
 

@@ -15,7 +15,7 @@ Meteor.publish('user-request', function userrequest() {
         return this.ready();
     }
 
-    return Request.find({userReqId: this.userId, isDone : false, isCancel: false});
+    return Request.find({userReqId: this.userId, isDone : false});
 });
 
 

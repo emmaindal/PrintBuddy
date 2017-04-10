@@ -59,11 +59,10 @@ class RequestComp extends React.Component {
         }
 
         // pending
-
         return (
             <div>
                 <h1>Request Container</h1>
-                <PendingRequestContainer/>
+                <PendingRequestContainer pendingBuddies={this.props.request.possiblePrintBuddies()}/>
             </div>
         );
     }
@@ -72,7 +71,7 @@ class RequestComp extends React.Component {
 const RequestContainer = createContainer(() => {
     const requestHandle = Meteor.subscribe('user-request');
     const loading = !requestHandle.ready();
-    const req = Request.find({userReqId: Meteor.userId(), isDone: false, isCancel: false});
+    const req = Request.find({userReqId: Meteor.userId(), isDone: false});
     const reqExists = !loading && !!req;
 
     return {

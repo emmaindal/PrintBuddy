@@ -36,6 +36,27 @@ export const insert = new ValidatedMethod({
     },
 });
 
+export const applyRequest = new ValidatedMethod({
+    name: 'request.applyRequest',
+    validate: new SimpleSchema({
+        requestId: {type: String},
+    }).validator(),
+    run({requestId}){
+        if (!this.userId) {
+            throw new Meteor.Error('request.applyRequest',
+                'Must be logged in to apply.');
+        }
+        const req = Request.findOne(requestId);
+        if(req.possibleOnes.includes(this.userId)){
+            throw new Meteor.Error('request.applyRequest.exist',
+                'You already applied for this job!');
+        }
+
+        // Todo begränsa det till 3?
+        Request.update(requestId,{ $push: { possibleOnes: this.userId } } );
+    }
+});
+
 
 const REQUEST_METHODS = _.pluck([
     insert,

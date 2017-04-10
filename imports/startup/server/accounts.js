@@ -52,6 +52,6 @@ Accounts.urls.verifyEmail = function (token) {
 
 // So we can access position field
 Meteor.publish('userData', function () {
-    return Meteor.users.find({}, {fields: {position: 1}});
+    return Meteor.users.find({}, {fields: {position: 1, username: 1}});
 });
 

@@ -5,8 +5,10 @@ import React from 'react';
 import {Request} from '../../api/request/request.js';
 import MapContainer from './MapContainer';
 import {JobList} from '../components/JobListComponent';
-import { browserHistory } from 'react-router';
-
+import {browserHistory} from 'react-router';
+import {applyRequest} from '../../api/request/methods';
+import {displayError} from '../helpers/errors';
+import {displayAlert} from '../helpers/alerts';
 
 class Jobs extends React.Component {
     constructor(props) {
@@ -17,18 +19,30 @@ class Jobs extends React.Component {
     }
 
     componentDidMount() {
-        // todo kolla vilket state användaren är på requestet! och välj rätt route.
-        if(!this.props.isBuddy){
+        if (!this.props.isBuddy) {
             browserHistory.replace('/request');
         }
     }
 
     onApply(clickedId) {
-        alert(`You clicked APPLY for job: ${clickedId}`);
+        const req = {requestId:clickedId}
+        applyRequest.call(req, (err, res) => {
+            if (err) {
+                if (err.error === 'request.applyRequest.exist') {
+                    displayError("Error!", 'You already applied for this job!');
+                }else{
+                    displayError("Error!", 'Something went wrong :( ');
+                }
+            }else{
+                displayAlert("Nice work :)",`You clicked APPLY for job`);
+            }
+        });
     }
+
     onChoose(clickedId) {
         alert(`You clicked onChoose for buddy: ${clickedId}`);
     }
+
     onViewLocation(clickedLocation) {
         alert(`You clicked to view location for ${clickedLocation}! This should update the map to show it`);
     }
