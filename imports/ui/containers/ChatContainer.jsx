@@ -24,6 +24,10 @@ class Chat extends React.Component {
         }
         console.log(obj);
     }
+    handleDownload() {
+        // Download the document URL
+        console.log("Download Document")
+    }
     componentDidMount() {
         const users = [
             {
@@ -92,7 +96,7 @@ class Chat extends React.Component {
 		return (
 			<div>
 				<h1>Chat Container</h1>
-                <ChatComponent users={this.state.users} onSubmit={this.onSubmit.bind(this)}/>
+                <ChatComponent users={this.state.users} handleDownload={this.handleDownload.bind(this)} onSubmit={this.onSubmit.bind(this)}/>
 			</div>
 		);
 	}
