@@ -1,7 +1,14 @@
 @import "../variables";
 
-
 .caption, h3{
     color: #000;
+}
 
+.waves-effect.waves-light.btn{
+    background-color: rgba(#2196f4, 0.86);
+    border-radius: 5px;
+}
+
+.slider .indicators .indicator-item.active{
+    background-color: $color-primary !important;
 }
