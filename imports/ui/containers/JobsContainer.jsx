@@ -11,8 +11,11 @@ import { browserHistory } from 'react-router';
 class Jobs extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
-
+        this.state = {
+			defaultCenter: this.props.userposition,
+			clickedJobId: '',
+		};
+		this.onViewLocation = this.onViewLocation.bind(this);
         // TODO får räkna ut på något sätt hur långt det är från sin egna address.
     }
 
@@ -29,8 +32,11 @@ class Jobs extends React.Component {
     onChoose(clickedId) {
         alert(`You clicked onChoose for buddy: ${clickedId}`);
     }
-    onViewLocation(clickedLocation) {
-        alert(`You clicked to view location for ${clickedLocation}! This should update the map to show it`);
+    onViewLocation(clickedJob) {
+		this.setState({
+			defaultCenter: clickedJob.requestorPosition(),
+			clickedJobId: clickedJob._id,
+		})
     }
 
     render() {
@@ -39,8 +45,8 @@ class Jobs extends React.Component {
                 <h1>Jobs Component</h1>
                 <div id="test-joblist" className="row">
                     <div className="col l10 offset-l1">
-                        <JobList listofjobs={this.props.items} onApply={this.onApply} onView={this.onViewLocation}/>
-                        <MapContainer/>
+                        <JobList listofjobs={this.props.jobs} onApply={this.onApply} onView={this.onViewLocation}/>
+                        <MapContainer clickedId={this.state.clickedJobId} markers={this.props.jobs} defaultCenter={this.state.defaultCenter}/>
                     </div>
                 </div>
             </div>
@@ -52,7 +58,8 @@ const JobsContainer = createContainer(() => {
     Meteor.subscribe('request');
 
     return {
-        items: Request.find({}).fetch()
+        jobs: Request.find({}).fetch(),
+		userposition: Meteor.users.findOne(Meteor.userId()).position
     };
 }, Jobs);
 

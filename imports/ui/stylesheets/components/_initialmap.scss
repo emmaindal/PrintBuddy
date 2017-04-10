@@ -1,0 +1,12 @@
+@import "../variables";
+
+#infowindow {
+	.collection-item.avatar {
+		min-height: 0px!important;
+		padding-left: 72px;
+		position: relative;
+	}
+}
+.infowindow-icon {
+	font-size: 24px!important;
+}
