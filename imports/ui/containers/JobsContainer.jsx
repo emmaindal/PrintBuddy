@@ -5,6 +5,7 @@ import React from 'react';
 import {Request} from '../../api/request/request.js';
 import MapContainer from './MapContainer';
 import {JobList} from '../components/JobListComponent';
+import { browserHistory } from 'react-router';
 
 
 class Jobs extends React.Component {
@@ -13,6 +14,13 @@ class Jobs extends React.Component {
         this.state = {};
 
         // TODO får räkna ut på något sätt hur långt det är från sin egna address.
+    }
+
+    componentDidMount() {
+        // todo kolla vilket state användaren är på requestet! och välj rätt route.
+        if(!this.props.isBuddy){
+            browserHistory.replace('/request');
+        }
     }
 
     onApply(clickedId) {
