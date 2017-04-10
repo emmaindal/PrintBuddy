@@ -12,7 +12,8 @@ export default class AboutComponent extends React.Component {
                             <div className="caption center-align">
                                 <h3>This is our big Tagline!</h3>
                                 <h5 className="light black-text text-lighten-3">Here's our small slogan..</h5>
-                                <a className="waves-effect waves-light btn">Read more</a>
+
+                                <a className="waves-effect waves-light btn">Read More</a>
                             </div>
                         </li>
                         <li>
