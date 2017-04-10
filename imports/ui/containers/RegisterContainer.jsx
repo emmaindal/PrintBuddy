@@ -4,7 +4,9 @@ import React from 'react';
 import {browserHistory} from 'react-router'
 
 import RegisterComponent from '../components/RegisterComponent';
+
 import {displayError} from '../helpers/errors';
+
 
 class Register extends React.Component {
 	constructor(props) {
@@ -13,15 +15,12 @@ class Register extends React.Component {
     }
 
     onSubmit(formData){
-
-        // Todo fixa i register så man kan söka på sin address via gogole api och lägga till det
-        const position = {address: "Gatan 13", lat: 55.606068, lng: 13.000383}; // 55.606068, 13.000383
-
         Accounts.createUser({
             email: formData.email,
             username:formData.username,
             password:formData.password,
-            position:position
+            position:formData.position,
+            printBuddy:formData.printBuddy
         }, (err) => {
             if (err) {
                 displayError("Error", err.reason)
@@ -40,7 +39,6 @@ class Register extends React.Component {
     }
 
 	render() {
-
 		return (
             <div>
                 <RegisterComponent submit={this.onSubmit}/>
@@ -50,7 +48,6 @@ class Register extends React.Component {
 }
 
 Register.propTypes = {
-    children: React.PropTypes.element, // matched child route component
 };
 
 const RegisterContainer = createContainer(() => {
@@ -60,7 +57,3 @@ const RegisterContainer = createContainer(() => {
 
 
 export default RegisterContainer;
-
-message = [
-    {userId:"1", text:"test"},{userId:"2", text:"test"},{userId:"123", text:"test231"},{userId:"2", text:"test3"},{userId:"1", text:"test4"},{userId:"2", text:"test5"}
-]

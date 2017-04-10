@@ -47,6 +47,7 @@ Request.helpers({
     requestorPosition(){
         return Meteor.users.findOne(this.userReqId).position
     }
-
 });
+
+
 

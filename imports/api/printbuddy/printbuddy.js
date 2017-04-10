@@ -6,7 +6,9 @@ export const PrintBuddy = new Mongo.Collection('printbuddy');
 
 const PrintBuddySchema = new SimpleSchema({
     userId: { type: String },
-    canColor: { type: String }
+    isActive:{type: Boolean},
+    canColor: { type: Boolean },
+    canDeliver:{ type: Boolean }
 });
 
 PrintBuddy.attachSchema(PrintBuddySchema);

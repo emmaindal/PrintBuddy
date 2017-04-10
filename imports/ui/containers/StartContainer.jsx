@@ -38,7 +38,6 @@ class Start extends React.Component {
 	render() {
 		return (
 			<div>
-				<Nav/>
 				<Content/>
 				<Footer/>
 			</div>

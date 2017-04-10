@@ -22,6 +22,8 @@ import VerifiedContainer from '../../ui/containers/VerifiedContainer';
 
 import TestContainer from '../../ui/containers/TestContainer';
 
+import '../../api/user/user.js';
+
 i18n.setLocale('en');
 
 // Needed for onTouchTap
@@ -31,7 +33,7 @@ injectTapEventPlugin();
 function requireAuth(nextState, replace) {
     if (!Meteor.userId()) {
         replace({
-            pathname: '/login',
+            pathname: '/start',
             state: {nextPathname: nextState.location.pathname}
         });
     }
@@ -44,8 +46,7 @@ export const renderRoutes = () => (
         <Route path="/start" component={StartContainer}/>
         <Route path="/about" component={AboutContainer}/>
 		<Route path="/verified" component={VerifiedContainer}/>
-		<Route path="/start" component={StartContainer}/>
-		<Route path="/" component={AppContainer}>
+		<Route onEnter={requireAuth} path="/" component={AppContainer}>
 			<Route path="request" component={RequestContainer}>
 				<Route path="create" component={CreateRequestContainer}/>
 				<Route path="pending" component={PendingRequestContainer}/>
