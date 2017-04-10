@@ -1,9 +1,12 @@
 @import "../variables";
 
 #geocodelist {
+	border: none!important;
 	a {
 		color: rgba(0, 0, 0, 0.87);
 		font-weight: 600;
+		border: 1px solid #e0e0e0;
+		border-radius: 2px;
 	}
 	a:hover {
 		cursor: pointer;
