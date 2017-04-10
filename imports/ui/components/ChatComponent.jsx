@@ -5,7 +5,6 @@ import ChatSendMessage from "./ChatSendMessage";
 import ChatInfo from "./ChatInfo";
 
 export default class ChatComponent extends React.Component {
-
     componentDidMount() {
         setTimeout(() => {
             $('#chatbox').animate({
@@ -23,7 +22,7 @@ export default class ChatComponent extends React.Component {
                     <div className="chat-header col s12 m8 l4 offset-m2 offset-l4">
                         <a onClick={this.showChatInfo.bind(this)}><i className="info-icon material-icons hide-on-large-only">info_outline</i></a>
                         <h6 className="chat-title">Chatt med Micke</h6>
-                        <a className="waves-effect waves-light btn mobile-download-btn hide-on-large-only">Donwload</a>
+                        <a onClick={this.props.handleDownload.bind(this)} className="waves-effect waves-light btn mobile-download-btn hide-on-large-only">Donwload</a>
                     </div>
                 </div>
                 <div className="row chat-row">
@@ -35,7 +34,7 @@ export default class ChatComponent extends React.Component {
                         <ChatSendMessage onSubmit={this.props.onSubmit.bind(this)} />
                     </div>
                     <div className="col hide-on-med-and-down l2 offset-l1">
-                        <a className="waves-effect waves-light btn-large shadow button-doc">Download Document</a>
+                        <a onClick={this.props.handleDownload.bind(this)} className="waves-effect waves-light btn-large shadow button-doc">Download Document</a>
                     </div>
                 </div>
                 <div id="modal1" className="modal">
@@ -45,6 +44,8 @@ export default class ChatComponent extends React.Component {
                             <li className="collection-item"><span>Namn:</span> Alexander Lööf </li>
                             <li className="collection-item"><span>Adress:</span> Webersgade 7. St th 2100 Köpenhamn S</li>
                             <li className="collection-item"><span>Color:</span> No </li>
+                            <li className="collection-item"><span>Pages:</span> 2 </li>
+                            <li className="collection-item"><span>Copies:</span> 1 </li>
                             <li className="collection-item"><span>Delivery:</span> Yes </li>
                             <li className="collection-item"><span>Last Date:</span> 2017-04-20</li>
                         </ul>
