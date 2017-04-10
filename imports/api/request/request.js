@@ -1,8 +1,20 @@
 
 import { Mongo } from 'meteor/mongo';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import { SimpleSchema, SchemaHelpers } from 'meteor/aldeed:simple-schema';
 
-export const Request = new Mongo.Collection('request');
+
+class RequestCollection extends Mongo.Collection {
+    insert(doc, callback) {
+        const ourDoc = doc;
+        ourDoc.createdAt = ourDoc.createdAt || new Date();
+        const result = super.insert(ourDoc, callback);
+        return result;
+    }
+}
+
+
+export const Request = new RequestCollection('request');
+
 
 const RequestSchema = new SimpleSchema({
     userReqId: { type: String,optional:true  },
@@ -15,7 +27,8 @@ const RequestSchema = new SimpleSchema({
     possibleOnes: { type: [String], optional:true },
     chosenOne: { type: String, optional:true },
     docURL: { type: String,optional:true  },
-    isDone:{type:Boolean}
+    isDone:{type:Boolean},
+    createdAt:{type:Date}
 });
 
 Request.attachSchema(RequestSchema);
@@ -45,6 +58,9 @@ Request.helpers({
         return Meteor.users.findOne(this.userReqId).username
     },
     requestorPosition(){
+        return Meteor.users.findOne(this.userReqId).position
+    },
+    latestRequest(){
         return Meteor.users.findOne(this.userReqId).position
     }
 });

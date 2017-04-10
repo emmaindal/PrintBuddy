@@ -42,7 +42,7 @@ const REQUEST_METHODS = _.pluck([
 ], 'name');
 
 if (Meteor.isServer) {
-    // Only allow 5 todos operations per connection per second
+    // Only allow 5  operations per connection per second
     DDPRateLimiter.addRule({
         name(name) {
             return _.contains(REQUEST_METHODS, name);
