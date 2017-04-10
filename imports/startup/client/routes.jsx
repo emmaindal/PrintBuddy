@@ -8,6 +8,7 @@ import { Meteor } from 'meteor/meteor';
 import LoginContainer from '../../ui/containers/LoginContainer';
 import RegisterContainer from '../../ui/containers/RegisterContainer';
 import StartContainer from '../../ui/containers/StartContainer';
+import AboutContainer from '../../ui/containers/AboutContainer';
 import AppContainer from '../../ui/containers/AppContainer';
 import RequestContainer from '../../ui/containers/RequestContainer';
 import CreateRequestContainer from '../../ui/containers/CreateRequestContainer';
@@ -41,6 +42,7 @@ export const renderRoutes = () => (
         <Route path="/Register" component={RegisterContainer}/>
         <Route path="/login" component={LoginContainer}/>
         <Route path="/start" component={StartContainer}/>
+        <Route path="/about" component={AboutContainer}/>
 		<Route path="/verified" component={VerifiedContainer}/>
 		<Route path="/start" component={StartContainer}/>
 		<Route path="/" component={AppContainer}>
