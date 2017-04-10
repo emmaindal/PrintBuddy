@@ -1,6 +1,6 @@
-import react from 'react';
-import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
+import ReactDOM from 'react-dom';
+import {createContainer} from 'meteor/react-meteor-data';
 
 import Geocode from '../helpers/Geocode';
 
@@ -33,24 +33,22 @@ class GeoCodeComponent extends React.Component {
 
 	onPickAdress(adress) {
 		this.props.onPickAdress(adress);
+		this.setState({suggestions: [], input: ""});
 	}
 
 	render() {
 		return (
 			<div>
-				<div className="input-field col s6">
-					<input id="input-geo" className="validate" placeholder="Enter your address to search" value={this.state.input} onChange={this.onInputChange}/>
-					<label htmlFor="input-geo">Address</label>
-					<div className="collection" id="geocodelist">
-						{ this.state.suggestions.length > 0 ? (
-							this.state.suggestions.map((adress, index) => {
-							return (
-								<a key={index} onClick={() => {this.onPickAdress(adress)}} className="collection-item">{adress.formatted_address}</a>
-								);
-							})
-						) : (<div/>)
-					}
-					</div>
+				<input id="input-geo" className="validate" placeholder="Enter your address to search" value={this.state.input} onChange={this.onInputChange} autoComplete="off"/>
+				<div className="collection" id="geocodelist">
+					{ this.state.suggestions.length > 0 ? (
+						this.state.suggestions.map((adress, index) => {
+						return (
+							<a key={index} onClick={() => {this.onPickAdress(adress)}} className="collection-item">{adress.formatted_address}</a>
+							);
+						})
+					) : (<div></div>) //(<div/>)
+				}
 				</div>
 			</div>
 		)
