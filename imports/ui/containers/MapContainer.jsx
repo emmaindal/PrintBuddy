@@ -9,34 +9,27 @@ import {
 import {InitialMap} from '../components/InitialMapComponent';
 
 
-export default class MapContainer extends React.Component {
+class MapContainer extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			markers: [
-				{
-					id: 1,
-					position: {
-						lat: 55.608868,
-						lng: 12.994994,
-					},
-					showInfo: false,
-					message: "Wow this is awesome!",
-				},
-				{
-					id: 2,
-					position: {
-						lat: 55.609898,
-						lng: 12.995997,
-					},
-					showInfo: false,
-					message: "This is marker 2!",
-				}
-			]
-		}
+		this.state = {};
 
 		this.handleMarkerClick = this.handleMarkerClick.bind(this);
 		this.handleMarkerClose = this.handleMarkerClose.bind(this);
+	}
+	componentWillReceiveProps(nextProps) {
+		if (nextProps.clickedId) {
+			nextProps.markers = nextProps.markers.map(marker =>{
+				if(marker._id == nextProps.clickedId){
+					marker.showInfo = true;
+				} else {
+					marker.showInfo = false;
+				}
+			});
+		}
+		this.setState({
+			markers: nextProps.markers,
+		});
 	}
 
 	handleMarkerClick(clickedMarker) {
@@ -75,6 +68,7 @@ export default class MapContainer extends React.Component {
 								<div style={{ height: "100%", width: "auto" }} />
 							}
 							markers={this.state.markers}
+							defaultCenter={this.props.defaultCenter}
 							onMarkerClick={this.handleMarkerClick}
 							onCloseClick={this.handleMarkerClose}
 						/>
@@ -84,3 +78,10 @@ export default class MapContainer extends React.Component {
 		);
 	}
 }
+
+MapContainer.propTypes = {
+    markers: React.PropTypes.array,
+	defaultCenter: React.PropTypes.object,
+};
+
+export default MapContainer;
