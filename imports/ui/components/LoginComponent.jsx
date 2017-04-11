@@ -10,9 +10,7 @@ export class LoginComponent extends React.Component {
                         <h4 className="text-center">Login</h4>
                         <form className="col offset-s1 s10">
                                 <div className="row">
-                                    <label htmlFor="email">
-                                        <i className="small material-icons">perm_identity</i>
-                                    </label>
+                                    <i className="small material-icons">account_circle</i>
                                     <div className="input-field col offset-s3 s6">
                                         <input id="email" type="email" className="validate"/>
                                         <label htmlFor="email">E-mail</label>
