@@ -3,12 +3,9 @@ import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
 
 import Nav from '../components/Nav';
-import TestComponent from '../components/TestComponent';
-import Footer from '../components/Footer';
-import {displayAlert}from '../helpers/alerts';
-import {Items} from '../../api/items/items.js';
-import {insert} from '../../api/items/methods';
-import {removeAll} from '../../api/items/methods';
+import {browserHistory} from 'react-router';
+import {PrintBuddy} from '../../api/printbuddy/printbuddy';
+
 
 class App extends React.Component {
     constructor(props) {
@@ -17,43 +14,50 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-    }
-
-    componentWillUnmount() {
 
     }
-
 
     render() {
-        const {items} = this.props;
-
+        if (this.props.loading) {
+            return (<div></div>); // or show loading icon
+        }
+        const {currentUser, children } = this.props;
+        let child = (<div></div>);
+        if(children){
+            // Todo fixa detta! så den routar rätt
+            child =   React.cloneElement(children, {isBuddy: currentUser.isBuddy()});
+        }
         return (
             <div>
-				<Nav/>
+                <Nav isBuddy={currentUser.isBuddy()}/>
                 <main>
                     <h1>PrintBuddy</h1>
-				    <h4>Under Development</h4>
-				    {this.props.children}
+                    <h4>Under Development</h4>
+                    {child}
                 </main>
-                <Footer/>
-			</div>
+            </div>
         );
     }
 }
 
 App.propTypes = {
     children: React.PropTypes.element, // matched child route component
+    currentUser: React.PropTypes.object,
+    loading: React.PropTypes.bool   // subscription status
 };
 
 // Create container är en hjälp class för att binda meteor data till react komponents
 // https://atmospherejs.com/meteor/react-meteor-data
 const AppContainer = createContainer(() => {
-    Meteor.subscribe('items');
+    const printbuddyHandle = Meteor.subscribe('printbuddy');
+    const userDataHandle = Meteor.subscribe('userData');
 
     return {
-        items: Items.find({}).fetch()
+        loading: !(printbuddyHandle.ready() && userDataHandle.ready()),
+        currentUser: Meteor.user(),
+        printBuddy: PrintBuddy.find({}).fetch()
     };
-}, App);
+}, App)
 
 
 export default AppContainer;

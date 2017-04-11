@@ -4,16 +4,16 @@ import React from 'react';
 import {Accounts} from 'meteor/accounts-base';
 import {browserHistory} from 'react-router'
 
-import Nav from '../components/Nav';
 import TestComponent from '../components/TestComponent';
 import {StepByStep} from '../components/StepByStepComponent';
 import {JobList} from '../components/JobListComponent';
+import {PendingBuddiesList} from '../components/PendingBuddiesListComponent';
 import {displayAlert}from '../helpers/alerts';
 import {displayError}from '../helpers/errors';
 import {Items} from '../../api/items/items.js';
 import {insert} from '../../api/items/methods';
 import {removeAll} from '../../api/items/methods';
-import MapContainer from './MapContainer';
+import GeoCoder from './GeoCodeContainer';
 
 class Test extends React.Component {
     constructor(props) {
@@ -21,13 +21,20 @@ class Test extends React.Component {
         this.state = {};
         this.testClick = this.testClick.bind(this);
         this.testClick2 = this.testClick2.bind(this);
+
+        //stepbystep component tests
         this.step1Click = this.step1Click.bind(this);
         this.step2Click = this.step2Click.bind(this);
         this.step3Click = this.step3Click.bind(this);
         this.step4Click = this.step4Click.bind(this);
         this.stepClear = this.stepClear.bind(this);
-        this.registerUser = this.registerUser.bind(this);
-        this.loginUser = this.loginUser.bind(this);
+
+        //printbuddies list
+        this.onChoose = this.onChoose.bind(this);
+        this.onViewLocation = this.onViewLocation.bind(this);
+
+        this.onLogout = this.onLogout.bind();
+
     }
 
     getInitialState() {
@@ -108,100 +115,75 @@ class Test extends React.Component {
         });
     }
 
-    registerUser() {
-        const email = "mikael.carlstein@gmail.com";
-        const password = "123456";
-        const username = "mikael";
-        const position = {address: "fasfasf", lat: 1, lng: 2};
-
-        Accounts.createUser({
-            email,
-            password,
-            username,
-            position
-        }, (err) => {
-            if (err) {
-                displayError("Error", err.reason)
-                console.log(err);
-            } else {
-                Meteor.call('sendVerificationLink', (error, response) => {
-                    if (error) {
-                        displayError("Error", error);
-                        console.log(error);
-                    } else {
-                        browserHistory.push('/');
-                    }
-                });
-            }
-        });
-
+    // printbuddy listknapp för att välja printbuddy
+    onChoose(clickedId) {
+        alert(`You clicked onChoose for buddy: ${clickedId}`);
     }
 
-    loginUser() {
-
-        const email = "mikael.carlstein@gmail.com";
-        const password = "123456";
-
-        Meteor.loginWithPassword(email, password, function (error) {
-            if (error) {
-                displayError("Error:", error.reason);
-            } else {
-                browserHistory.push('/');
-            }
-        });
-
+    onViewLocation(clickedLocation) {
+        alert(`You clicked to view location for ${clickedLocation}! This should update the map to show it`);
     }
+
+    onLogout() {
+        Meteor.logout(function () {
+            browserHistory.push('/start');
+        })
+    }
+
 
     render() {
         const {items} = this.props;
-        const dummyJobList = [
+        const dummyBuddiesList = [
             {
-                id: 1,
-                requestor: "Anna1337",
-                delivery: "Yes",
-                reward: 100,
-                currency: "SEK",
-                distance: 500,
+                _id: 241,
+                email: "bengan@test.se",
+                username: "Bengan75",
+                address: "Testvägen 7, Malmö",
             },
             {
-                id: 2,
-                requestor: "PelleSvanslös",
-                delivery: "no",
-                reward: 20,
-                currency: "SEK",
-                distance: 700,
-            },
-            {
-                id: 3,
-                requestor: "Kringlan75",
-                delivery: "Yes",
-                reward: 500,
-                currency: "SEK",
-                distance: 1500,
+                _id: 41,
+                email: "micke_cyklar@test.se",
+                username: "Micke91",
+                address: "Mickesgränd 1337, Malmö",
             },
         ];
 
-        return (
-			<div>
-				<div id="test-stepbystep">
-					<StepByStep step1={this.state.step1} step2={this.state.step2} step3={this.state.step3} step4={this.state.step4}/>
-					<h3>Test Step By Step</h3>
-					<button className="btn waves-effect waves-light" onClick={this.step1Click}> Step 1</button>
-					<button className="btn waves-effect waves-light" onClick={this.step2Click}> Step 2</button>
-					<button className="btn waves-effect waves-light" onClick={this.step3Click}> Step 3</button>
-					<button className="btn waves-effect waves-light" onClick={this.step4Click}> Step 4</button>
-					<button className="btn waves-effect waves-light" onClick={this.stepClear}> Clear</button>
-				</div>
 
-				<div id="test-joblist" className="row">
-					<JobList listofjobs={dummyJobList}/>
-					<MapContainer/>
-				</div>
-        <button className="btn waves-effect waves-light" onClick={this.registerUser}> Reg</button>
-        <button className="btn waves-effect waves-light" onClick={this.loginUser}> Login</button>
-				
-				<TestComponent title='Test title' onClick={this.testClick} add={this.testClick2} remove={this.testClick3} items={items} ></TestComponent>
-			</div>
+        return (
+            <div>
+                <div id="test-stepbystep" className="row">
+                    <StepByStep step1={this.state.step1} step2={this.state.step2} step3={this.state.step3}
+                                step4={this.state.step4}/>
+                    <h3>Test Step By Step</h3>
+                    <button className="btn waves-effect waves-light" onClick={this.step1Click}> Step 1</button>
+                    <button className="btn waves-effect waves-light" onClick={this.step2Click}> Step 2</button>
+                    <button className="btn waves-effect waves-light" onClick={this.step3Click}> Step 3</button>
+                    <button className="btn waves-effect waves-light" onClick={this.step4Click}> Step 4</button>
+                    <button className="btn waves-effect waves-light" onClick={this.stepClear}> Clear</button>
+                </div>
+
+                <div id="test-pendinglist" className="row">
+                    <div className="col l10 offset-l1">
+                        <PendingBuddiesList buddylist={dummyBuddiesList} onChoose={this.onChoose}
+                                            onView={this.onViewLocation}/>
+                    </div>
+                </div>
+
+                <div id="test-geocode" className="row">
+                    <div className="col l10 offset-l1">
+                        <h3>Test Geocode</h3>
+                        <GeoCoder onPickAdress={(adress) => {
+                            console.log(adress)
+                        }}/>
+                    </div>
+                </div>
+
+                <button className="btn waves-effect waves-light" onClick={this.onLogout}> LOGGA UT</button>
+
+
+                <TestComponent title='Test title' onClick={this.testClick} add={this.testClick2}
+                               remove={this.testClick3} items={items}></TestComponent>
+            </div>
         );
     }
 }

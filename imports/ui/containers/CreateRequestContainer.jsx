@@ -5,7 +5,7 @@ import { browserHistory } from 'react-router';
 
 import CreateRequestComponent from "../components/CreateRequestComponent";
 import {insert} from '../../api/request/methods';
-
+import {displayError} from '../helpers/errors';
 
 class CreateRequest extends React.Component {
 	constructor(props) {
@@ -16,10 +16,12 @@ class CreateRequest extends React.Component {
     onSubmit(request) {
         insert.call(request, (err, res) => {
             if (err) {
-                // TODO fixa error handling
-                alert(err);
-            } else {
-                browserHistory.push('/request/pending');
+                if (err.error === 'request.insert.unauthorized') {
+                    displayError("Wrong!", 'You need to login to add request');
+                } else {
+                    // Unexpected error, handle it in the UI somehow
+                    displayError("Error!", 'Something went wrong :( ');
+                }
             }
         });
     }

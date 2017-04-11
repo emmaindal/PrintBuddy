@@ -1,0 +1,147 @@
+@import "../variables";
+
+.shadow {
+    -webkit-box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
+    -moz-box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
+    box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
+}
+
+
+// Chat component
+.chat {
+    background: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    min-height: 150px;
+    max-height: 600px;
+    overflow-y: scroll;
+    position: relative;
+    z-index: 1;
+    
+    .collection .collection-item {
+        padding: 7px 10px;
+        position: relative;
+        min-height: 0;
+        border-bottom: 0;
+        padding-top: 0px;
+    }
+    .form {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 20px;
+        position: relative;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+    .btn-large {
+        letter-spacing: 2px;
+        height: 40px;
+        line-height: 30px;
+        margin-right: 10px;
+        transition: 0.2s all ease-in-out;
+        &:hover {
+            letter-spacing: 4px;
+        }
+    }
+    .message-username {
+        font-weight: bold;
+    }
+    .message-user-one {
+        background: $color-message-one;
+        padding-left: 15px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-right: 10px;
+        border-radius: 8px;
+    }
+    .message-user-two {
+        background: $color-message-two;
+        padding-left: 15px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-right: 10px;
+        border-radius: 8px;
+    }
+    .secondary-content {
+        right: 28px !important;
+        top: 4px !important;
+    }
+   
+}
+
+// Chat header
+.chat-header {
+    background: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 4rem;
+    z-index: 10000;
+    display: flex;
+    justify-content: space-between;
+    h6 {
+        margin-top: 21px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+}
+
+// Chat info komponent
+.chat-info {
+    background: white;
+    -webkit-box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
+    -moz-box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
+    box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
+    border-radius: 3px;
+    .chat-info-wrapper {
+        margin: 0;
+        .collection-item {
+            padding-bottom: 20px;
+            padding-top: 20px;
+            padding-left: 15px;
+            span {
+                font-weight: bold;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+// download document button
+.button-doc {
+    height: 100px;
+    line-height: 100px;
+
+}
+
+// mobile document download button
+.mobile-download-btn {
+    margin-right: 10px;
+    margin-top: 10px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.info-icon {
+    font-size: 2.3rem !important;
+    padding-left: 10px;
+    padding-right: 40px;
+    line-height: 1.8 !important;
+    cursor: pointer;
+}
+
+.chat-title {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.collection {
+    margin: 0.0rem 0 1rem 0; 
+}
+.chat-row {
+    margin-bottom: 0;
+    .col {
+        padding: 0 0 0rem !important;
+    }
+}
