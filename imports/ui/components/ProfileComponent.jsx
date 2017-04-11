@@ -7,9 +7,9 @@ export class ProfileComponent extends React.Component {
             $('select').material_select();
         });
         return (
-            <div id="Profileback">
+            <div>
                 <h2>Profile settings</h2>
-                <div className="row">
+                <div id="profilback" className="row">
                     <form className="col offset-s1 s10">
                         <div className="row">
                             <label htmlFor="email">
@@ -56,11 +56,14 @@ export class ProfileComponent extends React.Component {
                             </select>
                         </div>
                         <div className="row">
-                            <div className="input-field col s6">
+                            <div className="input-field col offset-s2 s8">
                                 <i className="material-icons prefix">mode_edit</i>
                                 <textarea id="icon_prefix2" className="materialize-textarea"></textarea>
-                                <label htmlFor="icon_prefix2">First Name</label>
+                                <label htmlFor="icon_prefix2">Message</label>
                             </div>
+                        </div>
+                        <div className="row col offset-s5">
+                            <button className="waves-effect waves-light btn">Submit</button>
                         </div>
                     </form>
                 </div>
