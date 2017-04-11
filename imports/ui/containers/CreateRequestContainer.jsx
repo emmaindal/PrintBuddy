@@ -22,8 +22,6 @@ class CreateRequest extends React.Component {
                     // Unexpected error, handle it in the UI somehow
                     displayError("Error!", 'Something went wrong :( ');
                 }
-            } else {
-                browserHistory.push('/request/pending');
             }
         });
     }
