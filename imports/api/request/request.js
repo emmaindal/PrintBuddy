@@ -64,12 +64,12 @@ Request.helpers({
     requestorPosition(){
         return Meteor.users.findOne(this.userReqId).position
     },
-    possiblePrintBuddies(){
+    /*possiblePrintBuddies(){
         const users = this.possibleOnes.map((id) =>{
             return Meteor.users.findOne(id);
         });
         return users;
-    }
+    }*/
 });
 
 

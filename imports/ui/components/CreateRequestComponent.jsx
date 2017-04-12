@@ -116,7 +116,7 @@ class CreateRequest extends React.Component {
                                 <label htmlFor="date">Date</label>
                             </div>
                             <div className="input-field col s4">
-                                <input id="timepicker" type="time" />
+                                <input id="timepicker" type="time"/>
                                 <label htmlFor="timepicker"></label>
                             </div>
                         </div>
