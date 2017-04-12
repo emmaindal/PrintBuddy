@@ -13,10 +13,14 @@ export const insert = new ValidatedMethod({
         delivery: {type: Boolean},
         needColor: {type: Boolean},
         reward: {type: Number},
+        pages: {type: Number},
+        copies: {type: Number},
+        currency: {type: String},
         radius: {type: Number},
-        lastDate: {type: Date}
+        lastDate: {type: Date},
+        title: {type: String}
     }).validator(),
-    run({delivery, needColor, reward, radius, lastDate}) {
+    run({delivery, needColor, reward, radius, lastDate, pages, copies, currency, title}) {
         if (!this.userId) {
             throw new Meteor.Error('request.insert.unauthorized', 'Must be logged to add item.');
         }
@@ -27,9 +31,12 @@ export const insert = new ValidatedMethod({
             needColor: needColor,
             reward: reward,
             radius: radius,
-            delivery: delivery,
             lastDate: lastDate,
-            isDone: false
+            isDone: false,
+            title: title,
+            pages: pages,
+            copies: copies,
+            currency: currency
         }
 
         return Request.insert(req);

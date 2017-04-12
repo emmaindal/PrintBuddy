@@ -22,7 +22,10 @@ const RequestSchema = new SimpleSchema({
     delivery: { type: Boolean },
     needColor: { type: Boolean },
     reward: { type: Number },
-    currency: { type: String,optional:true  },
+    currency: { type: String },
+    pages: { type: Number },
+    copies: { type : Number },
+    title: { type: String },
     radius: { type: Number },
     lastDate:{type: Date},
     possibleOnes: { type: [String], optional:false },
@@ -61,12 +64,12 @@ Request.helpers({
     requestorPosition(){
         return Meteor.users.findOne(this.userReqId).position
     },
-    possiblePrintBuddies(){
+    /*possiblePrintBuddies(){
         const users = this.possibleOnes.map((id) =>{
             return Meteor.users.findOne(id);
         });
         return users;
-    }
+    }*/
 });
 
 
