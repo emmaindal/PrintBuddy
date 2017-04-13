@@ -3,34 +3,45 @@ import FlipMove from 'react-flip-move';
 
 import Message from "./Message";
 
-export default class ChatMessageList extends React.Component {
+class ChatMessageList extends React.Component {
     renderMessages() {
         const users = this.props.users;
 
-        if (users.length === 0) {
+        const {userId, chat} = this.props;
+
+        if (!chat.messages || chat.messages.length == 0) {
             return (
                 <div className="collection-header">
                     <h5 className="center-align">Type your first message to get started!</h5>
                 </div>
             );
         } else {
-            return users.map((user) => {
-                return <Message key={user._id} user={user} />;
+            return chat.messages.map((message, index) => {
+                return <Message userId={userId} key={index} message={message}/>;
             });
         }
     }
+
     render() {
         return (
             <div>
                 <ul className="collection">
-                    <FlipMove maintainContainerHeight={true} duration={700} easing="ease" >
+                    <FlipMove maintainContainerHeight={true} duration={700} easing="ease">
                         {this.renderMessages()}
                     </FlipMove>
                 </ul>
             </div>
         );
     }
+}
+;
+
+ChatMessageList.propTypes = {
+    chat: React.PropTypes.object,
+    userId: React.PropTypes.string
 };
+
+export default ChatMessageList;
 
 
 

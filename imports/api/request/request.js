@@ -13,9 +13,7 @@ class RequestCollection extends Mongo.Collection {
     }
 }
 
-
 export const Request = new RequestCollection('request');
-
 
 const RequestSchema = new SimpleSchema({
     userReqId: { type: String,optional:true  },
@@ -64,12 +62,15 @@ Request.helpers({
     requestorPosition(){
         return Meteor.users.findOne(this.userReqId).position
     },
-    /*possiblePrintBuddies(){
+    possiblePrintBuddies(){
         const users = this.possibleOnes.map((id) =>{
             return Meteor.users.findOne(id);
         });
         return users;
-    }*/
+    },
+    printBuddyPosition(){
+        return Meteor.users.findOne(this.chosenOne).position
+    }
 });
 
 
