@@ -20,7 +20,7 @@ class MyJobList extends React.Component {
                     <PendingJobList listofjobs={this.props.jobs} userId={Meteor.userId()}/>
                 </div>
                 <div className="row">
-                    <ActiveJobList/>
+                    <ActiveJobList listofjobs={this.props.jobs} userId={Meteor.userId()}/>
                 </div>
 			</div>
 		);
