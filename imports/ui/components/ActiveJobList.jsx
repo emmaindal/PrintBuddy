@@ -23,7 +23,7 @@ const ActiveJobList = ({ listofjobs, userId }) => {
         );
     }
     return (
-        <div className="col s12 m10 offset-m1 l6">
+        <div className="col s12 m12 l12">
             <ul className="collection with-header" id="joblist">
                 <li className="collection-header"><h5>Active printjobs</h5></li>
                 <FlipMove maintainContainerHeight={true}>
