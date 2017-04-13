@@ -24,11 +24,9 @@ export const InitialPendingMap = withGoogleMap(props => {
 					{
 						<div id="infowindow">
 							<li className="collection-item avatar">
-								<i className="infowindow-icon material-icons circle green">TEST</i>
-								<span className="title">Job Title *</span>
-								<p>
-								Requested by {marker.username}
-								</p>
+								<i className="infowindow-icon material-icons circle green">print</i>
+								<span className="title">{marker.username}</span>
+								<p>{marker.position.address}</p>
 							</li>
 						</div>
 					}
