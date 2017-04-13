@@ -3,29 +3,34 @@ import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
 
 import {PendingBuddiesList} from '../components/PendingBuddiesListComponent';
+import MapContainer from './MapContainer';
 import {acceptBuddy} from '../../api/request/methods';
 import {displayError} from '../helpers/errors';
 
 class PendingRequest extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            defaultCenter: this.props.request.requestorPosition(),
+            clickedBuddyId: '',
+        };
         this.onViewClicked = this.onViewClicked.bind(this);
         this.onChooseClicked = this.onChooseClicked.bind(this);
     }
 
     onViewClicked(e) {
-
+        this.setState({
+            defaultCenter: e.position,
+            clickedBuddyId: e._id,
+        })
     }
 
     onChooseClicked(buddyId) {
-        console.log(buddyId);
         acceptBuddy.call({requestId :this.props.request._id, buddyId:buddyId}, (err, res) => {
             if (err) {
                 if (err.error === 'request.acceptBuddy.exist') {
                     displayError("Error!", 'You already accepted this job!');
                 } else {
-                    console.log(err);
                     displayError("Error!", 'Something went wrong :( ');
                 }
             }
@@ -35,9 +40,24 @@ class PendingRequest extends React.Component {
     render() {
         return (
             <div>
-                <h1>PendingRequest Component</h1>
-                <PendingBuddiesList buddylist={this.props.request.possiblePrintBuddies()} onView={this.onViewClicked}
-                                    onChoose={this.onChooseClicked}></PendingBuddiesList>
+                <div className="row">
+                    <h1>put the step by step here</h1>
+                </div>
+                <div className="row">
+                    <div className="col l10 offset-l1">
+                        <PendingBuddiesList 
+                            buddylist={this.props.request.possiblePrintBuddies()} 
+                            onView={this.onViewClicked}
+                            onChoose={this.onChooseClicked}
+                        />
+                        <MapContainer
+                            clickedId={this.state.clickedBuddyId} 
+                            isBuddy={false} 
+                            markers={this.props.request.possiblePrintBuddies()} 
+                            defaultCenter={this.state.defaultCenter}
+                        />
+                    </div>
+                </div>
             </div>
         );
     }
@@ -47,10 +67,10 @@ PendingRequest.propTypes = {
     request: React.PropTypes.object
 };
 
-const PendingRequestContainer = createContainer(() => {
+// const PendingRequestContainer = createContainer(() => {
 
-    return {};
-}, PendingRequest);
+//     return {};
+// }, PendingRequest);
 
 
-export default PendingRequestContainer;
+export default PendingRequest;

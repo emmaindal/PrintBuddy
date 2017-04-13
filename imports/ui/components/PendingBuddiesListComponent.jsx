@@ -13,7 +13,7 @@ export const PendingBuddiesList = ({buddylist, onChoose, onView}) =>
 							<div className="content-for-li">
 								<p>Buddy: {buddy.username} - Address: {buddy.position.address} - Distance: "not set" meter</p>
 								<div className="buttongroup">
-									<button className="btn waves-effect waves-light location-btn" onClick={() => {onView(buddy.position)}}><i className="small material-icons">location_on</i></button>
+									<button className="btn waves-effect waves-light location-btn" onClick={() => {onView(buddy)}}><i className="small material-icons">location_on</i></button>
 									<button className="btn waves-effect waves-light" onClick={() => {onChoose(buddy._id)}}>CHOOSE</button>
 								</div>
 							</div>
