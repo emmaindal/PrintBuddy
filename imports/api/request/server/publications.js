@@ -18,5 +18,28 @@ Meteor.publish('user-request', function userrequest() {
     return Request.find({userReqId: this.userId, isDone : false});
 });
 
+Meteor.publish('myjob-request-active', function myjobrequestactive() {
+    if (!this.userId) {
+        return this.ready();
+    }
+
+    return Request.find({chosenOne: this.userId, isDone : false});
+});
+
+
+Meteor.publish('myjob-request-pending', function myjobrequestpending() {
+    if (!this.userId) {
+        return this.ready();
+    }
+
+    return Request.find({possibleOnes: this.userId, isDone : false, chosenOne: { $exists: false}});
+});
+
+
+
+
+
+
+
 
 
