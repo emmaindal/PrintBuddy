@@ -60,7 +60,7 @@ class Jobs extends React.Component {
                 <div id="test-joblist" className="row">
                     <div className="col l10 offset-l1">
                         <JobList listofjobs={this.props.jobs} onApply={this.onApply} onView={this.onViewLocation}/>
-                        <MapContainer clickedId={this.state.clickedJobId} markers={this.props.jobs} defaultCenter={this.state.defaultCenter}/>
+                        <MapContainer isBuddy={true} clickedId={this.state.clickedJobId} markers={this.props.jobs} defaultCenter={this.state.defaultCenter}/>
                     </div>
                 </div>
             </div>
