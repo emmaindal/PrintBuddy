@@ -17,9 +17,11 @@ class MyJobList extends React.Component {
 			<div>
 				<h1>MyJobList Component</h1>
                 <div className="row">
-                    <PendingJobList listofjobs={this.props.jobs}/>
+                    <PendingJobList listofjobs={this.props.jobs} userId={Meteor.userId()}/>
                 </div>
-                <ActiveJobList/>
+                <div className="row">
+                    <ActiveJobList/>
+                </div>
 			</div>
 		);
 	}

@@ -1,23 +1,25 @@
 import React from 'react';
 import FlipMove from 'react-flip-move';
 
-const PendingJobList = ({listofjobs}) => {
+const PendingJobList = ({ listofjobs, userId }) => {
     const renderlist = () => {
         return (
             listofjobs.length === 0 ? <li className="collection-item">You have not applied to any job yet</li>
-            : 
-            listofjobs.map((job) => {
-                return (
-                    <li className="collection-item" key={job._id}>
-                        <div className="content-for-li">
-                            <p>Requestor: {job.requestorName()} - Reward: {job.reward} {job.currency} - Distance: {job.radius} meter , Address - {job.requestorPosition().address}</p>
-                            <div className="buttongroup">
-                                <button className="btn waves-effect waves-light" onClick={() => { }}>Cancel</button>
-                            </div>
-                        </div>
-                    </li>
-                );
-            })
+                :
+                listofjobs.map((job) => {
+                    if (job.possibleOnes.includes(userId)) {
+                        return (
+                            <li className="collection-item" key={job._id}>
+                                <div className="content-for-li">
+                                    <p>Requestor: {job.requestorName()} - Reward: {job.reward} {job.currency} - Distance: {job.radius} meter , Address - {job.requestorPosition().address}</p>
+                                    <div className="buttongroup">
+                                        <button className="btn waves-effect waves-light" onClick={() => { }}>Cancel</button>
+                                    </div>
+                                </div>
+                            </li>
+                        );
+                    }
+                })
         );
     }
     return (
