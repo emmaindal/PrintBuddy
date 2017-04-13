@@ -29,8 +29,7 @@ class RequestComp extends React.Component {
         if (this.props.loading) {
             return (<div></div>); // or show loading icon
         }
-        // Create
-        console.log(this.props.request);
+        
         if (!this.props.request) {
             return (
                 <div>
