@@ -1,14 +1,131 @@
 @import "../variables";
 
-.caption, h3{
-    color: #000;
+.col.grid-example.about-first{
+    background: $color-primary;
+    border: none;
+    padding-bottom: 10%;
+
+    h1{
+        color: white;
+        padding: 4% 0 0 0;
+    }
+
+    p{
+        color: white;
+        padding: 2% 0 0 0;
+        font-size: 16px;
+    }
 }
 
-.waves-effect.waves-light.btn{
-    background-color: rgba(#2196f4, 0.86);
+section.section-about-second{
+    background-color: white;
+    border: 1px lightgrey solid;
     border-radius: 5px;
+    padding: 2% 2% 2% 2%;
+    height: 90%;
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    @media screen and (max-width: $break-medium) {
+        width: 99%;
+        padding: 2% 2% 2% 2%;
+    }
+
+    h4{
+        padding-bottom: 3%;
+    }
 }
 
-.slider .indicators .indicator-item.active{
-    background-color: $color-primary !important;
+.col.grid-example.about-third{
+
+    .our-team-heading {
+        text-align: center;
+        padding-bottom: 3%;
+    }
+
+    .card.card-avatar {
+        position: relative;
+        overflow: hidden;
+        margin: 0.5rem 0 1rem;
+        transition: box-shadow 0.25s;
+        border-radius: 4px;
+        width: 100%;
+
+        .card-content {
+            padding: 5px;
+        }
+
+        .material-icons.person {
+            font-size: 128px;
+            color: #ff9800;
+        }
+    }
+
+    .card-container {
+        width: 19%;
+        float: left;
+        margin: 0.5%;
+        padding: 1%;
+        @media screen and (max-width: $break-medium) {
+            width: 100%;
+            float: none;
+            margin: 0.5%;
+        }
+    }
+
+    .is-hidden,
+    .is-visible {
+        opacity: 1;
+    }
+
+}
+
+.col.grid-example.about-third{
+
+}
+
+.col.s12.m6.l6.section-about-fourth.one{
+    text-align: left;
+    padding: 5%;
+
+    ul{
+        padding-top: 6%;
+    }
+
+    li{
+        font-size: 14px;
+    }
+
+    a{
+        color: inherit;
+    }
+
+}
+
+.col.s12.m6.l6.section-about-fourth.two{
+    text-align: left;
+    padding: 5%;
+
+    .formContainer{
+        background-color: white;
+        border: 1px lightgrey solid;
+        border-radius: 3px;
+        padding: 3%;
+    }
+
+    label.active{
+        transform: translateY(-50%);
+    }
+
+    .btn{
+        border-radius: 3px;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    .btn, btn:hover, .btn-large:hover{
+        background-color: #38a3fa;
+    }
+
+
 }

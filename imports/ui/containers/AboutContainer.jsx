@@ -1,10 +1,9 @@
-import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
 
 import Nav from '../components/Nav';
 import AboutComponent from '../components/AboutComponent';
-import Footer from '../components/Footer';
+
 
 class About extends React.Component {
     constructor(props) {
@@ -13,13 +12,7 @@ class About extends React.Component {
     }
 
     componentDidMount(){
-        const $ = window.$;
-            $(document).ready(function(){
-                $('.slider').slider();
-            });
 
-            $('.tapTarget').tapTarget('open');
-            $('.tapTarget').tapTarget('close');
     }
 
     render() {
