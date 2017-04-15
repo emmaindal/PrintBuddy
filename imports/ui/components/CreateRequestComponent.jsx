@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import moment from 'moment';
 
 class CreateRequest extends React.Component {
     constructor(props) {
@@ -27,6 +28,10 @@ class CreateRequest extends React.Component {
     }
     onSubmit(e) {
         e.preventDefault();
+
+        //const momentSet = moment(new Date(this.refs.lastDate.value)).format("ddd Do MMMM");
+        console.log(this.refs.lastTime.value);
+
         if (!this.refs.lastDate.value) {
             this.setState({ dateClassName: "datepicker invalid" });
         } else {
@@ -34,7 +39,8 @@ class CreateRequest extends React.Component {
                 delivery: this.refs.delivery.checked,
                 needColor: this.refs.needColor.checked,
                 radius: parseInt(this.state.range),
-                lastDate: new Date(this.refs.lastDate.value),
+                lastDate: moment(new Date(this.refs.lastDate.value)).format("ddd Do MMMM"),
+                lastTime: this.refs.lastTime.value.trim(),
                 reward: parseInt(this.refs.reward.value),
                 pages: parseInt(this.refs.pages.value),
                 copies: parseInt(this.refs.copies.value),
@@ -116,7 +122,7 @@ class CreateRequest extends React.Component {
                                 <label htmlFor="date">Date</label>
                             </div>
                             <div className="input-field col s4">
-                                <input id="timepicker" type="time"/>
+                                <input id="timepicker" ref="lastTime" type="time"/>
                                 <label htmlFor="timepicker"></label>
                             </div>
                         </div>
