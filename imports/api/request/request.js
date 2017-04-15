@@ -1,21 +1,36 @@
 
 import { Mongo } from 'meteor/mongo';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import { SimpleSchema, SchemaHelpers } from 'meteor/aldeed:simple-schema';
 
-export const Request = new Mongo.Collection('request');
+
+class RequestCollection extends Mongo.Collection {
+    insert(doc, callback) {
+        const ourDoc = doc;
+        ourDoc.createdAt = ourDoc.createdAt || new Date();
+        ourDoc.possibleOnes = [];
+        const result = super.insert(ourDoc, callback);
+        return result;
+    }
+}
+
+export const Request = new RequestCollection('request');
 
 const RequestSchema = new SimpleSchema({
     userReqId: { type: String,optional:true  },
     delivery: { type: Boolean },
     needColor: { type: Boolean },
     reward: { type: Number },
-    currency: { type: String,optional:true  },
+    currency: { type: String },
+    pages: { type: Number },
+    copies: { type : Number },
+    title: { type: String },
     radius: { type: Number },
     lastDate:{type: Date},
-    possibleOnes: { type: [String], optional:true },
+    possibleOnes: { type: [String], optional:false },
     chosenOne: { type: String, optional:true },
     docURL: { type: String,optional:true  },
-    isDone:{type:Boolean}
+    isDone:{type:Boolean},
+    createdAt:{type:Date}
 });
 
 Request.attachSchema(RequestSchema);
@@ -46,6 +61,15 @@ Request.helpers({
     },
     requestorPosition(){
         return Meteor.users.findOne(this.userReqId).position
+    },
+    possiblePrintBuddies(){
+        const users = this.possibleOnes.map((id) =>{
+            return Meteor.users.findOne(id);
+        });
+        return users;
+    },
+    printBuddyPosition(){
+        return Meteor.users.findOne(this.chosenOne).position
     }
 });
 

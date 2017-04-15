@@ -40,8 +40,10 @@ class Register extends React.Component {
 
 	render() {
 		return (
-            <div>
-                <RegisterComponent submit={this.onSubmit}/>
+            <div className="row">
+				<div className="col s12 m8 l6 xl4 offset-m2 offset-l3 offset-xl4">
+                	<RegisterComponent submit={this.onSubmit}/>
+				</div>
 			</div>
 		);
 	}

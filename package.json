@@ -11,6 +11,7 @@
     "bcrypt": "^1.0.2",
     "classnames": "^2.2.5",
     "faker": "^3.1.0",
+    "materialize-clockpicker": "^1.0.1",
     "react": "^15.4.2",
     "react-addons-css-transition-group": "^15.4.2",
     "react-addons-pure-render-mixin": "^15.4.2",

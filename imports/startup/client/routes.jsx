@@ -11,9 +11,7 @@ import StartContainer from '../../ui/containers/StartContainer';
 import AboutContainer from '../../ui/containers/AboutContainer';
 import AppContainer from '../../ui/containers/AppContainer';
 import RequestContainer from '../../ui/containers/RequestContainer';
-import CreateRequestContainer from '../../ui/containers/CreateRequestContainer';
-import PendingRequestContainer from '../../ui/containers/PendingRequestContainer';
-import ChatContainer from '../../ui/containers/ChatContainer';
+import PrintBudddyChatContainer from '../../ui/containers/PrintBudddyChatContainer';
 import DoneContainer from '../../ui/containers/DoneContainer';
 import JobsContainer from '../../ui/containers/JobsContainer';
 import MyJobsContainer from '../../ui/containers/MyJobsContainer';
@@ -39,6 +37,13 @@ function requireAuth(nextState, replace) {
     }
 }
 
+/*
+* 	<Route path="create" component={CreateRequestContainer}/>
+ <Route path="pending" component={PendingRequestContainer}/>
+ <Route path="chat" component={ChatContainer}/>
+ <Route path="done" component={DoneContainer}/>
+* */
+
 export const renderRoutes = () => (
     <Router history={browserHistory}>
         <Route path="/Register" component={RegisterContainer}/>
@@ -48,15 +53,11 @@ export const renderRoutes = () => (
 		<Route path="/verified" component={VerifiedContainer}/>
 		<Route onEnter={requireAuth} path="/" component={AppContainer}>
 			<Route path="request" component={RequestContainer}>
-				<Route path="create" component={CreateRequestContainer}/>
-				<Route path="pending" component={PendingRequestContainer}/>
-				<Route path="chat" component={ChatContainer}/>
-				<Route path="done" component={DoneContainer}/>
 			</Route>
 			<Route path="jobs" component={JobsContainer}/>
 			<Route path="myjobs" component={MyJobsContainer}>
 				<IndexRoute component={MyJobListContainer} />
-				<Route path="chat" component={ChatContainer}/>
+				<Route path="chat/:id" component={PrintBudddyChatContainer}/>
 				<Route path="done" component={DoneContainer}/>
 			</Route>
 			<Route path="test" component={TestContainer}/>

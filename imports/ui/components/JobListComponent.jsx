@@ -11,10 +11,11 @@ export const JobList = ({listofjobs, onApply, onView}) =>
 					return (
 						<li className="collection-item" key={job._id}>
 							<div className="content-for-li">
-								<p>Jobnr: {job._id} - Requestor: {job.requestorName()} - Reward: {job.reward} {job.currency} - Distance: {job.radius} meter , Address - {job.requestorPosition().address}</p>
+								<p>Requestor: {job.requestorName()} - Reward: {job.reward} {job.currency} - Distance: {job.radius} meter , Address - {job.requestorPosition().address}</p>
 								<div className="buttongroup">
-									<button className="btn waves-effect waves-light location-btn" onClick={() => {onView(job.userReqId)}}><i className="small material-icons">location_on</i></button>
-									<button className="btn waves-effect waves-light" onClick={() => {onApply(job.userReqId)}}>APPLY</button>
+
+									<button className="btn waves-effect waves-light location-btn" onClick={() => {onView(job)}}><i className="small material-icons">location_on</i></button>
+									<button className="btn waves-effect waves-light" onClick={() => {onApply(job._id)}}>APPLY</button>
 								</div>
 							</div>
 						</li>

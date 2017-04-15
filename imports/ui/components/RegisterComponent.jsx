@@ -92,12 +92,12 @@ class RegisterComponent extends React.Component {
             <div id="registerback">
                 <div className="row">
                     <h4 className="text-center">Register Account</h4>
-                    <form className="col offset-s1 s10" onSubmit={this.onSubmit.bind(this)}>
+                    <form className="col s10 offset-s1" onSubmit={this.onSubmit.bind(this)}>
                         <div className="row">
                             <label htmlFor="email">
                                 <i className="small material-icons">email</i>
                             </label>
-                            <div className="input-field col offset-s3 s6">
+                            <div className="input-field col s10 offset-s1 m10 offset-m1">
                                 <input id="email" type="email" className="validate" ref="email" required/>
                                 <label htmlFor="email">E-mail</label>
                             </div>
@@ -106,7 +106,7 @@ class RegisterComponent extends React.Component {
                             <label htmlFor="userId">
                                 <i className="small material-icons">perm_identity</i>
                             </label>
-                            <div className="input-field col offset-s3 s6">
+                            <div className="input-field col s10 offset-s1 m10 offset-m1">
                                 <input id="userId" type="text" className="validate" ref="username" required/>
                                 <label htmlFor="userId">Username</label>
                             </div>
@@ -115,7 +115,7 @@ class RegisterComponent extends React.Component {
                             <label htmlFor="password">
                                 <i className="small material-icons">lock</i>
                             </label>
-                            <div className="input-field col offset-s3 s6">
+                            <div className="input-field col s10 offset-s1 m10 offset-m1">
                                 <input id="password" type="password" className="validate" ref="password" required/>
                                 <label htmlFor="password">Password</label>
                             </div>
@@ -124,21 +124,21 @@ class RegisterComponent extends React.Component {
                             <label htmlFor="confirmpassword">
                                 <i className="small material-icons">lock</i>
                             </label>
-                            <div className="input-field col offset-s3 s6">
+                            <div className="input-field col s10 offset-s1 m10 offset-m1">
                                 <input id="confirmpassword" type="password" className="validate" ref="confirmpassword"
                                        required/>
                                 <label htmlFor="confirmpassword">Confirm password</label>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col offset-s3 s6">
+                            <div className="col s10 offset-s1 m10 offset-m1">
                                 <label id="passwordNotEqual"> {this.state.passwordNotEqual}</label>
                             </div>
                         </div>
                         <div id="test-geocode" className="row">
-                            <div className="col offset-s3 s6">
+                            <div className="col s10 offset-s1 m10 offset-m1">
                                 <p>Set your home address</p>
-                                <p>{this.state.address}</p>
+                                <p><strong>{this.state.address}</strong></p>
                                 <GeoCoder onPickAdress={(address) => {
                                     this.onPickAdress(address)
                                 }}/>
@@ -146,7 +146,7 @@ class RegisterComponent extends React.Component {
                         </div>
                         <div className="row">
                             <div className="switch">
-                                <div className="col offset-s3 s2">
+                                <div className="col offset-s1 s4">
                                     <label>
                                         Requestor
                                         <input type="checkbox" checked={this.state.isBuddy}
@@ -156,18 +156,18 @@ class RegisterComponent extends React.Component {
                                     </label>
                                 </div>
                             </div>
-                            <div className="input-field col s4">
+                            <div className="input-field col s6">
                                 <i className="small material-icons printer">print</i>
                                 <p>Set your printer settings if you want to be a Budddy!</p>
                                 <select id="mySelectBox" multiple>
                                     <option value="qwe" data-type="text-type" disabled> Set here</option>
-                                    <option value="deliver" data-type="text-type"> Can make delivery</option>
-                                    <option value="color" data-type="text-type"> Have a Color printer</option>
+                                    <option value="deliver" data-type="text-type"> Can deliver</option>
+                                    <option value="color" data-type="text-type"> Color printer</option>
                                 </select>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col offset-s3 s6">
+                            <div className="col s10 offset-s1 m10 offset-m1 center-align">
                                 <button className="waves-effect waves-light btn">Submit</button>
                             </div>
                         </div>

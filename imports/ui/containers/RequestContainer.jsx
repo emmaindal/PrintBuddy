@@ -1,41 +1,83 @@
 import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
-import { browserHistory } from 'react-router';
-
-import {Items} from '../../api/items/items.js';
+import {browserHistory} from 'react-router';
 
 
-class Request extends React.Component {
-	constructor(props) {
+import CreateRequestContainer from './CreateRequestContainer';
+import PendingRequestContainer from './PendingRequestContainer';
+import ChatContainer from './ChatContainer';
+
+import DoneContainer from './DoneContainer';
+
+import {Request} from '../../api/request/request.js';
+
+
+class RequestComp extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {};
     }
 
     componentDidMount() {
-		// todo kolla vilket state användaren är på requestet! och välj rätt route.
-        if(this.props.isBuddy){
+        if (this.props.isBuddy) {
             browserHistory.replace('/jobs');
-		}
-	}
+        }
+    }
 
-	render() {
+    render() {
+        if (this.props.loading) {
+            return (<div></div>); // or show loading icon
+        }
+        
+        if (!this.props.request) {
+            return (
+                <div>
+                    <h1>Request Container</h1>
+                    <CreateRequestContainer/>
+                </div>
+            );
+        }
+        // Chat
+        if (this.props.request.chosenOne && !this.props.request.isDone) {
+            return (
+                <div>
+                    <h1>Request Container</h1>
+                    <ChatContainer request={this.props.request}/>
+                </div>
+            );
+        }
+        // done.
+        if (this.props.request.isDone) {
+            return (
+                <div>
+                    <h1>Request Container</h1>
+                    <DoneContainer/>
+                </div>
+            );
+        }
+
+        // pending
         return (
-			<div>
-				<h1>Request Container</h1>
-				{this.props.children}
-			</div>
-		);
-	}
+            <div>
+                <h1>Request Container</h1>
+                <PendingRequestContainer request={this.props.request}/>
+            </div>
+        );
+    }
 }
 
 const RequestContainer = createContainer(() => {
-	Meteor.subscribe('items');
+    const requestHandle = Meteor.subscribe('user-request');
+    const loading = !requestHandle.ready();
+    const req = Request.find({userReqId: Meteor.userId(), isDone: false});
+    const reqExists = !loading && !!req;
 
     return {
-        items: Items.find({}).fetch()
+        loading: loading,
+        request: reqExists ? req.fetch()[0] : {}
     };
-}, Request);
+}, RequestComp);
 
 
 export default RequestContainer;

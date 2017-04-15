@@ -31,7 +31,6 @@ export const insert = new ValidatedMethod({
 });
 
 
-
 export const removeAll = new ValidatedMethod({
     name: 'items.removeAll',
     validate:null,
@@ -41,7 +40,6 @@ export const removeAll = new ValidatedMethod({
          throw new Meteor.Error('items.insert.notLoggedIn',
          'Must be logged to add item.');
          } */
-
 
         return Items.remove({});
     },

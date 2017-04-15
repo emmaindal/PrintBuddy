@@ -31,8 +31,6 @@ class App extends React.Component {
             <div>
                 <Nav isBuddy={currentUser.isBuddy()}/>
                 <main>
-                    <h1>PrintBuddy</h1>
-                    <h4>Under Development</h4>
                     {child}
                 </main>
             </div>

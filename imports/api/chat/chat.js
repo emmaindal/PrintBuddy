@@ -3,11 +3,19 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
 export const Chat = new Mongo.Collection('chat');
 
+const messageSchema = new SimpleSchema({
+    userId: { type: String, optional:false },
+    username: { type: String,optional:false },
+    text:  { type: String,optional:false },
+    createdAt:{type: Date,optional:false }
+});
+
+
 const ChatSchema = new SimpleSchema({
-    reqId: { type: String },
-    userReqId: { type: String },
-    chosenBuddyId:  { type: String },
-    messages:{type: [Object]}
+    requestId: { type: String, optional:false },
+    userReqId: { type: String,optional:false },
+    chosenBuddyId:  { type: String,optional:false },
+    messages:{type: [messageSchema],optional:false}
 });
 
 Chat.attachSchema(ChatSchema);

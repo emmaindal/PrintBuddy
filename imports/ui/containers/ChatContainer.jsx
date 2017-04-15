@@ -3,106 +3,63 @@ import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
 
 import ChatComponent from "../components/ChatComponent";
-
-
-class Chat extends React.Component {
-	constructor(props) {
+import {Chat} from '../../api/chat/chat';
+import {addMessageToRequest} from '../../api/chat/methods';
+import {displayError} from '../helpers/errors';
+class ChatHolder extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
             users: ""
         }
     }
-    onSubmit(message) {
-        console.log(message);
-        // INSERT Message till databas
-        const obj = {
-            _id: "212",
-            username: "Hampus",
-            text: message,
-            createdAt: "Saturday 10.05PM",
-            number: "one"
-        }
-        console.log(obj);
-    }
-    componentDidMount() {
-        const users = [
-            {
-                _id: "1",
-                username: "Alex",
-                text: "Hej vad heter du?",
-                createdAt: "Tuesday 9.05PM",
-                number: "one"
-            },
-            {
-                _id: "2",
-                username: "Micke",
-                text: "Jag heter Micke, vad heter du?Jag heter Micke, vad heter du?Jag heter Micke, vad heter du?Jag heter Micke, vad heter du?Jag heter Micke, vad heter du?Jag heter Micke, vad heter du?Jag heter Micke, vad heter du?Jag heter Micke, vad heter du?",
-                createdAt: "Tuesday 9.05PM",
-                number: "two"
-            },
-            {
-                _id: "3",
-                username: "Alex",
-                text: "Alex heter jag, gillar du bira?",
-                createdAt: "Tuesday 9.05PM",
-                number: "one"
-            },
-            {
-                _id: "4",
-                username: "Micke",
-                text: "Jag älskar bira! h3h3h3...",
-                createdAt: "Tuesday 9.05PM",
-                number: "two"
-            },
-            {
-                _id: "5",
-                username: "Alex",
-                text: "Hej vad heter du?",
-                createdAt: "Tuesday 9.05PM",
-                number: "one"
-            },
-            {
-                _id: "6",
-                username: "Micke",
-                text: "Jag heter Micke, vad heter du?",
-                createdAt: "Tuesday 9.05PM",
-                number: "two"
-            },
-            {
-                _id: "7",
-                username: "Alex",
-                text: "Alex heter jag, gillar du bira?",
-                createdAt: "Tuesday 9.05PM",
-                number: "one"
-            },
-            {
-                _id: "8",
-                username: "Micke",
-                text: "Jag älskar bira! h3h3h3...",
-                createdAt: "Tuesday 9.05PM",
-                number: "two"
+
+    onSubmit(text) {
+        const message = {requestId: this.props.request._id, text: text, username: Meteor.user().username};
+        addMessageToRequest.call(message, (err, res) => {
+            if (err) {
+                console.log(err);
+                if (err.error === 'chat.addMessageToRequest.unauthorized') {
+                    displayError("Wrong!", 'You need to login to chat');
+                } else {
+                    displayError("Error!", 'Something went wrong :( ');
+                }
             }
-            
-        ]
-        this.setState({
-            users: users,
         });
     }
-	render() {        
-		return (
-			<div>
-				<h1>Chat Container</h1>
-                <ChatComponent users={this.state.users} onSubmit={this.onSubmit.bind(this)}/>
-			</div>
-		);
-	}
+
+    handleDownload() {
+        // Download the document URL
+        console.log("Download Document")
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>Chat Container</h1>
+                <ChatComponent userId={Meteor.userId()} chat={this.props.chat} request={this.props.request}
+                               handleDownload={this.handleDownload.bind(this)} onSubmit={this.onSubmit.bind(this)}/>
+            </div>
+        );
+    }
 }
 
-const ChatContainer = createContainer(() => {
+ChatHolder.propTypes = {
+    chat: React.PropTypes.object,
+    request: React.PropTypes.object
+};
+
+const ChatContainer = createContainer((props) => {
+    const chatHandle = Meteor.subscribe('chat-request', props.request._id);
+    const loading = !chatHandle.ready();
+    const chat = Chat.find({requestId: props.request._id});
+    const chatExists = !loading && !!chat;
 
     return {
+        loading: loading,
+        chat: chatExists ? chat.fetch()[0] : {}
     };
-}, Chat);
+}, ChatHolder);
 
 
 export default ChatContainer;
