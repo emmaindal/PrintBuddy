@@ -14,7 +14,7 @@ class ChatInfo extends React.Component {
                     <li className="collection-item"><span>Pages:</span> {request.pages}  </li>
                     <li className="collection-item"><span>Copies:</span> {request.copies}  </li>
                     <li className="collection-item"><span>Delivery:</span> {request.delivery ? 'Yes' : 'No' } </li>
-                    <li className="collection-item"><span>Last Date:</span> {request.lastDate.toISOString()}</li>
+                    <li className="collection-item"><span>Last Date:</span> {request.lastDate}</li>
                 </ul>
             </div>
         );
