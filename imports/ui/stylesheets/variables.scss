@@ -12,7 +12,7 @@ $text-tertiary: white;
 $break-medium: 1085px;
 
 //Content
-$background-color: rgba(#ffffff, 0.72);
+$background-color: rgba(#ffffff, 0.85);
 $border-color: rgba(#f4f4f4, 0.82);
 $scroll-btn-background: rgba(#ff9800, 0.98);
 $scroll-btn-border: rgba(#ffa520, 1);
@@ -39,5 +39,4 @@ $color-primary-btn: #26a69a; //APPLY & CHOOSE buttons
 
 //Chat
 $color-message-one: transparentize(#ffa520, 0.4);
-$color-message-two: transparentize(#2193b0, 0.6) 
-
+$color-message-two: transparentize(#2193b0, 0.6)
