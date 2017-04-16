@@ -162,21 +162,9 @@ class Test extends React.Component {
                     <button className="btn waves-effect waves-light" onClick={this.stepClear}> Clear</button>
                 </div>
 
-                <div id="test-pendinglist" className="row">
-                    <div className="col l10 offset-l1">
-                        <PendingBuddiesList buddylist={dummyBuddiesList} onChoose={this.onChoose}
-                                            onView={this.onViewLocation}/>
-                    </div>
-                </div>
 
-                <div id="test-geocode" className="row">
-                    <div className="col l10 offset-l1">
-                        <h3>Test Geocode</h3>
-                        <GeoCoder onPickAdress={(adress) => {
-                            console.log(adress)
-                        }}/>
-                    </div>
-                </div>
+
+
 
                 <button className="btn waves-effect waves-light" onClick={this.onLogout}> LOGGA UT</button>
 

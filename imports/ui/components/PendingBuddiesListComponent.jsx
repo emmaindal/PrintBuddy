@@ -11,10 +11,10 @@ export const PendingBuddiesList = ({buddylist, onChoose, onView}) =>
 					return (
 						<li className="collection-item" key={buddy._id}>
 							<div className="content-for-li">
-								<p>Buddy: {buddy.username} - Address: {buddy.address} - Distance: "not set" meter</p> 
+								<p>Buddy: {buddy.username} - Address: {buddy.position.address} - Distance: "not set" meter</p>
 								<div className="buttongroup">
-									<button className="btn waves-effect waves-light location-btn" onClick={() => {onView(buddy.address)}}><i className="small material-icons">location_on</i></button>
-									<button className="btn waves-effect waves-light" onClick={() => {onChoose(buddy.username)}}>CHOOSE</button>
+									<button className="btn waves-effect waves-light location-btn" onClick={() => {onView(buddy)}}><i className="small material-icons">location_on</i></button>
+									<button className="btn waves-effect waves-light" onClick={() => {onChoose(buddy._id)}}>CHOOSE</button>
 								</div>
 							</div>
 						</li>

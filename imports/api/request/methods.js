@@ -5,7 +5,7 @@ import {SimpleSchema} from 'meteor/aldeed:simple-schema';
 import {DDPRateLimiter} from 'meteor/ddp-rate-limiter';
 
 import {Request} from './request.js';
-
+import {Chat} from  '../chat/chat';
 
 export const insert = new ValidatedMethod({
     name: 'request.insert',
@@ -13,10 +13,14 @@ export const insert = new ValidatedMethod({
         delivery: {type: Boolean},
         needColor: {type: Boolean},
         reward: {type: Number},
+        pages: {type: Number},
+        copies: {type: Number},
+        currency: {type: String},
         radius: {type: Number},
-        lastDate: {type: Date}
+        lastDate: {type: Date},
+        title: {type: String}
     }).validator(),
-    run({delivery, needColor, reward, radius, lastDate}) {
+    run({delivery, needColor, reward, radius, lastDate, pages, copies, currency, title}) {
         if (!this.userId) {
             throw new Meteor.Error('request.insert.unauthorized', 'Must be logged to add item.');
         }
@@ -27,9 +31,13 @@ export const insert = new ValidatedMethod({
             needColor: needColor,
             reward: reward,
             radius: radius,
-            delivery: delivery,
             lastDate: lastDate,
-            isDone: false
+            isDone: false,
+            title: title,
+            pages: pages,
+            copies: copies,
+            currency: currency,
+            possibleOnes: []
         }
 
         return Request.insert(req);
@@ -47,19 +55,46 @@ export const applyRequest = new ValidatedMethod({
                 'Must be logged in to apply.');
         }
         const req = Request.findOne(requestId);
-        if(req.possibleOnes.includes(this.userId)){
+        if (req.possibleOnes.includes(this.userId)) {
             throw new Meteor.Error('request.applyRequest.exist',
                 'You already applied for this job!');
         }
 
         // Todo begränsa det till 3?
-        Request.update(requestId,{ $push: { possibleOnes: this.userId } } );
+        Request.update(requestId, {$push: {possibleOnes: this.userId}});
     }
 });
 
+export const acceptBuddy = new ValidatedMethod({
+    name: 'request.acceptBuddy',
+    validate: new SimpleSchema({
+        requestId: {type: String},
+        buddyId: {type: String}
+    }).validator(),
+    run({requestId, buddyId}){
+        if (!this.userId) {
+            throw new Meteor.Error('request.acceptBuddy',
+                'Must be logged in to acceptBuddy.');
+        }
+
+        const req = Request.findOne(requestId);
+        if (req.chosenOne) {
+            throw new Meteor.Error('request.acceptBuddy.exist',
+                'Job already taken');
+        }
+
+        const chat = {requestId: requestId, userReqId: this.userId, chosenBuddyId: buddyId, messages:[]}
+        Chat.insert(chat, (err) => {
+            console.log(err);
+            if (!err) {
+                Request.update(requestId, {$set: {chosenOne: buddyId}});
+            }
+        });
+    }
+});
 
 const REQUEST_METHODS = _.pluck([
-    insert,
+    insert, applyRequest, acceptBuddy
 ], 'name');
 
 if (Meteor.isServer) {

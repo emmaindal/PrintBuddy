@@ -7,16 +7,18 @@ import {
 } from 'react-google-maps';
 
 import {InitialMap} from '../components/InitialMapComponent';
+import {InitialPendingMap} from '../components/InitialPendingMapComponent';
 
 
 class MapContainer extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {markers: this.props.markers};
 
 		this.handleMarkerClick = this.handleMarkerClick.bind(this);
 		this.handleMarkerClose = this.handleMarkerClose.bind(this);
 	}
+    
 	componentWillReceiveProps(nextProps) {
 		if (nextProps.clickedId) {
 			nextProps.markers = nextProps.markers.map(marker =>{
@@ -60,18 +62,36 @@ class MapContainer extends React.Component {
 			<div className="col s12 m10 offset-m1 l6">
 				<div className="collection" style={{ height: "500px"}}>
 					<div style={{height: "100%"}}>
-						<InitialMap
-							containerElement={
-								<div style={{ height: "100%", width: "auto" }} />
-							}
-							mapElement={
-								<div style={{ height: "100%", width: "auto" }} />
-							}
-							markers={this.state.markers}
-							defaultCenter={this.props.defaultCenter}
-							onMarkerClick={this.handleMarkerClick}
-							onCloseClick={this.handleMarkerClose}
-						/>
+                        {this.props.isBuddy ?
+                             (
+                                <InitialMap
+                                    containerElement={
+                                        <div style={{ height: "100%", width: "auto" }} />
+                                    }
+                                    mapElement={
+                                        <div style={{ height: "100%", width: "auto" }} />
+                                    }
+                                    markers={this.state.markers}
+                                    defaultCenter={this.props.defaultCenter}
+                                    onMarkerClick={this.handleMarkerClick}
+                                    onCloseClick={this.handleMarkerClose}
+                                />
+                            ) : (
+                                <InitialPendingMap
+                                    containerElement={
+                                        <div style={{ height: "100%", width: "auto" }} />
+                                    }
+                                    mapElement={
+                                        <div style={{ height: "100%", width: "auto" }} />
+                                    }
+                                    markers={this.state.markers}
+                                    defaultCenter={this.props.defaultCenter}
+                                    onMarkerClick={this.handleMarkerClick}
+                                    onCloseClick={this.handleMarkerClose}
+                                />
+                            )
+                        }
+						
 					</div>
 				</div>
 			</div>

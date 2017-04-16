@@ -13,16 +13,17 @@ class RequestCollection extends Mongo.Collection {
     }
 }
 
-
 export const Request = new RequestCollection('request');
-
 
 const RequestSchema = new SimpleSchema({
     userReqId: { type: String,optional:true  },
     delivery: { type: Boolean },
     needColor: { type: Boolean },
     reward: { type: Number },
-    currency: { type: String,optional:true  },
+    currency: { type: String },
+    pages: { type: Number },
+    copies: { type : Number },
+    title: { type: String },
     radius: { type: Number },
     lastDate:{type: Date},
     possibleOnes: { type: [String], optional:false },
@@ -66,6 +67,9 @@ Request.helpers({
             return Meteor.users.findOne(id);
         });
         return users;
+    },
+    printBuddyPosition(){
+        return Meteor.users.findOne(this.chosenOne).position
     }
 });
 
