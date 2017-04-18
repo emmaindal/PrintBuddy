@@ -10,20 +10,20 @@
 // Chat component
 .chat {
     background: white;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    min-height: 150px;
-    max-height: 600px;
-    overflow-y: scroll;
     position: relative;
     z-index: 1;
+
+    .collection {
+        border-bottom: 0;
+    }
     
     .collection .collection-item {
         padding: 7px 10px;
         position: relative;
         min-height: 0;
         border-bottom: 0;
-        padding-top: 0px;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
     .form {
         display: flex;
@@ -39,6 +39,7 @@
         height: 40px;
         line-height: 30px;
         margin-right: 10px;
+        margin-top: 10px;
         transition: 0.2s all ease-in-out;
         &:hover {
             letter-spacing: 4px;
@@ -86,6 +87,26 @@
     }
 }
 
+// Chat message
+.chat-message {
+    min-height: 530px;
+    max-height: 530px;
+    overflow-y: scroll;
+    h5 {
+        font-size: 18px;
+    }
+}
+
+// Chat form
+.chat-form {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: 1px solid #e0e0e0;
+    input[type=text] {
+        padding-top: 10px;
+    }
+}
+
 // Chat info komponent
 .chat-info {
     background: white;
@@ -93,11 +114,13 @@
     -moz-box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
     box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
     border-radius: 3px;
+    position: relative;
+    top: -60px;
     .chat-info-wrapper {
         margin: 0;
         .collection-item {
-            padding-bottom: 20px;
-            padding-top: 20px;
+            padding-bottom: 15px;
+            padding-top: 15px;
             padding-left: 15px;
             span {
                 font-weight: bold;
@@ -111,6 +134,8 @@
 .button-doc {
     height: 100px;
     line-height: 100px;
+    position: relative;
+    top: -60px;
 
 }
 
