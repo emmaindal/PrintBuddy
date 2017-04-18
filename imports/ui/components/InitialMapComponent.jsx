@@ -35,7 +35,7 @@ export const InitialMap = withGoogleMap(props => {
 							<li className="collection-item avatar">
 								<i className={marker.delivery ? "infowindow-icon material-icons circle blue" : "infowindow-icon material-icons circle green"}>{marker.delivery ? 'directions_run' : 'access_time'}</i>
 								<span className="title">{marker.delivery ? 'Delivery' : 'Pickup'}</span>
-								<p>At {marker.lastDate.toString().slice(16, 21)} on {marker.lastDate.toString().slice(0, 10)}
+								<p>At {marker.lastTime} on {marker.lastDate}
 								</p>
 							</li>
 							<li className="collection-item avatar">
