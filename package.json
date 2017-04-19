@@ -10,6 +10,7 @@
     "babel-runtime": "^6.18.0",
     "bcrypt": "^1.0.2",
     "classnames": "^2.2.5",
+    "emoji-mart": "^0.5.0",
     "faker": "^3.1.0",
     "materialize-clockpicker": "^1.0.1",
     "moment": "^2.18.1",

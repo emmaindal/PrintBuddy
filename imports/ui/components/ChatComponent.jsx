@@ -4,6 +4,8 @@ import ChatMessageList from "./ChatMessageList";
 import ChatSendMessage from "./ChatSendMessage";
 import ChatInfo from "./ChatInfo";
 
+import { Picker } from 'emoji-mart';
+
 class ChatComponent extends React.Component {
     componentDidMount() {
         setTimeout(() => {
@@ -30,7 +32,7 @@ class ChatComponent extends React.Component {
                         <ChatInfo request={this.props.request} />
                     </div>
                     <div id="chatbox" className="col s12 m8 l5 offset-m2 offset-l1 chat chat-message" >
-                        <ChatMessageList userId={this.props.userId} chat={this.props.chat} />                     
+                        <ChatMessageList userId={this.props.userId} chat={this.props.chat} />
                     </div>
                     <div className="col hide-on-med-and-down l2 offset-l1">
                         <a onClick={this.props.handleDownload.bind(this)} className="waves-effect waves-light btn-large shadow button-doc">Download Document</a>
@@ -41,6 +43,7 @@ class ChatComponent extends React.Component {
                         <ChatSendMessage onSubmit={this.props.onSubmit.bind(this)} />
                     </div>
                 </div>
+
                 <div id="modal1" className="modal">
                     <div className="modal-content">
                         <ChatInfo request={this.props.request} />
