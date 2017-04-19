@@ -15,64 +15,6 @@ class RegisterComponent extends React.Component {
         }
     }
 
-<<<<<<< HEAD
-export class RegisterComponent extends React.Component {
-    render() {
-        $(document).ready(function() {
-            $('select').material_select();
-        });
-        return (
-            <div>
-                <div id="registerback" className="row">
-                    <h4 className="text-center">Register Account</h4>
-                    <form className="col offset-s1 s10">
-                            <div className="row">
-                                <label htmlFor="email">
-                                    <i className="small material-icons">email</i>
-                                </label>
-                                <div className="input-field col offset-s3 s6">
-                                    <input id="email" type="email" className="validate"/>
-                                    <label htmlFor="email">E-mail</label>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <label htmlFor="userId">
-                                    <i className="small material-icons">perm_identity</i>
-                                </label>
-                                <div className="input-field col offset-s3 s6">
-                                    <input id="userId" type="text" className="validate"/>
-                                    <label htmlFor="userId">User Name</label>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <label htmlFor="password">
-                                    <i className="small material-icons">lock</i>
-                                </label>
-                            <div className="input-field col offset-s3 s6">
-                                <input id="password" type="password" className="validate"/>
-                                    <label htmlFor="password">Password</label>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <label htmlFor="confirmpassword">
-                                    <i className="small material-icons">lock</i>
-                                </label>
-                            <div className="input-field col offset-s3 s6">
-                                <input id="confirmpassword" type="password" className="validate"/>
-                                    <label htmlFor="confirmpassword">Confirm password</label>
-                                </div>
-                            </div>
-                            <div className="switch">
-                                <div className="col offset-s4 s4">
-                                    <label>
-                                        Buddy
-                                        <input type="checkbox"/>
-=======
-    componentDidMount() {
-        $('#mySelectBox').material_select();
-        $("#mySelectBox").on('change', (e) => this.onSelectChange(e));
-    }
-
     onSubmit(e) {
         e.preventDefault();
         if (this.state.lng == 0) {
@@ -116,6 +58,11 @@ export class RegisterComponent extends React.Component {
         }
         else {
             this.setState({isBuddy: true});
+            // TODO kanske ersätta timeout med en tracker??
+            setTimeout(() => {
+                $('#mySelectBox').material_select();
+                $("#mySelectBox").on('change', (e) => this.onSelectChange(e));
+            }, 100);
         }
     }
 
@@ -198,48 +145,41 @@ export class RegisterComponent extends React.Component {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="switch">
-                                <div className="col offset-s1 s4">
+                            <div className="switch text-center">
+                                <div className="col s12">
                                     <label>
                                         Requestor
                                         <input type="checkbox" checked={this.state.isBuddy}
                                                onChange={(e) => this.handleChange(e)}/>
->>>>>>> development
                                         <span className="lever"></span>
                                         PrintBuddy
                                     </label>
                                 </div>
                             </div>
-<<<<<<< HEAD
-                            <div className="row">
-                                <button className="waves-effect waves-light btn">Submit</button>
-                            </div>
-=======
-                            <div className="input-field col s6">
-                                <i className="small material-icons printer">print</i>
-                                <p>Set your printer settings if you want to be a Budddy!</p>
-                                <select id="mySelectBox" multiple>
-                                    <option value="qwe" data-type="text-type" disabled> Set here</option>
-                                    <option value="deliver" data-type="text-type"> Can deliver</option>
-                                    <option value="color" data-type="text-type"> Color printer</option>
-                                </select>
-                            </div>
+
+                            {this.state.isBuddy ? (
+                                <div ref="buddySelectBox" className="input-field col s6 offset-s3">
+                                    <i className="small material-icons printer">print</i>
+                                    <p>Set your printer settings if you want to be a Budddy!</p>
+                                    <select id="mySelectBox" multiple>
+                                        <option value="qwe" data-type="text-type" disabled> Set here</option>
+                                        <option value="deliver" data-type="text-type"> Can deliver</option>
+                                        <option value="color" data-type="text-type"> Color printer</option>
+                                    </select>
+                                </div>
+                            ) : (null)}
                         </div>
                         <div className="row">
                             <div className="col s10 offset-s1 m10 offset-m1 center-align">
                                 <button className="waves-effect waves-light btn">Submit</button>
                             </div>
                         </div>
->>>>>>> development
                     </form>
                 </div>
             </div>
         );
     }
 }
-<<<<<<< HEAD
-    export default RegisterComponent
-=======
 
 RegisterComponent.propTypes = {
     submit: React.PropTypes.func,
@@ -247,4 +187,3 @@ RegisterComponent.propTypes = {
 
 
 export default RegisterComponent
->>>>>>> development
