@@ -57,5 +57,4 @@ LoginComponent.propTypes = {
     submit: React.PropTypes.func,
 }
 
-
 export default LoginComponent;

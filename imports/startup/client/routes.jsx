@@ -5,6 +5,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import { Meteor } from 'meteor/meteor';
 
 // route components
+import ProfileContainer from '../../ui/containers/ProfileContainer';
 import LoginContainer from '../../ui/containers/LoginContainer';
 import RegisterContainer from '../../ui/containers/RegisterContainer';
 import StartContainer from '../../ui/containers/StartContainer';
@@ -46,7 +47,8 @@ function requireAuth(nextState, replace) {
 
 export const renderRoutes = () => (
     <Router history={browserHistory}>
-        <Route path="/Register" component={RegisterContainer}/>
+        <Route path="/profile" component={ProfileContainer}/>
+        <Route path="/register" component={RegisterContainer}/>
         <Route path="/login" component={LoginContainer}/>
         <Route path="/start" component={StartContainer}/>
         <Route path="/about" component={AboutContainer}/>
