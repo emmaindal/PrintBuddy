@@ -15,15 +15,15 @@ class ChatSendMessage extends React.Component {
     emojiPicker() {
         return (
             <Picker
-                className="hide-on-med-and-down"
                 emojiSize={20}
                 perLine={9}
                 skin={1}
                 native={false}
-                set='emojione'
+                set='apple'
                 onClick={(emoji) => {
                     const input = this.refs.text.value;
                     this.refs.text.value = input + emoji.native;
+                    $('.form-input').focus();
                 }}
             />
         );
