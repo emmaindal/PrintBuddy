@@ -15,11 +15,6 @@ class RegisterComponent extends React.Component {
         }
     }
 
-    componentDidMount() {
-        $('#mySelectBox').material_select();
-        $("#mySelectBox").on('change', (e) => this.onSelectChange(e));
-    }
-
     onSubmit(e) {
         e.preventDefault();
         if (this.state.lng == 0) {
@@ -63,6 +58,11 @@ class RegisterComponent extends React.Component {
         }
         else {
             this.setState({isBuddy: true});
+            // TODO kanske ersätta timeout med en tracker??
+            setTimeout(() => {
+                $('#mySelectBox').material_select();
+                $("#mySelectBox").on('change', (e) => this.onSelectChange(e));
+            }, 100);
         }
     }
 
@@ -145,8 +145,8 @@ class RegisterComponent extends React.Component {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="switch">
-                                <div className="col offset-s1 s4">
+                            <div className="switch text-center">
+                                <div className="col s12">
                                     <label>
                                         Requestor
                                         <input type="checkbox" checked={this.state.isBuddy}
@@ -156,15 +156,18 @@ class RegisterComponent extends React.Component {
                                     </label>
                                 </div>
                             </div>
-                            <div className="input-field col s6">
-                                <i className="small material-icons printer">print</i>
-                                <p>Set your printer settings if you want to be a Budddy!</p>
-                                <select id="mySelectBox" multiple>
-                                    <option value="qwe" data-type="text-type" disabled> Set here</option>
-                                    <option value="deliver" data-type="text-type"> Can deliver</option>
-                                    <option value="color" data-type="text-type"> Color printer</option>
-                                </select>
-                            </div>
+
+                            {this.state.isBuddy ? (
+                                <div ref="buddySelectBox" className="input-field col s6 offset-s3">
+                                    <i className="small material-icons printer">print</i>
+                                    <p>Set your printer settings if you want to be a Budddy!</p>
+                                    <select id="mySelectBox" multiple>
+                                        <option value="qwe" data-type="text-type" disabled> Set here</option>
+                                        <option value="deliver" data-type="text-type"> Can deliver</option>
+                                        <option value="color" data-type="text-type"> Color printer</option>
+                                    </select>
+                                </div>
+                            ) : (null)}
                         </div>
                         <div className="row">
                             <div className="col s10 offset-s1 m10 offset-m1 center-align">
