@@ -1,5 +1,4 @@
 import React from 'react';
-import moment from 'moment';
 
 class CreateRequest extends React.Component {
     constructor(props) {
@@ -29,9 +28,6 @@ class CreateRequest extends React.Component {
     onSubmit(e) {
         e.preventDefault();
 
-        //const momentSet = moment(new Date(this.refs.lastDate.value)).format("ddd Do MMMM");
-        console.log(this.refs.lastTime.value);
-
         if (!this.refs.lastDate.value) {
             this.setState({ dateClassName: "datepicker invalid" });
         } else {
@@ -39,7 +35,7 @@ class CreateRequest extends React.Component {
                 delivery: this.refs.delivery.checked,
                 needColor: this.refs.needColor.checked,
                 radius: parseInt(this.state.range),
-                lastDate: moment(new Date(this.refs.lastDate.value)).format("ddd Do MMMM"),
+                lastDate: new Date(this.refs.lastDate.value),
                 lastTime: this.refs.lastTime.value.trim(),
                 reward: parseInt(this.refs.reward.value),
                 pages: parseInt(this.refs.pages.value),
