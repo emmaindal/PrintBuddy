@@ -5,6 +5,7 @@ import {
 	InfoWindow,
 	Marker,
 } from 'react-google-maps';
+import moment from 'moment';
 
 export const InitialMap = withGoogleMap(props => {
 	return (
@@ -35,7 +36,7 @@ export const InitialMap = withGoogleMap(props => {
 							<li className="collection-item avatar">
 								<i className={marker.delivery ? "infowindow-icon material-icons circle blue" : "infowindow-icon material-icons circle green"}>{marker.delivery ? 'directions_run' : 'access_time'}</i>
 								<span className="title">{marker.delivery ? 'Delivery' : 'Pickup'}</span>
-								<p>At {marker.lastTime} on {marker.lastDate}
+								<p>At {marker.lastTime} on {moment(marker.lastDate).format("ddd Do MMMM")}
 								</p>
 							</li>
 							<li className="collection-item avatar">

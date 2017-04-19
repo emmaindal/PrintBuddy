@@ -1,4 +1,5 @@
 import React from "react";
+import moment from 'moment';
 
 class ChatInfo extends React.Component {
     render() {
@@ -14,7 +15,7 @@ class ChatInfo extends React.Component {
                     <li className="collection-item"><span>Pages:</span> {request.pages}  </li>
                     <li className="collection-item"><span>Copies:</span> {request.copies}  </li>
                     <li className="collection-item"><span>Delivery:</span> {request.delivery ? 'Yes' : 'No' } </li>
-                    <li className="collection-item"><span>Last Date:</span> {request.lastDate}</li>
+                    <li className="collection-item"><span>Last Date:</span> {moment(request.lastDate).format("ddd Do MMMM")}</li>
                 </ul>
             </div>
         );

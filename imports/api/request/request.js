@@ -25,7 +25,7 @@ const RequestSchema = new SimpleSchema({
     copies: { type : Number },
     title: { type: String },
     radius: { type: Number },
-    lastDate:{ type: String },
+    lastDate:{ type: Date },
     lastTime:{ type: String },
     possibleOnes: { type: [String], optional:false },
     chosenOne: { type: String, optional:true },
