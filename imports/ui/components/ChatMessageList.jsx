@@ -21,7 +21,11 @@ class ChatMessageList extends React.Component {
             });
         }
     }
-
+    componentWillUpdate() {
+        $('#chatbox').animate({
+                scrollTop: $("#chatbox").prop("scrollHeight")
+        });
+    }
     render() {
         return (
             <div>
