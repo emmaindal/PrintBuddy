@@ -5,6 +5,7 @@ import ChatSendMessage from "./ChatSendMessage";
 import ChatInfo from "./ChatInfo";
 
 import { Picker } from 'emoji-mart';
+import Stepper from 'react-stepper-horizontal';
 
 class ChatComponent extends React.Component {
     componentDidMount() {
@@ -20,6 +21,9 @@ class ChatComponent extends React.Component {
     render() {
         return (
             <div className="container">
+                <div className="step-by-step">
+                    <Stepper steps={[{title:'Request'}, {title:'Pending'}, {title:'Chat'}, {title:'Done'}]} activeStep={2} size={40} completeColor={"green"} activeColor={"orange"} />
+                </div>
                 <div className="row chat-row">
                     <div className="chat-header col s12 m8 l5 offset-m2 offset-l4">
                         <a onClick={this.showChatInfo.bind(this)}><i className="info-icon material-icons hide-on-large-only">info_outline</i></a>

@@ -6,6 +6,7 @@ import {PendingBuddiesList} from '../components/PendingBuddiesListComponent';
 import MapContainer from './MapContainer';
 import {acceptBuddy} from '../../api/request/methods';
 import {displayError} from '../helpers/errors';
+import Stepper from 'react-stepper-horizontal';
 
 class PendingRequest extends React.Component {
     constructor(props) {
@@ -40,8 +41,8 @@ class PendingRequest extends React.Component {
     render() {
         return (
             <div>
-                <div className="row">
-                    <h1>put the step by step here</h1>
+                <div className="step-by-step">
+                    <Stepper steps={[{title:'Request'}, {title:'Pending'}, {title:'Chat'}, {title:'Done'}]} activeStep={1} size={40} completeColor={"green"} activeColor={"orange"} />
                 </div>
                 <div className="row">
                     <div className="col l10 offset-l1">

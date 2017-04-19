@@ -36,7 +36,7 @@ class ChatHolder extends React.Component {
     render() {
         return (
             <div>
-                <h1>Chat Container</h1>
+                <p>Chat Container</p>
                 <ChatComponent userId={Meteor.userId()} chat={this.props.chat} request={this.props.request}
                                handleDownload={this.handleDownload.bind(this)} onSubmit={this.onSubmit.bind(this)}/>
             </div>

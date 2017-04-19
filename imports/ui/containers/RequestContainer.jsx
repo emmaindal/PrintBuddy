@@ -33,7 +33,7 @@ class RequestComp extends React.Component {
         if (!this.props.request) {
             return (
                 <div>
-                    <h1>Request Container</h1>
+                    <p>Request Container</p>
                     <CreateRequestContainer/>
                 </div>
             );
@@ -42,7 +42,7 @@ class RequestComp extends React.Component {
         if (this.props.request.chosenOne && !this.props.request.isDone) {
             return (
                 <div>
-                    <h1>Request Container</h1>
+                    <p>Request Container</p>
                     <ChatContainer request={this.props.request}/>
                 </div>
             );
@@ -51,7 +51,7 @@ class RequestComp extends React.Component {
         if (this.props.request.isDone) {
             return (
                 <div>
-                    <h1>Request Container</h1>
+                    <p>Request Container</p>
                     <DoneContainer/>
                 </div>
             );
@@ -60,7 +60,7 @@ class RequestComp extends React.Component {
         // pending
         return (
             <div>
-                <h1>Request Container</h1>
+                <p>Request Container</p>
                 <PendingRequestContainer request={this.props.request}/>
             </div>
         );
