@@ -9,14 +9,20 @@ export const JobList = ({listofjobs, onApply, onView}) =>
 				{ listofjobs.length > 0 ? (
 					listofjobs.map((job) => {
 					return (
-						<li className="collection-item" key={job._id}>
-							<div className="content-for-li">
-								<p>Requestor: {job.requestorName()} - Reward: {job.reward} {job.currency} - Distance: {job.distance} meter , Address - {job.requestorAddress()}</p>
-								<div className="buttongroup">
-
-									<button className="btn waves-effect waves-light location-btn" onClick={() => {onView(job)}}><i className="small material-icons">location_on</i></button>
-									<button className="btn waves-effect waves-light" onClick={() => {onApply(job._id)}}>APPLY</button>
-								</div>
+						<li className="collection-item content-for-li" key={job._id}>
+                            <p> 
+                                <i className="round-icon-green material-icons">description</i>
+                                {job.title}<br/>
+                                <i className={job.needColor ? "round-icon-green material-icons" : "round-icon-gray material-icons"}>print</i>
+                                {job.needColor ? 'Color' : 'Black & White'}<br/>
+                                <i className={job.delivery ? "round-icon-blue material-icons" : "round-icon-green material-icons"}>{job.delivery ? 'directions_run' : 'access_time'}</i>
+                                {job.delivery ? `Delivery - ${Math.round(job.distance)} meters.` : 'Pickup'}<br/>
+                                <i className={job.reward > 0 ? "round-icon-green material-icons" : "round-icon-gray material-icons"}>{job.reward > 0 ? 'monetization_on' : 'money_off'}</i>
+                                {job.reward > 0 ? `${job.reward} ${job.currency}` : 'No cash offered.'}
+                            </p>
+							<div className="buttongroup">
+								<button className="btn waves-effect waves-light location-btn" onClick={() => {onView(job)}}><i className="small material-icons">location_on</i></button>
+								<button className="btn waves-effect waves-light" onClick={() => {onApply(job._id)}}>APPLY</button>
 							</div>
 						</li>
 					);
