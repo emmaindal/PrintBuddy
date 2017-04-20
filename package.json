@@ -20,6 +20,7 @@
     "react-dom": "^15.4.2",
     "react-flip-move": "^2.9.1",
     "react-google-maps": "^6.0.1",
+    "react-modal": "^1.7.7",
     "react-router": "^2.8.1",
     "react-stepper-horizontal": "^1.0.6",
     "react-tap-event-plugin": "^2.0.1"

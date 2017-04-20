@@ -14,7 +14,7 @@
 .chat {
     background: white;
     position: relative;
-    z-index: 1;
+    z-index: 0;
 
     .collection {
         border-bottom: 0;
@@ -126,7 +126,7 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     height: 4rem;
-    z-index: 10000;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     h6 {
@@ -175,11 +175,23 @@
         }
     }
 }
+.job-info-buttons {
+    .collection-item {
+        display: flex;
+        justify-content: space-around;
+        .btn {
+            padding: 0 1rem;
+            z-index: 0;
+        }
+    }
+}
+
 
 // download document button
 .button-doc {
     height: 100px;
     line-height: 100px;
+    z-index: 0;
 }
 
 // mobile document download button

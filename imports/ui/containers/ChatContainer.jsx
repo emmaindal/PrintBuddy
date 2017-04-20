@@ -14,7 +14,6 @@ class ChatHolder extends React.Component {
             users: ""
         }
     }
-
     onSubmit(text) {
         const message = {requestId: this.props.request._id, text: text, username: Meteor.user().username};
         addMessageToRequest.call(message, (err, res) => {
@@ -28,18 +27,23 @@ class ChatHolder extends React.Component {
             }
         });
     }
-
     handleDownload() {
         // Download the document URL
         console.log("Download Document")
     }
-
+    handleJobCancel() {
+        console.log("Cancel Job");
+    }
+    handleJobDone() {
+        console.log("Job Done");
+    }
     render() {
         return (
             <div>
                 <p>Chat Container</p>
                 <ChatComponent userId={Meteor.userId()} chat={this.props.chat} request={this.props.request}
-                               handleDownload={this.handleDownload.bind(this)} onSubmit={this.onSubmit.bind(this)}/>
+                               handleDownload={this.handleDownload.bind(this)} onSubmit={this.onSubmit.bind(this)}
+                               handleJobCancel={this.handleJobCancel.bind(this)} handleJobDone={this.handleJobDone.bind(this)}/>
             </div>
         );
     }
