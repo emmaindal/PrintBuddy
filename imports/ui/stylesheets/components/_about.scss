@@ -1,6 +1,10 @@
 @import "../variables";
 
-.col.grid-example.about-first{
+.col.grid-example.about-content{
+    margin-bottom: 1%;
+}
+
+.col.grid-example.about-content.first{
     background: $color-primary;
     border: none;
     padding-bottom: 10%;
@@ -17,7 +21,12 @@
     }
 }
 
-section.section-about-second{
+.row.about-row{
+    background-color: white;
+
+}
+
+section.section-about-content.second{
     background-color: white;
     border: 1px lightgrey solid;
     border-radius: 5px;
@@ -36,9 +45,10 @@ section.section-about-second{
     }
 }
 
-.col.grid-example.about-third{
+.col.grid-example.about-content.third{
 
     .our-team-heading {
+        color: white;
         text-align: center;
         padding-bottom: 3%;
     }
@@ -59,7 +69,7 @@ section.section-about-second{
             font-size: 128px;
             color: #ff9800;
         }
-    }
+}
 
     .card-container {
         width: 19%;
@@ -80,11 +90,7 @@ section.section-about-second{
 
 }
 
-.col.grid-example.about-third{
-
-}
-
-.col.s12.m6.l6.section-about-fourth.one{
+.col.s12.m6.l6.section-about-content.fourth.one{
     text-align: left;
     padding: 5%;
 
@@ -102,7 +108,7 @@ section.section-about-second{
 
 }
 
-.col.s12.m6.l6.section-about-fourth.two{
+.col.s12.m6.l6.section-about-content.fourth.two{
     text-align: left;
     padding: 5%;
 
@@ -112,6 +118,7 @@ section.section-about-second{
         border-radius: 3px;
         padding: 3%;
     }
+
 
     label.active{
         transform: translateY(-50%);
