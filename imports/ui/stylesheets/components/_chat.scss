@@ -82,6 +82,7 @@
     }
     a {
         line-height: 32px !important;
+        font-weight: bold !important;
     }
     :last-child {
         :last-child {
@@ -93,6 +94,31 @@
         }
     }
 }
+.step-by-step  {
+    :first-child > * {
+            font-weight: bold !important;
+            
+    }
+    :first-child {
+        :first-child > * {
+            transition: none !important;
+            border-top-width: 2px !important;
+            :first-child  {
+            transition: all 1s ease-in-out !important;
+            }
+            :last-child {
+                border-top-width: 2px !important;
+            }
+            :nth-child(2) {
+                font-weight: bold !important;
+            }
+            :nth-child(3) {
+                border-top-width: 2px !important;
+            }
+        }
+    }
+}
+
 
 // Chat header
 .chat-header {

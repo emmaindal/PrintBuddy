@@ -6,13 +6,6 @@ import ChatInfo from "./ChatInfo";
 
 
 class ChatHolder extends React.Component {
-    componentDidMount() {
-        setTimeout(() => {
-            $('#chatbox').animate({
-                scrollTop: $("#chatbox").prop("scrollHeight")
-            }, 0);
-        }, 100);
-    }
     showChatInfo() {
         $('#modal1').openModal('open');
     }

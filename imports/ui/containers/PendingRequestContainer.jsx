@@ -41,9 +41,6 @@ class PendingRequest extends React.Component {
     render() {
         return (
             <div>
-                <div className="step-by-step">
-                    <Stepper steps={[{title:'Request'}, {title:'Pending'}, {title:'Chat'}, {title:'Done'}]} activeStep={1} size={40} completeColor={"green"} activeColor={"orange"} />
-                </div>
                 <div className="row">
                     <div className="col l10 offset-l1">
                         <PendingBuddiesList 

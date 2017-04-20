@@ -11,7 +11,6 @@ class ChatComponent extends React.Component {
     render() {
         return (
             <div className="container">
-                
                 <div className="row chat-row">
                     <div className="col s10 m10 l3 hide-on-med-and-down chat-info">
                         <ChatInfo request={this.props.request} />

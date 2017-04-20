@@ -3,6 +3,13 @@ import React from "react";
 import { Picker } from 'emoji-mart';
 
 class ChatSendMessage extends React.Component {
+    componentDidMount() {
+        setTimeout(() => {
+            $('#chatbox').animate({
+                scrollTop: $("#chatbox").prop("scrollHeight")
+            }, 0);
+        }, 100);
+    }
     onSubmit(e) {
         $('.form-input').focus();
         e.preventDefault();
