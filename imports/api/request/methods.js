@@ -17,7 +17,7 @@ export const insert = new ValidatedMethod({
         copies: {type: Number},
         currency: {type: String},
         radius: {type: Number},
-        lastDate: {type: String},
+        lastDate: {type: Date},
         lastTime: {type: String},
         title: {type: String},
         position: {type: positionSchema}
