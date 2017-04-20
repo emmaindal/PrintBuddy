@@ -42,9 +42,6 @@ class ChatHolder extends React.Component {
                     <ChatSendMessage onSubmit={this.props.onSubmit} />
                 </div>
 
-
-
-
                 {/*JobInfo Modal that open on click in mobile view*/}
                 <div id="modal1" className="modal">
                     <div className="modal-content">

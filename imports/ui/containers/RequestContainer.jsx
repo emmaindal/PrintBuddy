@@ -21,22 +21,6 @@ class RequestComp extends React.Component {
             activeStep: 0
         };
     }
-    componentWillReceiveProps() {
-        /*console.log(this.props);
-        if (!this.props.request) {
-            this.setState({ activeStep: 0 });
-            console.log("ActiveStep 0 ", this.state.activeStep);
-        } else if (this.props.request.chosenOne && !this.props.request.isDone) {
-            this.setState({ activeStep: 2 });
-            console.log("ActiveStep 2 ", this.state.activeStep);
-        } else if (this.props.request.isDone) {
-            this.setState({ activeStep: 3 });
-            console.log("ActiveStep 3 ", this.state.activeStep);
-        } else {
-            this.setState({ activeStep: 1 });
-            console.log("ActiveStep 1 ", this.state.activeStep);
-        } */
-    }
     componentDidMount() {
         if (this.props.isBuddy) {
             browserHistory.replace('/jobs');
