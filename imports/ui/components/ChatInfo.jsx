@@ -45,26 +45,3 @@ ChatInfo.propTypes = {
 };
 
 export default ChatInfo;
-
-
-/*<div id="cancelModal" className="modal">
-                    <div className="modal-content">
-                        <h5>Are you sure?</h5>
-                        <br />
-                        <p>Are you absolutely sure you want to Cancel this request?</p>
-                    </div>
-                    <div className="modal-footer">
-                        <a className="modal-action modal-close waves-effect waves-green btn-flat">No</a>
-                        <a className="modal-action modal-close waves-effect waves-green btn-flat">Yes</a>
-                    </div>
-                </div>
-                <div id="doneModal" className="modal">
-                    <div className="modal-content">
-                        <h5>Are you sure?</h5>
-                        <p>Are you absolutely sure this job is Done?</p>
-                    </div>
-                    <div className="modal-footer">
-                        <a className="modal-action modal-close waves-effect waves-green btn-flat">No</a>
-                        <a className="modal-action modal-close waves-effect waves-green btn-flat">Yes</a>
-                    </div>
-                </div>*/

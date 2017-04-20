@@ -1,11 +1,5 @@
 @import "../variables";
 
-.shadow {
-    -webkit-box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
-    -moz-box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
-    box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
-}
-
 .chat-holder {
     box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 17px 0 rgba(0, 0, 0, 0.22) !important;
 }
@@ -57,7 +51,9 @@
         padding-top: 3px;
         padding-bottom: 3px;
         padding-right: 10px;
-        border-radius: 8px;
+        border-radius: 12px;
+        border-bottom-left-radius: 0px;
+        
     }
     .message-user-two {
         background: $color-message-two;
@@ -65,7 +61,8 @@
         padding-top: 3px;
         padding-bottom: 3px;
         padding-right: 10px;
-        border-radius: 8px;
+        border-radius: 12px;
+        border-bottom-right-radius: 0px;
     }
     .secondary-content {
         right: 28px !important;
@@ -76,7 +73,8 @@
 
 //stepper 
 .step-by-step {
-    margin-bottom: 50px;
+    margin-top: 2%;
+    margin-bottom: 4%;
     span {
         line-height: 32px !important;
     }
@@ -161,13 +159,16 @@
 .chat-info {
     background: white;
     box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 17px 0 rgba(0, 0, 0, 0.22) !important;
-    border-radius: 3px;    
+    border-radius: 4px;
+    position: relative;
+    right: 10% !important;
+    width: 33% !important;    
     .chat-info-wrapper {
         margin: 0;
         .collection-item {
-            padding-bottom: 15px;
-            padding-top: 15px;
-            padding-left: 15px;
+            padding-bottom: 12px;
+            padding-top: 12px;
+            padding-left: 12px;
             span {
                 font-weight: bold;
                 margin-right: 5px;
@@ -192,6 +193,7 @@
     height: 100px;
     line-height: 100px;
     z-index: 0;
+    box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2), 0 7px 10px 0 rgba(0, 0, 0, 0.22) !important;
 }
 
 // mobile document download button
@@ -215,6 +217,15 @@
     margin-right: auto;
 }
 
+.smiley-pop {
+    margin-top: 12px;
+    margin-right: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease !important;
+    :hover {
+        transform: scale(1.1);
+    }
+}
 
 .collection {
     margin: 0.0rem 0 1rem 0; 
@@ -229,5 +240,14 @@
 @media only screen and (min-width: 992px) {
     .chat-row {
         margin-right: 70px !important;
+    }
+    .smiley-pop {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .step-by-step {
+        display: none;
     }
 }

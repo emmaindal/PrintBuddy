@@ -28,7 +28,6 @@ class ChatHolder extends React.Component {
         this.props.handleJobDone;
     }
     render() {
-        console.log(this.props.chat);
         return (
             <div>
                 <div className="chat-header">
@@ -43,6 +42,9 @@ class ChatHolder extends React.Component {
                     <ChatSendMessage onSubmit={this.props.onSubmit} />
                 </div>
 
+
+
+
                 {/*JobInfo Modal that open on click in mobile view*/}
                 <div id="modal1" className="modal">
                     <div className="modal-content">
@@ -52,7 +54,6 @@ class ChatHolder extends React.Component {
                         <a className="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
                     </div>
                 </div>
-
                 <div id="cancelModal" className="modal">
                     <div className="modal-content">
                         <h5>Are you sure?</h5>

@@ -4,6 +4,12 @@
   line-height: 1.15 !important;
 }
 
+#mobile-emoji {
+    position: relative;
+    right: 29rem!important;
+    display: none;
+}
+
 .emoji-mart {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif !important;
   font-size: 12px !important;
@@ -13,7 +19,7 @@
   border-radius: 5px!important;
   background: #fff!important;
   position: absolute !important;
-  left: 120% !important;
+  left: 120%;
   bottom: 90px !important;
   box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 17px 0 rgba(0, 0, 0, 0.22) !important;
 }
@@ -278,7 +284,16 @@
 
 
 @media only screen and (max-width: 992px) {
-    .emoji-mart {
+    #desktop-emoji {
+        display: none !important;
+    }
+    .mobile-emoji {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .mobile-emoji {
         display: none !important;
     }
 }
