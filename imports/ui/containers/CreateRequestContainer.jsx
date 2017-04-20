@@ -14,6 +14,7 @@ class CreateRequest extends React.Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
     onSubmit(request) {
+	    request.position = Meteor.user().position;
         insert.call(request, (err, res) => {
             if (err) {
                 if (err.error === 'request.insert.unauthorized') {

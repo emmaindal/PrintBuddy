@@ -1,7 +1,7 @@
 import React from 'react';
 import FlipMove from 'react-flip-move';
 
-const PendingJobList = ({listofjobs, userId}) => {
+const PendingJobList = ({listofjobs, userId, onView}) => {
     const renderlist = () => {
         return (
             listofjobs.map((job, index) => {
@@ -9,8 +9,9 @@ const PendingJobList = ({listofjobs, userId}) => {
                     <li className="collection-item" key={index}>
                         <div className="content-for-li">
                             <p>Requestor: {job.requestorName()} - Reward: {job.reward} {job.currency} -
-                                Distance: {job.radius} meter , Address - {job.requestorPosition().address}</p>
+                                Distance: {job.radius} meter , Address - {job.requestorAddress()}</p>
                             <div className="buttongroup">
+                                <button className="btn waves-effect waves-light location-btn" onClick={() => {onView(job)}}><i className="small material-icons">location_on</i></button>
                                 <button className="btn waves-effect waves-light" onClick={() => {
                                 }}>Cancel
                                 </button>

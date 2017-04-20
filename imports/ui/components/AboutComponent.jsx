@@ -7,14 +7,15 @@ export default class AboutComponent extends React.Component {
             <div>
                 <div className="row">
 
-                    <div className="col s12 m12 l12 grid-example about-first">
+                    <div className="col s12 m12 l12 grid-example about-content first">
                         <section className="section">
                             <h1>Who are we?</h1>
                             <p>Read about PrintBuddy as a team or contact us below if you have any questions.</p>
                         </section>
                     </div>
-                    <div className="col s12 m12 l12 grid-example about-second">
-                        <section className="section-about-second">
+                    <div className="row about-row">
+                    <div className="col s12 m12 l12 grid-example about-content second">
+                        <section className="section-about-content second">
                             <span className="about-article-first">
                                 <h4>How everything started</h4>
                                 <p>”Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -38,9 +39,10 @@ export default class AboutComponent extends React.Component {
                             </span>
                         </section>
                     </div>
-
-                    <div className="col s12 m12 l12 grid-example about-third">
-                        <section className="section-about-third">
+                    </div>
+                    <div className="row">
+                    <div className="col s12 m12 l12 grid-example about-content third">
+                        <section className="section-about-content third">
                             <h4 className="our-team-heading">Our Team</h4>
                             <div className="card-container">
                                 <div className="card card-avatar">
@@ -113,10 +115,11 @@ export default class AboutComponent extends React.Component {
                             </div>
                         </section>
                     </div>
-
-                    <div className="col s12 m12 l12 grid-example about-fourth">
+                    </div>
+                    <div className="row about-row">
+                    <div className="col s12 m12 l12 grid-example about content fourth">
                         <h4>Contact</h4>
-                        <section className="col s12 m6 l6 section-about-fourth one">
+                        <section className="col s12 m6 l6 section-about-content fourth one">
                             <h5>Say Hello!</h5>
                             <p>We are happy to answer any and all of your
                                 questions concerning our service.
@@ -128,7 +131,7 @@ export default class AboutComponent extends React.Component {
                                 <li><i className="material-icons">phone</i> +4612345678</li>
                             </ul>
                         </section>
-                        <section className="col s12 m6 l6 section-about-fourth two">
+                        <section className="col s12 m6 l6 section-about-content fourth two">
                             <div className="formContainer">
                                 <form action="">
                                     <div className="row">
@@ -153,6 +156,7 @@ export default class AboutComponent extends React.Component {
                                 </form>
                             </div>
                         </section>
+                    </div>
                     </div>
                 </div>
             </div>
