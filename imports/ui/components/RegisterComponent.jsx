@@ -32,11 +32,8 @@ class RegisterComponent extends React.Component {
                 email: this.refs.email.value,
                 username: this.refs.username.value,
                 password: this.refs.password.value,
-                position: {
-                    address: this.state.address,
-                    lat: this.state.lat,
-                    lng: this.state.lng
-                },
+                position: { type: "Point", coordinates: [ this.state.lng, this.state.lat ] },
+                address: this.state.address,
                 printBuddy: {
                     canColor: this.state.canColor,
                     canDeliver: this.state.canDeliver,
@@ -47,6 +44,7 @@ class RegisterComponent extends React.Component {
         } else {
             this.setState({passwordNotEqual: "Password not equal"});
         }
+        //{ type: "Point", coordinates: [ -73.97, 40.77 ] }
     }
 
     onPickAdress(address) {

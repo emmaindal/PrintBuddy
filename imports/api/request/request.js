@@ -15,6 +15,17 @@ class RequestCollection extends Mongo.Collection {
 
 export const Request = new RequestCollection('request');
 
+export const positionSchema = new SimpleSchema({
+    type: {
+        type: String,
+        allowedValues: ['Point'],
+    },
+    coordinates: {
+        type: [Number],
+        decimal: true,
+    }
+});
+
 const RequestSchema = new SimpleSchema({
     userReqId: { type: String,optional:true  },
     delivery: { type: Boolean },
@@ -31,7 +42,11 @@ const RequestSchema = new SimpleSchema({
     chosenOne: { type: String, optional:true },
     docURL: { type: String,optional:true  },
     isDone:{type:Boolean},
-    createdAt:{type:Date}
+    createdAt:{type:Date},
+    position: {
+        type: positionSchema,
+        optional: false
+    }
 });
 
 Request.attachSchema(RequestSchema);
@@ -43,6 +58,9 @@ Request.deny({
     remove() { return true; },
 });
 
+if(Meteor.isServer){
+    Request._ensureIndex({ 'position': '2dsphere'});
+}
 
 // This represents the keys from Lists objects that should be published
 // to the client. If we add secret properties to List objects, don't list
@@ -61,7 +79,16 @@ Request.helpers({
         return Meteor.users.findOne(this.userReqId).username
     },
     requestorPosition(){
-        return Meteor.users.findOne(this.userReqId).position
+        // todo går att refactor då vi spara postion i request direkt vid insert. (För att kunna sortera sen)
+        let position = Meteor.users.findOne(this.userReqId).position;
+        if(position){
+            position.lat = position.coordinates[1];
+            position.lng = position.coordinates[0];
+        }
+        return position
+    },
+    requestorAddress(){
+        return Meteor.users.findOne(this.userReqId).address
     },
     possiblePrintBuddies(){
         const users = this.possibleOnes.map((id) =>{

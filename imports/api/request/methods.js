@@ -4,7 +4,7 @@ import {ValidatedMethod} from 'meteor/mdg:validated-method';
 import {SimpleSchema} from 'meteor/aldeed:simple-schema';
 import {DDPRateLimiter} from 'meteor/ddp-rate-limiter';
 
-import {Request} from './request.js';
+import {Request, positionSchema} from './request.js';
 import {Chat} from  '../chat/chat';
 
 export const insert = new ValidatedMethod({
@@ -19,9 +19,10 @@ export const insert = new ValidatedMethod({
         radius: {type: Number},
         lastDate: {type: String},
         lastTime: {type: String},
-        title: {type: String}
+        title: {type: String},
+        position: {type: positionSchema}
     }).validator(),
-    run({delivery, needColor, reward, radius, lastDate, lastTime, pages, copies, currency, title}) {
+    run({delivery, needColor, reward, radius, lastDate, lastTime, pages, copies, currency, title, position}) {
         if (!this.userId) {
             throw new Meteor.Error('request.insert.unauthorized', 'Must be logged to add item.');
         }
@@ -39,7 +40,8 @@ export const insert = new ValidatedMethod({
             pages: pages,
             copies: copies,
             currency: currency,
-            possibleOnes: []
+            possibleOnes: [],
+            position: position
         }
 
         return Request.insert(req);
@@ -85,7 +87,7 @@ export const acceptBuddy = new ValidatedMethod({
                 'Job already taken');
         }
 
-        const chat = {requestId: requestId, userReqId: this.userId, chosenBuddyId: buddyId, messages:[]}
+        const chat = {requestId: requestId, userReqId: this.userId, chosenBuddyId: buddyId, messages: []}
         Chat.insert(chat, (err) => {
             console.log(err);
             if (!err) {

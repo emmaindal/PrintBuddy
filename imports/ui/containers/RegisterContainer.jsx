@@ -20,6 +20,7 @@ class Register extends React.Component {
             username:formData.username,
             password:formData.password,
             position:formData.position,
+            address: formData.address,
             printBuddy:formData.printBuddy
         }, (err) => {
             if (err) {
