@@ -77,6 +77,21 @@
 //stepper 
 .step-by-step {
     margin-bottom: 50px;
+    span {
+        line-height: 32px !important;
+    }
+    a {
+        line-height: 32px !important;
+    }
+    :last-child {
+        :last-child {
+            :last-child {
+                :first-child {
+                    margin-bottom: 13px !important;
+                }
+            }
+        }
+    }
 }
 
 // Chat header

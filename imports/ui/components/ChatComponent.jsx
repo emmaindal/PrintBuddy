@@ -5,15 +5,13 @@ import ChatMessageList from "./ChatMessageList";
 import ChatSendMessage from "./ChatSendMessage";
 import ChatInfo from "./ChatInfo";
 
-import Stepper from 'react-stepper-horizontal';
+
 
 class ChatComponent extends React.Component {
     render() {
         return (
             <div className="container">
-                <div className="step-by-step">
-                    <Stepper steps={[{ title: 'Request' }, { title: 'Pending' }, { title: 'Chat' }, { title: 'Done' }]} activeStep={2} size={40} completeColor={"green"} activeColor={"orange"} />
-                </div>
+                
                 <div className="row chat-row">
                     <div className="col s10 m10 l3 hide-on-med-and-down chat-info">
                         <ChatInfo request={this.props.request} />
