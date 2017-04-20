@@ -16,7 +16,7 @@ export const InitialPendingMap = withGoogleMap(props => {
 		{props.markers ? props.markers.map((marker, index) => (
 			<Marker
 				key={index}
-				position={ marker.position }
+				position={ { lat: marker.position.coordinates[1], lng: marker.position.coordinates[0] } }
 				onClick={() => props.onMarkerClick(marker)}
 			>
 			{marker.showInfo && (
@@ -26,7 +26,7 @@ export const InitialPendingMap = withGoogleMap(props => {
 							<li className="collection-item avatar">
 								<i className="infowindow-icon material-icons circle green">print</i>
 								<span className="title">{marker.username}</span>
-								<p>{marker.position.address}</p>
+								<p>{marker.address}</p>
 							</li>
 						</div>
 					}
