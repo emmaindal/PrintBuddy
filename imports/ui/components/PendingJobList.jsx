@@ -9,7 +9,7 @@ const PendingJobList = ({listofjobs, userId}) => {
                     <li className="collection-item" key={index}>
                         <div className="content-for-li">
                             <p>Requestor: {job.requestorName()} - Reward: {job.reward} {job.currency} -
-                                Distance: {job.radius} meter , Address - {job.requestorPosition().address}</p>
+                                Distance: {job.radius} meter , Address - {job.requestorAddress()}</p>
                             <div className="buttongroup">
                                 <button className="btn waves-effect waves-light" onClick={() => {
                                 }}>Cancel

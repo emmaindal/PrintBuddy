@@ -56,7 +56,7 @@ const MyJobListContainer = createContainer(() => {
     return {
         activeJobs: Request.find({chosenOne: Meteor.userId(), isDone : false}).fetch(),
         pendingJobs: Request.find({possibleOnes: Meteor.userId(), isDone : false, chosenOne: { $exists: false}}).fetch(),
-        userposition: Meteor.users.findOne(Meteor.userId()).position
+        userposition: {lat: Meteor.user().position.coordinates[1], lng: Meteor.user().position.coordinates[0]}
     };
 }, MyJobList);
 

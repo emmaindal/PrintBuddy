@@ -14,11 +14,10 @@ class Jobs extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-			defaultCenter: this.props.userposition,
-			clickedJobId: '',
-		};
-		this.onViewLocation = this.onViewLocation.bind(this);
-        // TODO får räkna ut på något sätt hur långt det är från sin egna address.
+            defaultCenter: this.props.userposition,
+            clickedJobId: '',
+        };
+        this.onViewLocation = this.onViewLocation.bind(this);
     }
 
     componentDidMount() {
@@ -28,16 +27,16 @@ class Jobs extends React.Component {
     }
 
     onApply(clickedId) {
-        const req = {requestId:clickedId}
+        const req = {requestId: clickedId}
         applyRequest.call(req, (err, res) => {
             if (err) {
                 if (err.error === 'request.applyRequest.exist') {
                     displayError("Error!", 'You already applied for this job!');
-                }else{
+                } else {
                     displayError("Error!", 'Something went wrong :( ');
                 }
-            }else{
-                displayAlert("Nice work :)",`You clicked APPLY for job`);
+            } else {
+                displayAlert("Nice work :)", `You clicked APPLY for job`);
             }
         });
     }
@@ -47,10 +46,10 @@ class Jobs extends React.Component {
     }
 
     onViewLocation(clickedJob) {
-		this.setState({
-			defaultCenter: clickedJob.requestorPosition(),
-			clickedJobId: clickedJob._id,
-		})
+        this.setState({
+            defaultCenter: clickedJob.requestorPosition(),
+            clickedJobId: clickedJob._id,
+        })
     }
 
     render() {
@@ -60,7 +59,8 @@ class Jobs extends React.Component {
                 <div id="test-joblist" className="row">
                     <div className="col l10 offset-l1">
                         <JobList listofjobs={this.props.jobs} onApply={this.onApply} onView={this.onViewLocation}/>
-                        <MapContainer isBuddy={true} clickedId={this.state.clickedJobId} markers={this.props.jobs} defaultCenter={this.state.defaultCenter}/>
+                        <MapContainer isBuddy={true} clickedId={this.state.clickedJobId} markers={this.props.jobs}
+                                      defaultCenter={this.state.defaultCenter}/>
                     </div>
                 </div>
             </div>
@@ -69,11 +69,14 @@ class Jobs extends React.Component {
 }
 
 const JobsContainer = createContainer(() => {
-    Meteor.subscribe('request');
-
+    const jobsRequestSub = Meteor.subscribe('jobs-request', Meteor.user().position.coordinates[1], Meteor.user().position.coordinates[0]);
+    const jobsRequestDeliverySub = Meteor.subscribe('jobs-request-delivery', Meteor.user().position.coordinates[1], Meteor.user().position.coordinates[0]);
+    const isReady = jobsRequestDeliverySub.ready() && jobsRequestSub.ready();
     return {
-        jobs: Request.find({}).fetch(),
-		userposition: Meteor.users.findOne(Meteor.userId()).position
+        jobs: isReady ? Request.find({}, {
+            sort: {distance: 1}
+        }).fetch() : [],
+        userposition: {lat: Meteor.user().position.coordinates[1], lng: Meteor.user().position.coordinates[0]}
     };
 }, Jobs);
 

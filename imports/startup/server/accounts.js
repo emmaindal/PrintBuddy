@@ -3,10 +3,17 @@ import {PrintBuddy} from '../../api/printbuddy/printbuddy';
 
 Accounts.validateNewUser((user) => {
     var positionSchema = new SimpleSchema({
-        address: {type: String},
-        lat: {type: Number, decimal: true},
-        lng: {type: Number, decimal: true},
+        type: {
+            type: String,
+            allowedValues: ['Point'],
+        },
+        coordinates: {
+            type: [Number],
+            decimal: true,
+        }
+
     });
+
 
 
     new SimpleSchema({
@@ -18,8 +25,13 @@ Accounts.validateNewUser((user) => {
         username: {type: String, optional: false},
         createdAt: {type: Date},
         services: {type: Object, blackbox: true},
-        position: {type: positionSchema, optional: false}
+        position: {
+            type: positionSchema,
+            optional: false
+        },
+        address: {type: String, optional: false}
     }).validate(user);
+
 
     // Return true to allow user creation to proceed
     return true;
@@ -34,13 +46,14 @@ Accounts.onCreateUser((options, user) => {
     }
 
     user.position = options.position;
+    user.address = options.address;
 
     PrintBuddy.insert({
         userId: user._id,
         canColor: options.printBuddy.canColor,
         canDeliver: options.printBuddy.canDeliver,
         isActive: options.printBuddy.isActive
-    })
+    });
 
     return user;
 });
@@ -50,8 +63,10 @@ Accounts.urls.verifyEmail = function (token) {
 }
 
 
-// So we can access position field
+Meteor.users._ensureIndex({ 'position': '2dsphere'});
+
+// So we can access field on client
 Meteor.publish('userData', function () {
-    return Meteor.users.find({}, {fields: {position: 1, username: 1}});
+    return Meteor.users.find({}, {fields: {position: 1, username: 1, address: 1}});
 });
 
