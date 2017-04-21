@@ -4,7 +4,7 @@ import React from 'react';
 
 import {PendingBuddiesList} from '../components/PendingBuddiesListComponent';
 import MapContainer from './MapContainer';
-import {acceptBuddy} from '../../api/request/methods';
+import {acceptBuddy, setCancel} from '../../api/request/methods';
 import {displayError} from '../helpers/errors';
 import Stepper from 'react-stepper-horizontal';
 
@@ -38,8 +38,11 @@ class PendingRequest extends React.Component {
         });
     }
     handleJobCancel() {
-        console.log("cancel request");
-        console.log(this.props);
+        setCancel.call({requestId:this.props.request._id}, (err, res) => {
+            if (err) {
+                displayError("Error!", 'Something went wrong :( ');
+            }
+        });  
     }
     render() {
         return (
@@ -50,7 +53,7 @@ class PendingRequest extends React.Component {
                             buddylist={this.props.request.possiblePrintBuddies()} 
                             onView={this.onViewClicked}
                             onChoose={this.onChooseClicked}
-                            handleJobCancel={this.handleJobCancel}
+                            handleJobCancel={this.handleJobCancel.bind(this)}
                         />
                         <MapContainer
                             clickedId={this.state.clickedBuddyId} 

@@ -32,7 +32,7 @@ class ChatHolder extends React.Component {
         console.log("Download Document")
     }
     handleJobCancel() {
-        console.log("Cancel Job");
+        console.log("Cancel job");
     }
     handleJobDone() {
         console.log("Job Done");

@@ -36,6 +36,7 @@ export const insert = new ValidatedMethod({
             lastDate: lastDate,
             lastTime: lastTime,
             isDone: false,
+            isCancel: false,
             title: title,
             pages: pages,
             copies: copies,
@@ -94,6 +95,22 @@ export const acceptBuddy = new ValidatedMethod({
                 Request.update(requestId, {$set: {chosenOne: buddyId}});
             }
         });
+    }
+});
+
+export const setCancel = new ValidatedMethod({
+    name: 'request.setCancel',
+    validate: new SimpleSchema({
+        requestId: {type: String},
+    }).validator(),
+    run({requestId}){
+        if (!this.userId) {
+            throw new Meteor.Error('request.acceptBuddy',
+                'Must be logged in to acceptBuddy.');
+        }
+
+        Request.update(requestId, {$set: {isCancel: true }});
+        
     }
 });
 
