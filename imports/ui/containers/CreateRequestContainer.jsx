@@ -29,8 +29,7 @@ class CreateRequest extends React.Component {
 	render() {
 		return (
 			<div>
-				<p>CreateRequest Container</p>
-                <CreateRequestComponent  submit={this.onSubmit}/>
+                <CreateRequestComponent submit={this.onSubmit}/>
 			</div>
 		);
 	}
