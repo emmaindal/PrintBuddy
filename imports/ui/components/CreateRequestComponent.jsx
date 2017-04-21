@@ -4,8 +4,9 @@ class CreateRequest extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            range: "50",
-            dateClassName: "datepicker"
+            range: "500",
+            dateClassName: "datepicker",
+            delivery: false,
         }
     }
     componentDidMount() {
@@ -25,6 +26,15 @@ class CreateRequest extends React.Component {
             range
         });
     }
+
+    handleDeliveryChange(e) {
+        if (this.state.delivery) {
+            this.setState({ delivery: false });
+        } else {
+            this.setState({ delivery: true });
+        }
+    }
+
     onSubmit(e) {
         e.preventDefault();
 
@@ -46,17 +56,18 @@ class CreateRequest extends React.Component {
             this.props.submit(request)
         }
     }
+
     render() {
         return (
             <div className="row">
                 <div className="col s12 m8 l6 xl4 offset-m2 offset-l3 offset-xl4 create-request">
-                    <h3 className="center-align">Create Request</h3>
+                    <h4 className="center-align">CREATE REQUEST</h4>
                     <form onSubmit={this.onSubmit.bind(this)}>
                         <div className="row file-row">
                             <div className="file-field input-field col s10">
                                 <div className="btn">
                                     <span>File</span>
-                                    <input type="file" />
+                                    <input type="file" required/>
                                 </div>
                                 <div className="file-path-wrapper">
                                     <input className="file-path validate" type="text" placeholder="Upload the document" />
@@ -81,12 +92,28 @@ class CreateRequest extends React.Component {
                         </div>
                         <div className="switch center-align">
                             <label className="second-switch">
-                                No Delivery
-                                <input type="checkbox" ref="delivery" />
+                                Pickup Yourself
+                                <input type="checkbox" ref="delivery" 
+                                    checked={this.state.delivery}
+                                    onChange={(e) => this.handleDeliveryChange(e)}
+                                />
                                 <span className="lever"></span>
-                                Home Delivery
+                                Request Delivery
                             </label>
                         </div>
+
+                        {!this.state.delivery ? (
+                            <div>
+                                <p className="center-align">How far are you willing to travel for a pickup?</p>
+                                <div className="row margin-bottom-after">
+                                    <p className="center-align col s2">{this.state.range} m</p>
+                                    <p className="range-field col s8">
+                                        <input onChange={this.changeRange.bind(this)} ref="range" type="range" id="test5" value={this.state.range} min="100" max="10000" />
+                                    </p>
+                                </div>
+                            </div>
+                            ) : (null)}
+
                         <div className="row" >
                             <div className="input-field inline col s4 offset-s2" >
                                 <input id="number" type="number" ref="pages" className="validate" required />
@@ -114,21 +141,15 @@ class CreateRequest extends React.Component {
                         <p className="center-align">Set a last date for pick-up/delivery</p>
                         <div className="row margin-bottom-after">
                             <div className="col s4 offset-s2 input-field inline">
-                                <input id="date" type="date" ref="lastDate" className={this.state.dateClassName} />
+                                <input id="date" type="date" ref="lastDate" className={this.state.dateClassName} required/>
                                 <label htmlFor="date">Date</label>
                             </div>
                             <div className="input-field col s4">
-                                <input id="timepicker" ref="lastTime" type="time"/>
+                                <input id="timepicker" ref="lastTime" type="time" required/>
                                 <label htmlFor="timepicker"></label>
                             </div>
                         </div>
-                        <p className="center-align">Set a max distance</p>
-                        <div className="row margin-bottom-after">
-                            <p className="center-align col s2">{this.state.range} m</p>
-                            <p className="range-field col s8">
-                                <input onChange={this.changeRange.bind(this)} ref="range" type="range" id="test5" min="1" max="10000" />
-                            </p>
-                        </div>
+                        
                         <div className="center-align">
                             <button className="btn-large waves-effect waves-light margin-bottom-after" type="submit" name="action">Submit</button>
                         </div>

@@ -6,8 +6,8 @@
     -webkit-box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
     -moz-box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
     box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
-    h3 {
-        margin: 30px auto;
+    h4 {
+        margin: 15px auto;
     }
     p {
         padding: 0;
@@ -24,10 +24,10 @@
         letter-spacing: 0.3rem;
     }
     .file-row {
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
     }
     .switch {
-        margin-bottom: 2.5rem;
+        margin-bottom: 2rem;
         .first-switch {
             margin-right: 50px;
         }
@@ -38,5 +38,5 @@
 }
 
 .margin-bottom-after {
-    margin-bottom: 50px !important;
+    margin-bottom: 30px !important;
 }
