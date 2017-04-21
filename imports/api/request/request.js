@@ -42,7 +42,9 @@ const RequestSchema = new SimpleSchema({
     chosenOne: { type: String, optional:true },
     docURL: { type: String,optional:true  },
     isDone:{type:Boolean},
+    isCancel: {type: Boolean},
     createdAt:{type:Date},
+    finishAt:{type:Date, optional: true},
     position: {
         type: positionSchema,
         optional: false
@@ -98,7 +100,8 @@ Request.helpers({
     },
     printBuddyPosition(){
         return Meteor.users.findOne(this.chosenOne).position
-    }
+    },
+    
 });
 
 

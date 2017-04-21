@@ -40,6 +40,7 @@ export const insert = new ValidatedMethod({
             lastDate: lastDate,
             lastTime: lastTime,
             isDone: false,
+            isCancel: false,
             title: title,
             pages: pages,
             copies: copies,
@@ -73,6 +74,26 @@ export const applyRequest = new ValidatedMethod({
     }
 });
 
+export const removeApplyRequest = new ValidatedMethod({
+    name: 'request.removeApplyRequest',
+    validate: new SimpleSchema({
+        requestId: {type: String},
+    }).validator(),
+    run({requestId}){
+        if (!this.userId) {
+            throw new Meteor.Error('request.removeApplyRequest',
+                'Must be logged in to remove apply');
+        }
+        const req = Request.findOne(requestId);
+        if (req.possibleOnes.includes(this.userId)) {
+            Request.update(requestId, {$pull: {possibleOnes: this.userId}});
+        }else {
+            throw new Meteor.Error('request.removeApplyRequest.dontexist',
+                'You cant remove from request, if you not have apply');
+        }
+    }
+});
+
 export const acceptBuddy = new ValidatedMethod({
     name: 'request.acceptBuddy',
     validate: new SimpleSchema({
@@ -93,7 +114,6 @@ export const acceptBuddy = new ValidatedMethod({
 
         const chat = {requestId: requestId, userReqId: this.userId, chosenBuddyId: buddyId, messages: []}
         Chat.insert(chat, (err) => {
-            console.log(err);
             if (!err) {
                 Request.update(requestId, {$set: {chosenOne: buddyId}});
             }
@@ -101,8 +121,65 @@ export const acceptBuddy = new ValidatedMethod({
     }
 });
 
+export const cancelRequest = new ValidatedMethod({
+    name: 'request.cancelRequest',
+    validate: new SimpleSchema({
+        requestId: {type: String},
+    }).validator(),
+    run({requestId}){
+        if (!this.userId) {
+            throw new Meteor.Error('request.cancelRequest',
+                'Must be logged in to cancel request.');
+        }
+        const request = Request.findOne(requestId);
+        if(this.userId !== request.userReqId){
+            throw new Meteor.Error('request.cancelRequest.notsame',
+                'Cant cancel others request.');
+        }
+        Request.update(requestId, {$set: {isCancel: true }});
+    }
+});
+
+export const doneRequest = new ValidatedMethod({
+    name: 'request.doneRequest',
+    validate: new SimpleSchema({
+        requestId: {type: String},
+    }).validator(),
+    run({requestId}){
+        if (!this.userId) {
+            throw new Meteor.Error('request.doneRequest',
+                'Must be logged in to cancel request.');
+        }
+        const request = Request.findOne(requestId);
+        if(this.userId !== request.userReqId){
+            throw new Meteor.Error('request.doneRequest.notsame',
+                'Cant done others request.');
+        }
+        Request.update(requestId, {$set: {isDone: true }});
+    }
+});
+
+export const finishRequest = new ValidatedMethod({
+    name: 'request.finishRequest',
+    validate: new SimpleSchema({
+        requestId: {type: String},
+    }).validator(),
+    run({requestId}){
+        if (!this.userId) {
+            throw new Meteor.Error('request.finishRequest',
+                'Must be logged in to cancel request.');
+        }
+        const request = Request.findOne(requestId);
+        if(this.userId !== request.userReqId){
+            throw new Meteor.Error('request.finishRequest.notsame',
+                'Cant finish others request.');
+        }
+        Request.update(requestId, {$set: {finishAt: new Date() }});
+    }
+});
+
 const REQUEST_METHODS = _.pluck([
-    insert, applyRequest, acceptBuddy
+    insert, applyRequest, acceptBuddy,cancelRequest, doneRequest,removeApplyRequest,finishRequest
 ], 'name');
 
 if (Meteor.isServer) {

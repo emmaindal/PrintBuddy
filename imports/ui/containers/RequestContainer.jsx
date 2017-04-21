@@ -58,7 +58,7 @@ class RequestComp extends React.Component {
             );
         }
         // Chat
-        if (this.props.request.chosenOne && !this.props.request.isDone) {
+        if (this.props.request.chosenOne && !this.props.request.isDone && !this.props.request.isCancel) {
             return (
                 <div>
                     <ChatContainer request={this.props.request} />
@@ -69,7 +69,7 @@ class RequestComp extends React.Component {
         if (this.props.request.isDone) {
             return (
                 <div>
-                    <DoneContainer />
+                    <DoneContainer request={this.props.request} />
                 </div>
             );
         }
@@ -102,7 +102,7 @@ class RequestComp extends React.Component {
 const RequestContainer = createContainer(() => {
     const requestHandle = Meteor.subscribe('user-request');
     const loading = !requestHandle.ready();
-    const req = Request.find({ userReqId: Meteor.userId(), isDone: false });
+    const req = Request.find({ userReqId: Meteor.userId(), isCancel: false ,finishAt: {$exists: false}});
     const reqExists = !loading && !!req;
 
     return {

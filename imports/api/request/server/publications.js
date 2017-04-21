@@ -11,9 +11,11 @@ Meteor.publish('request', function request() {
 
 
 Meteor.publish('jobs-request', function request(lat, lng) {
-    // Todo fixa här så användaren endast ser de requesten de kan ta.
     check(lat, Number);
     check(lng, Number);
+
+    const start = new Date();
+    start.setHours(0, 0, 0, 0);
 
     ReactiveAggregate(this, Request, [
         {
@@ -23,7 +25,14 @@ Meteor.publish('jobs-request', function request(lat, lng) {
                     "coordinates": [lng, lat]
                 },
                 "distanceField": "distance",
-                "spherical": true
+                "spherical": true,
+                "query": {
+                    delivery: false,
+                    isCancel: false,
+                    isDone: false,
+                    chosenOne: {$exists: false},
+                    lastDate: {$gte: start}
+                }
             }
         },
         {
@@ -42,6 +51,9 @@ Meteor.publish('jobs-request-delivery', function request(lat, lng) {
     check(lat, Number);
     check(lng, Number);
 
+    const start = new Date();
+    start.setHours(0, 0, 0, 0);
+
     ReactiveAggregate(this, Request, [
         {
             "$geoNear": {
@@ -52,7 +64,13 @@ Meteor.publish('jobs-request-delivery', function request(lat, lng) {
                 "distanceField": "distance",
                 "spherical": true,
                 "maxDistance": 100000,
-                "query": {delivery: true}
+                "query": {
+                    delivery: true,
+                    isCancel: false,
+                    isDone: false,
+                    chosenOne: {$exists: false},
+                    lastDate: {$gte: start}
+                }
             }
         }
     ]);
@@ -64,7 +82,7 @@ Meteor.publish('user-request', function userrequest() {
         return this.ready();
     }
 
-    return Request.find({userReqId: this.userId, isDone: false});
+    return Request.find({userReqId: this.userId, isCancel: false, finishAt: {$exists: false}});
 });
 
 Meteor.publish('myjob-request-active', function myjobrequestactive() {
@@ -72,16 +90,24 @@ Meteor.publish('myjob-request-active', function myjobrequestactive() {
         return this.ready();
     }
 
-    return Request.find({chosenOne: this.userId, isDone: false});
+    return Request.find({chosenOne: this.userId, isDone: false, isCancel: false});
 });
-
 
 Meteor.publish('myjob-request-pending', function myjobrequestpending() {
     if (!this.userId) {
         return this.ready();
     }
 
-    return Request.find({possibleOnes: this.userId, isDone: false, chosenOne: {$exists: false}});
+    return Request.find({possibleOnes: this.userId, isDone: false, isCancel: false, chosenOne: {$exists: false}});
+});
+
+
+Meteor.publish('myjob-request-buddy-chat', function myjobrequestactive() {
+    if (!this.userId) {
+        return this.ready();
+    }
+
+    return Request.find({chosenOne: this.userId});
 });
 
 
