@@ -183,6 +183,12 @@
         .btn {
             padding: 0 1rem;
             z-index: 0;
+            width: 40%;
+        }
+        .red {
+            &:hover {
+                background: #ef9a9a !important;
+            }
         }
     }
 }
