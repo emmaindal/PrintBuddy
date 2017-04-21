@@ -35,6 +35,14 @@
     input[type=range] {
         border: none;
     }
+    input[type=range] + .thumb.active .value {
+    color: #fff;
+    margin-left: -1px;
+    margin-top: 1px;
+    }
+    .range-field {
+        padding: 0 !important;
+    }
 }
 
 .margin-bottom-after {
