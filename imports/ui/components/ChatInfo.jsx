@@ -29,7 +29,7 @@ class ChatInfo extends React.Component {
                     <div className="job-info-buttons">
                         <li className="collection-item">
                             <a onClick={this.showDoneModal} className="waves-effect waves-light btn">Finish Request</a>
-                            <a onClick={this.showCancelModal} className="waves-effect waves-light btn">Cancel Request</a>
+                            <a onClick={this.showCancelModal} className="red lighten-2 waves-effect waves-red btn">Cancel Request</a>
                         </li>
                     </div>
                 </ul>
