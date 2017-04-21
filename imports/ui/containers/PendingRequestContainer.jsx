@@ -37,7 +37,10 @@ class PendingRequest extends React.Component {
             }
         });
     }
-
+    handleJobCancel() {
+        console.log("cancel request");
+        console.log(this.props);
+    }
     render() {
         return (
             <div>
@@ -47,6 +50,7 @@ class PendingRequest extends React.Component {
                             buddylist={this.props.request.possiblePrintBuddies()} 
                             onView={this.onViewClicked}
                             onChoose={this.onChooseClicked}
+                            handleJobCancel={this.handleJobCancel}
                         />
                         <MapContainer
                             clickedId={this.state.clickedBuddyId} 
