@@ -3,6 +3,7 @@ import {IndexRoute, Router, Route, browserHistory} from 'react-router';
 import i18n from 'meteor/universe:i18n';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import { Meteor } from 'meteor/meteor';
+//import gapi from 'gapi-client';
 
 // route components
 import ProfileContainer from '../../ui/containers/ProfileContainer';
@@ -36,6 +37,22 @@ function requireAuth(nextState, replace) {
             state: {nextPathname: nextState.location.pathname}
         });
     }
+}
+
+
+//Load google drive client
+gapi.load('client:auth2', initClient);
+
+// Initialize the API client library
+function initClient() {
+    gapi.client.init({
+        discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"],
+        clientId: '344182666840-duuipj97ukh3d5vtitmr0s7tcgri3rm4.apps.googleusercontent.com',
+        scope: 'https://www.googleapis.com/auth/drive'//'https://www.googleapis.com/auth/drive.file'
+    }).then( () => {
+        // do stuff with loaded APIs
+        console.log('gapi loaded');
+    });
 }
 
 /*
