@@ -28,6 +28,7 @@ class ChatHolder extends React.Component {
         this.props.handleJobDone;
     }
     render() {
+        const canCancel =  this.props.userId === this.props.request.userReqId;
         return (
             <div>
                 <div className="chat-header">
@@ -45,7 +46,7 @@ class ChatHolder extends React.Component {
                 {/*JobInfo Modal that open on click in mobile view*/}
                 <div id="modal1" className="modal">
                     <div className="modal-content">
-                        <ChatInfo request={this.props.request}/>
+                        <ChatInfo request={this.props.request} canCancel={canCancel}/>
                     </div>
                     <div className="modal-footer">
                         <a className="modal-action modal-close waves-effect waves-green btn-flat">Close</a>

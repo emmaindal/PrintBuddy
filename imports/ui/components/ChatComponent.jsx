@@ -28,7 +28,8 @@ class ChatComponent extends React.Component {
                     <div className="col s12 m10 l5 offset-m1 chat-holder">
                         <ChatHolder userId={this.props.userId} chat={this.props.chat} request={this.props.request}
                             onClick={this.props.handleDownload.bind(this)} onSubmit={this.props.onSubmit}
-                            handleJobCancel={this.props.handleJobCancel} handleJobDone={this.props.handleJobDone} />
+                            handleJobCancel={this.props.handleJobCancel} handleJobDone={this.props.handleJobDone}
+                            canCancel={canCancel} />
                     </div>
                     <div className="col hide-on-med-and-down l2 offset-l1">
                         <a onClick={this.props.handleDownload.bind(this)} className="waves-effect waves-light btn-large shadow button-doc">Download Document</a>
