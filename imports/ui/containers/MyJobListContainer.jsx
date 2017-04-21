@@ -4,38 +4,49 @@ import React from 'react';
 import {browserHistory} from 'react-router'
 
 import {Request} from '../../api/request/request.js';
+import {removeApplyRequest} from '../../api/request/methods';
 import PendingJobList from "../components/PendingJobList";
 import ActiveJobList from "../components/ActiveJobList.jsx";
 import MapContainer from './MapContainer';
 
 class MyJobList extends React.Component {
-	constructor(props) {
+    constructor(props) {
         super(props);
         this.state = {
-			defaultCenter: this.props.userposition,
-			clickedJobId: '',
-		};
+            defaultCenter: this.props.userposition,
+            clickedJobId: '',
+        };
 
         this.onChatClicked = this.onChatClicked.bind(this);
         this.onViewLocation = this.onViewLocation.bind(this);
+        this.onCancel = this.onCancel.bind(this);
+
     }
 
     // TODO onClick handlers för click på markers
     // TODO onClick handlers för VIEW knapp (när den e skapad)
     // TODO - Kanske borde filtrera vilka jobb som skickas in som markers i kartan?? Så det bara är pending och active.
 
-    onChatClicked(id){
-        browserHistory.push('/myjobs/chat/'+id);
+    onChatClicked(id) {
+        browserHistory.push('/myjobs/chat/' + id);
     }
 
     onViewLocation(clickedJob) {
-		this.setState({
-			defaultCenter: clickedJob.requestorPosition(),
-			clickedJobId: clickedJob._id,
-		})
+        this.setState({
+            defaultCenter: clickedJob.requestorPosition(),
+            clickedJobId: clickedJob._id,
+        })
     }
 
-	render() {
+    onCancel(clickedJob) {
+        removeApplyRequest.call({requestId: clickedJob._id}, (err, res) => {
+            if (err) {
+                displayError("Error!", 'Something went wrong :( ');
+            }
+        });
+    }
+
+    render() {
 
         let jobsMarkerList = [];
         this.props.pendingJobs.map((job) => {
@@ -45,24 +56,27 @@ class MyJobList extends React.Component {
             jobsMarkerList.push(job);
         });
 
-		return (
-			<div>
+        return (
+            <div>
                 <div className="row">
                     <div className="col l10 offset-l1">
                         <div className="col l6">
                             <div className="row">
-                                <PendingJobList listofjobs={this.props.pendingJobs} onView={this.onViewLocation}/>
+                                <PendingJobList listofjobs={this.props.pendingJobs} onView={this.onViewLocation}
+                                                onCancel={this.onCancel}/>
                             </div>
                             <div className="row">
-                                <ActiveJobList listofjobs={this.props.activeJobs} onChatClicked={this.onChatClicked} onView={this.onViewLocation}/>
+                                <ActiveJobList listofjobs={this.props.activeJobs} onChatClicked={this.onChatClicked}
+                                               onView={this.onViewLocation}/>
                             </div>
                         </div>
-                        <MapContainer isBuddy={true} clickedId={this.state.clickedJobId} markers={jobsMarkerList} defaultCenter={this.state.defaultCenter}/>
+                        <MapContainer isBuddy={true} clickedId={this.state.clickedJobId} markers={jobsMarkerList}
+                                      defaultCenter={this.state.defaultCenter}/>
                     </div>
-                </div> 
-			</div>
-		);
-	}
+                </div>
+            </div>
+        );
+    }
 }
 
 const MyJobListContainer = createContainer(() => {
@@ -70,8 +84,13 @@ const MyJobListContainer = createContainer(() => {
     Meteor.subscribe('myjob-request-pending');
 
     return {
-        activeJobs: Request.find({chosenOne: Meteor.userId(), isDone : false}).fetch(),
-        pendingJobs: Request.find({possibleOnes: Meteor.userId(), isDone : false, chosenOne: { $exists: false}}).fetch(),
+        activeJobs: Request.find({chosenOne: Meteor.userId(), isDone: false, isCancel: false}).fetch(),
+        pendingJobs: Request.find({
+            possibleOnes: Meteor.userId(),
+            isDone: false,
+            isCancel: false,
+            chosenOne: {$exists: false}
+        }).fetch(),
         userposition: {lat: Meteor.user().position.coordinates[1], lng: Meteor.user().position.coordinates[0]}
     };
 }, MyJobList);

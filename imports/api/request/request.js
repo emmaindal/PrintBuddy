@@ -44,6 +44,7 @@ const RequestSchema = new SimpleSchema({
     isDone:{type:Boolean},
     isCancel: {type: Boolean},
     createdAt:{type:Date},
+    finishAt:{type:Date, optional: true},
     position: {
         type: positionSchema,
         optional: false

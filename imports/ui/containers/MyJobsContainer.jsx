@@ -12,7 +12,7 @@ class MyJobs extends React.Component {
     render() {
         return (
             <div>
-                <h1>MyJobs Component</h1>
+                <p>MyJobs Component</p>
                 {this.props.children}
             </div>
         );

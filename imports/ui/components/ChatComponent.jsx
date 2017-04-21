@@ -17,11 +17,13 @@ class ChatComponent extends React.Component {
         });
     }
     render() {
+        const canCancel =  this.props.userId === this.props.request.userReqId;
+        console.log(canCancel);
         return (
             <div className="container">
                 <div className="row chat-row">
                     <div className="col s10 m10 l3 hide-on-med-and-down chat-info">
-                        <ChatInfo request={this.props.request} handleJobCancel={this.props.handleJobCancel} handleJobDone={this.props.handleJobDone} />
+                        <ChatInfo canCancel={canCancel} request={this.props.request} handleJobCancel={this.props.handleJobCancel} handleJobDone={this.props.handleJobDone} />
                     </div>
                     <div className="col s12 m10 l5 offset-m1 chat-holder">
                         <ChatHolder userId={this.props.userId} chat={this.props.chat} request={this.props.request}
