@@ -1,12 +1,12 @@
 import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
+import {browserHistory} from  'react-router';
 
 import {PendingBuddiesList} from '../components/PendingBuddiesListComponent';
 import MapContainer from './MapContainer';
-import {acceptBuddy} from '../../api/request/methods';
+import {acceptBuddy, cancelRequest} from '../../api/request/methods';
 import {displayError} from '../helpers/errors';
-import Stepper from 'react-stepper-horizontal';
 
 class PendingRequest extends React.Component {
     constructor(props) {
@@ -21,7 +21,7 @@ class PendingRequest extends React.Component {
 
     onViewClicked(e) {
         this.setState({
-            defaultCenter: e.position,
+            defaultCenter: {lat:e.position.coordinates[1], lng: e.position.coordinates[0]},
             clickedBuddyId: e._id,
         })
     }
@@ -37,19 +37,25 @@ class PendingRequest extends React.Component {
             }
         });
     }
-
+    handleJobCancel() {
+        cancelRequest.call({requestId:this.props.request._id}, (err, res) => {
+            if (err) {
+                displayError("Error!", 'Something went wrong :( ');
+            }else {
+                browserHistory.push("/request");
+            }
+        });  
+    }
     render() {
         return (
             <div>
-                <div className="step-by-step">
-                    <Stepper steps={[{title:'Request'}, {title:'Pending'}, {title:'Chat'}, {title:'Done'}]} activeStep={1} size={40} completeColor={"green"} activeColor={"orange"} />
-                </div>
                 <div className="row">
                     <div className="col l10 offset-l1">
                         <PendingBuddiesList 
                             buddylist={this.props.request.possiblePrintBuddies()} 
                             onView={this.onViewClicked}
                             onChoose={this.onChooseClicked}
+                            handleJobCancel={this.handleJobCancel.bind(this)}
                         />
                         <MapContainer
                             clickedId={this.state.clickedBuddyId} 

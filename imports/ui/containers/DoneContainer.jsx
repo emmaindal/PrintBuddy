@@ -2,21 +2,41 @@ import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
 
+import {finishRequest} from '../../api/request/methods';
 
 class Done extends React.Component {
 	constructor(props) {
         super(props);
         this.state = {};
+        this.onClick = this.onClick.bind(this);
     }
+
+    onClick(){
+        if (Meteor.userId() === this.props.request.userReqId) {
+            finishRequest.call({requestId: this.props.request._id}, (err, res) => {
+                if (err) {
+                    displayError("Error!", 'Something went wrong :( ');
+                } else {
+                    browserHistory.replace("/request");
+                }
+            });
+        }
+	}
 
 	render() {
 		return (
 			<div>
 				<h1>Done Component</h1>
+				<button onClick={this.onClick} className="waves-effect waves-light btn">Finish!</button>
 			</div>
 		);
 	}
 }
+
+
+Done.propTypes = {
+    request: React.PropTypes.object
+};
 
 const DoneContainer = createContainer(() => {
 

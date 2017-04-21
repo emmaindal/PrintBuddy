@@ -1,11 +1,14 @@
 import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
+import {browserHistory} from 'react-router';
 
 import ChatComponent from "../components/ChatComponent";
 import {Chat} from '../../api/chat/chat';
 import {addMessageToRequest} from '../../api/chat/methods';
+import {cancelRequest, doneRequest} from '../../api/request/methods';
 import {displayError} from '../helpers/errors';
+
 class ChatHolder extends React.Component {
     constructor(props) {
         super(props);
@@ -30,15 +33,41 @@ class ChatHolder extends React.Component {
 
     handleDownload() {
         // Download the document URL
-        console.log("Download Document")
+
+    }
+
+    handleJobCancel() {
+        if (Meteor.userId() === this.props.request.userReqId) {
+            cancelRequest.call({requestId: this.props.request._id}, (err, res) => {
+                if (err) {
+                    displayError("Error!", 'Something went wrong :( ');
+                } else {
+                    browserHistory.replace("/request");
+                }
+            });
+        }
+    }
+
+    handleJobDone() {
+        console.log("Job Done");
+        if (Meteor.userId() === this.props.request.userReqId) {
+            doneRequest.call({requestId: this.props.request._id}, (err, res) => {
+                if (err) {
+                    displayError("Error!", 'Something went wrong :( ');
+                } else {
+                    browserHistory.replace("/request");
+                }
+            });
+        }
     }
 
     render() {
         return (
             <div>
-                <p>Chat Container</p>
                 <ChatComponent userId={Meteor.userId()} chat={this.props.chat} request={this.props.request}
-                               handleDownload={this.handleDownload.bind(this)} onSubmit={this.onSubmit.bind(this)}/>
+                               handleDownload={this.handleDownload.bind(this)} onSubmit={this.onSubmit.bind(this)}
+                               handleJobCancel={this.handleJobCancel.bind(this)}
+                               handleJobDone={this.handleJobDone.bind(this)}/>
             </div>
         );
     }

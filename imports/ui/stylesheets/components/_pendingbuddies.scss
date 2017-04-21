@@ -5,6 +5,7 @@
 		display: inline-flex;
 		justify-content: space-between;
 		width: 100%;
+        
 		p {
 			margin: 0.5em 0 0.5em 0;
 		}
@@ -32,4 +33,17 @@
 				background-color: lighten($color-location-btn, 15%);
 		}
 	}
+    h5 {
+        font-size: 20px;
+        display: inline-block;
+    }
+    .cancel-button {
+        float: right;
+        margin-top: -6px;
+        width: 20%;
+        padding: 0px;
+        &:hover {
+            background-color: #ef9a9a !important; 
+        }
+    }
 }

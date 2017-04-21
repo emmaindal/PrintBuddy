@@ -9,6 +9,7 @@
 		p {
 			margin: 0.5em 0 0.5em 0;
 			padding-right: 1em;
+            font-size: 16px;
 		}
 		#nojobsmessage {
 			margin-left: auto;
@@ -33,5 +34,41 @@
 		.location-btn:hover {
 				background-color: lighten($color-location-btn, 15%);
 		}
+        .round-icon-green {
+            color: white;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            font-size: 16px!important;
+            height: 26px;
+            width: 26px;
+            line-height: 26px;
+            text-align: center;
+            margin-right: 10px;
+            margin-left: 5px;
+        }
+        .round-icon-blue {
+            color: white;
+            background-color: #2196F3;
+            border-radius: 50%;
+            font-size: 16px!important;
+            height: 26px;
+            width: 26px;
+            line-height: 26px;
+            text-align: center;
+            margin-right: 10px;
+            margin-left: 4px;
+        }
+        .round-icon-gray {
+            color: white;
+            background-color: #999;
+            border-radius: 50%;
+            font-size: 16px!important;
+            height: 26px;
+            width: 26px;
+            line-height: 26px;
+            text-align: center;
+            margin-right: 10px;
+            margin-left: 4px;
+        }
 	}
 }

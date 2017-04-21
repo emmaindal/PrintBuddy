@@ -19,8 +19,9 @@ import JobsContainer from '../../ui/containers/JobsContainer';
 import MyJobsContainer from '../../ui/containers/MyJobsContainer';
 import MyJobListContainer from '../../ui/containers/MyJobListContainer';
 import VerifiedContainer from '../../ui/containers/VerifiedContainer';
-
 import TestContainer from '../../ui/containers/TestContainer';
+
+import isLoading from "../../ui/components/Loading";
 
 import '../../api/user/user.js';
 
@@ -71,6 +72,7 @@ export const renderRoutes = () => (
         <Route path="/about" component={AboutContainer}/>
 		<Route path="/verified" component={VerifiedContainer}/>
 		<Route onEnter={requireAuth} path="/" component={AppContainer}>
+            <IndexRoute component={isLoading} />
 			<Route path="request" component={RequestContainer}>
 			</Route>
 			<Route path="jobs" component={JobsContainer}/>

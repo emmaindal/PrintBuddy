@@ -1,34 +1,14 @@
 @import "../variables";
 
 .col.grid-example {
-    border: 0.5px solid $border-color;
-    border-radius: 2px;
-    margin: 3px 0;
     text-align: center;
     line-height: 50px;
-    font-size: 28px;
-    background-color: $background-color;
-    -webkit-transition: width 2s;
-    color: $text-secondary;
-    padding: 3%;
+    padding: 2%;
 }
 
-.col.grid-example.first {
-    border: 0;
-    background-color: $color-primary;
-    height: 100%;
-
-    h1 {
-        margin-top: 4%;
-        color: $text-tertiary;
-    }
-
-    .waves-effect.waves-light.btn-large {
-        border-radius: 3px;
-        margin-top: 2%;
-        background-color: white;
-        color: $color-primary;
-    }
+p, h1,h2,h3,h4,h5{
+    padding: 0;
+    margin: 0;
 }
 
 p {
@@ -40,71 +20,88 @@ a {
     font-size: 14px;
 }
 
-.promo-caption {
-    font-size: 18px;
+
+.col.grid-example.content-first {
+    border: 0;
+    background-color: $color-primary;
+
+    h1 {
+        padding-top: 6%;
+        padding-bottom: 2%;
+        color: $text-tertiary;
+        @media screen and (max-width: $break-small){
+            font-size: 33px;
+            padding-bottom: 5%;
+        }
+    }
+
+    .waves-effect.waves-light.btn-large {
+        border: 1px white solid;
+        border-radius: 3px;
+        padding-bottom: 2%;
+        background-color: $color-primary;
+        color: white;
+    }
+
+    p{
+        font-size: 14px;
+        color: black;
+        padding-bottom: 2%;
+    }
+
+    a{
+        color: black;
+    }
+
 }
 
-.promo i {
-    margin: 40px 0;
-    font-size: 5rem;
-    display: block;
-}
-
-.btn-floating.btn-large.waves-effect.waves-light {
-    display: block;
+.scroll-btn{
     margin: 26px auto -26px;
     background-color: $scroll-btn-background;
     border: 1px solid $scroll-btn-border;
     color: $text-tertiary;
 }
 
-,
-.btn-large i {
-    font-size: 2rem;
-    color: $text-tertiary;
+
+.btn-floating:hover{
+    background-color: $scroll-btn-background;
 }
 
-.btn-floating i {
-    width: auto;
+.back-to-top-btn{
+    float: right;
 }
 
-.our-team-heading {
-    text-align: center;
-    padding-top: 2%;
+.col.grid-example.content-second{
+    margin: 0;
+    background-color: white;
+    padding-bottom: 2%;
+    @media screen and (max-width: $break-medium){
+        width: 100%;
+
+        .img-wrapper{
+            display: none;
+        }
+    }
 }
 
-.card.card-avatar {
-    position: relative;
-    overflow: hidden;
-    margin: 0.5rem 0 1rem;
-    background-color: #fff;
-    transition: box-shadow 0.25s;
-    border-radius: 4px;
+.row.two{
+    background-color: white;
+}
+
+.img-wrapper{
+    height: 100%;
     width: 100%;
 
-    .card-content {
-        padding: 5px;
-    }
-
-    .material-icons.person {
-        font-size: 128px;
-        color: #ff9800;
+    img{
+        max-height: 100%;
+        max-width: 100%;
+        display: block;
+        margin: auto;
     }
 }
 
-.card-container {
-    width: 19%;
-    float: left;
-    margin: 0.5%;
-    padding: 1%;
-    @media screen and (max-width: $break-medium) {
-        width: 100%;
-        float: none;
-        margin: 0.5%;
+.text-wrapper{
+    h5{
+        padding-bottom: 6%;
     }
-}
-
-.is-hidden,
-.is-visible {
-    opacity: 1;
 }

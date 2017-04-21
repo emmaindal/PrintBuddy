@@ -1,0 +1,75 @@
+$yellow: #F0C078;
+$blue: #f36f6f;
+
+@import "../variables";
+
+html {
+    background: #058df9 !important;
+}
+
+.square{
+    width: 15px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: $blue;
+    animation: grow 3s infinite cubic-bezier(.53,.68,.53,.41);
+  }
+  .square:nth-of-type(2){
+    margin-top: 12px;
+    animation-delay: .1s;
+  }
+  .square:nth-of-type(3){
+    margin-top: 24px;
+    animation-delay: .2s;
+  }
+  .square:nth-of-type(4){
+    margin-top: 36px;
+    animation-delay: .3s;
+  }
+  .square:nth-of-type(5){
+      margin-top: 48px;
+      animation-delay: .4s;
+    }
+@keyframes grow{
+  0%, 100%{
+    transform: translateX(-25px) scaleX(.5);
+    background: $blue;
+  }
+  25%{
+    transform: translateX(0px) scaleY(1) scaleX(5) rotateY(180deg);
+    background: $yellow;
+  }
+
+  50%{
+    transform: translateX(25px) scaleX(.5);
+    background: $blue;
+  }
+  75%{
+    transform: translateX(0px) scaleY(1) scaleX(5) rotateY(180deg);
+    background: $yellow;
+  }
+}
+
+.wrapper{
+  width: 50px;
+  height: 98px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -100px;
+  margin-left: -25px;
+
+  transform-style: preserve-3d;
+  animation: 2s global infinite;
+}
+
+@keyframes global{
+  0%,100%{
+    transform: rotateY(0deg);
+  }
+  50%{
+    transform: rotateY(360deg);
+  }
+}
