@@ -19,9 +19,11 @@ class CreateRequest extends React.Component {
             if (err) {
                 if (err.error === 'request.insert.unauthorized') {
                     displayError("Wrong!", 'You need to login to add request');
+                } else if (err.error === 'request.insert.invalidDate') {
+                    displayError("Back to the Future!", "You need to select 'Today' or a future date!");
                 } else {
                     // Unexpected error, handle it in the UI somehow
-                    displayError("Error!", 'Something went wrong :( ');
+                    displayError("Error!", 'Something completely unexpected went terribly wrong :( ');
                 }
             }
         });
