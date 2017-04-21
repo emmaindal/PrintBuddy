@@ -6,20 +6,18 @@ import Nav from '../components/Nav';
 import {browserHistory} from 'react-router';
 import {PrintBuddy} from '../../api/printbuddy/printbuddy';
 
+import isLoading from "../components/Loading";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
     }
-
     componentDidMount() {
-
     }
-
     render() {
         if (this.props.loading) {
-            return (<div></div>); // or show loading icon
+            return (<div><isLoading/></div>); //show loading icon
         }
         const {currentUser, children } = this.props;
         let child = (<div></div>);
@@ -28,11 +26,11 @@ class App extends React.Component {
             child =   React.cloneElement(children, {isBuddy: currentUser.isBuddy()});
         }
         return (
-            <div>
+            <div> 
                 <Nav isBuddy={currentUser.isBuddy()}/>
                 <main>
-                    {child}
-                </main>
+                    {child}   
+                </main>   
             </div>
         );
     }
