@@ -21,7 +21,14 @@ class Login extends React.Component {
             }
         });
     }
-
+    componentWillMount() {
+        $("#app").fadeOut(1);
+    }
+    componentDidMount() {
+        $("#prepage").fadeOut(200);
+        $("#app").fadeIn(1500);
+          
+    }
     render() {
         return (
             <div>
