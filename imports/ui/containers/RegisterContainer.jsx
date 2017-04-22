@@ -13,7 +13,14 @@ class Register extends React.Component {
         super(props);
         this.onSubmit = this.onSubmit.bind(this);
     }
-
+    componentWillMount() {
+        $("#app").fadeOut(1);
+    }
+    componentDidMount() {
+        $("#prepage").fadeOut(200);
+        $("#app").fadeIn(1500);
+          
+    }
     onSubmit(formData){
         Accounts.createUser({
             email: formData.email,
