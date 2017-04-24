@@ -16,8 +16,7 @@ class App extends React.Component {
     }
     componentDidMount() {
         $("#prepage").fadeOut(200);
-        $("#app").fadeIn(1500);
-          
+        $("#app").fadeIn(1500);          
     }
     render() {
         if (this.props.loading) {
