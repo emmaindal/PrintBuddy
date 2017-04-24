@@ -8,7 +8,16 @@ const ActiveJobList = ({ listofjobs, onChatClicked, onView}) => {
                     return (
                         <li className="collection-item" key={index}>
                             <div className="content-for-li">
-                                <p>Requestor: {job.requestorName()} - Reward: {job.reward} {job.currency} - Distance: {job.radius} meter , Address - {job.requestorAddress()}</p>
+                                <p> 
+                                    <i className="round-icon-green material-icons">description</i>
+                                    {job.title}<br/>
+                                    <i className={job.needColor ? "round-icon-green material-icons" : "round-icon-gray material-icons"}>print</i>
+                                    {job.needColor ? 'Color' : 'Black & White'}<br/>
+                                    <i className={job.delivery ? "round-icon-blue material-icons" : "round-icon-green material-icons"}>{job.delivery ? 'directions_run' : 'access_time'}</i>
+                                    {job.delivery ? `Delivery` : 'Pickup'}<br/>
+                                    <i className={job.reward > 0 ? "round-icon-green material-icons" : "round-icon-gray material-icons"}>{job.reward > 0 ? 'monetization_on' : 'money_off'}</i>
+                                    {job.reward > 0 ? `${job.reward} ${job.currency}` : 'No cash offered.'}
+                                </p>
                                 <div className="buttongroup">
                                     <button className="btn waves-effect waves-light location-btn" onClick={() => {onView(job)}}><i className="small material-icons">location_on</i></button>
                                     <button className="btn waves-effect waves-light" onClick={() => onChatClicked(job._id)}>Chat</button>
