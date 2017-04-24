@@ -7,6 +7,7 @@ class LoginComponent extends React.Component {
     constructor(props) {
         super(props)
         this.state = {};
+        this.onSubmit = this.onSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -26,7 +27,7 @@ class LoginComponent extends React.Component {
             <div>
                 <div id="loginback" className="row">
                     <h4 className="text-center">Login</h4>
-                    <form className="col offset-s1 s10" onSubmit={this.onSubmit.bind(this)}>
+                    <form className="col offset-s1 s10" onSubmit={this.onSubmit}>
                         <div className="row">
                             <label htmlFor="email">
                                 <i className="small material-icons">perm_identity</i>
