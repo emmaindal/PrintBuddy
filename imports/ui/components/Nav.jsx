@@ -22,7 +22,7 @@ class Nav extends React.Component {
 
 onLogout() {
 	Meteor.logout(function () {
-		browserHistory.push('/start');
+		browserHistory.replace('/start');
 	})
 }
 
