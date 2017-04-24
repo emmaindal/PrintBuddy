@@ -10,6 +10,12 @@
         margin: 25px auto;
         margin-bottom: 10px;
     }
+    i {
+        color: green !important;
+        position: absolute;
+        top: 8px;
+        left: 36%;
+    }
     p {
         padding: 0;
         margin: 0;
@@ -18,6 +24,7 @@
         width: 18% !important;
         padding: 0;
         letter-spacing: 0.2rem;
+        cursor: pointer;
     }
     .btn-upload {
         width: 63% !important;
@@ -33,7 +40,10 @@
     .switch {
         margin-bottom: 2rem;
         .first-switch {
-            margin-right: 50px;
+            margin-right: 40px;
+        }
+        .second-switch {
+            margin-right: 10px;
         }
     }
     input[type=range] {
@@ -49,14 +59,16 @@
     }
 
     #request-tabs {
-    
-    margin-bottom: 30px;
+        margin-top: 10px;
+        margin-left: 10px!important;
+        margin-bottom: 30px;
+        width: 96% !important;
     }
     .tabs .tab a {
-        color: $color-primary-btn !important;
+        color: darken($color-primary-btn, 10%)!important;
     }
     .tabs .indicator {
-        background-color: $color-primary-btn !important;
+        background-color: darken($color-primary-btn, 10%) !important;
     }
     input[type=range] + .thumb {
         background-color: $color-primary-btn !important;
@@ -72,3 +84,13 @@
     margin-bottom: 30px;
 }
 
+
+input[type=range]::-webkit-slider-thumb {
+background-color: $color-primary-btn;
+}
+input[type=range]::-moz-range-thumb {
+background-color: $color-primary-btn;
+}
+input[type=range]::-ms-thumb {
+background-color: $color-primary-btn;
+}

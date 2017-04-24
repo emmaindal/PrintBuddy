@@ -79,7 +79,7 @@ class CreateRequest extends React.Component {
         return (
             <div className="container">
                 <CreateRequestComponent isLoading={this.state.isLoading} googleStatus={this.state.googleStatus}
-                                        submit={this.onSubmit}
+                                        submit={this.onSubmit} googleUrl={this.state.downloadUrl}
                                         fileChangeHandler={this.onfileChangeHandler}
                                         loginGoogleSubmit={this.onFileSubmit}/>
             </div>

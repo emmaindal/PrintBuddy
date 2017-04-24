@@ -122,7 +122,7 @@ class CreateRequest extends React.Component {
                 {!this.state.delivery ? (
                     <div>
                         <p className="center-align">How far are you willing to travel for a pickup?</p>
-                        <div className="row margin-bottom-after">
+                        <div className="row">
                             <p className="center-align col s2">{this.state.range} m</p>
                             <p className="range-field col s8">
                                 <input onChange={this.changeRange.bind(this)} ref="range" type="range"
@@ -156,7 +156,7 @@ class CreateRequest extends React.Component {
                         <label>Currency</label>
                     </div>
                 </div>
-                <p className="center-align">Set a last date for pick-up/delivery</p>
+                <p className="center-align">Set a last time for {this.state.delivery ? "delivery" : "pick-up"}</p>
                 <div className="row margin-bottom-after">
                     <div className="col s4 offset-s2 input-field inline">
                         <input id="date" type="date" ref="lastDate" className={this.state.dateClassName}
@@ -181,11 +181,11 @@ class CreateRequest extends React.Component {
         return (
             <div className="row">
                 <div className="col s12 m8 l6 offset-m2 offset-l3 create-request">
-                    <h4 className="center-align">CREATE REQUEST</h4>
                     <form onSubmit={this.onSubmit.bind(this)}>
                         <ul id="request-tabs" className="tabs row">
-                            <li className="tab col s2"><a className="active" href="#documentation">Document</a></li>
-                            <li className="tab col s2 the-spec disabled"><a href="#specification">Specifications</a></li>
+                            <li className="tab col s3"><a className="active" href="#documentation">{this.props.googleUrl ? (<i className='material-icons small'>done</i>) : null}
+                                Document</a></li>
+                            <li className="tab col s3 the-spec disabled"><a href="#specification">Details</a></li>
                         </ul>
                         <div id="documentation" className="col s12">{this.renderFirstSection()}</div>
                         <div id="specification" className="col s12">{this.renderSecondSection()}</div>
