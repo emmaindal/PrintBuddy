@@ -2,12 +2,13 @@
 
 .create-request {
     background-color: $color-create-request-component;
-    border-radius: 5px;
+    border-radius: 8px;
     -webkit-box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
     -moz-box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
     box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
     h4 {
-        margin: 15px auto;
+        margin: 25px auto;
+        margin-bottom: 10px;
     }
     p {
         padding: 0;
@@ -18,10 +19,13 @@
         padding: 0;
         letter-spacing: 0.2rem;
     }
+    .btn-upload {
+        width: 63% !important;
+    }
     .btn-large {
         width: 25%;
         padding: 0;
-        letter-spacing: 0.3rem;
+        letter-spacing: 0.2rem;
     }
     .file-row {
         margin-bottom: 1.5rem;
@@ -43,8 +47,28 @@
     .range-field {
         padding: 0 !important;
     }
+
+    #request-tabs {
+    
+    margin-bottom: 30px;
+    }
+    .tabs .tab a {
+        color: $color-primary-btn !important;
+    }
+    .tabs .indicator {
+        background-color: $color-primary-btn !important;
+    }
+    input[type=range] + .thumb {
+        background-color: $color-primary-btn !important;
+    }
 }
 
 .margin-bottom-after {
     margin-bottom: 30px !important;
 }
+
+.upload-row {
+    margin-top: 50px !important;
+    margin-bottom: 30px;
+}
+
