@@ -3,6 +3,7 @@ import {IndexRoute, Router, Route, browserHistory} from 'react-router';
 import i18n from 'meteor/universe:i18n';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import { Meteor } from 'meteor/meteor';
+//import gapi from 'gapi-client';
 
 // route components
 import ProfileContainer from '../../ui/containers/ProfileContainer';

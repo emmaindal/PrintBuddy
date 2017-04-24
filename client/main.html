@@ -1,31 +1,36 @@
 <head>
     <meta charset="utf-8">
     <title>PrintBuddy</title>
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, minimal-ui, maximum-scale=1, minimum-scale=1" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, minimal-ui, maximum-scale=1, minimum-scale=1"/>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJcXFZ9PEnnF22z0bGqd1eLDmYdoSCB9A" type="text/javascript"></script>
+
+    <script>
+        window.gapiCallbacks = [];
+        function gapiLoaded() {
+            //Load google drive client
+            gapi.load('client:auth2', initClient);
+
+            // Initialize the API client library
+            function initClient() {
+                gapi.client.init({
+                    discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"],
+                    clientId: '344182666840-duuipj97ukh3d5vtitmr0s7tcgri3rm4.apps.googleusercontent.com',
+                    scope: 'https://www.googleapis.com/auth/drive.file'
+                }).then(() => {
+                    // do stuff with loaded APIs
+                    console.log('gapi loaded');
+                });
+            }
+        }
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJcXFZ9PEnnF22z0bGqd1eLDmYdoSCB9A"
+            type="text/javascript"></script>
+    <script src="https://apis.google.com/js/client.js?onload=gapiLoaded"></script>
+
 </head>
 
 <body>
-    <div id="app">
-    </div>
-    <div id="prepage">
-        <div class="containerOne container1">
-            <div class="circle circle1"></div>
-            <div class="circle circle2"></div>
-            <div class="circle circle3"></div>
-        </div>
-        <div class="containerOne container2">
-            <p class="msg">
-                <span class="color1">· #</span><span class="color2">Print</span><span class="color3">Buddy ·</span>
-            </p>
-        </div>
-        <!--<div class="containerOne container3">
-            <h1 class="msg">
-                <span class="color2">· Print</span>
-                <span class="color3">Buddy ·</span>
-            </h1>
-        </div>-->
-    </div>
+<div id="app"></div>
 </body>
