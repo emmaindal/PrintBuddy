@@ -13,3 +13,19 @@ nav {
         color: $text-secondary;
     }
 }
+
+.dropdown-content li > a, .dropdown-content li > span{
+    color: $text-secondary;
+}
+
+.dropdown-content{
+    margin-top: 64px;
+}
+
+.mobile-nav-icon{
+    float: left;
+}
+
+.side-nav a{
+    padding: 0 25px;
+}
