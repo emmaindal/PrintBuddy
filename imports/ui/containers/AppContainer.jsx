@@ -1,36 +1,53 @@
-import {Meteor} from 'meteor/meteor';
-import {createContainer} from 'meteor/react-meteor-data';
+import { Meteor } from 'meteor/meteor';
+import { createContainer } from 'meteor/react-meteor-data';
 import React from 'react';
 
 import Nav from '../components/Nav';
-import {browserHistory} from 'react-router';
-import {PrintBuddy} from '../../api/printbuddy/printbuddy';
-
-import isLoading from "../components/Loading";
+import { browserHistory } from 'react-router';
+import { PrintBuddy } from '../../api/printbuddy/printbuddy';
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
     }
+    componentWillMount() {
+        $("#app").fadeOut(1);
+    }
     componentDidMount() {
+        $("#prepage").fadeOut(200);
+        $("#app").fadeIn(1500);
+          
     }
     render() {
         if (this.props.loading) {
-            return (<div><isLoading/></div>); //show loading icon
+            return (
+                <div>
+                    <div className="containerOne container1">
+                        <div className="circle circle1"></div>
+                        <div className="circle circle2"></div>
+                        <div className="circle circle3"></div>
+                    </div>
+                    <div className="containerOne container2">
+                        <p className="msg">
+                            <span className="color1">· #</span><span className="color2">Print</span><span className="color3">Buddy ·</span>
+                        </p>
+                    </div>
+                </div>
+            ); //show loading icon
         }
-        const {currentUser, children } = this.props;
+        const { currentUser, children } = this.props;
         let child = (<div></div>);
-        if(children){
+        if (children) {
             // Todo fixa detta! så den routar rätt
-            child =   React.cloneElement(children, {isBuddy: currentUser.isBuddy()});
+            child = React.cloneElement(children, { isBuddy: currentUser.isBuddy() });
         }
         return (
-            <div> 
-                <Nav isBuddy={currentUser.isBuddy()}/>
+            <div>
+                <Nav isBuddy={currentUser.isBuddy()} />
                 <main>
-                    {child}   
-                </main>   
+                    {child}
+                </main>
             </div>
         );
     }

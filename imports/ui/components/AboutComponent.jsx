@@ -1,7 +1,14 @@
 import React from 'react';
 
 export default class AboutComponent extends React.Component {
-
+    componentWillMount() {
+        $("#app").fadeOut(1);
+    }
+    componentDidMount() {
+        $("#prepage").fadeOut(200);
+        $("#app").fadeIn(1000);
+          
+    }
     render() {
         return(
             <div>

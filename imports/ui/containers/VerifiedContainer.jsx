@@ -10,9 +10,9 @@ class Verified extends React.Component {
         super(props);
         this.state = { title: "Account is verifying"};
     }
-
     componentDidMount() {
-
+        $("#prepage").fadeOut(200);
+        $("#app").fadeIn(1500);
         Accounts.verifyEmail( this.props.location.query.token, ( error ) =>{
             if ( error ) {
                 displayError( "Error", error.reason);
@@ -21,11 +21,9 @@ class Verified extends React.Component {
             }
         });
     }
-
-    componentWillUnmount() {
-
+    componentWillMount() {
+        $("#app").fadeOut(1);
     }
-
     render() {
         return (
             <div>
