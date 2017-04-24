@@ -40,7 +40,7 @@ const RequestSchema = new SimpleSchema({
     lastTime:{ type: String },
     possibleOnes: { type: [String], optional:false },
     chosenOne: { type: String, optional:true },
-    docURL: { type: String,optional:true  },
+    docURL: { type: String,optional:false  },
     isDone:{type:Boolean},
     isCancel: {type: Boolean},
     createdAt:{type:Date},

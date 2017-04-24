@@ -32,8 +32,7 @@ class ChatHolder extends React.Component {
     }
 
     handleDownload() {
-        // Download the document URL
-
+        window.open(this.props.request.docURL,"_self");
     }
 
     handleJobCancel() {
