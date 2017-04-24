@@ -11,7 +11,7 @@ import {insertFile, checkLogin} from '../helpers/googleApiHelper';
 class CreateRequest extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {isLoading: false, file: {}, downloadUrl: "", googleStatus: "Not uploaded"};
+        this.state = {isLoading: false, file: {}, downloadUrl: "", googleStatus: "Upload to google drive"};
         this.onSubmit = this.onSubmit.bind(this);
         this.onFileSubmit = this.onFileSubmit.bind(this);
         this.onfileChangeHandler = this.onfileChangeHandler.bind(this);
@@ -32,9 +32,11 @@ class CreateRequest extends React.Component {
                 } else {
                     insertFile(this.state.file).then((url) => {
                         console.log(url)
-                        this.setState({googleStatus: "uploaded!!!!!"});
+                        this.setState({googleStatus: "Uploaded"});
                         this.setState({downloadUrl: url});
                         this.setState({isLoading: false});
+                        $(".the-spec").removeClass("disabled");
+                        $('ul.tabs').tabs('select_tab', 'specification');
                     }, (err) =>{
                         // todo maybe better error. Just log out the user now and then need try again
                         console.log(err);
@@ -44,6 +46,8 @@ class CreateRequest extends React.Component {
                     });
                 }
             });
+        } else { 
+            displayError("Whoops!", 'You need to pick a document before you can upload!');
         }
     }
 
@@ -73,10 +77,9 @@ class CreateRequest extends React.Component {
 
     render() {
         return (
-            <div>
-                <h2>CreateRequest Container</h2>
+            <div className="container">
                 <CreateRequestComponent isLoading={this.state.isLoading} googleStatus={this.state.googleStatus}
-                                        submit={this.onSubmit}
+                                        submit={this.onSubmit} googleUrl={this.state.downloadUrl}
                                         fileChangeHandler={this.onfileChangeHandler}
                                         loginGoogleSubmit={this.onFileSubmit}/>
             </div>
