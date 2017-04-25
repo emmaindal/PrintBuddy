@@ -11,7 +11,6 @@ class RegisterComponent extends React.Component {
             lng: 0,
             isBuddy: false,
             canColor: false,
-            canDeliver: false
         }
     }
 
@@ -31,7 +30,6 @@ class RegisterComponent extends React.Component {
                 address: this.state.address,
                 printBuddy: {
                     canColor: this.state.canColor,
-                    canDeliver: this.state.canDeliver,
                     isActive: this.state.isBuddy
                 }
             }
@@ -39,7 +37,6 @@ class RegisterComponent extends React.Component {
         } else {
             this.setState({passwordNotEqual: "Password not equal"});
         }
-        //{ type: "Point", coordinates: [ -73.97, 40.77 ] }
     }
 
     onPickAdress(address) {
@@ -72,11 +69,6 @@ class RegisterComponent extends React.Component {
             if (options[i].selected) {
                 value.push(options[i].value);
             }
-        }
-        if (value.includes("deliver")) {
-            this.setState({canDeliver: true});
-        } else {
-            this.setState({canDeliver: false});
         }
         if (value.includes("color")) {
             this.setState({canColor: true});
@@ -161,7 +153,6 @@ class RegisterComponent extends React.Component {
                                     <p>Set your printer settings if you want to be a Budddy!</p>
                                     <select id="mySelectBox" multiple>
                                         <option value="qwe" data-type="text-type" disabled> Set here</option>
-                                        <option value="deliver" data-type="text-type"> Can deliver</option>
                                         <option value="color" data-type="text-type"> Color printer</option>
                                     </select>
                                 </div>
