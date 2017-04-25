@@ -73,7 +73,7 @@ const JobsContainer = createContainer(() => {
     const jobsRequestDeliverySub = Meteor.subscribe('jobs-request-delivery', Meteor.user().position.coordinates[1], Meteor.user().position.coordinates[0]);
     const isReady = jobsRequestDeliverySub.ready() && jobsRequestSub.ready();
     return {
-        jobs: isReady ? Request.find({}, {
+        jobs: isReady ? Request.find({ distance: {$exists: true}}, {
             sort: {distance: 1}
         }).fetch() : [],
         userposition: {lat: Meteor.user().position.coordinates[1], lng: Meteor.user().position.coordinates[0]}
