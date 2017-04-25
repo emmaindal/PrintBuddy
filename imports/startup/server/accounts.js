@@ -51,7 +51,6 @@ Accounts.onCreateUser((options, user) => {
     PrintBuddy.insert({
         userId: user._id,
         canColor: options.printBuddy.canColor,
-        canDeliver: options.printBuddy.canDeliver,
         isActive: options.printBuddy.isActive
     });
 

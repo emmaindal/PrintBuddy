@@ -8,7 +8,6 @@ const PrintBuddySchema = new SimpleSchema({
     userId: { type: String },
     isActive:{type: Boolean},
     canColor: { type: Boolean },
-    canDeliver:{ type: Boolean }
 });
 
 PrintBuddy.attachSchema(PrintBuddySchema);
