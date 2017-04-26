@@ -12,7 +12,6 @@ class MyJobs extends React.Component {
     render() {
         return (
             <div>
-                <p>MyJobs Component</p>
                 {this.props.children}
             </div>
         );

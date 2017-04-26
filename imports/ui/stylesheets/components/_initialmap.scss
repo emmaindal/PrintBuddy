@@ -1,11 +1,74 @@
 @import "../variables";
 
 #infowindow {
+    width: auto;
+    max-width: 190px;
+    height: 100%;
+    overflow: hidden;
+    
 	.collection-item.avatar {
 		min-height: 0px!important;
-		padding-left: 72px;
+		padding-left: 60px;
 		position: relative;
+        
+        .title {
+            font-size: 15px
+        }
+        .title-large {
+            font-size: 16px;
+        }
 	}
+    .round-icon-green {
+            color: white;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            font-size: 16px!important;
+            height: 26px;
+            width: 26px;
+            line-height: 26px;
+            text-align: center;
+            margin-top: 6px;
+
+            position: absolute;
+            overflow: hidden;
+            left: 15px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .round-icon-blue {
+            color: white;
+            background-color: #2196F3;
+            border-radius: 50%;
+            font-size: 16px!important;
+            height: 26px;
+            width: 26px;
+            line-height: 26px;
+            text-align: center;
+            margin-top: 6px;
+
+            position: absolute;
+            overflow: hidden;
+            left: 15px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .round-icon-gray {
+            color: white;
+            background-color: #999;
+            border-radius: 50%;
+            font-size: 16px!important;
+            height: 26px;
+            width: 26px;
+            line-height: 26px;
+            text-align: center;
+            margin-top: 6px;
+
+            position: absolute;
+            overflow: hidden;
+            left: 15px;
+            display: inline-block;
+            vertical-align: middle;
+        }
 }
 .infowindow-icon {
 	font-size: 24px!important;
