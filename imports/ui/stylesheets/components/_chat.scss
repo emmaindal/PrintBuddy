@@ -1,7 +1,7 @@
 @import "../variables";
 
 .chat-holder {
-    box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 17px 0 rgba(0, 0, 0, 0.22) !important;
+    box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 17px 0 rgba(0, 0, 0, 0.12) !important;
 }
 
 // Chat component
@@ -13,7 +13,6 @@
     .collection {
         border-bottom: 0;
     }
-    
     .collection .collection-item {
         padding: 7px 10px;
         position: relative;
@@ -69,6 +68,10 @@
         top: 4px !important;
     }
    
+}
+
+.margin-top-5 {
+    margin-top: 5%;
 }
 
 //stepper 
@@ -154,10 +157,9 @@
 // Chat info komponent
 .chat-info {
     background: white;
-    box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 17px 0 rgba(0, 0, 0, 0.22) !important;
+    box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 17px 0 rgba(0, 0, 0, 0.12) !important;
     border-radius: 4px;
     position: relative;
-    right: 10% !important;
     width: 33% !important;    
     .chat-info-wrapper {
         margin: 0;
@@ -192,10 +194,7 @@
 
 // download document button
 .button-doc {
-    height: 100px;
-    line-height: 100px;
     z-index: 0;
-    box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2), 0 7px 10px 0 rgba(0, 0, 0, 0.22) !important;
 }
 
 // mobile document download button
@@ -243,10 +242,8 @@
     .chat-row {
         margin-right: 70px !important;
     }
-    .smiley-pop {
-        display: none;
-    }
 }
+
 
 @media only screen and (max-width: 450px) {
     .step-by-step {

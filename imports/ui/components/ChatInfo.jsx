@@ -37,6 +37,10 @@ class ChatInfo extends React.Component {
                                 Request</a>
                         </li>
                     </div> : null}
+                    {!canCancel ? <li className="collection-item">
+                        <a onClick={this.props.handleDownload} className="waves-effect waves-light btn button-doc">Download Document</a>
+                    </li> : null}
+                    
                 </ul>
             </div>
         );
