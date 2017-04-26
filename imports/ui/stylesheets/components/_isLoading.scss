@@ -15,7 +15,7 @@
   width : 100%;
   text-align : center;
 }
-.circle{
+.loading-circle{
   position:absolute;
   display:block;
   border-radius:50%;
@@ -24,31 +24,31 @@
   transform-style:preserve-3d;
 }
 
-.circle1 {
+.loading-circle1 {
   animation : rotate1 1s infinite linear;
-  border-color : #A27035;
+  border-color : darken($color-primary-btn, 10%);
   height:100px;
   width:100px;
   margin:-50px;
 }
-.circle2 {
+.loading-circle2 {
   animation : rotate2 1s infinite linear;
-  border-color : #B88B4A;
+  border-color : darken($color-primary-btn, 5%);
   height:70px;
   width:70px;
   margin:-35px;
 }
-.circle3 {
+.loading-circle3 {
   animation:rotate3 1s infinite linear;
-  border-color : #DDCA7D;
+  border-color : $color-primary-btn;
   height:10px;
   width:10px;
   margin:-5px;
 }
 
-.color1 { color : #A27035; }
-.color2 { color : #B88B4A; }
-.color3 { color : #DDCA7D; }
+.color1 { color : darken($color-primary-btn, 10%); }
+.color2 { color : darken($color-primary-btn, 5%); }
+.color3 { color : $color-primary-btn; }
 
 @keyframes rotate1{
   0% { transform: rotateZ(20deg) rotateY(0deg) }
@@ -89,7 +89,7 @@
   top: 5px;
   right: 10px;
   font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-  color : #A27035;
+  color : darken($color-primary-btn, 10%);
 }
 
 .f a {
@@ -99,7 +99,7 @@
 .msg {
   padding-top : 150px;
   font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-  color : #A27035;
+  color : darken($color-primary-btn, 10%);
   font-size: 18px !important;
 }
 

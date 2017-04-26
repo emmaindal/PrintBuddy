@@ -76,12 +76,24 @@ class CreateRequest extends React.Component {
                     <div className="col s2">
                     </div>
                 </div>
+                
                 <div className="row margin-bottom-after">
-                    <div className="input-field col s8 offset-s2">
-                        <input ref="title" className="validate" id="input-text" type="text" maxLength="40"
-                            required />
-                        <label htmlFor="input-text">Job title</label>
+                    <div className="input-field inline col s4 offset-s2">
+                        <input id="number" type="number" ref="pages" className="validate" required />
+                        <label htmlFor="number">Nr of Pages</label>
                     </div>
+                    <div className="input-field inline col s4">
+                        <input id="number" type="number" ref="copies" className="validate" required />
+                        <label htmlFor="number">Nr of Copies</label>
+                    </div>
+                </div>
+                <div className="switch center-align">
+                    <label className="first-switch">
+                        Black/White
+                                <input type="checkbox" ref="needColor" />
+                        <span className="lever"></span>
+                        Color
+                            </label>
                 </div>
                 <div className="row upload-row">
                     <div className="center-align">
@@ -99,47 +111,11 @@ class CreateRequest extends React.Component {
     renderSecondSection() {
         return (
             <div>
-                <div className="switch center-align">
-                    <label className="first-switch">
-                        Black/White
-                                <input type="checkbox" ref="needColor" />
-                        <span className="lever"></span>
-                        Color
-                            </label>
-                </div>
-                <div className="switch center-align">
-                    <label className="second-switch">
-                        Request Delivery
-                                <input type="checkbox" ref="delivery"
-                            checked={!this.state.delivery}
-                            onChange={(e) => this.handleDeliveryChange(e)}
-                        />
-                        <span className="lever"></span>
-                        Pickup Yourself
-                            </label>
-                </div>
-
-                {!this.state.delivery ? (
-                    <div>
-                        <p className="center-align">How far are you willing to travel for a pickup?</p>
-                        <div className="row">
-                            <p className="center-align col s2">{this.state.range} m</p>
-                            <p className="range-field col s8">
-                                <input onChange={this.changeRange.bind(this)} ref="range" type="range"
-                                    id="test5" value={this.state.range} min="100" max="10000" />
-                            </p>
-                        </div>
-                    </div>
-                ) : (null)}
-
-                <div className="row">
-                    <div className="input-field inline col s4 offset-s2">
-                        <input id="number" type="number" ref="pages" className="validate" required />
-                        <label htmlFor="number">Nr of Pages</label>
-                    </div>
-                    <div className="input-field inline col s4">
-                        <input id="number" type="number" ref="copies" className="validate" required />
-                        <label htmlFor="number">Nr of Copies</label>
+                <div className="row margin-bottom-after">
+                    <div className="input-field col s8 offset-s2">
+                        <input ref="title" className="validate" id="input-text" type="text" maxLength="40"
+                            required />
+                        <label htmlFor="input-text">Job Description</label>
                     </div>
                 </div>
                 <div className="row margin-bottom-after">
@@ -156,10 +132,33 @@ class CreateRequest extends React.Component {
                         <label>Currency</label>
                     </div>
                 </div>
-                <p className="center-align">Set a last time for {this.state.delivery ? "delivery" : "pick-up"}</p>
+                <div className="switch center-align">
+                    <label className="second-switch">
+                        Request Delivery
+                                <input type="checkbox" ref="delivery"
+                            checked={!this.state.delivery}
+                            onChange={(e) => this.handleDeliveryChange(e)}
+                        />
+                        <span className="lever"></span>
+                        Pickup Yourself
+                            </label>
+                </div>
+                {!this.state.delivery ? (
+                    <div>
+                        <p className="center-align">How far are you willing to travel for a pickup?</p>
+                        <div className="row">
+                            <p className="center-align col s2">{this.state.range} m</p>
+                            <p className="range-field col s8">
+                                <input onChange={this.changeRange.bind(this)} ref="range" type="range"
+                                    id="test5" value={this.state.range} min="100" max="10000" />
+                            </p>
+                        </div>
+                    </div>
+                ) : (null)}       
+                <p className="center-align">Set a last Date & Time for {this.state.delivery ? "delivery" : "pick-up"}</p>
                 <div className="row margin-bottom-after">
                     <div className="col s4 offset-s2 input-field inline">
-                        <input id="date" type="date" ref="lastDate" className={this.state.dateClassName}
+                        <input id="date set-date" type="date" ref="lastDate" className={this.state.dateClassName}
                             required />
                         <label htmlFor="date">Date</label>
                     </div>
@@ -181,7 +180,7 @@ class CreateRequest extends React.Component {
         return (
             <div className="row">
                 <div className="col s12 m8 l6 offset-m2 offset-l3 create-request">
-                    <form onSubmit={this.onSubmit.bind(this)}>
+                    <form id="request-form" onSubmit={this.onSubmit.bind(this)}>
                         <ul id="request-tabs" className="tabs row">
                             <li className="tab col s3"><a className="active" href="#documentation">{this.props.googleUrl ? (<i className='material-icons small'>done</i>) : null}
                                 Document</a></li>

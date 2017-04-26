@@ -38,8 +38,6 @@ class Nav extends React.Component {
                         <ul className="right hide-on-med-and-down">
                             <li><IndexLink to="/jobs" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Jobs</IndexLink></li>
                             <li><Link to="/myjobs" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>My Jobs</Link></li>
-                            <li><Link to="/test" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Test Page</Link></li>
-
                             <li><Link className='dropdown-button' to='#' data-activates='dropdown1'><i className="material-icons">&#xE7FD;</i></Link></li>
 
                             <ul id='dropdown1' className='dropdown-content'>
@@ -52,7 +50,6 @@ class Nav extends React.Component {
                         <ul className="side-nav" id="mobile-nav">
                             <li><IndexLink to="/jobs" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Jobs</IndexLink></li>
                             <li><Link to="/myjobs" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>My Jobs</Link></li>
-                            <li><Link to="/test" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Test Page</Link></li>
 
                             <li><Link to="#" className="mobile-nav-icon"><i className="material-icons">&#xE7FD;</i></Link></li>
                             <li><Link to="#" className="mobile-nav-icon"><i className="material-icons">&#xE8B8;</i></Link></li>
@@ -71,7 +68,6 @@ class Nav extends React.Component {
                         <a href="" data-activates="mobile-nav" className="button-collapse"><i className="material-icons">menu</i></a>
                         <ul className="right hide-on-med-and-down">
                             <li><IndexLink to="/request" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Requests</IndexLink></li>
-                            <li><Link to="/test" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Test Page</Link></li>
 
                             <li><Link className='dropdown-button' to='#' data-activates='dropdown1'><i className="material-icons">&#xE7FD;</i></Link></li>
 
@@ -84,7 +80,6 @@ class Nav extends React.Component {
                         </ul>
                         <ul className="side-nav" id="mobile-nav">
                             <li><IndexLink to="/request" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Requests</IndexLink></li>
-                            <li><Link to="/test" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Test Page</Link></li>
                             <li><Link to="#" className="mobile-nav-icon"><i className="material-icons">&#xE7FD;</i></Link></li>
                             <li><Link to="#" className="mobile-nav-icon"><i className="material-icons">&#xE8B8;</i></Link></li>
                             <li><Link onClick={this.onLogout} className="mobile-nav-icon"><i className="material-icons">&#xE8AC;</i></Link></li>

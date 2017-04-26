@@ -23,9 +23,9 @@ class App extends React.Component {
             return (
                 <div>
                     <div className="containerOne container1">
-                        <div className="circle circle1"></div>
-                        <div className="circle circle2"></div>
-                        <div className="circle circle3"></div>
+                        <div className="loading-circle loading-circle1"></div>
+                        <div className="loading-circle loading-circle2"></div>
+                        <div className="loading-circle loading-circle3"></div>
                     </div>
                     <div className="containerOne container2">
                         <p className="msg">
