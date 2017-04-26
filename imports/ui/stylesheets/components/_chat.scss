@@ -71,48 +71,6 @@
    
 }
 
-//stepper 
-.step-by-step {
-    margin-top: 0.1%;
-    margin-bottom: 4%;
-    span {
-        line-height: 32px !important;
-    }
-    a {
-        line-height: 32px !important;
-        margin-top: 4px !important;
-    }
-    :last-child {
-        :last-child {
-            :last-child {
-                :first-child {
-                    
-                }
-            }
-        }
-    }
-}
-.step-by-step  {
-    :first-child {
-        :first-child > * {
-            transition: none !important;
-            border-top-width: 2px !important;
-            :first-child  {
-            transition: all 1s ease-in-out !important;
-            }
-            :last-child {
-                border-top-width: 2px !important;
-            }
-            :nth-child(2) {
-                font-weight: 500 !important;
-            }
-            :nth-child(3) {
-                border-top-width: 2px !important;
-            }
-        }
-    }
-}
-
 
 // Chat header
 .chat-header {

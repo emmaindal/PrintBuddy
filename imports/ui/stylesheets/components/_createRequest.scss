@@ -6,6 +6,9 @@
     -webkit-box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
     -moz-box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
     box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
+    .dropdown-content {
+        margin-top: 45px !important;
+    }
     h4 {
         margin: 25px auto;
         margin-bottom: 10px;
@@ -28,6 +31,7 @@
     }
     .btn-upload {
         width: 63% !important;
+        overflow: hidden;
     }
     .btn-large {
         width: 25%;
@@ -45,6 +49,24 @@
         .second-switch {
             margin-right: 10px;
         }
+    }
+    .picker__date-display {
+        background-color: $color-primary-btn !important; 
+    }
+    .picker__weekday-display {
+        background-color: darken($color-primary-btn, 10%) !important;
+    }
+    .picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected {
+        background-color: $color-primary-btn !important; 
+    }
+    .picker__day.picker__day--today {
+        color: darken($color-primary-btn, 10%) !important;
+    }
+    .picker__close, .picker__today {
+        color: $color-primary-btn !important; 
+    }
+    .picker__nav--prev:hover, .picker__nav--next:hover {
+        background:  $color-primary-btn !important; 
     }
     input[type=range] {
         border: none;
@@ -93,4 +115,8 @@ background-color: $color-primary-btn;
 }
 input[type=range]::-ms-thumb {
 background-color: $color-primary-btn;
+}
+
+.form-input-error {
+    border-bottom: 1px solid #ff2200 !important; 
 }
