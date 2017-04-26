@@ -70,8 +70,8 @@
    
 }
 
-.margin-top-5 {
-    margin-top: 5%;
+.margin-top-4 {
+    margin-top: 4%;
 }
 
 // Chat header
@@ -93,8 +93,6 @@
 
 // Chat message
 .chat-message {
-    min-height: 450px;
-    max-height: 450px;
     overflow-y: scroll;
     h5 {
         font-size: 18px;
@@ -112,14 +110,15 @@
 }
 
 // Chat info komponent
-.chat-info {
-    background: white;
-    box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 17px 0 rgba(0, 0, 0, 0.12) !important;
-    border-radius: 4px;
-    position: relative;
-    width: 33% !important;    
+.chat-info {  
     .chat-info-wrapper {
+        background: white;
+        border-radius: 4px;
+        position: relative; 
+        padding-left: 5%;  
+        padding-right: 5%;
         margin: 0;
+        box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 17px 0 rgba(0, 0, 0, 0.12) !important;
         .collection-item {
             padding-bottom: 12px;
             padding-top: 12px;
@@ -195,15 +194,20 @@
     }
 }
 
-@media only screen and (min-width: 992px) {
-    .chat-row {
-        margin-right: 70px !important;
-    }
-}
-
 
 @media only screen and (max-width: 450px) {
     .step-by-step {
         display: none;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .chat-holder {
+        margin-right: 5%;
+        margin-left: 2.5%;
+    }
+    .chat-info {
+        margin-left: 5%;
+        margin-right: 2.5%;
     }
 }

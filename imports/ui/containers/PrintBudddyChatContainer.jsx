@@ -27,7 +27,7 @@ class PrintBuddyChat extends React.Component {
             isDone = <div><h1>This request is cancel!</h1></div>; // or show loading icon
         }
         return (
-            <div className="margin-top-5">
+            <div className="margin-top-4">
                 {isDone}
                 {isCancel}
                 <ChatContainer request={this.props.request}/>

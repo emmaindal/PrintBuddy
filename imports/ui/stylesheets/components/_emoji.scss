@@ -13,8 +13,6 @@
   border-radius: 5px!important;
   background: #fff!important;
   position: fixed !important;
-  top: 43%;
-  right: 5%;
   z-index: 9;
   box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.12) !important;
 }
@@ -277,3 +275,28 @@
 .emoji-mart-skin-tone-5 { background-color: #9b643d !important}
 .emoji-mart-skin-tone-6 { background-color: #594539 !important}
 
+@media only screen and (max-width: 451px) {
+    .emoji-mart {
+        top: 29%;
+        right: 3%;
+    }
+}
+
+@media only screen and (min-width: 451px) {
+    .emoji-mart {
+        top: 42%;
+        right: 3%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .emoji-mart {
+        right: 9%;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .emoji-mart {
+        right: 3%;
+        top: 46%;
+    }
+}

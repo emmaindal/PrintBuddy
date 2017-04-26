@@ -17,7 +17,7 @@ class ChatInfo extends React.Component {
     render() {
         const {request, canCancel} = this.props;
         return (
-            <div>
+            <div className="chat-info">
                 <ul className="collection with-header chat-info-wrapper">
                     <li className="collection-header"><h4>Job info</h4></li>
                     <li className="collection-item"><span>Title:</span> {request.title} </li>
