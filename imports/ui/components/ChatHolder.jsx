@@ -43,7 +43,7 @@ class ChatHolder extends React.Component {
                     <h6 className="chat-title">Chat</h6>
                     <a onClick={this.props.handleDownload} className="waves-effect waves-light btn mobile-download-btn hide-on-large-only">Download</a>
                 </div>
-                <div id="chatbox" className="chat chat-message" style={{minHeight: this.chatHeight()}} >
+                <div id="chatbox" className="chat chat-message" style={{minHeight: this.chatHeight(), maxHeight: this.chatHeight()}} >
                     <ChatMessageList userId={this.props.userId} chat={this.props.chat} />
                 </div>
                 <div className="chat-form chat">

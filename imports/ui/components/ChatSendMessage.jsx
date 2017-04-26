@@ -15,14 +15,13 @@ class ChatSendMessage extends React.Component {
         $('.form-input').focus();
         e.preventDefault();
         let message = this.refs.text.value.trim();
-        if (message.length > 1) {
+        if (message.length >= 1) {
             this.refs.text.value = "";
             this.props.onSubmit(message);
         }
     }
     popEmojiPicker() {
         $(".mobile-emoji").show();
-        console.log("click");
     }
     emojiPickerMobile() {
         return (

@@ -7,7 +7,7 @@ class ChatMessageList extends React.Component {
     renderMessages() {
         const users = this.props.users;
 
-        const {userId, chat} = this.props;
+        const { userId, chat } = this.props;
 
         if (!chat.messages || chat.messages.length == 0) {
             return (
@@ -17,13 +17,13 @@ class ChatMessageList extends React.Component {
             );
         } else {
             return chat.messages.map((message, index) => {
-                return <Message userId={userId} key={index} message={message}/>;
+                return <Message userId={userId} key={index} message={message} />;
             });
         }
     }
     componentWillUpdate() {
         $('#chatbox').animate({
-                scrollTop: $("#chatbox").prop("scrollHeight")
+            scrollTop: $("#chatbox").prop("scrollHeight")
         });
     }
     render() {
