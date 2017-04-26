@@ -60,16 +60,16 @@ class MapContainer extends React.Component {
 	render() {
 		return (
 			<div className="col s12 m10 offset-m1 l6">
-				<div className="collection" style={{ height: "500px"}}>
-					<div style={{height: "100%"}}>
+				<div className="collection" style={{ height: "88vh"}}>
+					<div style={{height: "88vh"}}>
                         {this.props.isBuddy ?
                              (
                                 <InitialMap
                                     containerElement={
-                                        <div style={{ height: "100%", width: "auto" }} />
+                                        <div style={{ height: "88vh", width: "auto" }} />
                                     }
                                     mapElement={
-                                        <div style={{ height: "100%", width: "auto" }} />
+                                        <div style={{ height: "88vh", width: "auto" }} />
                                     }
                                     markers={this.state.markers}
                                     defaultCenter={this.props.defaultCenter}
@@ -79,10 +79,10 @@ class MapContainer extends React.Component {
                             ) : (
                                 <InitialPendingMap
                                     containerElement={
-                                        <div style={{ height: "100%", width: "auto" }} />
+                                        <div style={{ height: "88vh", width: "auto" }} />
                                     }
                                     mapElement={
-                                        <div style={{ height: "100%", width: "auto" }} />
+                                        <div style={{ height: "88vh", width: "auto" }} />
                                     }
                                     markers={this.state.markers}
                                     defaultCenter={this.props.defaultCenter}
