@@ -13,8 +13,8 @@ class RegisterComponent extends React.Component {
             canColor: false,
         }
     }
-
     onSubmit(e) {
+        $('#register-modal').closeModal();
         e.preventDefault();
         if (this.state.lng == 0) {
             this.setState({address: "You need to set home address"});
@@ -80,8 +80,6 @@ class RegisterComponent extends React.Component {
     render() {
         return (
             <div id="registerback">
-                <div className="row">
-                    <h4 className="text-center">Register Account</h4>
                     <form className="col s10 offset-s1" onSubmit={this.onSubmit.bind(this)}>
                         <div className="row">
                             <label htmlFor="email">
@@ -158,13 +156,10 @@ class RegisterComponent extends React.Component {
                                 </div>
                             ) : (null)}
                         </div>
-                        <div className="row">
-                            <div className="col s10 offset-s1 m10 offset-m1 center-align">
-                                <button className="waves-effect waves-light btn">Submit</button>
-                            </div>
+                        <div className="row register-modal-row">
+                            <button className="col s10 offset-s1 waves-effect waves-light btn">Register</button>
                         </div>
                     </form>
-                </div>
             </div>
         );
     }

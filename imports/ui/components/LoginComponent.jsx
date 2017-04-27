@@ -16,6 +16,7 @@ class LoginComponent extends React.Component {
     }
 
     onSubmit(e) {
+        $('#login-modal').closeModal();
         e.preventDefault();
         const user = {
             email: this.state.email,
@@ -35,29 +36,29 @@ class LoginComponent extends React.Component {
     render() {
         return (
             <div>
-                <div id="loginback" className="row">
-                    <h4 className="text-center">Login</h4>
+                <div id="loginback">
                     <form className="col offset-s1 s10" onSubmit={this.onSubmit}>
                         <div className="row">
                             <label htmlFor="email">
                                 <i className="small material-icons">perm_identity</i>
                             </label>
-                            <div className="input-field col offset-s3 s6">
+                            <div className="input-field col offset-s1 s10">
                                 <input value={this.state.email} onChange={this.handleEmailChange} id="email" type="email" className="validate" required ref="email"/>
                                 <label htmlFor="email">E-mail</label>
                             </div>
                         </div>
-                        <div className="row">
+                        <div className="row margin-bottom-after">
                             <i className="small material-icons">lock</i>
-                            <div className="input-field col offset-s3 s6">
+                            <div className="input-field col offset-s1 s10">
                                 <input value={this.state.password} onChange={this.handlePasswordChange} id="password" type="password" className="validate" required ref="password"/>
                                 <label htmlFor="password">Password</label>
                             </div>
                         </div>
-                        <div className="row">
-                            <button className="col offset-s4 s4 waves-effect waves-light btn btn-block">Login</button>
+                        <div className="row login-modal-row">
+                            <button className="col offset-s1 s10 waves-effect waves-light btn btn-block">Login</button>
                         </div>
                     </form>
+                    
                 </div>
             </div>
         );
