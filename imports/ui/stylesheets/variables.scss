@@ -1,15 +1,17 @@
 $gradiant-primary: linear-gradient(446deg, #6cc0e9, #4aafe3);
 $nice-color-alex: -webkit-gradient(linear, left top, right top, color-stop(0%, #2193b0), color-stop(100%, #6dd5ed));
 $nice-color-emma: -webkit-gradient(linear, left top, right top, color-stop(0%, #38a3fa), color-stop(100%, #058df9));
-$color-primary: #2196F3;
+$color-primary: rgba(#f2f2f2, 0.89);
+$color-primary-details: #0592e2;
 $color-secondary: darken($color-primary, 10%);
 $color-tertiary: darken($color-secondary, 5%);
 $text-primary: rgb(255, 255, 255);
-$text-secondary: rgba(#0369ba, 0.87);
+$text-secondary: rgba(#015280, 0.87);
 $text-tertiary: white;
 
 // Test background colors
 $bg-color-test: #003b4e;
+
 
 //media screen
 $break-medium: 1085px;
@@ -19,8 +21,8 @@ $break-small: 620px;
 //Content
 $background-color: rgba(#ffffff, 0.95);
 $border-color: rgba(#f4f4f4, 0.82);
-$scroll-btn-background: #2196F3;
-$scroll-btn-border: #2196F3;
+$scroll-btn-background: #0592e2;
+$scroll-btn-border: #0592e2;
 
 
 //navbar
@@ -40,8 +42,9 @@ $color-create-request-component: white;
 
 //list colors
 $color-location-btn: orange;
-$color-primary-btn: #26a69a; //APPLY & CHOOSE buttons
+$color-primary-btn: #0592e2; //APPLY & CHOOSE buttons
 
 //Chat
 $color-message-one: transparentize(#ffa520, 0.4);
 $color-message-two: transparentize(#2193b0, 0.6)
+

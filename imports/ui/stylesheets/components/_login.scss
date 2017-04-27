@@ -3,6 +3,11 @@
 .btn-block {
     width: 25%;
 }
+
 #loginback {
     background-color: white;
     }
+
+.btn, .btn-large, .btn:hover, .btn-large:hover{
+    background-color: $scroll-btn-background;
+}

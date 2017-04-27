@@ -59,7 +59,7 @@ class MyJobList extends React.Component {
         return (
             <div>
                 <div className="row">
-                    <div className="col l10 offset-l1">
+                    <div className="col s12 m12 l12">
                         <div className="col l6">
                             <div className="row">
                                 <PendingJobList listofjobs={this.props.pendingJobs} onView={this.onViewLocation}

@@ -55,9 +55,8 @@ class Jobs extends React.Component {
     render() {
         return (
             <div>
-                <h1>Jobs Component</h1>
                 <div id="test-joblist" className="row">
-                    <div className="col s12 m12 l10 offset-l1">
+                    <div className="col s12 m12 l12">
                         <JobList listofjobs={this.props.jobs} onApply={this.onApply} onView={this.onViewLocation}/>
                         <MapContainer isBuddy={true} clickedId={this.state.clickedJobId} markers={this.props.jobs}
                                       defaultCenter={this.state.defaultCenter}/>
@@ -73,7 +72,7 @@ const JobsContainer = createContainer(() => {
     const jobsRequestDeliverySub = Meteor.subscribe('jobs-request-delivery', Meteor.user().position.coordinates[1], Meteor.user().position.coordinates[0]);
     const isReady = jobsRequestDeliverySub.ready() && jobsRequestSub.ready();
     return {
-        jobs: isReady ? Request.find({}, {
+        jobs: isReady ? Request.find({ distance: {$exists: true}}, {
             sort: {distance: 1}
         }).fetch() : [],
         userposition: {lat: Meteor.user().position.coordinates[1], lng: Meteor.user().position.coordinates[0]}

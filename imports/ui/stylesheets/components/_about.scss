@@ -5,7 +5,7 @@
 }
 
 .col.grid-example.about-content.first{
-    background: $color-primary;
+    background: $color-primary-details;
     border: none;
     padding-bottom: 10%;
 
@@ -22,7 +22,7 @@
 }
 
 .row.about-row{
-    background-color: white;
+    background-color: $color-primary;
 
 }
 
@@ -46,6 +46,7 @@ section.section-about-content.second{
 }
 
 .col.grid-example.about-content.third{
+    background: $color-primary-details;
 
     .our-team-heading {
         color: white;

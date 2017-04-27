@@ -1,17 +1,17 @@
-import {Meteor} from 'meteor/meteor';
-import {createContainer} from 'meteor/react-meteor-data';
+import { Meteor } from 'meteor/meteor';
+import { createContainer } from 'meteor/react-meteor-data';
 import React from 'react';
-import {browserHistory} from 'react-router';
+import { browserHistory } from 'react-router';
 
 import CreateRequestComponent from "../components/CreateRequestComponent";
-import {insert} from '../../api/request/methods';
-import {displayError} from '../helpers/errors';
-import {insertFile, checkLogin} from '../helpers/googleApiHelper';
+import { insert } from '../../api/request/methods';
+import { displayError } from '../helpers/errors';
+import { insertFile, checkLogin } from '../helpers/googleApiHelper';
 
 class CreateRequest extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {isLoading: false, file: {}, downloadUrl: "", googleStatus: "Not uploaded"};
+        this.state = { isLoading: false, file: {}, downloadUrl: "", googleStatus: "Upload to google drive" };
         this.onSubmit = this.onSubmit.bind(this);
         this.onFileSubmit = this.onFileSubmit.bind(this);
         this.onfileChangeHandler = this.onfileChangeHandler.bind(this);
@@ -19,31 +19,35 @@ class CreateRequest extends React.Component {
     }
 
     onfileChangeHandler(evt) {
-        this.setState({file: evt.target.files[0]});
+        this.setState({ file: evt.target.files[0] });
     }
 
     onFileSubmit() {
         if (this.state.file.name) {
-            this.setState({isLoading: true});
+            this.setState({ isLoading: true });
             checkLogin().then((isSignId) => {
                 if (!isSignId) {
                     gapi.auth2.getAuthInstance().signIn();
-                    this.setState({isLoading: false});
+                    this.setState({ isLoading: false });
                 } else {
                     insertFile(this.state.file).then((url) => {
                         console.log(url)
-                        this.setState({googleStatus: "uploaded!!!!!"});
-                        this.setState({downloadUrl: url});
-                        this.setState({isLoading: false});
-                    }, (err) =>{
+                        this.setState({ googleStatus: "Uploaded" });
+                        this.setState({ downloadUrl: url });
+                        this.setState({ isLoading: false });
+                        $(".the-spec").removeClass("disabled");
+                        $('ul.tabs').tabs('select_tab', 'specification');
+                    }, (err) => {
                         // todo maybe better error. Just log out the user now and then need try again
                         console.log(err);
                         gapi.auth2.getAuthInstance().signOut();
-                        this.setState({isLoading: false});
-                        this.setState({googleStatus: "something went wrong, Try sign in again"});
+                        this.setState({ isLoading: false });
+                        this.setState({ googleStatus: "something went wrong, Try sign in again" });
                     });
                 }
             });
+        } else {
+            displayError("Whoops!", 'You need to pick a document before you can upload!');
         }
     }
 
@@ -73,12 +77,11 @@ class CreateRequest extends React.Component {
 
     render() {
         return (
-            <div>
-                <h2>CreateRequest Container</h2>
+            <div className="container">
                 <CreateRequestComponent isLoading={this.state.isLoading} googleStatus={this.state.googleStatus}
-                                        submit={this.onSubmit}
-                                        fileChangeHandler={this.onfileChangeHandler}
-                                        loginGoogleSubmit={this.onFileSubmit}/>
+                    submit={this.onSubmit} googleUrl={this.state.downloadUrl}
+                    fileChangeHandler={this.onfileChangeHandler}
+                    loginGoogleSubmit={this.onFileSubmit} />
             </div>
         );
     }

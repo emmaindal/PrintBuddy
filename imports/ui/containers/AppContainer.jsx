@@ -16,17 +16,16 @@ class App extends React.Component {
     }
     componentDidMount() {
         $("#prepage").fadeOut(200);
-        $("#app").fadeIn(1500);
-          
+        $("#app").fadeIn(1500);          
     }
     render() {
         if (this.props.loading) {
             return (
                 <div>
                     <div className="containerOne container1">
-                        <div className="circle circle1"></div>
-                        <div className="circle circle2"></div>
-                        <div className="circle circle3"></div>
+                        <div className="loading-circle loading-circle1"></div>
+                        <div className="loading-circle loading-circle2"></div>
+                        <div className="loading-circle loading-circle3"></div>
                     </div>
                     <div className="containerOne container2">
                         <p className="msg">

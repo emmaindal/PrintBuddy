@@ -1,7 +1,7 @@
 @import "../variables";
 
 .chat-holder {
-    box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 17px 0 rgba(0, 0, 0, 0.22) !important;
+    box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 17px 0 rgba(0, 0, 0, 0.12) !important;
 }
 
 // Chat component
@@ -13,7 +13,6 @@
     .collection {
         border-bottom: 0;
     }
-    
     .collection .collection-item {
         padding: 7px 10px;
         position: relative;
@@ -21,6 +20,7 @@
         border-bottom: 0;
         padding-top: 5px;
         padding-bottom: 5px;
+        clear:both;
     }
     .form {
         display: flex;
@@ -51,72 +51,67 @@
         padding-top: 3px;
         padding-bottom: 3px;
         padding-right: 10px;
-        border-radius: 12px;
-        border-bottom-left-radius: 0px;
+        border-radius: 20px;
+        border-bottom-left-radius: 2px;
+        min-height: 45px;
+        min-width: 100px;
+        overflow: auto;
+        .secondary-content {
+            position: relative !important;
+            top: 0 !important;
+            right: 0 !important;
+            font-size: 12px;
+            overflow: auto;
+            padding-left: 11px;
+        }
         
     }
     .message-user-two {
         background: $color-message-two;
-        padding-left: 15px;
+        padding-left: 13px;
         padding-top: 3px;
         padding-bottom: 3px;
-        padding-right: 10px;
-        border-radius: 12px;
-        border-bottom-right-radius: 0px;
+        padding-right: 5px;
+        border-radius: 20px;
+        border-bottom-right-radius: 2px;
+        min-height: 45px;
+        min-width: 100px;
+        overflow: auto;
+        .secondary-content {
+            float: none;
+            position: relative !important;
+            top: 0 !important;
+            right: 0 !important;
+            font-size: 12px;
+            overflow: auto;
+            padding-right: 10px
+        }
+        .message-username {
+            float: right;
+            padding-right: 10px;
+        }
+        p {
+            word-break: break-word;
+            position: relative;
+            line-height: 20px;
+            float: right;
+            padding-right: 10px;
+            padding-top: 5px;
+            padding-bottom: 3px;
+        }  
+    }   
+    .list-user-one {
+        float: left;
     }
-    .secondary-content {
-        right: 28px !important;
-        top: 4px !important;
+    .list-user-two {
+        float: right;
     }
    
 }
 
-//stepper 
-.step-by-step {
-    margin-top: 2%;
-    margin-bottom: 4%;
-    span {
-        line-height: 32px !important;
-    }
-    a {
-        line-height: 32px !important;
-        font-weight: bold !important;
-    }
-    :last-child {
-        :last-child {
-            :last-child {
-                :first-child {
-                    margin-bottom: 13px !important;
-                }
-            }
-        }
-    }
+.margin-top-4 {
+    margin-top: 4%;
 }
-.step-by-step  {
-    :first-child > * {
-            font-weight: bold !important;
-            
-    }
-    :first-child {
-        :first-child > * {
-            transition: none !important;
-            border-top-width: 2px !important;
-            :first-child  {
-            transition: all 1s ease-in-out !important;
-            }
-            :last-child {
-                border-top-width: 2px !important;
-            }
-            :nth-child(2) {
-                font-weight: bold !important;
-            }
-            :nth-child(3) {
-                border-top-width: 2px !important;
-            }
-        }
-    }
-}
-
 
 // Chat header
 .chat-header {
@@ -137,8 +132,6 @@
 
 // Chat message
 .chat-message {
-    min-height: 450px;
-    max-height: 450px;
     overflow-y: scroll;
     h5 {
         font-size: 18px;
@@ -156,15 +149,15 @@
 }
 
 // Chat info komponent
-.chat-info {
-    background: white;
-    box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 17px 0 rgba(0, 0, 0, 0.22) !important;
-    border-radius: 4px;
-    position: relative;
-    right: 10% !important;
-    width: 33% !important;    
+.chat-info {  
     .chat-info-wrapper {
+        background: white;
+        border-radius: 4px;
+        position: relative; 
+        padding-left: 5%;  
+        padding-right: 5%;
         margin: 0;
+        box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 17px 0 rgba(0, 0, 0, 0.12) !important;
         .collection-item {
             padding-bottom: 12px;
             padding-top: 12px;
@@ -196,10 +189,7 @@
 
 // download document button
 .button-doc {
-    height: 100px;
-    line-height: 100px;
     z-index: 0;
-    box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.2), 0 7px 10px 0 rgba(0, 0, 0, 0.22) !important;
 }
 
 // mobile document download button
@@ -243,17 +233,20 @@
     }
 }
 
-@media only screen and (min-width: 992px) {
-    .chat-row {
-        margin-right: 70px !important;
-    }
-    .smiley-pop {
-        display: none;
-    }
-}
 
 @media only screen and (max-width: 450px) {
     .step-by-step {
         display: none;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .chat-holder {
+        margin-right: 5%;
+        margin-left: 2.5%;
+    }
+    .chat-info {
+        margin-left: 5%;
+        margin-right: 2.5%;
     }
 }

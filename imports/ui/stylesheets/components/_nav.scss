@@ -1,9 +1,9 @@
 @import "../variables";
 
 nav {
-    background-color: $bg-color-test; // $color-navbar-two
+    background-color: $color-primary-details; // $color-navbar-two
 
-
+    
     .brand-logo {
         color: $text-primary;
     }
@@ -12,4 +12,32 @@ nav {
     a {
         color: $text-secondary;
     }
+    
+    @media only screen and (min-width: 992px) {
+        .nav-container {
+            padding-left: 3%;
+            padding-right: 1%;
+        }
+        ul li a {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    }
 }
+
+.dropdown-content li > a, .dropdown-content li > span{
+    color: $text-secondary;
+}
+
+.dropdown-content{
+    margin-top: 64px;
+}
+
+.mobile-nav-icon{
+    float: left;
+}
+
+.side-nav a{
+    padding: 0 25px;
+}
+
