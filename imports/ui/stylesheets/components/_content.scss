@@ -1,9 +1,13 @@
 @import "../variables";
 
+
 .col.grid-example {
     text-align: center;
     line-height: 50px;
     padding: 2%;
+    @media screen and (max-width: $break-medium){
+        line-height: none;
+    }
 }
 
 p, h1,h2,h3,h4,h5{
@@ -34,44 +38,47 @@ a {
 .col.grid-example.content-first {
     border: 0;
     background-color: $color-primary-details;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%2342a9f4' fill-opacity='0.23'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+    height:100vh;
+        @media screen and (max-width: $break-small){
+            height: 50vh;
+         }
 
     h1 {
-        padding-top: 6%;
-        padding-bottom: 2%;
+        font-size: 64px;
+        padding-top: 15%;
+        padding-bottom: 3%;
         color: $text-tertiary;
         @media screen and (max-width: $break-small){
             font-size: 33px;
-            padding-bottom: 5%;
+            padding-top: 25%;
+
         }
+
     }
 
-    .waves-effect.waves-light.btn-large {
-        border: 1px white solid;
-        border-radius: 3px;
+.waves-effect.waves-light.btn-large.sign-up {
+        border: 1px $color-primary-details solid;
+        border-radius: 4px;
         padding-bottom: 2%;
-        background-color: $color-primary-details;
-        color: white;
+        background-color: white;
+        color: rgb(94, 94, 94);
     }
 
     p{
-        font-size: 14px;
-        color: black;
+        color: white;
         padding-bottom: 2%;
     }
 
     a{
-        color: black;
+        font-size: 20px;
+        color: white;
+        @media screen and (max-width: $break-small){
+            font-size: 14px;
+        }
     }
 
 }
-
-.scroll-btn{
-    margin: 26px auto -26px;
-    background-color: $scroll-btn-background;
-    border: 1px solid $scroll-btn-border;
-    color: $text-tertiary;
-}
-
 
 .btn-floating:hover{
     background-color: $scroll-btn-background;
@@ -111,7 +118,30 @@ a {
 }
 
 .text-wrapper{
-    h5{
+    padding: 5%;
+    h4{
         padding-bottom: 6%;
     }
+}
+
+.arrow {
+  text-align: center;
+  padding-top: 20%;
+}
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
 }

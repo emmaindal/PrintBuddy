@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
-    "test": "meteor test --driver-package=practicalmeteor:mocha"
+    "test": "meteor test --driver-package=practicalmeteor:mocha --port 3100"
   },
   "dependencies": {
     "autoprefixer": "^6.4.1",
@@ -30,6 +30,7 @@
   "devDependencies": {
     "enzyme": "^2.7.1",
     "expect": "^1.20.2",
+    "expect-enzyme": "^0.15.0",
     "meteor-node-stubs": "^0.2.3",
     "react-addons-test-utils": "^15.4.2",
     "shelljs": "^0.7.4"

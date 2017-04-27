@@ -7,15 +7,15 @@ export default class AboutComponent extends React.Component {
     componentDidMount() {
         $("#prepage").fadeOut(200);
         $("#app").fadeIn(1000);
-          
+
     }
     render() {
         return(
             <div>
                 <div className="row">
 
-                    <div className="col s12 m12 l12 grid-example about-content first">
-                        <section className="section">
+                    <div className="col s12 m12 l12 grid-example about-content first" id="fifth-row">
+                        <section className="section" >
                             <h1>Who are we?</h1>
                             <p>Read about PrintBuddy as a team or contact us below if you have any questions.</p>
                         </section>
