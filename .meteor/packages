@@ -32,6 +32,8 @@ dburles:collection-helpers
 reywood:publish-composite
 mdg:validated-method
 mdg:validation-error
+meteorhacks:aggregate
+jcbernack:reactive-aggregate
 
 # i18n
 universe:i18n
@@ -49,7 +51,6 @@ chriswessels:hammer
 standard-minifier-js@1.2.3
 ddp-rate-limiter@1.0.7
 
-
 # rest apis
 simple:rest-accounts-password
 simple:rest
@@ -58,7 +59,6 @@ simple:rest
 xolvio:cleaner
 dispatch:mocha-phantomjs
 practicalmeteor:mocha
-practicalmeteor:chai
 practicalmeteor:sinon
 hwillson:stub-collections
 shell-server@0.2.3
@@ -68,9 +68,6 @@ msavin:mongol
 # security
 audit-argument-checks@1.0.7
 
+
 # not yet sorted
 
-
-
-meteorhacks:aggregate
-jcbernack:reactive-aggregate
