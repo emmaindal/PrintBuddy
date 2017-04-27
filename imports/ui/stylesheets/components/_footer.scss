@@ -2,7 +2,7 @@
 
 
 footer.page-footer{
-    background-color: $color-primary-details;
+    background-color: darken($color-primary-details, 5%);
     width: 100%;
 
     .container{
