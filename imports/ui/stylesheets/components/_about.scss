@@ -1,5 +1,9 @@
 @import "../variables";
 
+.row{
+    margin-bottom: 5px;
+}
+
 .col.grid-example.about-content{
     margin-bottom: 1%;
 }
@@ -7,11 +11,15 @@
 .col.grid-example.about-content.first{
     background: $color-primary-details;
     border: none;
+    height: 100%;
     padding-bottom: 10%;
 
     h1{
         color: white;
         padding: 4% 0 0 0;
+        @media screen and (max-width: $break-medium){
+        font-size: 40px;
+    }
     }
 
     p{
@@ -116,7 +124,7 @@ section.section-about-content.second{
     .formContainer{
         background-color: white;
         border: 1px lightgrey solid;
-        border-radius: 3px;
+        border-radius: 5px;
         padding: 3%;
     }
 
@@ -132,7 +140,7 @@ section.section-about-content.second{
     }
 
     .btn, btn:hover, .btn-large:hover{
-        background-color: #38a3fa;
+        background-color: $color-primary-details;
     }
 
 
