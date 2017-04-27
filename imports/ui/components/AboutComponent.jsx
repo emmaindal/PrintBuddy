@@ -1,14 +1,6 @@
 import React from 'react';
 
 export default class AboutComponent extends React.Component {
-    componentWillMount() {
-        $("#app").fadeOut(1);
-    }
-    componentDidMount() {
-        $("#prepage").fadeOut(200);
-        $("#app").fadeIn(1000);
-
-    }
     render() {
         return(
             <div>
@@ -93,24 +85,6 @@ export default class AboutComponent extends React.Component {
                                             <p><i className="material-icons person">person</i></p>
                                         </div>
                                         <div className="card-content">
-                                            <span className="card-title activator grey-text text-darken-4">Musti
-                                                <h6>Developer</h6>
-                                                <div className="contact-icons">
-                                                    <a href="#"><i className="fa fa-envelope" aria-hidden="true"></i></a>
-                                                    <a href="#"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a>
-                                                </div>
-                                            </span>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div className="card-container">
-                                    <div className="card card-avatar">
-                                        <div className="waves-effect waves-block waves-light">
-                                            <p><i className="material-icons person">person</i></p>
-                                        </div>
-                                        <div className="card-content">
                                             <span className="card-title activator grey-text text-darken-4">Mikael
                                                 <h6>Chief Programmer</h6>
                                                 <div className="contact-icons">
@@ -146,9 +120,8 @@ export default class AboutComponent extends React.Component {
                     </div>
                     <div className="row about-row">
                         <div className="col s12 m12 l12 grid-example about content fourth">
-                            <h4>CONTACT</h4>
                             <section className="col s12 m6 l6 section-about-content fourth one">
-                                <h5>Say Hello!</h5>
+                                <h4>Say Hello!</h4>
                                 <p>We are happy to answer any and all of your
                                     questions concerning our service.
                                     Just fill in the form to the right and we will answer

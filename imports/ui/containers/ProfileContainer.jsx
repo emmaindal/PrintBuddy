@@ -9,21 +9,13 @@ class Profile extends React.Component {
 	constructor(props) {
         super(props);
     }
-    componentWillMount() {
-        $("#app").fadeOut(1);
-    }
-    componentDidMount() {
-        $("#prepage").fadeOut(200);
-        $("#app").fadeIn(1500);
-          
-    }
+    
 	render() {
         const {items} = this.props;
 
 		return (
             <div>
-				<Nav/>
-                <ProfileComponent/>
+                <ProfileComponent currentUser={this.props.currentUser}/>
 			</div>
 		);
 	}
@@ -35,6 +27,7 @@ Profile.propTypes = {
 
 const ProfileContainer = createContainer(() => {
     return {
+        currentUser: Meteor.user()
     };
 }, Profile);
 
