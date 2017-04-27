@@ -9,17 +9,23 @@
 }
 
 .col.grid-example.about-content.first{
-    background: $color-primary-details;
+    background: linear-gradient(
+    rgba(#0592e2, 0.69),
+    rgba(#0592e2, 0.69)
+    ), url("https://static.pexels.com/photos/7096/people-woman-coffee-meeting.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
     border: none;
-    height: 100%;
-    padding-bottom: 10%;
+    height: 80%;
+    padding-bottom: 12%;
 
     h1{
         color: white;
-        padding: 4% 0 0 0;
+        padding: 5% 0 0 0;
+        text-shadow: 4px 2px 4px #044e78;
         @media screen and (max-width: $break-medium){
-        font-size: 40px;
-    }
+            font-size: 40px;
+        }
     }
 
     p{
@@ -54,12 +60,13 @@ section.section-about-content.second{
 }
 
 .col.grid-example.about-content.third{
-    background: $color-primary-details;
+    background: darken($color-primary-details, 5%);
 
     .our-team-heading {
         color: white;
         text-align: center;
-        padding-bottom: 3%;
+        padding-bottom: 1%;
+        padding-top: 2%;
     }
 
     .card.card-avatar {
@@ -78,7 +85,7 @@ section.section-about-content.second{
             font-size: 128px;
             color: #ff9800;
         }
-}
+    }
 
     .card-container {
         width: 19%;
@@ -95,6 +102,15 @@ section.section-about-content.second{
     .is-hidden,
     .is-visible {
         opacity: 1;
+    }
+
+    .contact-icons{
+        i{
+            padding-left: 3%;
+        }
+        a{
+            font-size: 26px;
+        }
     }
 
 }
