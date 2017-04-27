@@ -4,6 +4,7 @@ import React from 'react';
 
 import Nav from '../components/Nav';
 import Content from '../components/Content';
+import AboutComponent from '../components/AboutComponent';
 import Footer from '../components/Footer';
 
 
@@ -14,7 +15,7 @@ class Start extends React.Component {
     }
     componentWillMount() {
         $("#app").fadeOut(1);
-        
+
     }
 	componentDidMount(){
 		const $$ = window.$;
@@ -44,6 +45,7 @@ class Start extends React.Component {
 		return (
 			<div>
 				<Content/>
+				<AboutComponent/>
 				<Footer/>
 			</div>
 		);
