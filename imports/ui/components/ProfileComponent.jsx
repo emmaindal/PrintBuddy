@@ -39,6 +39,7 @@ export class ProfileComponent extends React.Component {
                     isActive: this.state.isBuddy
                 }
             }
+        console.log("THIS SHOULD BE SENT FOR UPDATE: ", updatedUser); // TODO Metod för att uppdatera currentUsers info!
     }
 
     handleChange(e) {

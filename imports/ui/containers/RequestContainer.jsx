@@ -83,7 +83,6 @@ class RequestComp extends React.Component {
     render() {
         return (
             <div>
-                <p>Request Container</p>
                 <div className="step-by-step container">
                     <Stepper steps={[
                         { title: "Request" },

@@ -29,10 +29,9 @@ class Nav extends React.Component {
     }
 
     popProfileModal() {
-        console.log("popProfile fired");
         $('#profile-modal').openModal({
-            inDuration: 100, 
-            outDuration: 100,  
+            inDuration: 0.9, 
+            outDuration: 0.9,  
         });
     }
 
@@ -49,11 +48,10 @@ class Nav extends React.Component {
                             <ul className="right hide-on-med-and-down">
                                 <li><IndexLink to="/jobs" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Jobs</IndexLink></li>
                                 <li><Link to="/myjobs" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>My Jobs</Link></li>
-                                <li><Link className='dropdown-button' to='#' data-activates='dropdown1'><i className="material-icons">&#xE7FD;</i></Link></li>
+                                <li><Link className='dropdown-button' data-activates='dropdown1'><i className="material-icons">&#xE7FD;</i></Link></li>
 
                                 <ul id='dropdown1' className='dropdown-content'>
-                                    <li><Link to="#" onClick={this.popProfileModal}>Profile</Link></li>
-                                    <li><Link to="#">Settings</Link></li>
+                                    <li><Link onClick={this.popProfileModal}>Settings</Link></li>
                                     <li className="divider"></li>
                                     <li><Link onClick={this.onLogout}>Log out</Link></li>
                                 </ul>
@@ -62,8 +60,7 @@ class Nav extends React.Component {
                                 <li><IndexLink to="/jobs" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Jobs</IndexLink></li>
                                 <li><Link to="/myjobs" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>My Jobs</Link></li>
 
-                                <li><Link to="#" className="mobile-nav-icon" onClick={this.popProfileModal}><i className="material-icons">&#xE7FD;</i></Link></li>
-                                <li><Link to="#" className="mobile-nav-icon"><i className="material-icons">&#xE8B8;</i></Link></li>
+                                <li><Link className="mobile-nav-icon" onClick={this.popProfileModal}><i className="material-icons">settings</i></Link></li>
                                 <li><Link onClick={this.onLogout} className="mobile-nav-icon"><i className="material-icons">&#xE8AC;</i></Link></li>
 
                             </ul>
@@ -89,19 +86,17 @@ class Nav extends React.Component {
                             <ul className="right hide-on-med-and-down">
                                 <li><IndexLink to="/request" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Requests</IndexLink></li>
 
-                                <li><Link className='dropdown-button' to='#' data-activates='dropdown1'><i className="material-icons">&#xE7FD;</i></Link></li>
+                                <li><Link className='dropdown-button' data-activates='dropdown1'><i className="material-icons">&#xE7FD;</i></Link></li>
 
                                 <ul id='dropdown1' className='dropdown-content'>
-                                    <li><Link onClick={this.popProfileModal}>Profile</Link></li>
-                                    <li><Link to="#">Settings</Link></li>
+                                    <li><Link onClick={this.popProfileModal}>Settings</Link></li>
                                     <li className="divider"></li>
                                     <li><Link onClick={this.onLogout}>Log out</Link></li>
                                 </ul>
                             </ul>
                             <ul className="side-nav" id="mobile-nav">
                                 <li><IndexLink to="/request" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Requests</IndexLink></li>
-                                <li><Link className="mobile-nav-icon" id="requestor-profile" onClick={this.popProfileModal}><i className="material-icons">&#xE7FD;</i></Link></li>
-                                <li><Link to="#" className="mobile-nav-icon" id="requestor-settings"><i className="material-icons">&#xE8B8;</i></Link></li>
+                                <li><Link className="mobile-nav-icon" id="requestor-profile" onClick={this.popProfileModal}><i className="material-icons">settings</i></Link></li>
                                 <li><Link onClick={this.onLogout} className="mobile-nav-icon"><i className="material-icons">&#xE8AC;</i></Link></li>
 
                             </ul>
