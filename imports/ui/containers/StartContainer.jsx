@@ -37,9 +37,7 @@ class Start extends React.Component {
 		})
         $("#prepage").fadeOut(200);
         $("#app").fadeIn(1000);
-
 	}
-
 	render() {
 		return (
 			<div>

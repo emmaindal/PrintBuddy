@@ -5,8 +5,22 @@
 }
 
 #loginback {
-    background-color: white;
+    background-color: transparent;
+    .row .col {
+        padding: 0;
     }
+    i.small {
+        font-size: 1.5rem;
+        margin-top: 27px;
+    }
+    .input-field label {
+        left: 0;
+    }
+    .login-modal-row {
+        margin-top: 45px;
+        margin-bottom: 0;
+    }
+}
 
 .btn, .btn-large, .btn:hover, .btn-large:hover{
     background-color: $scroll-btn-background;

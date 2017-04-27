@@ -20,6 +20,16 @@ a {
     font-size: 14px;
 }
 
+.start-page {
+    .login-modal {
+        width: 40%;
+        .modal-content {
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
 
 .col.grid-example.content-first {
     border: 0;
