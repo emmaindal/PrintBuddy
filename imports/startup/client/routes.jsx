@@ -52,8 +52,6 @@ function requireAuth(nextState, replace) {
 export const renderRoutes = () => (
     <Router history={browserHistory}>
         <Route path="/profile" component={ProfileContainer} />
-        <Route path="/register" component={RegisterContainer} />
-        <Route path="/login" component={LoginContainer} />
         <Route path="/start" component={StartContainer} />
         <Route path="/about" component={AboutContainer} />
         <Route path="/verified" component={VerifiedContainer} />

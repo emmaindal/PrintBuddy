@@ -26,11 +26,68 @@ a {
 
 .start-page {
     .login-modal {
-        width: 40%;
+        width: 500px;
+        top: 28% !important;
+        overflow-y: visible !important;
         .modal-content {
             padding-bottom: 0;
             padding-left: 0;
             padding-right: 0;
+            padding-top: 15px;
+        }
+        .cance-login-modal-btn {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            width: 30px;
+            height: 30px;
+            &:hover {
+            background-color: #ef9a9a !important;
+        }
+            
+        }
+        .btn-floating i {
+            font-size: 1.3rem;
+            line-height: 30px;
+        }
+        .breakit {
+            margin: 15px 0px;
+        }
+        .line-break {
+            border-bottom: 1px solid #9e9e9e !important;
+        }
+    }
+    .register-modal {
+        width: 500px;
+        top: 14% !important;
+        overflow-y: visible !important;
+        max-height: none;
+        .modal-content {
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 15px;
+        }
+        .cance-login-modal-btn {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            width: 30px;
+            height: 30px;
+            &:hover {
+            background-color: #ef9a9a !important;
+        }
+            
+        }
+        .btn-floating i {
+            font-size: 1.3rem;
+            line-height: 30px;
+        }
+        .breakit {
+            margin: 15px 0px;
+        }
+        .line-break {
+            border-bottom: 1px solid #9e9e9e !important;
         }
     }
 }

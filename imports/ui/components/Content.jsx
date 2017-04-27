@@ -1,13 +1,25 @@
 import React from 'react';
 
 import LoginContainer from "../containers/LoginContainer";
+import RegisterContainer from "../containers/RegisterContainer";
 
 export default class Content extends React.Component {
     componentDidMount() {
 
     }
     popLoginModal() {
-        $('#login-modal').openModal('open');
+        $('#register-modal').closeModal();
+        $('#login-modal').openModal({
+            inDuration: 100, 
+            outDuration: 100,  
+        });
+    }
+    popRegisterModal() {
+        $('#login-modal').closeModal();
+        $('#register-modal').openModal({
+            inDuration: 100, 
+            outDuration: 100,      
+        });
     }
     render() {
         return (
@@ -15,7 +27,7 @@ export default class Content extends React.Component {
                 <div className="row">
                     <div className="col s12 m12 l12 grid-example content-first" id="first-row">
                         <h1>Welcome to PrintBuddy</h1>
-                        <a href="/register"className="waves-effect waves-light btn-large sign-up">SIGN UP</a>
+                        <a onClick={this.popRegisterModal} className="waves-effect waves-light btn-large sign-up">SIGN UP</a>
                         <h5><a onClick={this.popLoginModal}>Already have an account? Sign in here.</a></h5>
                         <div className="arrow bounce">
                             <a className="fa fa-arrow-down fa-2x" href="#second-row"></a>
@@ -76,10 +88,32 @@ export default class Content extends React.Component {
                 </div>
                 <div id="login-modal" className="modal login-modal">
                     <div className="modal-content">
+                        <a className="cance-login-modal-btn modal-action modal-close btn-floating btn waves-effect waves-light red lighten-2"><i className="material-icons">clear</i></a>
                         <LoginContainer/>
+                        <div className="breakit row">
+                            <div className="line-break col s10 offset-s1"></div>
+                        </div>
+                        <div className="row">
+                            <div className="col s10 offset-s1" style={{display: "flex", justifyContent: "space-between", marginBottom: "15px"}}>
+                                <div>Don't have an Account?</div>
+                                <a onClick={this.popRegisterModal}>Register</a>
+                            </div>
+                        </div>
                     </div>
-                    <div className="modal-footer">
-                        <a className="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                </div>
+                <div id="register-modal" className="modal register-modal">
+                    <div className="modal-content">
+                        <a className="cance-login-modal-btn modal-action modal-close btn-floating btn waves-effect waves-light red lighten-2"><i className="material-icons">clear</i></a>
+                        <RegisterContainer/>
+                        <div className="breakit row">
+                            <div className="line-break col s10 offset-s1"></div>
+                        </div>
+                        <div className="row">
+                            <div className="col s10 offset-s1" style={{display: "flex", justifyContent: "space-between", marginBottom: "15px"}}>
+                                <div>Already have an Account?</div>
+                                <a onClick={this.popLoginModal}>Login</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
