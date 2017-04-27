@@ -30,7 +30,7 @@ const ActiveJobList = ({ listofjobs, onChatClicked, onView}) => {
     }
     return (
         <div className="col s12 m12 l12">
-            <ul className="collection with-header" id="joblist">
+            <ul className="collection with-header" id="active-joblist">
                 <li className="collection-header"><h5>Active printjobs</h5></li>
                 <FlipMove maintainContainerHeight={true}>
                     {renderlist()}

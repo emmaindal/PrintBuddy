@@ -2,7 +2,6 @@ import React from 'react';
 import FlipMove from 'react-flip-move';
 
 export const JobList = ({listofjobs, onApply, onView}) =>
-	<div className="col s12 m10 offset-m1 l6">
 		<ul className="collection with-header" id="joblist">
 			<li className="collection-header"><h5>Nearby printjobs</h5></li>
 			<FlipMove maintainContainerHeight={true}>
@@ -37,4 +36,4 @@ export const JobList = ({listofjobs, onApply, onView}) =>
 				}
 			</FlipMove>
 		</ul>
-	</div>;
+;

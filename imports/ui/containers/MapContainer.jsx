@@ -60,46 +60,43 @@ class MapContainer extends React.Component {
 	render() {
         const mapHeight = () => {
             if (Meteor.user().isBuddy()) {
-                return "88vh"; // re-adjust later if needed!
+                return "calc( 100vh - 64px )"; // re-adjust later if needed!
             } else {
                 return "71vh"; // re-adjust later if needed!
             }
         }
 		return (
-			<div className="col s12 m10 offset-m1 l6">
-				<div className="collection" style={{ height: mapHeight()}}>
-					<div style={{height: mapHeight()}}>
-                        {this.props.isBuddy ?
-                             (
-                                <InitialMap
-                                    containerElement={
-                                        <div style={{ height: mapHeight(), width: "auto" }} />
-                                    }
-                                    mapElement={
-                                        <div style={{ height: mapHeight(), width: "auto" }} />
-                                    }
-                                    markers={this.state.markers}
-                                    defaultCenter={this.props.defaultCenter}
-                                    onMarkerClick={this.handleMarkerClick}
-                                    onCloseClick={this.handleMarkerClose}
-                                />
-                            ) : (
-                                <InitialPendingMap
-                                    containerElement={
-                                        <div style={{ height: mapHeight(), width: "auto" }} />
-                                    }
-                                    mapElement={
-                                        <div style={{ height: mapHeight(), width: "auto" }} />
-                                    }
-                                    markers={this.state.markers}
-                                    defaultCenter={this.props.defaultCenter}
-                                    onMarkerClick={this.handleMarkerClick}
-                                    onCloseClick={this.handleMarkerClose}
-                                />
-                            )
-                        }
-						
-					</div>
+			<div className="collection" id="google-maps-inject" style={{ height: mapHeight()}}>
+				<div style={{height: mapHeight()}}>
+                    {this.props.isBuddy ?
+                            (
+                            <InitialMap
+                                containerElement={
+                                    <div style={{ height: mapHeight(), width: "auto" }} />
+                                }
+                                mapElement={
+                                    <div style={{ height: mapHeight(), width: "auto" }} />
+                                }
+                                markers={this.state.markers}
+                                defaultCenter={this.props.defaultCenter}
+                                onMarkerClick={this.handleMarkerClick}
+                                onCloseClick={this.handleMarkerClose}
+                            />
+                        ) : (
+                            <InitialPendingMap
+                                containerElement={
+                                    <div style={{ height: mapHeight(), width: "auto" }} />
+                                }
+                                mapElement={
+                                    <div style={{ height: mapHeight(), width: "auto" }} />
+                                }
+                                markers={this.state.markers}
+                                defaultCenter={this.props.defaultCenter}
+                                onMarkerClick={this.handleMarkerClick}
+                                onCloseClick={this.handleMarkerClose}
+                            />
+                        )
+                    }
 				</div>
 			</div>
 		);

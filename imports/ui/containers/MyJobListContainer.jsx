@@ -57,21 +57,24 @@ class MyJobList extends React.Component {
         });
 
         return (
-            <div>
+            <div id="myjobslist">
                 <div className="row">
-                    <div className="col s12 m12 l12">
-                        <div className="col l6">
-                            <div className="row">
-                                <PendingJobList listofjobs={this.props.pendingJobs} onView={this.onViewLocation}
-                                                onCancel={this.onCancel}/>
-                            </div>
-                            <div className="row">
-                                <ActiveJobList listofjobs={this.props.activeJobs} onChatClicked={this.onChatClicked}
-                                               onView={this.onViewLocation}/>
-                            </div>
+                    <div className="col s12 m12 l6">
+                        <div className="row">
+                            <ActiveJobList listofjobs={this.props.activeJobs} onChatClicked={this.onChatClicked}
+                                            onView={this.onViewLocation}/>
                         </div>
-                        <MapContainer isBuddy={true} clickedId={this.state.clickedJobId} markers={jobsMarkerList}
-                                      defaultCenter={this.state.defaultCenter}/>
+                        <div className="row">
+                            <PendingJobList listofjobs={this.props.pendingJobs} onView={this.onViewLocation}
+                                            onCancel={this.onCancel}/>
+                        </div>
+                    </div>
+                    <div className="col s12 m12 l6" id="map-column">
+                        <MapContainer 
+                            isBuddy={true} 
+                            clickedId={this.state.clickedJobId} 
+                            markers={jobsMarkerList}
+                            defaultCenter={this.state.defaultCenter}/>
                     </div>
                 </div>
             </div>

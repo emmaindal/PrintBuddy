@@ -1,0 +1,24 @@
+
+#myjobslist {
+    .row {
+        margin: 0;
+    }
+    .col {
+        margin: 0;
+        padding: 0;
+    }
+    .collection {
+        margin: 0;
+    }
+    @media only screen and (min-width: 993px) {
+        #map-column {
+           margin-top: -10px;
+        }
+    }
+
+    #pending-joblist, #active-joblist {
+        height: calc((100vh - 64px)/2);
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+}
