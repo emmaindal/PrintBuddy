@@ -1,10 +1,71 @@
 @import "../variables";
 
-#profilback {
-    background-color: white;
-    margin-top: 1.2rem;
-    .text-center {
-        padding-top: 20px;
-        margin-bottom: 10px;
+
+.switch label input[type=checkbox]:checked + .lever:after{
+    background-color: $scroll-btn-background;
+}
+
+.switch label input[type=checkbox]:checked + .lever{
+    background-color: lighten($scroll-btn-background, 40%);
+}
+
+#profile {
+    background-color: transparent;
+    .row .col {
+        padding: 0;
+    }
+    i.small {
+        font-size: 1.5rem;
+        margin-top: 27px;
+    }
+    .input-field label {
+        left: 0;
+    }
+    .profile-modal-row {
+        margin-top: 35px;
+        margin-bottom: 35px;
+        font-size: 16px;
+        .btn {
+            letter-spacing: 3px;
+            height: 50px;
+        }
+    }
+    #role-switcher {
+
+    }
+    #color-switcher {
+        margin-top: 20px;
+        margin-left: -42px;
+    }
+}
+#passwordNotEqual{
+    color: red;
+}
+
+.profile-modal {
+    width: 500px;
+    top: 14% !important;
+    overflow-y: visible !important;
+    max-height: none;
+    .modal-content {
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 15px;
+    }
+    .cance-login-modal-btn {
+        position: absolute;
+         top: -12px;
+        right: -12px;
+        width: 30px;
+        height: 30px;
+        &:hover {
+        background-color: #ef9a9a !important;
+    }
+            
+    }
+    .btn-floating i {
+        font-size: 1.3rem;
+        line-height: 30px;
     }
 }
