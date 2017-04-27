@@ -17,7 +17,7 @@ class ChatInfo extends React.Component {
     render() {
         const {request, canCancel} = this.props;
         return (
-            <div>
+            <div className="chat-info">
                 <ul className="collection with-header chat-info-wrapper">
                     <li className="collection-header"><h4>Job info</h4></li>
                     <li className="collection-item"><span>Title:</span> {request.title} </li>
@@ -37,6 +37,10 @@ class ChatInfo extends React.Component {
                                 Request</a>
                         </li>
                     </div> : null}
+                    {!canCancel ? <li className="collection-item">
+                        <a onClick={this.props.handleDownload} className="waves-effect waves-light btn button-doc">Download Document</a>
+                    </li> : null}
+                    
                 </ul>
             </div>
         );

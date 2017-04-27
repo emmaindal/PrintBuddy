@@ -3,7 +3,7 @@
 nav {
     background-color: $color-primary-details; // $color-navbar-two
 
-
+    
     .brand-logo {
         color: $text-primary;
     }
@@ -11,6 +11,17 @@ nav {
     .active,
     a {
         color: $text-secondary;
+    }
+    
+    @media only screen and (min-width: 992px) {
+        .nav-container {
+            padding-left: 3%;
+            padding-right: 1%;
+        }
+        ul li a {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
     }
 }
 
@@ -29,3 +40,4 @@ nav {
 .side-nav a{
     padding: 0 25px;
 }
+
