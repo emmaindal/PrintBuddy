@@ -3,7 +3,7 @@ import React from 'react';
 export default class AboutComponent extends React.Component {
     render() {
         return(
-            <div>
+            <div id="about-content">
                 <div className="row">
 
                     <div className="col s12 m12 l12 grid-example about-content first" id="fifth-row">

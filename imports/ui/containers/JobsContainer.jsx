@@ -54,10 +54,12 @@ class Jobs extends React.Component {
 
     render() {
         return (
-            <div>
-                <div id="test-joblist" className="row">
-                    <div className="col s12 m12 l12">
+            <div id="jobslistcontainer">
+                <div className="row">
+                    <div className="col s12 m12 l6">
                         <JobList listofjobs={this.props.jobs} onApply={this.onApply} onView={this.onViewLocation}/>
+                    </div>
+                    <div className="col s12 m12 l6" id="map-column">
                         <MapContainer isBuddy={true} clickedId={this.state.clickedJobId} markers={this.props.jobs}
                                       defaultCenter={this.state.defaultCenter}/>
                     </div>

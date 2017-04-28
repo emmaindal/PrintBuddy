@@ -1,6 +1,7 @@
 @import "../variables";
 
-#joblist {
+
+#joblist, #pending-joblist, #active-joblist {
 	background: white;
 	.content-for-li {
 		display: inline-flex;
@@ -71,4 +72,24 @@
             margin-left: 4px;
         }
 	}
+}
+#joblist {
+    height: calc((100vh - 64px)); 
+}
+#jobslistcontainer {
+    .row {
+        margin: 0;
+    }
+    .col {
+        margin: 0;
+        padding: 0;
+    }
+    .collection {
+        margin: 0;
+    }
+    @media only screen and (min-width: 993px) {
+        #map-column {
+           margin-top: -10px;
+        }
+    }
 }

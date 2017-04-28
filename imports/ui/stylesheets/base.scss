@@ -65,6 +65,17 @@ a {
 button {
     cursor: pointer;
 }
+
+// Nedan är en del av Simons CSS hack för en liten css GoogleMaps mardröm
+@media only screen and (min-width: 992px) {
+    html {
+        font-size: 15px;
+    }
+}
+// Ovan är en del av Simons CSS hack för en liten css GoogleMaps mardröm
+
+
+
 // SCROLL BAR CUMSTOMIZE
 
 /* Let's get this party started */

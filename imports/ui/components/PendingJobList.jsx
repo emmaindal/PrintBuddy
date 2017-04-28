@@ -35,7 +35,7 @@ const PendingJobList = ({listofjobs, onView, onCancel}) => {
     }
     return (
         <div className="col s12 m12 l12">
-            <ul className="collection with-header" id="joblist">
+            <ul className="collection with-header" id="pending-joblist">
                 <li className="collection-header"><h5>Pending printjobs</h5></li>
                 <FlipMove maintainContainerHeight={true}>
                     {renderlist()}
