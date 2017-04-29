@@ -2,6 +2,7 @@
 
 .chat-holder {
     box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 17px 0 rgba(0, 0, 0, 0.12) !important;
+    border-radius: 4px;
 }
 
 // Chat component
@@ -38,6 +39,8 @@
         margin-right: 10px;
         margin-top: 10px;
         transition: 0.2s all ease-in-out;
+        width: 30%;
+        padding: 0!important;
         &:hover {
             letter-spacing: 4px;
         }
@@ -109,24 +112,36 @@
     
 }
 
-.margin-top-4 {
+/*.margin-top-4 {
     margin-top: 4%;
-}
+}*/
 
 .chat-holder {
     #modal1 {
         .cancel-icon {
             position: absolute;
-            right: 3px;
-            top: 3px;
+            right: 14px;
+            top: 8px;
             z-index: 999999999;
+            font-size: 32px;
+            color: #6b6b6b;
+            font-weight: 100;
         }
         @media screen and (max-width: 500px) {
             width: 100%;
             height: 100vh;
             top: 0 !important;
             max-height: none !important;
-        }   background: white;
+            background: white;
+        }
+        .modal-content {
+            .chat-info {
+                .chat-info-wrapper {
+                    height: auto !important;
+                    overflow-y: inherit !important;
+                }
+            }
+        }   
     }
     
 }
@@ -140,7 +155,6 @@
     z-index: 1;
     display: flex;
     justify-content: space-between;
-    
     h6 {
         margin-top: 21px;
         font-weight: bold;
@@ -158,14 +172,33 @@
 // Chat message
 .chat-message {
     overflow-y: scroll;
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 450px) {
         height: calc(100vh - 181px);
+    }
+    @media screen and (min-width: 451px) {
+        height: calc(100vh - 297px);
+    }
+    @media screen and (min-width: 600px) {
+        height: calc(100vh - 24rem);
     }
     h5 {
         font-size: 18px;
     }
 }
+.chat-buddy {
+    @media screen and (max-width: 600px) {
+        height: calc(100vh - 181px);
+    }
+    @media screen and (min-width: 601px) {
+        height: calc(100vh - 18rem);
+    }
+}
 
+.chat-holder-buddy {
+    @media screen and (min-width: 601px) {
+        margin-top: 26px;
+    }
+}
 // Chat form
 .chat-form {
     border-bottom-left-radius: 5px;
@@ -177,7 +210,13 @@
 }
 
 // Chat info komponent
-.chat-info {  
+.chat-info {
+    .chat-info-wrapper-buddy {
+        height: calc(100vh - 9rem) !important;
+        @media screen and (max-height: 630px) {
+            overflow-y: scroll;
+        }
+    }  
     .chat-info-wrapper {
         background: white;
         border-radius: 4px;
@@ -186,9 +225,13 @@
         padding-right: 5%;
         margin: 0;
         box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 17px 0 rgba(0, 0, 0, 0.12);
+        height: calc(100vh - 15rem);
         @media screen and (max-width: 500px) {
             box-shadow: none;
             border-bottom: none;
+        }
+        @media screen and (max-height: 720px) {
+            overflow-y: scroll;
         }
         .collection-item {
             padding-bottom: 12px;
@@ -204,6 +247,12 @@
         }
     }
 }
+.chat-info-buddy {
+    @media screen and (min-width: 601px) {
+        margin-top: 35px;
+        
+    } 
+}
 .job-info-buttons {
     .collection-item {
         display: flex;
@@ -212,6 +261,8 @@
             padding: 0 1rem;
             z-index: 0;
             width: 40%;
+            height: 50px;
+            line-height: 3.5;
         }
         .red {
             &:hover {
@@ -225,6 +276,8 @@
 // download document button
 .button-doc {
     z-index: 0;
+    height: 50px;
+    line-height: 3.5;
 }
 
 // mobile document download button
@@ -249,7 +302,7 @@
 }
 
 .smiley-pop {
-    margin-top: 12px;
+    margin-top: 16px;
     margin-right: 12px;
     cursor: pointer;
     transition: all 0.3s ease !important;

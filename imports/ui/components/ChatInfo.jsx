@@ -14,11 +14,18 @@ class ChatInfo extends React.Component {
 
     }
 
+    chatInfoWrapperStyle() {
+        if (this.props.canCancel) {
+            return "collection with-header chat-info-wrapper";
+        } else {
+            return "collection with-header chat-info-wrapper chat-info-wrapper-buddy";
+        }
+    }
     render() {
         const {request, canCancel} = this.props;
         return (
             <div className="chat-info">
-                <ul className="collection with-header chat-info-wrapper">
+                <ul className={this.chatInfoWrapperStyle()}>
                     <li className="collection-header"><h4>Job info</h4></li>
                     <li className="collection-item"><span>Title:</span> {request.title} </li>
                     <li className="collection-item">

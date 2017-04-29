@@ -29,15 +29,23 @@ class ChatHolder extends React.Component {
     }
     chatHeight() {
         if (this.props.userId === this.props.request.userReqId) {
-            return "53vh"
+            return "chat chat-message invisible-scrollbar"
         } else {
-            return "63vh"
+            return "chat chat-message chat-buddy invisible-scrollbar"
+        }
+    }
+    chatHolderStyle() {
+        if (this.props.userId === this.props.request.userReqId) {
+            return "chat-holder"
+        } else {
+            return "chat-holder chat-holder-buddy"
         }
     }
     render() {
         const canCancel =  this.props.userId === this.props.request.userReqId;
+        
         return (
-            <div className="chat-holder">
+            <div className={this.chatHolderStyle()}>
                 <div className="chat-header">
                     <a onClick={this.showChatInfo.bind(this)}><i className="info-icon material-icons hide-on-large-only">info_outline</i></a>
                     <h6 className="chat-title center-align">Chat</h6>
@@ -45,7 +53,7 @@ class ChatHolder extends React.Component {
                     <a onClick={this.props.handleDownload} className="waves-effect waves-light btn mobile-download-btn hide-on-large-only">Download</a>
                     : null}
                 </div>
-                <div id="chatbox" className="chat chat-message">
+                <div id="chatbox" className={this.chatHeight()}>
                     <ChatMessageList userId={this.props.userId} chat={this.props.chat} />
                 </div>
                 <div className="chat-form chat">
