@@ -1,0 +1,20 @@
+@import "../variables";
+
+.side-nav {
+    width: 170px;
+    background: $color-primary-details;
+    li {
+        .active {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        
+        a {
+            color: white;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+        .mobile-nav-icon {
+            width: 100%; // Ändra till 50% om vi vill ha dessa knappar bredvid varandra. Men tänk på UX mobil. liten yta o trycka på
+        }
+    }
+}
