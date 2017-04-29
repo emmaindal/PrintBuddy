@@ -11,7 +11,7 @@ export const JobList = ({listofjobs, onApply, onView}) =>
 						<li className="collection-item content-for-li" key={job._id}>
                             <p> 
                                 <i className="round-icon-green material-icons">description</i>
-                                {job.title}<br/>
+                                <span className="job-title-span">{job.title}</span><br/>
                                 <i className={job.needColor ? "round-icon-green material-icons" : "round-icon-gray material-icons"}>print</i>
                                 {job.needColor ? 'Color' : 'Black & White'}<br/>
                                 <i className={job.delivery ? "round-icon-blue material-icons" : "round-icon-green material-icons"}>{job.delivery ? 'directions_run' : 'access_time'}</i>

@@ -7,21 +7,51 @@
 		display: inline-flex;
 		justify-content: space-between;
 		width: 100%;
-		p {
-			margin: 0.5em 0 0.5em 0;
-			padding-right: 1em;
-            font-size: 1.2rem;
-		}
+        .job-title-span {
+            font-size: 1.2rem; // Justera upp denna om vi ska ha större text för titeln
+        }
 		#nojobsmessage {
 			margin-left: auto;
 			margin-right: auto;
 			font-size: 1.4rem;
 		}
-		.buttongroup {
-		display: inline-flex;
-		margin-top: auto;
-		margin-bottom: auto;
-		}
+		
+        @media only screen and (min-width: 601px) { //breakpoint för stacked buttons i list stor skärm
+            .buttongroup {
+                display: inline-flex;
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+            p {
+                margin: 0.5em 0 0.5em 0;
+                padding-right: 1em;
+                font-size: 1.2rem;
+            }
+        }
+        @media only screen and (max-width: 600px) { //breakpoint för stacked buttons i list liten skärm
+
+            .buttongroup {
+                display: inline-grid;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                .btn:first-of-type {
+                    margin: 0;
+                }
+                .btn {
+                    min-width: 77.86px;
+                }
+            }
+            p {
+                .job-title-span {
+                    font-size: 1.1rem;
+                }
+                max-width: 80%;
+                margin: 0 0 0 0;
+                margin-left: -25px;
+                padding-right: 0;
+                font-size: 1.1rem;
+            }
+        }
 		.btn:first-of-type {
 			margin-right: 0.5rem;
 		}
@@ -72,6 +102,7 @@
             margin-left: 4px;
         }
 	}
+    
 }
 #joblist {
     @media only screen and (min-width: 993px) {

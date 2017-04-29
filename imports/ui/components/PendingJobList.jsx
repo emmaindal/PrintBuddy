@@ -8,9 +8,9 @@ const PendingJobList = ({listofjobs, onView, onCancel}) => {
                 return (
                     <li className="collection-item" key={index}>
                         <div className="content-for-li">
-                            <p> 
-                                <i className="round-icon-green material-icons">description</i>
-                                {job.title}<br/>
+                            <p>
+                               <i className="round-icon-green material-icons">description</i>
+                                <span className="job-title-span">{job.title}</span><br/>
                                 <i className={job.needColor ? "round-icon-green material-icons" : "round-icon-gray material-icons"}>print</i>
                                 {job.needColor ? 'Color' : 'Black & White'}<br/>
                                 <i className={job.delivery ? "round-icon-blue material-icons" : "round-icon-green material-icons"}>{job.delivery ? 'directions_run' : 'access_time'}</i>
