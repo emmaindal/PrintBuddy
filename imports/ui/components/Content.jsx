@@ -20,6 +20,9 @@ export default class Content extends React.Component {
             inDuration: 100,
             outDuration: 100,
         });
+        $('#register-modal').animate({
+            scrollTop: 0
+        }, 10);
     }
     render() {
         return (
@@ -91,7 +94,7 @@ export default class Content extends React.Component {
                 </div>
                 <div id="login-modal" className="modal login-modal">
                     <div className="modal-content">
-                        <a className="cance-login-modal-btn modal-action modal-close btn-floating btn waves-effect waves-light red lighten-2"><i className="material-icons">clear</i></a>
+                        <i className="material-icons cancel-icon modal-action modal-close ">clear</i>
                         <LoginContainer />
                         <div className="breakit row">
                             <div className="line-break col s10 offset-s1"></div>
@@ -104,10 +107,10 @@ export default class Content extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div id="register-modal" className="modal register-modal">
+                <div id="register-modal" className="modal register-modal ">
                     <div id="scrollbar">
                         <div className="modal-content">
-                            <a className="cance-login-modal-btn modal-action modal-close btn-floating btn waves-effect waves-light red lighten-2"><i className="material-icons">clear</i></a>
+                            <i className="material-icons cancel-icon modal-action modal-close ">clear</i>
                             <RegisterContainer />
                             <div className="breakit row">
                                 <div className="line-break col s10 offset-s1"></div>

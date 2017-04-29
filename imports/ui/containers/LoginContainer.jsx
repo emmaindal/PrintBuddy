@@ -17,17 +17,10 @@ class Login extends React.Component {
             if (error) {
                 displayError("Error:", error.reason);
             } else {
+                $('#login-modal').closeModal();
                 browserHistory.push('/');
             }
         });
-    }
-    componentWillMount() {
-        $("#app").fadeOut(1);
-    }
-    componentDidMount() {
-        $("#prepage").fadeOut(200);
-        $("#app").fadeIn(1500);
-          
     }
     render() {
         return (

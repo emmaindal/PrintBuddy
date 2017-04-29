@@ -4,17 +4,9 @@
     text-align: center;
 }
 
-.printer {
-
-}
-
 #registerback {
     background-color: white;
 	margin-top: 1.2rem;
-	.text-center {
-		padding-top: 20px;
-		margin-bottom: 10px;
-	}
 }
 
 #passwordNotEqual{
@@ -40,6 +32,9 @@
     }
     .input-field label {
         left: 0;
+    }
+    form p {
+        margin-bottom: 0 !important;
     }
     .register-modal-row {
         margin-top: 35px;
