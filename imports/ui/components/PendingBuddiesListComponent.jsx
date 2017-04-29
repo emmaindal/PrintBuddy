@@ -20,7 +20,7 @@ export class PendingBuddiesList extends React.Component {
                                                 <i className="round-icon-blue material-icons">sentiment_very_satisfied</i>
                                             </div>
                                             <p className="valign-wrapper">
-                                                {buddy.username} have offered to print for you!<br/>Address: {buddy.position.address} - Distance: "not set" meter
+                                                {buddy.username} have offered to print for you!<br/>
                                             </p>
                                             <div className="buttongroup">
                                                 <button className="btn waves-effect waves-light location-btn" onClick={() => { this.props.onView(buddy) }}><i className="small material-icons">location_on</i></button>
