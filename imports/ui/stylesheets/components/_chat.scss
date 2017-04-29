@@ -109,9 +109,9 @@
     
 }
 
-.margin-top-4 {
+/*.margin-top-4 {
     margin-top: 4%;
-}
+}*/
 
 .chat-holder {
     #modal1 {
@@ -140,7 +140,6 @@
     z-index: 1;
     display: flex;
     justify-content: space-between;
-    
     h6 {
         margin-top: 21px;
         font-weight: bold;
@@ -158,14 +157,33 @@
 // Chat message
 .chat-message {
     overflow-y: scroll;
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 450px) {
         height: calc(100vh - 181px);
+    }
+    @media screen and (min-width: 451px) {
+        height: calc(100vh - 297px);
+    }
+    @media screen and (min-width: 600px) {
+        height: calc(100vh - 24rem);
     }
     h5 {
         font-size: 18px;
     }
 }
+.chat-buddy {
+    @media screen and (max-width: 600px) {
+        height: calc(100vh - 181px);
+    }
+    @media screen and (min-width: 601px) {
+        height: calc(100vh - 18rem);
+    }
+}
 
+.chat-holder-buddy {
+    @media screen and (min-width: 601px) {
+        margin-top: 26px;
+    }
+}
 // Chat form
 .chat-form {
     border-bottom-left-radius: 5px;
