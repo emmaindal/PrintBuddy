@@ -29,9 +29,9 @@ class ChatHolder extends React.Component {
     }
     chatHeight() {
         if (this.props.userId === this.props.request.userReqId) {
-            return "chat chat-message"
+            return "chat chat-message invisible-scrollbar"
         } else {
-            return "chat chat-message chat-buddy"
+            return "chat chat-message chat-buddy invisible-scrollbar"
         }
     }
     chatHolderStyle() {
