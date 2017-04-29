@@ -24,6 +24,7 @@ class Nav extends React.Component {
 
     onLogout() {
         Meteor.logout(function () {
+            $('.button-collapse').sideNav('hide');
             browserHistory.replace('/start');
         })
     }
@@ -69,7 +70,7 @@ class Nav extends React.Component {
 
                     <div id="profile-modal" className="modal profile-modal">
                         <div className="modal-content">
-                            <a className="cance-login-modal-btn modal-action modal-close btn-floating btn waves-effect waves-light red lighten-2"><i className="material-icons">clear</i></a>
+                            <i className="material-icons modal-close modal-action cancel-icon">clear</i>
                             <ProfileContainer/>
                         </div>
                     </div>
@@ -105,7 +106,7 @@ class Nav extends React.Component {
 
                     <div id="profile-modal" className="modal profile-modal">
                         <div className="modal-content">
-                            <a className="cance-login-modal-btn modal-action modal-close btn-floating btn waves-effect waves-light red lighten-2"><i className="material-icons">clear</i></a>
+                            <i className="material-icons modal-action modal-close cancel-icon">clear</i>
                             <ProfileContainer/>
                         </div>
                     </div>

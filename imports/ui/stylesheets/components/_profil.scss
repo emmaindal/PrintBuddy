@@ -18,6 +18,9 @@
         font-size: 1.5rem;
         margin-top: 27px;
     }
+    form p {
+        margin-bottom: 0 !important;
+    }
     .input-field label {
         left: 0;
     }
@@ -30,9 +33,6 @@
             height: 50px;
         }
     }
-    #role-switcher {
-
-    }
     #color-switcher {
         margin-top: 20px;
         margin-left: -42px;
@@ -44,26 +44,28 @@
 
 .profile-modal {
     width: 500px;
-    top: 14% !important;
-    overflow-y: visible !important;
-    max-height: none;
+    top: 15vh !important;
+    max-height: 70vh !important;
+    @media screen and (max-height: 70vh) {
+        overflow-y: scroll !important;
+    }
+    @media screen and (max-width: 500px) {
+        width: 100%;
+        height: 100vh;
+        top: 0 !important;
+        max-height: none !important;
+    }
     .modal-content {
         padding-bottom: 0;
         padding-left: 0;
         padding-right: 0;
         padding-top: 15px;
     }
-    .cance-login-modal-btn {
+    .cancel-icon {
         position: absolute;
-         top: -12px;
-        right: -12px;
-        width: 30px;
-        height: 30px;
-        &:hover {
-        background-color: #ef9a9a !important;
-    }
-            
-    }
+        right: 3px;
+        top: 3px;
+    }     
     .btn-floating i {
         font-size: 1.3rem;
         line-height: 30px;
