@@ -59,7 +59,7 @@ class MyJobList extends React.Component {
         return (
             <div id="myjobslist">
                 <div className="row">
-                    <div className="col s12 m12 l6">
+                    <div className="col s12 m12 l6 invisible-scrollbar" id="myjobslist-scroller">
                         <div className="row">
                             <ActiveJobList listofjobs={this.props.activeJobs} onChatClicked={this.onChatClicked}
                                             onView={this.onViewLocation}/>

@@ -74,6 +74,10 @@ button {
 }
 // Ovan är en del av Simons CSS hack för en liten css GoogleMaps mardröm
 
+//nedan är en klass för att göra scrollbar invisible i webkit-browsers som chrome
+.invisible-scrollbar::-webkit-scrollbar {
+    display: none;
+}
 
 
 // SCROLL BAR CUMSTOMIZE
