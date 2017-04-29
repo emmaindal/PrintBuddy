@@ -48,9 +48,9 @@ class PendingRequest extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div id="pending-request-container">
                 <div className="row">
-                    <div className="col l10 offset-l1">
+                    <div className="col s12 m12 l12 invisible-scrollbar" id="pendingbuddieslist-scroller">
                         <PendingBuddiesList 
                             buddylist={this.props.request.possiblePrintBuddies()} 
                             onView={this.onViewClicked}

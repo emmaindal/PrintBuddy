@@ -60,9 +60,9 @@ class MapContainer extends React.Component {
 	render() {
         const mapHeight = () => {
             if (Meteor.user().isBuddy()) {
-                return "calc( 100vh - 64px )"; // re-adjust later if needed!
+                return "calc( 100vh - 64px )";
             } else {
-                return "71vh"; // re-adjust later if needed!
+                return "calc( 100vh - 179px )"; // re-adjust later if needed!
             }
         }
 		return (
