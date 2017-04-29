@@ -75,9 +75,7 @@ class RequestComp extends React.Component {
         }
         // pending
         return (
-            <div>
                 <PendingRequestContainer request={this.props.request} />
-            </div>
         );
     }
     render() {

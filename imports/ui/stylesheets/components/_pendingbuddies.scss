@@ -1,24 +1,16 @@
 @import "../variables";
 
 #pendingbuddieslist {
+    .collection-header {
+            background: #e9e9e9;
+            color: #575555;
+            padding-left: 36px;
+        } 
 	.content-for-li {
 		display: inline-flex;
 		justify-content: space-between;
 		width: 100%;
         
-		p {
-			margin: 0.5em 0 0.5em 0;
-		}
-		#noapplicationmessage {
-			margin-left: auto;
-			margin-right: auto;
-			font-size: 1.4rem;
-		}
-		.buttongroup {
-		display: inline-flex;
-		margin-top: auto;
-		margin-bottom: auto;
-		}
 		.btn:first-of-type {
 			margin-right: 0.5rem;
 		}
@@ -32,18 +24,126 @@
 		.location-btn:hover {
 				background-color: lighten($color-location-btn, 15%);
 		}
-	}
-    h5 {
-        font-size: 20px;
-        display: inline-block;
-    }
-    .cancel-button {
-        float: right;
-        margin-top: -6px;
-        width: 20%;
-        padding: 0px;
-        &:hover {
-            background-color: #ef9a9a !important; 
+        
+        .round-icon-green {
+            color: white;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            font-size: 26px!important;
+            height: 36px;
+            width: 36px;
+            line-height: 36px;
+            text-align: center;
+            margin-right: 10px;
+            margin-left: 5px;
         }
+        .round-icon-blue {
+            color: white;
+            background-color: #2196F3;
+            border-radius: 50%;
+            font-size: 26px!important;
+            height: 36px;
+            width: 36px;
+            line-height: 36px;
+            text-align: center;
+            margin-right: 10px;
+            margin-left: 4px;
+        }
+        .round-icon-gray {
+            color: white;
+            background-color: #999;
+            border-radius: 50%;
+            font-size: 26px!important;
+            height: 36px;
+            width: 36px;
+            line-height: 36px;
+            text-align: center;
+            margin-right: 10px;
+            margin-left: 4px;
+        }
+	}
+    @media only screen and (min-width: 601px) { //breakpoint för stacked buttons i list stor skärm
+        h5 {
+            font-size: 1.4rem;
+            display: inline-block;
+        }
+        .collection-header {
+            padding-left: 20px;
+            padding-right: 1%;
+        }
+        .collection-item {
+            padding-left: 20px;
+            padding-right: 1%;
+        }
+        #noapplicationmessage {
+			font-size: 1.2rem;
+		}
+        .cancel-button {
+            float: right;
+            margin-top: -5.55px;
+            width: 20%;
+            padding: 0px;
+            &:hover {
+                background-color: #ef9a9a !important; 
+            }
+        }
+        p {
+			margin: 0.5em 0 0.5em 0;
+            width: 100%;
+            padding-left: 12px;
+            padding-right: 10px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+		}
+        .buttongroup {
+            display: inline-flex;
+            margin-top: auto;
+            margin-bottom: auto;
+		}
+    }
+    @media only screen and (max-width: 600px) { //breakpoint för stacked buttons i list liten skärm
+        h5 {
+            font-size: 1.14rem;
+            display: inline-block;
+        }
+        .collection-header {
+            padding-left: 10px;
+            padding-right: 1.6%;
+        }
+        .collection-item {
+            padding-left: 10px;
+            padding-right: 1.6%;
+        }
+        #noapplicationmessage {
+			font-size: 1.1rem;
+		}
+        .cancel-button {
+            float: right;
+            margin-top: -8px;
+            width: 77.86px;
+            padding: 0px;
+            &:hover {
+                background-color: #ef9a9a !important; 
+            }
+        }
+        .buttongroup {
+            display: inline-grid;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            .btn:first-of-type {
+                margin: 0;
+            }
+            .btn {
+                min-width: 77.86px;
+            }
+        }
+        p {
+			margin: 0.5em 0 0.5em 0;
+            width: 100%;
+            padding-left: 2px;
+            padding-right: 8px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+		}
     }
 }
