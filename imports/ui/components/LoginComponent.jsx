@@ -16,7 +16,6 @@ class LoginComponent extends React.Component {
     }
 
     onSubmit(e) {
-        $('#login-modal').closeModal();
         e.preventDefault();
         const user = {
             email: this.state.email,

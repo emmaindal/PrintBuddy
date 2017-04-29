@@ -15,19 +15,12 @@ class Login extends React.Component {
     onSubmit(formData) {
         Meteor.loginWithPassword(formData.email, formData.password, function (error) {
             if (error) {
-                displayError("Error:", error.reason);
+                displayError("Error:", "Email and/or Password is incorrect!");
             } else {
+                $('#login-modal').closeModal();
                 browserHistory.push('/');
             }
         });
-    }
-    componentWillMount() {
-        $("#app").fadeOut(1);
-    }
-    componentDidMount() {
-        $("#prepage").fadeOut(200);
-        $("#app").fadeIn(1500);
-          
     }
     render() {
         return (

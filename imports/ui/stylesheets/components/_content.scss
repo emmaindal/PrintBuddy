@@ -28,24 +28,29 @@ a {
 .start-page {
     .login-modal {
         width: 500px;
-        top: 28% !important;
-        overflow-y: visible !important;
+        top: 20vh !important;
+        margin-bottom: 50px;
+        min-height: 300px;        
+        @media screen and (max-height: 40vh) {
+            overflow-y: scroll !important;
+        }
+        @media screen and (max-width: 500px) {
+            width: 100%;
+            height: 100vh;
+            top: 0 !important;
+            max-height: none !important;
+            
+        }
         .modal-content {
             padding-bottom: 0;
             padding-left: 0;
             padding-right: 0;
-            padding-top: 15px;
+            padding-top: 20px;
         }
-        .cance-login-modal-btn {
+        .cancel-icon {
             position: absolute;
-            top: -12px;
-            right: -12px;
-            width: 30px;
-            height: 30px;
-            &:hover {
-                background-color: #ef9a9a !important;
-            }
-
+            right: 3px;
+            top: 3px;
         }
         .btn-floating i {
             font-size: 1.3rem;
@@ -60,25 +65,27 @@ a {
     }
     .register-modal {
         width: 500px;
-        top: 14% !important;
-        overflow-y: visible !important;
-        max-height: none;
+        top: 10vh !important;
+        max-height: 80vh;        
+        @media screen and (max-height: 80vh) {
+            overflow-y: scroll !important;
+        }
+        @media screen and (max-width: 500px) {
+            width: 100%;
+            height: 100vh;
+            top: 0 !important;
+            max-height: none !important;
+        }
         .modal-content {
             padding-bottom: 0;
             padding-left: 0;
             padding-right: 0;
-            padding-top: 15px;
+            padding-top: 0px;
         }
-        .cance-login-modal-btn {
+        .cancel-icon {
             position: absolute;
-            top: -12px;
-            right: -12px;
-            width: 30px;
-            height: 30px;
-            &:hover {
-                background-color: #ef9a9a !important;
-            }
-
+            right: 3px;
+            top: 3px;
         }
         .btn-floating i {
             font-size: 1.3rem;
@@ -206,3 +213,4 @@ a {
         transform: translateY(-15px);
     }
 }
+

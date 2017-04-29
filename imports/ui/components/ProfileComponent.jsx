@@ -79,7 +79,7 @@ export class ProfileComponent extends React.Component {
         return (
             <div id="profile">
                     <form className="col s10 offset-s1" onSubmit={(this.onSubmit)}>
-                        <div className="row">
+                        <div className="row" style={{marginBottom: 0}}>
                             <label htmlFor="email">
                                 <i className="small material-icons">email</i>
                             </label>

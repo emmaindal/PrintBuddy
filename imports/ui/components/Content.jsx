@@ -20,6 +20,9 @@ export default class Content extends React.Component {
             inDuration: 100,
             outDuration: 100,
         });
+        $('#register-modal').animate({
+            scrollTop: 0
+        }, 10);
     }
     render() {
         return (
@@ -41,7 +44,7 @@ export default class Content extends React.Component {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
                                 <div className="img-wrapper hide-on-large-only">
-                                    <img src="https://static.pexels.com/photos/6508/nature-laptop-outside-macbook.jpg"/>
+                                    <img src="https://static.pexels.com/photos/6508/nature-laptop-outside-macbook.jpg" />
                                 </div>
 
                                 <div className="arrow bounce">
@@ -51,7 +54,7 @@ export default class Content extends React.Component {
                         </div>
                         <div className="col m6 s12 grid-example content-second right hide-on-med-and-down">
                             <div className="img-wrapper right">
-                                <img src="https://static.pexels.com/photos/33488/navigation-car-drive-road.jpg"/>
+                                <img src="https://static.pexels.com/photos/33488/navigation-car-drive-road.jpg" />
                             </div>
                         </div>
                     </div>
@@ -91,30 +94,32 @@ export default class Content extends React.Component {
                 </div>
                 <div id="login-modal" className="modal login-modal">
                     <div className="modal-content">
-                        <a className="cance-login-modal-btn modal-action modal-close btn-floating btn waves-effect waves-light red lighten-2"><i className="material-icons">clear</i></a>
-                        <LoginContainer/>
+                        <i className="material-icons cancel-icon modal-action modal-close ">clear</i>
+                        <LoginContainer />
                         <div className="breakit row">
                             <div className="line-break col s10 offset-s1"></div>
                         </div>
                         <div className="row">
-                            <div className="col s10 offset-s1" style={{display: "flex", justifyContent: "space-between", marginBottom: "15px"}}>
+                            <div className="col s10 offset-s1" style={{ display: "flex", justifyContent: "space-between", marginBottom: "15px" }}>
                                 <div>Don't have an Account?</div>
                                 <a onClick={this.popRegisterModal}>Register</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="register-modal" className="modal register-modal">
-                    <div className="modal-content">
-                        <a className="cance-login-modal-btn modal-action modal-close btn-floating btn waves-effect waves-light red lighten-2"><i className="material-icons">clear</i></a>
-                        <RegisterContainer/>
-                        <div className="breakit row">
-                            <div className="line-break col s10 offset-s1"></div>
-                        </div>
-                        <div className="row">
-                            <div className="col s10 offset-s1" style={{display: "flex", justifyContent: "space-between", marginBottom: "15px"}}>
-                                <div>Already have an Account?</div>
-                                <a onClick={this.popLoginModal}>Login</a>
+                <div id="register-modal" className="modal register-modal ">
+                    <div id="scrollbar">
+                        <div className="modal-content">
+                            <i className="material-icons cancel-icon modal-action modal-close ">clear</i>
+                            <RegisterContainer />
+                            <div className="breakit row">
+                                <div className="line-break col s10 offset-s1"></div>
+                            </div>
+                            <div className="row">
+                                <div className="col s10 offset-s1" style={{ display: "flex", justifyContent: "space-between", marginBottom: "15px" }}>
+                                    <div>Already have an Account?</div>
+                                    <a onClick={this.popLoginModal}>Login</a>
+                                </div>
                             </div>
                         </div>
                     </div>
