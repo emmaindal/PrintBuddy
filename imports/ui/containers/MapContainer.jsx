@@ -81,7 +81,6 @@ class MapContainer extends React.Component {
                                 defaultCenter={this.props.defaultCenter}
                                 onMarkerClick={this.handleMarkerClick}
                                 onCloseClick={this.handleMarkerClose}
-                                userObject={Meteor.user()}
                             />
                         ) : (
                             <InitialPendingMap
@@ -95,7 +94,6 @@ class MapContainer extends React.Component {
                                 defaultCenter={this.props.defaultCenter}
                                 onMarkerClick={this.handleMarkerClick}
                                 onCloseClick={this.handleMarkerClose}
-                                userObject={Meteor.user()}
                             />
                         )
                     }

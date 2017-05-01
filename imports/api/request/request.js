@@ -104,10 +104,6 @@ Request.helpers({
     printBuddyAdress() {
         return Meteor.users.findOne(this.chosenOne).address
     },
-    
-    userObject() {
-        return Meteor.users.findOne(this.userReqId)
-    }
 });
 
 

@@ -15,8 +15,7 @@ export const InitialMap = withGoogleMap(props => {
 			center={{ lat: props.defaultCenter.lat, lng: props.defaultCenter.lng }}
 		>
         <Marker
-            key={props.userObject._id}
-            position={{lat: props.userObject.position.coordinates[1], lng:props.userObject.position.coordinates[0]}}
+            position={{lat: props.defaultCenter.lat, lng:props.defaultCenter.lng}}
             defaultAnimation={2}
             icon={{url: "/assets/images/markerHome.png"}}
         />
