@@ -164,7 +164,7 @@
     display: flex;
     justify-content: space-between;
     h6 {
-        margin-top: 21px;
+        margin-top: 17px;
         font-weight: bold;
         font-size: 18px;
     }
@@ -203,6 +203,13 @@
 }
 
 .chat-holder-buddy {
+    .chat-header {
+        @media screen and (max-width: 993px) {
+            .chat-title {
+                padding-left: 18%;
+            }
+        }
+    }
     @media screen and (min-width: 601px) {
         margin-top: 26px;
     }
@@ -220,7 +227,7 @@
 // Chat info komponent
 .chat-info {
     .chat-info-wrapper-buddy {
-        height: calc(100vh - 9.2rem) !important;
+        height: calc(100vh - 8.9rem) !important;
         overflow-y: hidden !important;
         @media screen and (max-height: 690px) {
             overflow-y: scroll !important;
@@ -235,7 +242,7 @@
         padding-right: 5%;
         margin: 0;
         box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 17px 0 rgba(0, 0, 0, 0.12);
-        height: calc(100vh - 15.2rem);
+        height: calc(100vh - 14.9rem);
         @media screen and (max-width: 500px) {
             box-shadow: none;
             border-bottom: none;

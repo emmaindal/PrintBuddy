@@ -14,6 +14,7 @@ class MyJobList extends React.Component {
         super(props);
         this.state = {
             defaultCenter: this.props.userposition,
+            userObject: this.props.userObject,
             clickedJobId: '',
         };
 
@@ -85,6 +86,7 @@ class MyJobList extends React.Component {
 const MyJobListContainer = createContainer(() => {
     Meteor.subscribe('myjob-request-active');
     Meteor.subscribe('myjob-request-pending');
+    Meteor.subscribe("allUsers")
 
     return {
         activeJobs: Request.find({chosenOne: Meteor.userId(), isDone: false, isCancel: false}).fetch(),
@@ -94,7 +96,7 @@ const MyJobListContainer = createContainer(() => {
             isCancel: false,
             chosenOne: {$exists: false}
         }).fetch(),
-        userposition: {lat: Meteor.user().position.coordinates[1], lng: Meteor.user().position.coordinates[0]}
+        userposition: {lat: Meteor.user().position.coordinates[1], lng: Meteor.user().position.coordinates[0]},
     };
 }, MyJobList);
 

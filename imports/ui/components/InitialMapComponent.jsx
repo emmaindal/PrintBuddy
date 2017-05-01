@@ -14,12 +14,22 @@ export const InitialMap = withGoogleMap(props => {
 			defaultZoom={14}
 			center={{ lat: props.defaultCenter.lat, lng: props.defaultCenter.lng }}
 		>
+        <Marker
+            key={props.userObject._id}
+            position={{lat: props.userObject.position.coordinates[1], lng:props.userObject.position.coordinates[0]}}
+            defaultAnimation={2}
+            icon={{url: "/assets/images/markerHome.png"}}
+        />
 		{props.markers ? props.markers.map((marker, index) => (
-			<Marker
+            
+            <Marker
 				key={index}
 				position={marker.requestorPosition()}
 				onClick={() => props.onMarkerClick(marker)}
+                defaultAnimation={2}
+                icon={{url: "/assets/images/markerRed.png"}}
 			>
+			
 			{marker.showInfo && (
 				<InfoWindow onCloseClick={() => props.onCloseClick(marker)}>
 					{
