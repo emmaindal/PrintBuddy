@@ -101,6 +101,9 @@ Request.helpers({
     printBuddyPosition(){
         return Meteor.users.findOne(this.chosenOne).position
     },
+    printBuddyAdress() {
+        return Meteor.users.findOne(this.chosenOne).address
+    }
     
 });
 
