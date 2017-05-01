@@ -7,6 +7,8 @@
 		display: inline-flex;
 		justify-content: space-between;
 		width: 100%;
+        padding-top: 0;
+        padding-bottom: 0;
         .job-title-span {
             font-size: 1.2rem; // Justera upp denna om vi ska ha större text för titeln
         }
@@ -114,6 +116,7 @@
         color: #575555;
         padding-left: 36px;
     } 
+    
 }
 #jobslistcontainer {
     .row {

@@ -1,12 +1,13 @@
 @import "variables";
-
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans|PT+Sans+Narrow|Roboto+Condensed');
 
 html {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Open Sans', sans-serif; //'Source Sans Pro', sans-serif;
     background: $color-primary; // $nice-color-emma 
     min-height: 100%;
     position: relative;
     color: #505b69;
+    font-size: 0.8rem;
 }
 
 // Normalize css
@@ -68,11 +69,11 @@ button {
 }
 
 // Nedan är en del av Simons CSS hack för en liten css GoogleMaps mardröm
-@media only screen and (min-width: 992px) {
+/*@media only screen and (min-width: 992px) {
     html {
         font-size: 15px;
     }
-}
+}*/
 // Ovan är en del av Simons CSS hack för en liten css GoogleMaps mardröm
 
 //nedan är en klass för att göra scrollbar invisible i webkit-browsers som chrome
@@ -80,25 +81,3 @@ button {
     display: none;
 }
 
-
-// SCROLL BAR CUMSTOMIZE
-
-/* Let's get this party started */
-/*::-webkit-scrollbar {
-    width: 10px;
-}
-*/
-/* Track */
-/*::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-}*/
-
-/* Handle */
-/*::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background: rgba(0,180,220,0.2);
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-}*/

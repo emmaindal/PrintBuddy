@@ -46,7 +46,7 @@ class Nav extends React.Component {
                         <div className="nav-wrapper nav-container">
                             <a href="" className="brand-logo">PrintBuddy</a>
                             <a href="" data-activates="mobile-nav" className="button-collapse"><i className="material-icons">menu</i></a>
-                            <ul className="right hide-on-med-and-down">
+                            <ul className="right hide-on-med-and-down desktop-nav">
                                 <li><IndexLink to="/jobs" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Jobs</IndexLink></li>
                                 <li><Link to="/myjobs" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>My Jobs</Link></li>
                                 <li><Link className='dropdown-button' data-activates='dropdown1'><i className="material-icons">&#xE7FD;</i></Link></li>
@@ -84,7 +84,7 @@ class Nav extends React.Component {
                         <div className="nav-wrapper nav-container">
                             <a href="" className="brand-logo">PrintBuddy</a>
                             <a href="" data-activates="mobile-nav" className="button-collapse"><i className="material-icons">menu</i></a>
-                            <ul className="right hide-on-med-and-down">
+                            <ul className="right hide-on-med-and-down desktop-nav">
                                 <li><IndexLink to="/request" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Requests</IndexLink></li>
 
                                 <li><Link className='dropdown-button' data-activates='dropdown1'><i className="material-icons">&#xE7FD;</i></Link></li>

@@ -76,7 +76,7 @@ class CreateRequest extends React.Component {
                     <div className="col s2">
                     </div>
                 </div>
-                
+
                 <div className="row margin-bottom-after">
                     <div className="input-field inline col s4 offset-s2">
                         <input id="number" type="number" ref="pages" className="validate" required />
@@ -98,7 +98,20 @@ class CreateRequest extends React.Component {
                 <div className="row upload-row">
                     <div className="center-align">
                         {this.props.isLoading ?
-                            <div>Uploading...</div> :
+                            <div className="sk-circle">
+                                <div className="sk-circle1 sk-child"></div>
+                                <div className="sk-circle2 sk-child"></div>
+                                <div className="sk-circle3 sk-child"></div>
+                                <div className="sk-circle4 sk-child"></div>
+                                <div className="sk-circle5 sk-child"></div>
+                                <div className="sk-circle6 sk-child"></div>
+                                <div className="sk-circle7 sk-child"></div>
+                                <div className="sk-circle8 sk-child"></div>
+                                <div className="sk-circle9 sk-child"></div>
+                                <div className="sk-circle10 sk-child"></div>
+                                <div className="sk-circle11 sk-child"></div>
+                                <div className="sk-circle12 sk-child"></div>
+                            </div> :
                             <div className="btn-large btn-upload" onClick={this.props.loginGoogleSubmit}><span>{this.props.googleStatus}</span></div>
                         }
                     </div>
@@ -154,7 +167,7 @@ class CreateRequest extends React.Component {
                             </p>
                         </div>
                     </div>
-                ) : (null)}       
+                ) : (null)}
                 <p className="center-align">Set a last Date & Time for {this.state.delivery ? "delivery" : "pick-up"}</p>
                 <div className="row margin-bottom-after">
                     <div className="col s4 offset-s2 input-field inline">
