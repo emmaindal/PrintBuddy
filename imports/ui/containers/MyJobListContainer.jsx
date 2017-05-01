@@ -14,6 +14,7 @@ class MyJobList extends React.Component {
         super(props);
         this.state = {
             defaultCenter: this.props.userposition,
+            defaultPosition: this.props.userposition,
             clickedJobId: '',
         };
 
@@ -74,7 +75,8 @@ class MyJobList extends React.Component {
                             isBuddy={true} 
                             clickedId={this.state.clickedJobId} 
                             markers={jobsMarkerList}
-                            defaultCenter={this.state.defaultCenter}/>
+                            defaultCenter={this.state.defaultCenter}
+                            defaultPosition={this.state.defaultPosition}/>
                     </div>
                 </div>
             </div>

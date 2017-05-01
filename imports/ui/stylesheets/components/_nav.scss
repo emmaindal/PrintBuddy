@@ -1,5 +1,4 @@
 @import "../variables";
-@import url('https://fonts.googleapis.com/css?family=Boogaloo');
 
 nav {
     background-color: $color-primary-details; // $color-navbar-two
@@ -15,9 +14,8 @@ nav {
     }
     .brand-logo {
         color: $text-primary;
-        font-family: 'Boogaloo', cursive;
-        font-size: 3rem;
-        letter-spacing: 4px;
+        font-size: 2.5rem;
+        letter-spacing: 2px;
     }
 
     .active,
