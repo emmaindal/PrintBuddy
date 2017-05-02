@@ -37,7 +37,7 @@ class Jobs extends React.Component {
                     displayError("Error!", 'Something went wrong :( ');
                 }
             } else {
-                displayAlert("Nice work :)", `You clicked APPLY for job`);
+                displayAlert("Gooood!", `You applied for a new job`);
             }
         });
     }
@@ -58,7 +58,7 @@ class Jobs extends React.Component {
             <div id="jobslistcontainer">
                 <div className="row">
                     <div className="col s12 m12 l6">
-                        <JobList listofjobs={this.props.jobs} onApply={this.onApply} onView={this.onViewLocation}/>
+                        <JobList userId={this.props.userId} listofjobs={this.props.jobs} onApply={this.onApply} onView={this.onViewLocation}/>
                     </div>
                     <div className="col s12 m12 l6" id="map-column">
                         <MapContainer isBuddy={true} clickedId={this.state.clickedJobId} markers={this.props.jobs}

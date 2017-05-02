@@ -35,7 +35,7 @@ class App extends React.Component {
         let child = (<div></div>);
         if (children) {
             // Todo fixa detta! så den routar rätt
-            child = React.cloneElement(children, { isBuddy: currentUser.isBuddy() });
+            child = React.cloneElement(children, { isBuddy: currentUser.isBuddy(), userId: currentUser._id });
         }
         return (
             <div>
