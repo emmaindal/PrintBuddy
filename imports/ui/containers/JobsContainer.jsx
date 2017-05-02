@@ -15,6 +15,7 @@ class Jobs extends React.Component {
         super(props);
         this.state = {
             defaultCenter: this.props.userposition,
+            defaultPosition: this.props.userposition,
             clickedJobId: '',
         };
         this.onViewLocation = this.onViewLocation.bind(this);
@@ -61,7 +62,7 @@ class Jobs extends React.Component {
                     </div>
                     <div className="col s12 m12 l6" id="map-column">
                         <MapContainer isBuddy={true} clickedId={this.state.clickedJobId} markers={this.props.jobs}
-                                      defaultCenter={this.state.defaultCenter}/>
+                                      defaultCenter={this.state.defaultCenter} defaultPosition={this.state.defaultPosition}/>
                     </div>
                 </div>
             </div>

@@ -22,7 +22,6 @@ class ChatInfo extends React.Component {
         }
     }
     render() {
-        console.log(this.props);
         const {request, canCancel} = this.props;
         return (
             <div className="chat-info">
