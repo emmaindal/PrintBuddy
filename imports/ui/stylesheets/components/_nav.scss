@@ -3,7 +3,7 @@
 nav {
     background-color: $color-primary-details; // $color-navbar-two
 
-    
+
     .brand-logo {
         color: $text-primary;
     }
@@ -16,7 +16,7 @@ nav {
     .button-collapse {
         padding-left: 4px;
     }
-    
+
     @media only screen and (min-width: 992px) {
         .nav-container {
             padding-left: 36px;
@@ -43,6 +43,3 @@ nav {
         padding: 0 25px;
     }
 }
-
-
-

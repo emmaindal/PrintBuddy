@@ -17,7 +17,6 @@ export default class Footer extends React.Component {
                             <h5 className="white-text">Contact</h5>
                             <ul>
                                 <li><a className="grey-text text-lighten-3" href="#!"><i className="material-icons">email</i> info@printbuddy.se</a></li>
-                                <li><a className="grey-text text-lighten-3" href="#!"><i className="material-icons">phone</i> +4612345678</a></li>
                             </ul>
                         </div>
                     </div>
