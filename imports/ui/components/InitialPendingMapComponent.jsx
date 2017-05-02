@@ -25,7 +25,7 @@ export const InitialPendingMap = withGoogleMap(props => {
                     position={{ lat: marker.position.coordinates[1], lng: marker.position.coordinates[0] }}
                     onClick={() => props.onMarkerClick(marker)}
                     defaultAnimation={2}
-                    icon={{url: "/assets/images/markerRed.png"}}
+                    icon={ marker.delivery ? {url: "/assets/images/markerBlue.png"} : {url: "/assets/images/markerGreen.png"}}
                 >
                     {marker.showInfo && (
                         <InfoWindow onCloseClick={() => props.onCloseClick(marker)}>

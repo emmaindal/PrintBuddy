@@ -26,7 +26,7 @@ export const InitialMap = withGoogleMap(props => {
 				position={marker.requestorPosition()}
 				onClick={() => props.onMarkerClick(marker)}
                 defaultAnimation={2}
-                icon={{url: "/assets/images/markerRed.png"}}
+				icon={ marker.delivery ? {url: "/assets/images/markerBlue.png"} : {url: "/assets/images/markerGreen.png"}}
 			>
 			
 			{marker.showInfo && (
