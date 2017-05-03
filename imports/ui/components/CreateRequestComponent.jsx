@@ -182,7 +182,7 @@ class CreateRequest extends React.Component {
                 </div>
 
                 <div className="center-align">
-                    <button className="btn-large waves-effect waves-light margin-bottom-after" type="submit"
+                    <button className="btn-large waves-effect waves-light margin-bottom-after btn-upload" type="submit"
                         name="action">Submit
                             </button>
                 </div>

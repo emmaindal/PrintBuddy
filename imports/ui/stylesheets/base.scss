@@ -68,13 +68,25 @@ button {
     cursor: pointer;
 }
 
-// Nedan är en del av Simons CSS hack för en liten css GoogleMaps mardröm
-/*@media only screen and (min-width: 992px) {
-    html {
-        font-size: 15px;
-    }
+
+/*.btn, .btn-large, .btn:hover, .btn-large:hover, .btn:focus{
+    background-color: $scroll-btn-background;
 }*/
-// Ovan är en del av Simons CSS hack för en liten css GoogleMaps mardröm
+
+.btn, .btn-large {
+    font-weight: 500;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg,$color-primary-btn,#34bdff);
+    transition: all .25s ease-in-out;
+    text-transform: uppercase;
+    &:hover {
+         letter-spacing: 2px;
+    }
+}
+
+.btn-cancel {
+     background: linear-gradient(90deg,$color-primary-btn,#34bdff);
+}
 
 //nedan är en klass för att göra scrollbar invisible i webkit-browsers som chrome
 .invisible-scrollbar::-webkit-scrollbar {

@@ -138,8 +138,9 @@ a {
         border: 1px $color-primary-details solid;
         border-radius: 4px;
         padding-bottom: 2%;
-        background-color: white;
+        background: white !important;
         color: rgb(94, 94, 94);
+        width: 15%;
     }
 
     p{
