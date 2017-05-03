@@ -4,9 +4,13 @@ import LoginContainer from "../containers/LoginContainer";
 import RegisterContainer from "../containers/RegisterContainer";
 
 export default class Content extends React.Component {
-    componentDidMount() {
+    constructor(props) {
+        super(props)
 
+        this.popLoginModal = this.popLoginModal.bind(this);
+        this.popRegisterModal = this.popRegisterModal.bind(this);
     }
+
     popLoginModal() {
         $('#register-modal').closeModal();
         $('#login-modal').openModal({
@@ -24,6 +28,7 @@ export default class Content extends React.Component {
             scrollTop: 0
         }, 10);
     }
+
     render() {
         return (
             <div className="start-page">
@@ -31,8 +36,8 @@ export default class Content extends React.Component {
                 <div className="row">
                     <div className="col s12 m12 l12 grid-example content-first" id="first-row">
                         <h1>Welcome to PrintBuddy</h1>
-                        <a onClick={this.popRegisterModal} className="waves-effect waves-light btn-large sign-up">SIGN UP</a>
-                        <h5><a onClick={this.popLoginModal}>Already have an account? Sign in here.</a></h5>
+                        <a id="btn-popregistermodal" onClick={this.popRegisterModal} className="waves-effect waves-light btn-large sign-up">SIGN UP</a>
+                        <h5><a id="btn-poploginmodal" onClick={this.popLoginModal}>Already have an account? Sign in here.</a></h5>
                         <div className="arrow bounce">
                             <a className="fa fa-arrow-down fa-2x" href="#second-row"></a>
                         </div>

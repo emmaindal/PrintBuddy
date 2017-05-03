@@ -2,21 +2,12 @@ import {Meteor} from 'meteor/meteor';
 import {SimpleSchema} from 'meteor/aldeed:simple-schema';
 import  {Request} from '../request.js';
 
-
-Meteor.publish('request', function request() {
-    // Todo fixa här så användaren endast ser de requesten de kan ta.
-
-    return Request.find();
-});
-
-
 Meteor.publish('jobs-request', function request(lat, lng) {
     check(lat, Number);
     check(lng, Number);
 
     const start = new Date();
     start.setHours(0, 0, 0, 0);
-
     ReactiveAggregate(this, Request, [
         {
             "$geoNear": {
