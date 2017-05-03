@@ -1,13 +1,13 @@
 @import "../variables";
 
 nav {
-    background: linear-gradient(90deg, #008ede, #00b4ff); //$color-primary-details; // $color-navbar-two
+    background: linear-gradient(90deg, $color-primary-btn,#3198e6); //$color-primary-details; // $color-navbar-two
     letter-spacing: 2px;
     z-index: 9999999999;
     ul a {
-        font-size: 1.1rem!important;
-        font-weight: bold;
+        font-size: 1rem!important;
         text-transform: uppercase;
+        transition: all 0.5s ease !important;
     }
 
     .desktop-nav {
@@ -15,8 +15,10 @@ nav {
     }
     .brand-logo {
         color: $text-primary;
-        font-size: 2.5rem;
+        font-size: 2rem;
         letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 100;
     }
 
 
@@ -35,6 +37,7 @@ nav {
     }
     .dropdown-content li > a, .dropdown-content li > span{
         color: $text-secondary;
+        font-size: 0.8rem!important;
     }
 
     .dropdown-content{

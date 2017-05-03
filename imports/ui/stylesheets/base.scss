@@ -76,7 +76,7 @@ button {
 .btn, .btn-large {
     font-weight: 500;
     letter-spacing: 1px;
-    background: linear-gradient(90deg,$color-primary-btn,#34bdff);
+    background: linear-gradient(90deg, $color-primary-btn,#3198e6);
     transition: all .25s ease-in-out;
     text-transform: uppercase;
     border-radius: 3px;
@@ -86,7 +86,7 @@ button {
 }
 
 .btn-cancel {
-     background: linear-gradient(90deg, #ff5819, #e49898);
+     background: linear-gradient(90deg, #ef6d3d, #ef7152);
 }
 
 //nedan är en klass för att göra scrollbar invisible i webkit-browsers som chrome

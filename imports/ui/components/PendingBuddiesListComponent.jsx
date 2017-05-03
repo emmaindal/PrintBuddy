@@ -17,7 +17,7 @@ export class PendingBuddiesList extends React.Component {
                                     <li className="collection-item" key={buddy._id}>
                                         <div className="content-for-li">
                                             <div className="valign-wrapper">
-                                                <i className="round-icon-blue material-icons z-depth-2">sentiment_very_satisfied</i>
+                                                <i className="round-icon-blue material-icons z-depth-1">sentiment_very_satisfied</i>
                                             </div>
                                             <p className="valign-wrapper">
                                                 {buddy.username} have offered to print for you!<br/>
