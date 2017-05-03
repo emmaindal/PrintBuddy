@@ -28,7 +28,8 @@ export const insert = new ValidatedMethod({
             throw new Meteor.Error('request.insert.unauthorized', 'Must be logged to add item.');
         }
         let currentDate = new Date();
-        if (lastDate.getDate() < currentDate.getDate()) {
+        currentDate.setHours(0,0,0,0);
+        if (lastDate.getTime() < currentDate.getTime()) {
             throw new Meteor.Error('request.insert.invalidDate', 'date selected is in the past.');
         }
 
