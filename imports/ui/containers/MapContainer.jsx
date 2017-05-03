@@ -81,6 +81,7 @@ class MapContainer extends React.Component {
                                 defaultCenter={this.props.defaultCenter}
                                 onMarkerClick={this.handleMarkerClick}
                                 onCloseClick={this.handleMarkerClose}
+                                defaultPosition={this.props.defaultPosition}
                             />
                         ) : (
                             <InitialPendingMap
@@ -94,6 +95,7 @@ class MapContainer extends React.Component {
                                 defaultCenter={this.props.defaultCenter}
                                 onMarkerClick={this.handleMarkerClick}
                                 onCloseClick={this.handleMarkerClose}
+                                defaultPosition={this.props.defaultPosition}
                             />
                         )
                     }
@@ -107,5 +109,5 @@ MapContainer.propTypes = {
     markers: React.PropTypes.array,
 	defaultCenter: React.PropTypes.object,
 };
-
+   
 export default MapContainer;

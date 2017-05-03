@@ -29,14 +29,16 @@ class ChatInfo extends React.Component {
                     <li className="collection-header"><h4>Job info</h4></li>
                     <li className="collection-item"><span>Title:</span> {request.title} </li>
                     <li className="collection-item">
-                        <span>Adress:</span> {request.delivery ? "Request Adress" : "Printbuddy Adress"}</li>
+                        <span>Adress:</span> {request.delivery ? request.requestorAddress() : request.printBuddyAdress()}</li>
                     <li className="collection-item"><span>Color:</span> {request.needColor ? 'Yes' : 'No'} </li>
                     <li className="collection-item"><span>Pages:</span> {request.pages}  </li>
                     <li className="collection-item"><span>Copies:</span> {request.copies}  </li>
                     <li className="collection-item"><span>Price:</span> {request.reward} {request.currency} </li>
                     <li className="collection-item"><span>Delivery:</span> {request.delivery ? 'Yes' : 'No'} </li>
                     <li className="collection-item">
-                        <span>Last Date:</span> {moment(request.lastDate).format("ddd Do MMMM")}</li>
+                        <span>Last Date:</span> {moment(request.lastDate).format("ddd Do MMMM")}
+                    </li>
+                    <li className="collection-item"><span>Last Time:</span> {request.lastTime} </li>
                     {canCancel ? <div className="job-info-buttons">
                         <li className="collection-item">
                             <a onClick={this.showDoneModal} className="waves-effect waves-light btn">Finish Request</a>

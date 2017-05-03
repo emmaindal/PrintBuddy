@@ -14,6 +14,7 @@ class MyJobList extends React.Component {
         super(props);
         this.state = {
             defaultCenter: this.props.userposition,
+            defaultPosition: this.props.userposition,
             clickedJobId: '',
         };
 
@@ -74,7 +75,8 @@ class MyJobList extends React.Component {
                             isBuddy={true} 
                             clickedId={this.state.clickedJobId} 
                             markers={jobsMarkerList}
-                            defaultCenter={this.state.defaultCenter}/>
+                            defaultCenter={this.state.defaultCenter}
+                            defaultPosition={this.state.defaultPosition}/>
                     </div>
                 </div>
             </div>
@@ -94,7 +96,7 @@ const MyJobListContainer = createContainer(() => {
             isCancel: false,
             chosenOne: {$exists: false}
         }).fetch(),
-        userposition: {lat: Meteor.user().position.coordinates[1], lng: Meteor.user().position.coordinates[0]}
+        userposition: {lat: Meteor.user().position.coordinates[1], lng: Meteor.user().position.coordinates[0]},
     };
 }, MyJobList);
 

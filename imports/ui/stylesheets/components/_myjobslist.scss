@@ -10,6 +10,10 @@
     .collection {
         margin: 0;
     }
+    .collection .collection-item {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
     @media only screen and (min-width: 993px) {
         #map-column {
            margin-top: -10px;

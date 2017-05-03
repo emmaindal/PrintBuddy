@@ -13,6 +13,7 @@ class PendingRequest extends React.Component {
         super(props);
         this.state = {
             defaultCenter: this.props.request.requestorPosition(),
+            defaultPosition: this.props.request.requestorPosition(),
             clickedBuddyId: '',
         };
         this.onViewClicked = this.onViewClicked.bind(this);
@@ -62,6 +63,7 @@ class PendingRequest extends React.Component {
                             isBuddy={false} 
                             markers={this.props.request.possiblePrintBuddies()} 
                             defaultCenter={this.state.defaultCenter}
+                            defaultPosition={this.state.defaultPosition}
                         />
                     </div>
                 </div>

@@ -2,10 +2,20 @@
 
 nav {
     background-color: $color-primary-details; // $color-navbar-two
+    letter-spacing: 2px;
+    z-index: 9999999999;
+    ul a {
+        font-size: 1.1rem!important;
+        font-weight: bold;
+    }
 
-    
+    .desktop-nav {
+        padding-bottom: 2px;
+    }
     .brand-logo {
         color: $text-primary;
+        font-size: 2.5rem;
+        letter-spacing: 2px;
     }
 
     .active,
@@ -23,8 +33,8 @@ nav {
             padding-right: 1%;
         }
         ul li a {
-            padding-left: 30px;
-            padding-right: 30px;
+            padding-left: 35px;
+            padding-right: 35px;
         }
     }
     .dropdown-content li > a, .dropdown-content li > span{
