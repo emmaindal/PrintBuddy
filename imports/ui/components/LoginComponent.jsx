@@ -37,7 +37,7 @@ class LoginComponent extends React.Component {
             <div>
                 <div id="loginback">
                     <form className="col offset-s1 s10" onSubmit={this.onSubmit}>
-                        <div className="row">
+                        <div className="row" style={{marginTop: "10px"}}>
                             <label htmlFor="email">
                                 <i className="small material-icons">perm_identity</i>
                             </label>

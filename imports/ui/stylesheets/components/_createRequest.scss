@@ -1,12 +1,25 @@
 @import "../variables";
 
+.create-request-container {
+    .row .col {
+        padding: 0 !important;
+    }
+    .row {
+        margin-bottom: 0;
+    }
+}
 .create-request {
     background-color: $color-create-request-component;
-    border-radius: 8px;
+    border-radius: 3px;
     -webkit-box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
     -moz-box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
     box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
-    margin-top: 7vh;
+    margin-top: 6vh;
+     @media only screen and (max-width: 450px) {
+         margin-top: 0;
+         width: 100vw !important;
+         height: calc(100vh - 56px) !important;
+     }
     .dropdown-content {
         margin-top: 45px !important;
     }
@@ -17,30 +30,34 @@
     i {
         color: green !important;
         position: absolute;
-        top: 8px;
-        left: 36%;
+        top: 10px;
+        left: 39%;
     }
     p {
         padding: 0;
         margin: 0;
+        font-size: 1rem;
+    }
+    .input-field label {
+        left: 0;
     }
     .btn {
-        width: 18% !important;
+        width: 15% !important;
         padding: 0;
-        letter-spacing: 0.2rem;
-        cursor: pointer;
+        margin-left: 2%;
     }
     .btn-upload {
-        width: 63% !important;
+        width: 70% !important;
         overflow: hidden;
+        margin-bottom: 30px;
     }
     .btn-large {
         width: 25%;
         padding: 0;
-        letter-spacing: 0.2rem;
     }
     .file-row {
-        margin-bottom: 1.5rem;
+        margin-bottom: 3rem;
+        margin-top: 1rem;
     }
     .switch {
         margin-bottom: 2rem;
@@ -84,7 +101,7 @@
     #request-tabs {
         margin-top: 10px;
         margin-left: 10px!important;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         width: 96% !important;
     }
     .tabs .tab a {
@@ -103,7 +120,7 @@
 }
 
 .upload-row {
-    margin-top: 50px !important;
+    margin-top: 60px !important;
     margin-bottom: 30px;
 }
 
@@ -125,8 +142,8 @@ background-color: $color-primary-btn;
 // Loading icon 
 .sk-circle {
   margin: 0px auto;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   position: relative;
 }
 .sk-circle .sk-child {

@@ -9,7 +9,7 @@ export class PendingBuddiesList extends React.Component {
         return (
             <div className="col s12 m12 l6">
                 <ul className="collection with-header" id="pendingbuddieslist">
-                    <li className="collection-header"><h5>Choose a PrintBuddy for the job!</h5><a onClick={this.popCancelModal} className="red lighten-2 waves-effect waves-light btn cancel-button">Cancel</a></li>
+                    <li className="collection-header"><h5>Choose a PrintBuddy for the job!</h5><a onClick={this.popCancelModal} className="waves-effect waves-light btn btn-cancel cancel-button">Cancel</a></li>
                     <FlipMove maintainContainerHeight={true}>
                         {this.props.buddylist.length > 0 ? (
                             this.props.buddylist.map((buddy) => {
@@ -17,14 +17,14 @@ export class PendingBuddiesList extends React.Component {
                                     <li className="collection-item" key={buddy._id}>
                                         <div className="content-for-li">
                                             <div className="valign-wrapper">
-                                                <i className="round-icon-blue material-icons">sentiment_very_satisfied</i>
+                                                <i className="round-icon-blue material-icons z-depth-1">sentiment_very_satisfied</i>
                                             </div>
                                             <p className="valign-wrapper">
                                                 {buddy.username} have offered to print for you!<br/>
                                             </p>
                                             <div className="buttongroup">
                                                 <button className="btn waves-effect waves-light location-btn" onClick={() => { this.props.onView(buddy) }}><i className="small material-icons">location_on</i></button>
-                                                <button className="btn waves-effect waves-light" onClick={() => { this.props.onChoose(buddy._id) }}>CHOOSE</button>
+                                                <button className="btn waves-effect waves-light choose-btn" onClick={() => { this.props.onChoose(buddy._id) }}>CHOOSE</button>
                                             </div>
                                         </div>
                                     </li>

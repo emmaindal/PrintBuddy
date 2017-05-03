@@ -18,15 +18,10 @@
     }
     .login-modal-row {
         margin-top: 35px;
-        margin-bottom: 35px;
+        margin-bottom: 45px;
         font-size: 16px;
         .btn {
-            letter-spacing: 3px;
             height: 50px;
         }
     }
-}
-
-.btn, .btn-large, .btn:hover, .btn-large:hover, .btn:focus{
-    background-color: $scroll-btn-background;
 }

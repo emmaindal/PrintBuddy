@@ -1,12 +1,13 @@
 @import "../variables";
 
 nav {
-    background-color: $color-primary-details; // $color-navbar-two
+    background: linear-gradient(90deg, $color-primary-btn,#3198e6); //$color-primary-details; // $color-navbar-two
     letter-spacing: 2px;
     z-index: 9999999999;
     ul a {
-        font-size: 1.1rem!important;
-        font-weight: bold;
+        font-size: 1rem!important;
+        text-transform: uppercase;
+        transition: all 0.5s ease !important;
     }
 
     .desktop-nav {
@@ -14,14 +15,12 @@ nav {
     }
     .brand-logo {
         color: $text-primary;
-        font-size: 2.5rem;
+        font-size: 2rem;
         letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 100;
     }
 
-    .active,
-    a {
-        color: $text-secondary;
-    }
 
     .button-collapse {
         padding-left: 4px;
@@ -29,16 +28,16 @@ nav {
     
     @media only screen and (min-width: 992px) {
         .nav-container {
-            padding-left: 36px;
-            padding-right: 1%;
+            padding-left: 10px;
         }
         ul li a {
-            padding-left: 35px;
+            padding-left: 39px;
             padding-right: 35px;
         }
     }
     .dropdown-content li > a, .dropdown-content li > span{
         color: $text-secondary;
+        font-size: 0.8rem!important;
     }
 
     .dropdown-content{
@@ -53,6 +52,3 @@ nav {
         padding: 0 25px;
     }
 }
-
-
-

@@ -50,20 +50,24 @@
             letter-spacing: 4px;
         }
     }
-    .message-username {
-        font-weight: bold;
-    }
+    
     .message-user-one {
         background: $color-message-one;
         padding-left: 15px;
         padding-top: 3px;
         padding-bottom: 3px;
         padding-right: 10px;
-        border-radius: 20px;
+        border-radius: 15px;
         border-bottom-left-radius: 2px;
         min-height: 45px;
         min-width: 100px;
         overflow: auto;
+        p {
+            font-size: 1rem;
+        }
+        .message-username {
+            font-weight: bold;
+        }
         .secondary-content {
             position: relative !important;
             top: 0 !important;
@@ -71,7 +75,7 @@
             font-size: 12px;
             overflow: auto;
             padding-left: 11px;
-            color: $color-primary-btn;
+            color: #34bdff;
         }
         
     }
@@ -81,12 +85,15 @@
         padding-top: 3px;
         padding-bottom: 3px;
         padding-right: 5px;
-        border-radius: 20px;
+        border-radius: 15px;
         border-bottom-right-radius: 2px;
         min-height: 45px;
         min-width: 100px;
         overflow: auto;
         color: white;
+        p {
+            font-size: 1rem;
+        }
         .secondary-content {
             float: none;
             position: relative !important;
@@ -146,7 +153,13 @@
             .chat-info {
                 .chat-info-wrapper {
                     height: auto !important;
+                    min-height: 530px !important;
                     overflow-y: inherit !important;
+                    @media screen and (max-width: 500px) {
+                        .job-info-buttons {
+                            border-top: none !important;
+                        }
+                    }
                 }
             }
         }   
@@ -181,10 +194,10 @@
 .chat-message {
     overflow-y: scroll;
     @media screen and (max-width: 450px) {
-        height: calc(100vh - 181px);
+        height: calc(100vh - 173px);
     }
     @media screen and (min-width: 451px) {
-        height: calc(100vh - 297px);
+        height: calc(100vh - 288px);
     }
     @media screen and (min-width: 600px) {
         height: calc(100vh - 24rem);
@@ -232,6 +245,10 @@
         @media screen and (max-height: 690px) {
             overflow-y: scroll !important;
         }
+        .job-info-buttons {
+            padding-top: 7px !important;
+            padding-bottom: 7px !important;  
+        }
     }  
     .chat-info-wrapper {
         border: none;
@@ -254,6 +271,8 @@
             padding-bottom: 12px;
             padding-top: 12px;
             padding-left: 12px;
+            border-bottom: 0;
+            font-size: 1.1rem;
             span {
                 font-weight: bold;
                 margin-right: 5px;
@@ -261,6 +280,7 @@
         }
         .collection-header {
             padding-left: 12px;
+            margin-bottom: 10px;
         }
     }
 }
@@ -271,9 +291,17 @@
     } 
 }
 .job-info-buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
     .collection-item {
         display: flex;
         justify-content: space-around;
+        padding-top: 7px !important;
+        padding-bottom: 7px !important;
         .btn {
             padding: 0 1rem;
             z-index: 0;
@@ -281,28 +309,25 @@
             height: 50px;
             line-height: 3.5;
         }
-        .red {
-            &:hover {
-                background: #ef9a9a !important;
-            }
-        }
     }
 }
 
 
 // download document button
 .button-doc {
+    margin: 0px auto;
     z-index: 0;
     height: 50px;
     line-height: 3.5;
+    width: 90%;
 }
 
 // mobile document download button
 .mobile-download-btn {
     margin-right: 10px;
-    margin-top: 10px;
-    padding-left: 2%;
-    padding-right: 2%;
+    margin-top: 7px;
+    padding: 0;
+    width: 30%;
 }
 
 .info-icon {
