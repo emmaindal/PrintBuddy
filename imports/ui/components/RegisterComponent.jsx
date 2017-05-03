@@ -70,7 +70,7 @@ class RegisterComponent extends React.Component {
         return (
             <div id="registerback">
                 <form className="col s10 offset-s1" onSubmit={this.onSubmit.bind(this)}>
-                    <div className="row">
+                    <div className="row" style={{marginTop: "30px"}}>
                         <label htmlFor="email">
                             <i className="small material-icons">email</i>
                         </label>
@@ -114,7 +114,7 @@ class RegisterComponent extends React.Component {
                             </div>
                         </div>
                         : null}
-                    <div id="test-geocode" style={{ marginTop: "10px", marginBottom: 0 }} className="row">
+                    <div id="test-geocode" style={{ marginTop: "10px", marginBottom: "15px" }} className="row">
                         <div className="col s10 offset-s1 m10 offset-m1">
                             <p>Home address</p>
                             <p><strong>{this.state.address}</strong></p>

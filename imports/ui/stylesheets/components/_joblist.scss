@@ -9,6 +9,10 @@
 		width: 100%;
         padding-top: 0;
         padding-bottom: 0;
+        padding-left: 6px;
+        p:first-child {
+            margin-top:5px;
+        }
         .job-title-span {
             font-size: 1.2rem; // Justera upp denna om vi ska ha större text för titeln
         }
@@ -17,6 +21,16 @@
 			margin-right: auto;
 			font-size: 1.4rem;
 		}
+        .apply-btn {
+            color: white!important;
+            padding: 0;
+            width: 77px;
+        }
+        .apply-btn.disabled {
+            opacity: 0.3;
+            padding: 0;
+            width: 77px;
+        }
 		
         @media only screen and (min-width: 601px) { //breakpoint för stacked buttons i list stor skärm
             .buttongroup {
@@ -31,16 +45,13 @@
             }
         }
         @media only screen and (max-width: 600px) { //breakpoint för stacked buttons i list liten skärm
-
+            padding-left: 30px;
             .buttongroup {
                 display: inline-grid;
-                padding-top: 10px;
+                padding-top: 18px;
                 padding-bottom: 10px;
                 .btn:first-of-type {
                     margin: 0;
-                }
-                .btn {
-                    min-width: 77.86px;
                 }
             }
             p {
@@ -62,10 +73,7 @@
 			padding-right: 1rem;
 		}
 		.location-btn {
-				background-color: $color-location-btn;		
-		}
-		.location-btn:hover {
-				background-color: lighten($color-location-btn, 15%);
+				background:$color-location-btn !important;		
 		}
         .round-icon-green {
             color: white;
@@ -114,7 +122,7 @@
     .collection-header {
         background: #e9e9e9;
         color: #575555;
-        padding-left: 36px;
+        padding-left: 10px;
     } 
     
 }

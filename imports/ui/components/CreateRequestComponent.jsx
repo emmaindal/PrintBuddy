@@ -78,11 +78,11 @@ class CreateRequest extends React.Component {
                 </div>
 
                 <div className="row margin-bottom-after">
-                    <div className="input-field inline col s4 offset-s2">
+                    <div className="input-field inline col s3 offset-s2">
                         <input id="number" type="number" ref="pages" className="validate" required />
                         <label htmlFor="number">Nr of Pages</label>
                     </div>
-                    <div className="input-field inline col s4">
+                    <div className="input-field inline col s3 offset-s2">
                         <input id="number" type="number" ref="copies" className="validate" required />
                         <label htmlFor="number">Nr of Copies</label>
                     </div>
@@ -124,19 +124,19 @@ class CreateRequest extends React.Component {
     renderSecondSection() {
         return (
             <div>
-                <div className="row margin-bottom-after">
+                <div className="row" style={{marginBottom: "20px"}}>
                     <div className="input-field col s8 offset-s2">
                         <input ref="title" className="validate" id="input-text" type="text" maxLength="40"
                             required />
                         <label htmlFor="input-text">Job Description</label>
                     </div>
                 </div>
-                <div className="row margin-bottom-after">
-                    <div className="input-field col s4 offset-s2">
+                <div className="row" style={{marginBottom: "30px"}}>
+                    <div className="input-field col s3 offset-s2">
                         <input id="number" type="number" ref="reward" className="validate" required />
                         <label htmlFor="number">Reward</label>
                     </div>
-                    <div className="input-field col s4">
+                    <div className="input-field col s3 offset-s2">
                         <select ref="currency">
                             <option defaultValue="sek">SEK</option>
                             <option value="eur">EUR</option>
@@ -157,7 +157,7 @@ class CreateRequest extends React.Component {
                             </label>
                 </div>
                 {!this.state.delivery ? (
-                    <div>
+                    <div style={{marginBottom: "20px"}}>
                         <p className="center-align">How far are you willing to travel for a pickup?</p>
                         <div className="row">
                             <p className="center-align col s2">{this.state.range} m</p>
@@ -169,13 +169,13 @@ class CreateRequest extends React.Component {
                     </div>
                 ) : (null)}
                 <p className="center-align">Set a last Date & Time for {this.state.delivery ? "delivery" : "pick-up"}</p>
-                <div className="row margin-bottom-after">
-                    <div className="col s4 offset-s2 input-field inline">
+                <div className="row" style={{marginBottom: "20px"}}>
+                    <div className="col s3 offset-s2 input-field inline">
                         <input id="date set-date" type="date" ref="lastDate" className={this.state.dateClassName}
                             required />
                         <label htmlFor="date">Date</label>
                     </div>
-                    <div className="input-field col s4">
+                    <div className="input-field col s3 offset-s2">
                         <input id="timepicker" ref="lastTime" type="time" required />
                         <label htmlFor="timepicker"></label>
                     </div>
@@ -192,7 +192,7 @@ class CreateRequest extends React.Component {
     render() {
         return (
             <div className="row">
-                <div className="col s12 m8 l6 offset-m2 offset-l3 create-request">
+                <div className="col s12 m8 l4 offset-m2 offset-l4 create-request" style={{padding: "0px"}}>
                     <form id="request-form" onSubmit={this.onSubmit.bind(this)}>
                         <ul id="request-tabs" className="tabs row">
                             <li className="tab col s3"><a className="active" href="#documentation">{this.props.googleUrl ? (<i className='material-icons small'>done</i>) : null}

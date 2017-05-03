@@ -19,7 +19,7 @@
 			padding-right: 1rem;
 		}
 		.location-btn {
-				background-color: $color-location-btn;		
+				background: $color-location-btn !important;		
 		}
 		.location-btn:hover {
 				background-color: lighten($color-location-btn, 15%);
@@ -47,7 +47,6 @@
             line-height: 36px;
             text-align: center;
             margin-right: 10px;
-            margin-left: 4px;
         }
         .round-icon-gray {
             color: white;
@@ -76,21 +75,18 @@
             padding-right: 1%;
         }
         #noapplicationmessage {
-			font-size: 1.2rem;
+			font-size: 1.1rem;
 		}
         .cancel-button {
             float: right;
             margin-top: -6.85px;
             width: 20%;
             padding: 0px;
-            &:hover {
-                background-color: #ef9a9a !important; 
-            }
         }
         p {
 			margin: 0.5em 0 0.5em 0;
             width: 100%;
-            padding-left: 12px;
+            padding-left: 0;
             padding-right: 10px;
             line-height: 1.8;
             font-size: 1.1rem;
@@ -99,11 +95,16 @@
             display: inline-flex;
             margin-top: auto;
             margin-bottom: auto;
+            padding: 0;
+            .choose-btn{
+                width: 110px;
+                padding: 0;
+            }
 		}
     }
     @media only screen and (max-width: 600px) { //breakpoint för stacked buttons i list liten skärm
         h5 {
-            font-size: 1.14rem;
+            font-size: 1.1rem;
             display: inline-block;
         }
         .collection-header {
@@ -115,7 +116,7 @@
             padding-right: 1.6%;
         }
         #noapplicationmessage {
-			font-size: 1.1rem;
+			font-size: 1.0rem;
 		}
         .cancel-button {
             float: right;
@@ -128,19 +129,20 @@
         }
         .buttongroup {
             display: inline-grid;
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding: 0;
             .btn:first-of-type {
                 margin: 0;
+                margin-bottom: 4px;
             }
             .btn {
-                min-width: 77.86px;
+                width: 77.86px;
+                text-align: center!important;
             }
         }
         p {
 			margin: 0.5em 0 0.5em 0;
             width: 100%;
-            padding-left: 2px;
+            padding-left: 0;
             padding-right: 8px;
             line-height: 1.8;
             font-size: 1.1rem;

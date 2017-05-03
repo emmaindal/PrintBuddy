@@ -8,10 +8,13 @@
     
 	.collection-item.avatar {
 		min-height: 0px!important;
-		padding-left: 40px;
 		position: relative;
         padding-top: 5px !important;
+        padding-left: 0px;
         padding-bottom: 5px !important;
+        p, span {
+            margin-left: 35px;
+        }
         .material-icons {
             left: 0%;
         }

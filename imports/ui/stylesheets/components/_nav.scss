@@ -1,12 +1,13 @@
 @import "../variables";
 
 nav {
-    background-color: $color-primary-details; // $color-navbar-two
+    background: linear-gradient(90deg, #008ede, #00b4ff); //$color-primary-details; // $color-navbar-two
     letter-spacing: 2px;
     z-index: 9999999999;
     ul a {
         font-size: 1.1rem!important;
         font-weight: bold;
+        text-transform: uppercase;
     }
 
     .desktop-nav {
@@ -18,10 +19,6 @@ nav {
         letter-spacing: 2px;
     }
 
-    .active,
-    a {
-        color: $text-secondary;
-    }
 
     .button-collapse {
         padding-left: 4px;
@@ -29,11 +26,10 @@ nav {
     
     @media only screen and (min-width: 992px) {
         .nav-container {
-            padding-left: 36px;
-            padding-right: 1%;
+            padding-left: 10px;
         }
         ul li a {
-            padding-left: 35px;
+            padding-left: 39px;
             padding-right: 35px;
         }
     }
@@ -53,6 +49,3 @@ nav {
         padding: 0 25px;
     }
 }
-
-
-

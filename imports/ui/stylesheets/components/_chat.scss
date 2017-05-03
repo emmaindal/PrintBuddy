@@ -50,20 +50,24 @@
             letter-spacing: 4px;
         }
     }
-    .message-username {
-        font-weight: bold;
-    }
+    
     .message-user-one {
         background: $color-message-one;
         padding-left: 15px;
         padding-top: 3px;
         padding-bottom: 3px;
         padding-right: 10px;
-        border-radius: 20px;
+        border-radius: 15px;
         border-bottom-left-radius: 2px;
         min-height: 45px;
         min-width: 100px;
         overflow: auto;
+        p {
+            font-size: 1rem;
+        }
+        .message-username {
+            font-weight: bold;
+        }
         .secondary-content {
             position: relative !important;
             top: 0 !important;
@@ -71,7 +75,7 @@
             font-size: 12px;
             overflow: auto;
             padding-left: 11px;
-            color: $color-primary-btn;
+            color: #34bdff;
         }
         
     }
@@ -81,12 +85,15 @@
         padding-top: 3px;
         padding-bottom: 3px;
         padding-right: 5px;
-        border-radius: 20px;
+        border-radius: 15px;
         border-bottom-right-radius: 2px;
         min-height: 45px;
         min-width: 100px;
         overflow: auto;
         color: white;
+        p {
+            font-size: 1rem;
+        }
         .secondary-content {
             float: none;
             position: relative !important;
@@ -281,11 +288,6 @@
             height: 50px;
             line-height: 3.5;
         }
-        .red {
-            &:hover {
-                background: #ef9a9a !important;
-            }
-        }
     }
 }
 
@@ -295,14 +297,15 @@
     z-index: 0;
     height: 50px;
     line-height: 3.5;
+    width: 100%;
 }
 
 // mobile document download button
 .mobile-download-btn {
     margin-right: 10px;
-    margin-top: 10px;
-    padding-left: 2%;
-    padding-right: 2%;
+    margin-top: 7px;
+    padding: 0;
+    width: 30%;
 }
 
 .info-icon {

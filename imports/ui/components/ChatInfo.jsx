@@ -42,7 +42,7 @@ class ChatInfo extends React.Component {
                     {canCancel ? <div className="job-info-buttons">
                         <li className="collection-item">
                             <a onClick={this.showDoneModal} className="waves-effect waves-light btn">Finish Request</a>
-                            <a onClick={this.showCancelModal} className="red lighten-2 waves-effect waves-red btn">Cancel
+                            <a onClick={this.showCancelModal} className="waves-effect waves-red btn btn-cancel">Cancel
                                 Request</a>
                         </li>
                     </div> : null}
