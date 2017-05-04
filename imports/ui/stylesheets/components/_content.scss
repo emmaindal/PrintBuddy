@@ -139,10 +139,14 @@
         }
 
         .brand-logo{
+            position: relative;
             font-size: 2rem;
+            float: left;
+            margin-left: 1%;
             @media only screen and (max-width: 992px){
-                font-size: 1,2rem;
-                left: 15%;
+                left: 0;
+                -webkit-transform: none; 
+                transform: none; 
             }
         }
 
@@ -167,7 +171,7 @@
                 border: 1px $color-primary-details solid;
                 border-radius: 4px;
                 padding-bottom: 2%;
-                background-color: white;
+                background: white !important;
                 color: rgb(94, 94, 94);
 
 

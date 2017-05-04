@@ -49,7 +49,7 @@ class Nav extends React.Component {
         if (isBuddy) {
             return (
                 <div>
-                    <nav>
+                    <nav className="main-nav">
                         <div className="nav-wrapper nav-container">
                             <a href="" className="brand-logo">PRINTBUDDY</a>
                             <a href="" data-activates="mobile-nav" className="button-collapse"><i className="material-icons">menu</i></a>
@@ -87,7 +87,7 @@ class Nav extends React.Component {
         } else {
             return (
                 <div>
-                    <nav>
+                    <nav className="main-nav">
                         <div className="nav-wrapper nav-container">
                             <a href="" className="brand-logo">PRINTBUDDY</a>
                             <a href="" data-activates="mobile-nav" className="button-collapse"><i className="material-icons">menu</i></a>
