@@ -10,9 +10,6 @@ nav {
         transition: all 0.5s ease !important;
     }
 
-    .desktop-nav {
-        padding-bottom: 2px;
-    }
     .brand-logo {
         color: $text-primary;
         font-size: 2rem;
@@ -25,7 +22,7 @@ nav {
     .button-collapse {
         padding-left: 4px;
     }
-    
+
     @media only screen and (min-width: 992px) {
         .nav-container {
             padding-left: 10px;
@@ -51,4 +48,5 @@ nav {
     .side-nav a{
         padding: 0 25px;
     }
+
 }
