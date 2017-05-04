@@ -22,19 +22,24 @@ class RegisterComponent extends React.Component {
         }
 
         if (this.refs.password.value == this.refs.confirmpassword.value) {
-            const user = {
-                email: this.refs.email.value,
-                username: this.refs.username.value,
-                password: this.refs.password.value,
-                position: { type: "Point", coordinates: [this.state.lng, this.state.lat] },
-                address: this.state.address,
-                printBuddy: {
-                    canColor: this.state.canColor,
-                    isActive: this.state.isBuddy
+            if (this.refs.password.value.length < 6)
+            {
+                displayError("Whoops!", 'Your password must be at least 6 characters');
+            }else{
+                const user = {
+                    email: this.refs.email.value,
+                    username: this.refs.username.value,
+                    password: this.refs.password.value,
+                    position: { type: "Point", coordinates: [this.state.lng, this.state.lat] },
+                    address: this.state.address,
+                    printBuddy: {
+                        canColor: this.state.canColor,
+                        isActive: this.state.isBuddy
+                    }
                 }
+                this.props.submit(user);
+                $('#register-modal').closeModal();
             }
-            this.props.submit(user);
-            $('#register-modal').closeModal();
         } else {
             this.setState({ passwordNotEqual: "Password not equal" });
             displayError("Whoops!", 'Your password must match!');
