@@ -10,6 +10,7 @@ class Nav extends React.Component {
         super(props)
 
         this.popProfileModal = this.popProfileModal.bind(this);
+        this.onLogout = this.onLogout.bind(this);
     }
 
     componentDidMount() {
@@ -34,6 +35,14 @@ class Nav extends React.Component {
             outDuration: 0.9,
         });
     }
+
+    onLogout() {
+        Meteor.logout(function () {
+            $('.button-collapse').sideNav('hide');
+            browserHistory.replace('/start');
+        })
+    }
+
 
     render() {
         const {isBuddy} = this.props;
