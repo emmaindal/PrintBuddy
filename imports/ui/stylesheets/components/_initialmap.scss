@@ -2,14 +2,22 @@
 
 #infowindow {
     width: auto;
-    max-width: 190px;
+    //max-width: 190px;
     height: 100%;
     overflow: hidden;
     
 	.collection-item.avatar {
 		min-height: 0px!important;
-		padding-left: 60px;
 		position: relative;
+        padding-top: 5px !important;
+        padding-left: 0px;
+        padding-bottom: 5px !important;
+        p, span {
+            margin-left: 35px;
+        }
+        .material-icons {
+            left: 0%;
+        }
         
         .title {
             font-size: 15px
@@ -27,7 +35,7 @@
             width: 26px;
             line-height: 26px;
             text-align: center;
-            margin-top: 6px;
+            margin-top: 2px;
 
             position: absolute;
             overflow: hidden;
@@ -44,7 +52,7 @@
             width: 26px;
             line-height: 26px;
             text-align: center;
-            margin-top: 6px;
+            margin-top: 2px;
 
             position: absolute;
             overflow: hidden;

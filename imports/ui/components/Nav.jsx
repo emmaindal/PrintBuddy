@@ -6,19 +6,26 @@ import { browserHistory } from 'react-router';
 import ProfileContainer from '../containers/ProfileContainer';
 
 class Nav extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.onLogout = this.onLogout.bind(this);
+        this.popProfileModal = this.popProfileModal.bind(this);
+    }
+
     componentDidMount() {
         $(".button-collapse").sideNav();
 
         $('.dropdown-button').dropdown({
-            inDuration: 300,
-            outDuration: 225,
-            constrainWidth: false, // Does not change width of dropdown to that of the activator
-            hover: true, // Activate on hover
-            gutter: 0, // Spacing from edge
-            belowOrigin: false, // Displays dropdown below the button
-            alignment: 'left', // Displays dropdown with edge aligned to the left of button
-            stopPropagation: false // Stops event propagation
-        }
+                inDuration: 300,
+                outDuration: 225,
+                constrainWidth: false, // Does not change width of dropdown to that of the activator
+                hover: true, // Activate on hover
+                gutter: 0, // Spacing from edge
+                belowOrigin: false, // Displays dropdown below the button
+                alignment: 'left', // Displays dropdown with edge aligned to the left of button
+                stopPropagation: false // Stops event propagation
+            }
         );
     }
 
@@ -46,15 +53,15 @@ class Nav extends React.Component {
                         <div className="nav-wrapper nav-container">
                             <a href="" className="brand-logo">PRINTBUDDY</a>
                             <a href="" data-activates="mobile-nav" className="button-collapse"><i className="material-icons">menu</i></a>
-                            <ul className="right hide-on-med-and-down">
-                                <li><IndexLink to="/jobs" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Jobs</IndexLink></li>
-                                <li><Link to="/myjobs" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>My Jobs</Link></li>
+                            <ul className="right hide-on-med-and-down desktop-nav">
+                                <li><IndexLink id="mainindexlink" to="/jobs" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Jobs</IndexLink></li>
+                                <li><Link id="myjobslink" to="/myjobs" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>My Jobs</Link></li>
                                 <li><Link className='dropdown-button' data-activates='dropdown1'><i className="material-icons">&#xE7FD;</i></Link></li>
 
                                 <ul id='dropdown1' className='dropdown-content'>
-                                    <li><Link onClick={this.popProfileModal}>Settings</Link></li>
+                                    <li><Link id="btn-settingsmodal" onClick={this.popProfileModal}>Settings</Link></li>
                                     <li className="divider"></li>
-                                    <li><Link onClick={this.onLogout}>Log out</Link></li>
+                                    <li><Link id="btn-onlogout" onClick={this.onLogout}>Log out</Link></li>
                                 </ul>
                             </ul>
                             <ul className="side-nav" id="mobile-nav">
@@ -84,8 +91,8 @@ class Nav extends React.Component {
                         <div className="nav-wrapper nav-container">
                             <a href="" className="brand-logo">PRINTBUDDY</a>
                             <a href="" data-activates="mobile-nav" className="button-collapse"><i className="material-icons">menu</i></a>
-                            <ul className="right hide-on-med-and-down">
-                                <li><IndexLink to="/request" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Requests</IndexLink></li>
+                            <ul className="right hide-on-med-and-down desktop-nav">
+                                <li><IndexLink id="mainindexlink" to="/request" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Requests</IndexLink></li>
 
                                 <li><Link className='dropdown-button' data-activates='dropdown1'><i className="material-icons">&#xE7FD;</i></Link></li>
 

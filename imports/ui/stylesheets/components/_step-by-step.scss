@@ -1,13 +1,17 @@
 //stepper 
 .step-by-step {
+    position: relative;
     height: 105px;
     margin-bottom: 10px; // ändra detta och calcs för map och lista går åt skogen :)
     span {
-        line-height: 32px !important;
+        line-height: 33px !important;
+        font-weight: 300;
+        font-size: 14px;
+       
     }
     a {
-        line-height: 32px !important;
-        margin-top: 4px !important;
+        line-height: 33px !important;
+        margin-top: 3px !important;
     }
     :last-child {
         :last-child {
@@ -25,7 +29,7 @@
             transition: none !important;
             border-top-width: 2px !important;
             :first-child  {
-            transition: all 1s ease-in-out !important;
+            transition: all 0.5s ease!important;
             }
             :last-child {
                 border-top-width: 2px !important;

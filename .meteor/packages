@@ -62,7 +62,7 @@ practicalmeteor:mocha
 practicalmeteor:sinon
 hwillson:stub-collections
 shell-server@0.2.3
-dburles:factory
+
 msavin:mongol
 
 # security
@@ -71,3 +71,5 @@ audit-argument-checks@1.0.7
 
 # not yet sorted
 
+johanbrook:publication-collector
+dburles:factory

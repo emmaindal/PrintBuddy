@@ -5,9 +5,13 @@ import LoginContainer from "../containers/LoginContainer";
 import RegisterContainer from "../containers/RegisterContainer";
 
 export default class Content extends React.Component {
-    componentDidMount() {
+    constructor(props) {
+        super(props)
 
+        this.popLoginModal = this.popLoginModal.bind(this);
+        this.popRegisterModal = this.popRegisterModal.bind(this);
     }
+
     popLoginModal() {
         $('#register-modal').closeModal();
         $('#login-modal').openModal({
@@ -25,6 +29,7 @@ export default class Content extends React.Component {
             scrollTop: 0
         }, 10);
     }
+
     render() {
         return (
             <div className="start-page">
@@ -42,6 +47,7 @@ export default class Content extends React.Component {
                         <h4 className="slogan">Welcome to PrintBuddy</h4>
                         <a onClick={this.popRegisterModal} className="waves-effect waves-light btn-large sign-up">SIGN UP</a>
                         <h6><a onClick={this.popLoginModal}><strong>Already have an account? Sign in here.</strong></a></h6>
+
                         <div className="arrow bounce">
                             <a className="fa fa-arrow-down fa-2x" href="#second-row"></a>
                         </div>

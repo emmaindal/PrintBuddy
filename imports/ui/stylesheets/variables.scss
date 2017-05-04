@@ -45,5 +45,5 @@ $color-location-btn: orange;
 $color-primary-btn: #0592e2; //APPLY & CHOOSE buttons
 
 //Chat
-$color-message-one: transparentize(#ffa520, 0.4);
-$color-message-two: transparentize(#2193b0, 0.6)
+$color-message-one: $color-primary;
+$color-message-two: linear-gradient(90deg, $color-primary-btn,#3198e6);
