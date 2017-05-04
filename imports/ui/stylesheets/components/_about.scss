@@ -2,164 +2,144 @@
 
 #about-content {
     .row{
-    margin-bottom: 5px;
-}
-
-.col.grid-example.about-content{
-    margin-bottom: 1%;
-}
-
-.col.grid-example.about-content.first{
-    background: linear-gradient(
-    rgba(#0592e2, 0.69),
-    rgba(#0592e2, 0.69)
-    ), url("https://static.pexels.com/photos/7096/people-woman-coffee-meeting.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    border: none;
-    height: 80%;
-    padding-bottom: 12%;
-
-    h1{
-        color: white;
-        padding: 5% 0 0 0;
-        text-shadow: 4px 2px 4px #044e78;
-        @media screen and (max-width: $break-medium){
-            font-size: 40px;
-        }
+        margin-bottom: 5px;
     }
 
-    p{
-        color: white;
-        padding: 2% 0 0 0;
-        font-size: 16px;
-    }
-}
-
-.row.about-row{
-    background-color: $color-primary;
-
-}
-
-section.section-about-content.second{
-    background-color: white;
-    border: 1px lightgrey solid;
-    border-radius: 5px;
-    padding: 2% 2% 2% 2%;
-    height: 90%;
-    width: 70%;
-    margin-right: auto;
-    margin-left: auto;
-    @media screen and (max-width: $break-medium) {
-        width: 99%;
-        padding: 2% 2% 2% 2%;
-    }
-
-    h4{
-        padding-bottom: 3%;
-    }
-}
-
-.col.grid-example.about-content.third{
-    background: darken($color-primary-details, 5%);
-
-    .our-team-heading {
-        color: white;
+    .col.grid-example.about-content{
         text-align: center;
-        padding-bottom: 1%;
-        padding-top: 2%;
+        margin-bottom: 1%;
     }
 
-    .card.card-avatar {
-        position: relative;
-        overflow: hidden;
-        margin: 0.5rem 0 1rem;
-        transition: box-shadow 0.25s;
-        border-radius: 4px;
-        width: 100%;
+    .col.grid-example.about-content.first{
+        background: linear-gradient(
+        rgba(#0592e2, 0.69),
+        rgba(#0592e2, 0.69)
+        ), url("https://static.pexels.com/photos/7096/people-woman-coffee-meeting.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border: none;
+        height: 80%;
+        padding-bottom: 12%;
 
-        .card-content {
-            padding: 5px;
+        h1{
+            color: white;
+            padding: 5% 0 0 0;
+            text-shadow: 4px 2px 4px #044e78;
+            @media screen and (max-width: $break-medium){
+                font-size: 3rem;
+            }
         }
 
-        .material-icons.person {
-            font-size: 128px;
-            color: #ff9800;
-        }
-    }
-
-    .card-container {
-        width: 19%;
-        float: left;
-        margin: 0.5%;
-        padding: 1%;
-        @media screen and (max-width: $break-medium) {
-            width: 100%;
-            float: none;
-            margin: 0.5%;
+        p{
+            color: white;
+            padding: 2% 0 0 0;
+            font-size: 1.14rem;
         }
     }
 
-    .is-hidden,
-    .is-visible {
-        opacity: 1;
+    .row.about-row{
+        background-color: $color-primary;
+
     }
 
-    .contact-icons{
-        i{
-            padding-left: 3%;
-        }
-        a{
-            font-size: 26px;
-        }
-    }
-
-}
-
-.col.s12.m6.l6.section-about-content.fourth.one{
-    text-align: left;
-    padding: 5%;
-
-    ul{
-        padding-top: 6%;
-    }
-
-    li{
-        font-size: 14px;
-    }
-
-    a{
-        color: inherit;
-    }
-
-}
-
-.col.s12.m6.l6.section-about-content.fourth.two{
-    text-align: left;
-    padding: 5%;
-
-    .formContainer{
+    section.section-about-content.second{
         background-color: white;
         border: 1px lightgrey solid;
         border-radius: 5px;
-        padding: 3%;
+        padding: 2% 5% 5% 5%;
+        height: 100%;
+        width: 70%;
+        margin-right: auto;
+        margin-left: auto;
+
+        @media screen and (max-width: $break-medium) {
+            width: 99%;
+            padding: 2% 2% 2% 2%;
+        }
+
+        h4{
+            padding-bottom: 3%;
+        }
     }
 
+    .col.grid-example.about-content.third{
+        background: darken($color-primary-details, 5%);
 
-    label.active{
-        transform: translateY(-50%);
+        .our-team-heading {
+            color: white;
+            text-align: center;
+            padding-bottom: 1%;
+            padding-top: 2%;
+        }
+
+
+
+        .material-icons.person {
+            font-size: 10rem;
+            color: #ff9800;
+        }
+
+
+        .is-hidden,
+        .is-visible {
+            opacity: 1;
+        }
+
+        .contact-icons{
+            i{
+                padding-left: 3%;
+            }
+            a{
+                font-size: 2rem;
+            }
+        }
+
     }
 
-    .btn{
-        border-radius: 3px;
-        height: 30px;
-        line-height: 30px;
+    .col.s12.m6.l6.section-about-content.fourth.one{
+        text-align: left;
+        padding: 5%;
+
+        ul{
+            padding-top: 6%;
+        }
+
+        li{
+            font-size: 1rem;
+        }
+
+        a{
+            color: inherit;
+        }
+
     }
 
-    .btn, btn:hover, .btn-large:hover{
-        background-color: $color-primary-details;
+    .col.s12.m6.l6.section-about-content.fourth.two{
+        text-align: left;
+        padding: 5%;
+
+        .formContainer{
+            background-color: white;
+            border: 1px lightgrey solid;
+            border-radius: 5px;
+            padding: 3%;
+        }
+
+
+        label.active{
+            transform: translateY(-50%);
+        }
+
+        .btn{
+            border-radius: 3px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .btn, btn:hover, .btn-large:hover{
+            background-color: $color-primary-details;
+        }
+
+
     }
-
-
-}
 }

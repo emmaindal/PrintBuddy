@@ -23,8 +23,8 @@ export const JobList = ({userId, listofjobs, onApply, onView}) =>
                                 <button className="btn waves-effect waves-light location-btn" onClick={() => {
                                     onView(job)
                                 }}><i className="small material-icons">location_on</i></button>
-                                {job.possibleOnes.includes(userId) ?  <button className="btn waves-effect waves-light disabled" >APPLIED</button> :
-                                    <button className="btn waves-effect waves-light" onClick={() => {
+                                {job.possibleOnes.includes(userId) ?  <button className="btn waves-effect waves-light disabled apply-btn" >APPLIED</button> :
+                                    <button className="btn waves-effect waves-light apply-btn" onClick={() => {
                                         onApply(job._id)
                                     }}>APPLY</button>
                                 }

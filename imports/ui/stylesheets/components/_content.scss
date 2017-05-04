@@ -1,36 +1,36 @@
 @import "../variables";
 
 
-.col.grid-example {
-    text-align: center;
-    line-height: 50px;
-    padding: 2%;
-    @media screen and (max-width: $break-medium){
-        line-height: none;
-        padding: 0%;
-    }
-}
-
-p, h1,h2,h3,h4,h5{
-    padding: 0;
-    margin: 0;
-}
-
-p {
-    font-size: 14px;
-    line-height: 30px;
-}
-
-a {
-    font-size: 14px;
-}
-
 .start-page {
+    .col.grid-example {
+        line-height: 0px;
+        padding: 2%;
+        @media screen and (max-width: $break-medium){
+            line-height: 2%;
+            padding: 0%;
+            text-align: center;
+        }
+    }
+
+    p, h1,h2,h3,h4,h5{
+        padding: 0;
+        margin: 0;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 30px;
+    }
+
+    a{
+        color: $color-primary-details;
+    }
+
     .login-modal {
         width: 500px;
         top: 20vh !important;
         margin-bottom: 50px;
-        min-height: 300px;        
+        min-height: 300px;
         @media screen and (max-height: 40vh) {
             overflow-y: scroll !important;
         }
@@ -39,7 +39,7 @@ a {
             height: 100vh;
             top: 0 !important;
             max-height: none !important;
-            
+
         }
         .modal-content {
             padding-bottom: 0;
@@ -52,7 +52,7 @@ a {
             right: 14px;
             top: 8px;
             z-index: 999999999;
-            font-size: 26px;
+            font-size: 1.8rem;
             color: #6b6b6b;
             font-weight: 100;
         }
@@ -66,11 +66,12 @@ a {
         .line-break {
             border-bottom: 1px solid #9e9e9e !important;
         }
+
     }
     .register-modal {
         width: 500px;
         top: 10vh !important;
-        max-height: 80vh;        
+        max-height: 80vh;
         @media screen and (max-height: 80vh) {
             overflow-y: scroll !important;
         }
@@ -91,7 +92,7 @@ a {
             right: 14px;
             top: 8px;
             z-index: 999999999;
-            font-size: 32px;
+            font-size: 2.2rem;
             color: #6b6b6b;
             font-weight: 100;
         }
@@ -106,119 +107,168 @@ a {
             border-bottom: 1px solid #9e9e9e !important;
         }
     }
-}
 
-.col.grid-example.content-first {
-    border: 0;
-    background: linear-gradient(
-    rgba(#0592e2, 0.69),
-    rgba(#0592e2, 0.69)
-    ), url("https://static.pexels.com/photos/7075/people-office-group-team.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    @media screen and (max-width: $break-small){
-        height: 37vh;
-    }
 
-    h1 {
-        font-size: 64px;
-        padding-top: 15%;
-        padding-bottom: 3%;
-        color: $text-tertiary;
-        text-shadow: 4px 2px 4px #044e78;
-        @media screen and (max-width: $break-small){
-            font-size: 33px;
-            padding-top: 20%;
+    .col.grid-example.content-first {
+        height: 100vh;
+        border: 0;
+        padding-bottom: 2%;
+        background: linear-gradient(
+        rgba(#0592e2, 0.69),
+        rgba(#0592e2, 0.69)
+        ), url("https://static.pexels.com/photos/7075/people-office-group-team.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        @media screen and (max-width: $break-medium){
+            height: auto;
+        }
+
+        nav.start-nav{
+            background-color: transparent;
+            box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.11), 0 0px 0px 0 rgba(0, 0, 0, 0.12);
+            border-bottom: 1px solid darken($color-navbar-two, 40%);
 
         }
 
+        a{
+            color: white;
+        }
+
+        nav ul a{
+            font-size: 1.2rem;
+        }
+
+        .brand-logo{
+            position: relative;
+            font-size: 2rem;
+            float: left;
+            margin-left: 1%;
+            @media only screen and (max-width: 992px){
+                left: 0;
+                -webkit-transform: none; 
+                transform: none; 
+            }
+        }
+
+        .welcome{
+            text-align: center;
+            .slogan {
+                font-size: 3.5rem;
+                padding-top: 11%;
+                padding-bottom: 3%;
+                color: $text-tertiary;
+                text-shadow: 4px 2px 4px #044e78;
+
+
+                @media screen and (max-width: $break-small){
+                    font-size: 1.5rem;
+                    padding-top: 5%;
+
+                }
+            }
+
+            .sign-up {
+                border: 1px $color-primary-details solid;
+                border-radius: 4px;
+                padding-bottom: 2%;
+                background: white !important;
+                color: rgb(94, 94, 94);
+
+
+                a{
+                    font-size: 1.3rem;
+                    color: white !important;
+
+                    @media screen and (max-width: $break-small){
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+        }
     }
 
-    .waves-effect.waves-light.btn-large.sign-up {
-        border: 1px $color-primary-details solid;
-        border-radius: 4px;
-        padding-bottom: 2%;
+    .btn-floating:hover{
+        background-color: $scroll-btn-background;
+    }
+
+    .col.grid-example.content-second{
         background-color: white;
-        color: rgb(94, 94, 94);
-    }
+        padding: 5%;
+        @media screen and (max-width: $break-medium){
+            width: 100%;
 
-    p{
-        color: white;
-        padding-bottom: 2%;
-        text-shadow: 4px 2px 4px #044e78;
-    }
-
-    a{
-        font-size: 20px;
-        color: white;
-        @media screen and (max-width: $break-small){
-            font-size: 14px;
+            
         }
     }
 
-}
+    .info-wrapper{
+        background-color: white;
+    }
 
-.btn-floating:hover{
-    background-color: $scroll-btn-background;
-}
+    .row.two{
+        background-color: white;
+    }
 
-.col.grid-example.content-second{
-    margin: 0;
-    background-color: white;
-    padding-bottom: 2%;
-    @media screen and (max-width: $break-medium){
+    .card-panel.teal{
+        padding: 5% 1% 1% 1%;
+        background-color: $color-primary !important;
+        text-align: center;
+
+        h5{
+            color: $color-primary-details
+        }
+
+        img{
+            max-width: 100%;
+
+        }
+    }
+
+
+    .img-wrapper{
+        height: 100%;
         width: 100%;
 
-        .img-wrapper{
-            display: none;
+        img{
+            max-height: 100%;
+            max-width: 100%;
         }
     }
-}
 
-.row.two{
-    background-color: white;
-}
+    .text-wrapper{
+        padding: 6%;
 
-.img-wrapper{
-    height: 100%;
-    width: 100%;
 
-    img{
-        max-height: 100%;
-        max-width: 100%;
+        h4{
+            padding-bottom: 6%;
+        }
     }
-}
 
-.text-wrapper{
-    padding: 6%;
+    .arrow {
+        text-align: center;
+    }
+    .bounce {
+        -moz-animation: bounce 6s infinite;
+        -webkit-animation: bounce 6s infinite;
+        animation: bounce 6s infinite;
+        padding-top: 5%;
+        @media screen and (max-width: $break-small){
+            padding-top: 0%;
+        }
 
-    h4{
-        padding-bottom: 6%;
     }
-}
 
-.arrow {
-    text-align: center;
-    padding-top: 20%;
-    @media screen and (max-width: $break-small){
-        padding-top: 0%;
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        60% {
+            transform: translateY(-20px);
+        }
+        60% {
+            transform: translateY(-15px);
+        }
     }
-}
-.bounce {
-    -moz-animation: bounce 2s infinite;
-    -webkit-animation: bounce 2s infinite;
-    animation: bounce 2s infinite;
-}
 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-30px);
-    }
-    60% {
-        transform: translateY(-15px);
-    }
 }
-

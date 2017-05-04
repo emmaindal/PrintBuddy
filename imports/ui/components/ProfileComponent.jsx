@@ -91,6 +91,7 @@ class ProfileComponent extends React.Component {
                         <div className="input-field col s10 offset-s1 m10 offset-m1">
                             <input id="email" type="email" className="validate" ref="email"
                                    value={this.state.currentUser.emails[0].address} disabled/>
+
                         </div>
                     </div>
                     <div className="row">

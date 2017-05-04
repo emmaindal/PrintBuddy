@@ -22,7 +22,7 @@ const PendingJobList = ({listofjobs, onView, onCancel}) => {
                                 <button className="btn waves-effect waves-light location-btn" onClick={() => {
                                     onView(job)
                                 }}><i className="small material-icons">location_on</i></button>
-                                <button className="btn waves-effect waves-light" onClick={() => {
+                                <button className="btn waves-effect waves-light btn-cancel" onClick={() => {
                                     onCancel(job)
                                 }}>Cancel
                                 </button>

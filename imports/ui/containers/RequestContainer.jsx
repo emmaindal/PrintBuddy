@@ -92,9 +92,10 @@ class RequestComp extends React.Component {
                         { title: "Pending" },
                         { title: "Chat" },
                         { title: "Done" }]}
-                        activeStep={this.getActiveStep()} size={36} completeColor="#79d283" activeColor="#0592e2" 
-                        completeTitleColor="#79d283" activeTitleColor="#0592e2" 
-                        defaultTitleColor="rgba(0, 0, 0, 0.3)" defaultColor="rgba(0, 0, 0, 0.3)"/>
+                        activeStep={this.getActiveStep()} size={36} completeColor="#0592e2" activeColor="#0592e2" 
+                        completeTitleColor="#0592e2" activeTitleColor="#0592e2" 
+                        defaultTitleColor="rgba(0, 0, 0, 0.1)" defaultColor="rgba(0, 0, 0, 0.1)"
+                        titleFontSize={14}/>
                 </div>
                 {this.renderRightContainer()}
             </div>

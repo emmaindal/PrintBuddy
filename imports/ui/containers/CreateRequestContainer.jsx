@@ -77,7 +77,7 @@ class CreateRequest extends React.Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="create-request-container">
                 <CreateRequestComponent isLoading={this.state.isLoading} googleStatus={this.state.googleStatus}
                     submit={this.onSubmit} googleUrl={this.state.downloadUrl}
                     fileChangeHandler={this.onfileChangeHandler}

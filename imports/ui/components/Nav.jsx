@@ -48,11 +48,11 @@ class Nav extends React.Component {
         if (isBuddy) {
             return (
                 <div>
-                    <nav>
+                    <nav className="main-nav">
                         <div className="nav-wrapper nav-container">
-                            <a href="" className="brand-logo">PrintBuddy</a>
-                            <a href="" data-activates="mobile-nav" className="button-collapse"><i
-                                className="material-icons">menu</i></a>
+
+                            <a href="" className="brand-logo">PRINTBUDDY</a>
+                            <a href="" data-activates="mobile-nav" className="button-collapse"><i className="material-icons">menu</i></a>
                             <ul className="right hide-on-med-and-down desktop-nav">
                                 <li><IndexLink id="mainindexlink" to="/jobs" activeClassName="active"
                                                activeStyle={{fontWeight: 'bold'}}>Jobs</IndexLink></li>
@@ -81,11 +81,11 @@ class Nav extends React.Component {
         } else {
             return (
                 <div>
-                    <nav>
+                    <nav className="main-nav">
                         <div className="nav-wrapper nav-container">
-                            <a href="" className="brand-logo">PrintBuddy</a>
-                            <a href="" data-activates="mobile-nav" className="button-collapse"><i
-                                className="material-icons">menu</i></a>
+
+                            <a href="" className="brand-logo">PRINTBUDDY</a>
+                            <a href="" data-activates="mobile-nav" className="button-collapse"><i className="material-icons">menu</i></a>
                             <ul className="right hide-on-med-and-down desktop-nav">
                                 <li><IndexLink id="mainindexlink" to="/request" activeClassName="active"
                                                activeStyle={{fontWeight: 'bold'}}>Requests</IndexLink></li>

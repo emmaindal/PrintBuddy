@@ -12,7 +12,7 @@ class Start extends React.Component {
 	constructor(props) {
         super(props);
         this.state = {};
-    }   
+    }
 	componentDidMount(){
 		const $$ = window.$;
 
@@ -32,7 +32,7 @@ class Start extends React.Component {
 		      });
 		    });
 		})
-        $("#prepage").fadeOut(200);    
+        $("#prepage").fadeOut(200);
 	}
 	render() {
 		return (

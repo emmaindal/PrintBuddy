@@ -4,13 +4,13 @@ export default class AboutComponent extends React.Component {
     render() {
         return(
             <div id="about-content">
-                <div className="row">
+                <div className="row about-row">
 
                     <div className="col s12 m12 l12 grid-example about-content first" id="fifth-row">
                         <section className="section" >
                             <h1>Who are we?</h1>
                             <p>Read about PrintBuddy as a team or contact us below if you have any questions.</p>
-                            
+
                         </section>
                     </div>
                     <div className="row about-row">
@@ -18,33 +18,30 @@ export default class AboutComponent extends React.Component {
                             <section className="section-about-content second">
                                 <span className="about-article-first">
                                     <h4>How everything started</h4>
-                                    <p>”Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                        labore et dolore magna aliqua.
-                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                                        ut aliquip ex ea commodo consequat.
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                        dolore eu fugiat nulla pariatur.
-                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                        officia deserunt mollit anim id est laborum
+                                    <p>PrintBuddy is a school project started in Mars 2017.
+                                        Our goal with this project is to make it easier for you to get any
+                                        document printed out in your neighborhood.
                                     </p>
-                                    <p>”Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                        labore et dolore magna aliqua.
-                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                                        ut aliquip ex ea commodo consequat.
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                        dolore eu fugiat nulla pariatur.
-                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                        officia deserunt mollit anim id est laborum
+                                    <br/>
+                                    <p>We know how hard it is to really need, for example a CV, printed out.
+                                        You have no printer at home, you need to go to a library or something
+                                        and it’s too late because the library closes at 6 pm.
+                                    </p>
+                                    <br/>
+                                    <p>
+                                        Therefore, we, as a team, works for a easy way to make your days more comfortable.
+                                        Just a click away and you get the ability to have your really important documents in
+                                        your hand after a few minutes - if there is a PrintBuddy in your neighborhood.
                                     </p>
                                 </span>
                             </section>
                         </div>
                     </div>
-                    <div className="row">
+                    <div className="row about-row">
                         <div className="col s12 m12 l12 grid-example about-content third">
                             <section className="section-about-content third">
                                 <h4 className="our-team-heading">OUR TEAM</h4>
-                                <div className="card-container">
+                                <div className="col s12 m3 l3">
                                     <div className="card card-avatar">
                                         <div className="waves-effect waves-block waves-light">
                                             <p><i className="material-icons person">person</i></p>
@@ -58,10 +55,9 @@ export default class AboutComponent extends React.Component {
                                                 </div>
                                             </span>
                                         </div>
-                                    </div>
-
                                 </div>
-                                <div className="card-container">
+                                </div>
+                                <div className="col s12 m3 l3">
                                     <div className="card card-avatar">
                                         <div className="waves-effect waves-block waves-light">
                                             <p><i className="material-icons person">person</i></p>
@@ -79,7 +75,7 @@ export default class AboutComponent extends React.Component {
                                     </div>
 
                                 </div>
-                                <div className="card-container">
+                                <div className="col s12 m3 l3">
                                     <div className="card card-avatar">
                                         <div className="waves-effect waves-block waves-light">
                                             <p><i className="material-icons person">person</i></p>
@@ -97,7 +93,7 @@ export default class AboutComponent extends React.Component {
                                     </div>
 
                                 </div>
-                                <div className="card-container">
+                                <div className="col s12 m3 l3">
                                     <div className="card card-avatar">
                                         <div className="waves-effect waves-block waves-light">
                                             <p><i className="material-icons person">person</i></p>
