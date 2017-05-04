@@ -11,7 +11,7 @@
 		position: relative;
         padding-top: 5px !important;
         padding-left: 0px;
-        padding-bottom: 5px !important;
+        padding-bottom: 10px !important;
         p, span {
             margin-left: 35px;
         }
@@ -21,9 +21,6 @@
         
         .title {
             font-size: 15px
-        }
-        .title-large {
-            font-size: 16px;
         }
 	}
     .round-icon-green {
@@ -35,8 +32,6 @@
             width: 26px;
             line-height: 26px;
             text-align: center;
-            margin-top: 2px;
-
             position: absolute;
             overflow: hidden;
             left: 15px;
@@ -52,8 +47,6 @@
             width: 26px;
             line-height: 26px;
             text-align: center;
-            margin-top: 2px;
-
             position: absolute;
             overflow: hidden;
             left: 15px;
@@ -69,8 +62,6 @@
             width: 26px;
             line-height: 26px;
             text-align: center;
-            margin-top: 6px;
-
             position: absolute;
             overflow: hidden;
             left: 15px;
