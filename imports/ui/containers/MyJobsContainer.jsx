@@ -17,8 +17,6 @@ class MyJobs extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log("ADSASDASDASD ");
-
         if (!nextProps.isBuddy) {
             browserHistory.replace('/request');
         }
