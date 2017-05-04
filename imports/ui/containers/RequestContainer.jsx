@@ -26,7 +26,6 @@ class RequestComp extends React.Component {
         }
     }
     componentWillReceiveProps(nextProps) {
-        console.log("faslfkalsflklkf ");
         if (nextProps.isBuddy) {
             browserHistory.replace('/jobs');
         }
