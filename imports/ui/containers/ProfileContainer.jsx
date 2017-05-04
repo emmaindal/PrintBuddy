@@ -49,7 +49,6 @@ class Profile extends React.Component {
     }
 
     render() {
-        console.log("fasfasf");
         return (
             <div>
                 <ProfileComponent onLogout={this.onLogout} onSubmit={this.onSubmit} currentUser={this.props.currentUser}/>
