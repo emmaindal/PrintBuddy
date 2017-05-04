@@ -25,9 +25,12 @@ class Done extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<h1>Done Component</h1>
-				<button onClick={this.onClick} className="waves-effect waves-light btn">Finish!</button>
+			<div className="done-page">
+					<div className="done">
+						<h2>You are now done!</h2>
+					<p className="done-icon"><i className="fa fa-check-circle" aria-hidden="true"></i></p>
+				<button onClick={this.onClick} className="waves-effect waves-light btn-large">UPLOAD A NEW JOB</button>
+					</div>
 			</div>
 		);
 	}

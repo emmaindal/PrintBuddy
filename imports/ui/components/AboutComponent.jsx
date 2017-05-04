@@ -8,7 +8,7 @@ export default class AboutComponent extends React.Component {
 
                     <div className="col s12 m12 l12 grid-example about-content first" id="fifth-row">
                         <section className="section" >
-                            <h1>Who are we?</h1>
+                            <h1>WHO ARE WE?</h1>
                             <p>Read about PrintBuddy as a team or contact us below if you have any questions.</p>
 
                         </section>
@@ -44,33 +44,43 @@ export default class AboutComponent extends React.Component {
                                 <div className="col s12 m3 l3">
                                     <div className="card card-avatar">
                                         <div className="waves-effect waves-block waves-light">
-                                            <p><i className="material-icons person">person</i></p>
+                                            <img className="profile-picture" src="https://static.pexels.com/photos/91227/pexels-photo-91227.jpeg" alt="profile-picture"/>
                                         </div>
                                         <div className="card-content">
-                                            <span className="card-title activator grey-text text-darken-4">Simon
-                                                <h6>Developer</h6>
+                                            <span className="card-title activator grey-text text-darken-4">Simon<i className="material-icons right">more_vert</i></span>
+                                                <span>
+                                                <h6 className="team-position">Developer</h6>
                                                 <div className="contact-icons">
-                                                    <a href="#"><i className="fa fa-envelope" aria-hidden="true"></i></a>
-                                                    <a href="#"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                                                    <a href="mailto:simon.holm@se.issworld.com"><i className="fa fa-envelope" aria-hidden="true"></i></a>
+                                                    <a href="https://se.linkedin.com/in/simon-holm-50769aa6"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a>
                                                 </div>
                                             </span>
+                                        </div>
+                                        <div className="card-reveal">
+                                            <span className="card-title grey-text text-darken-4"><h5>Simon Holm</h5><i className="material-icons right">close</i></span>
+                                            <p>Here is some more information about this product that is only revealed once clicked on.</p>
                                         </div>
                                 </div>
                                 </div>
                                 <div className="col s12 m3 l3">
                                     <div className="card card-avatar">
                                         <div className="waves-effect waves-block waves-light">
-                                            <p><i className="material-icons person">person</i></p>
+                                            <img className="profile-picture" src="https://static.pexels.com/photos/91227/pexels-photo-91227.jpeg" alt="profile-picture"/>
                                         </div>
                                         <div className="card-content">
-                                            <span className="card-title activator grey-text text-darken-4">Emma
-                                                <h6>Developer/Designer</h6>
+                                            <span className="card-title activator grey-text text-darken-4">Emma<i className="material-icons right">more_vert</i></span>
+                                            <span>
+                                            <h6 className="team-position">Developer/Designer</h6>
                                                 <div className="contact-icons">
-                                                    <a href="#"><i className="fa fa-envelope" aria-hidden="true"></i></a>
-                                                    <a href="#"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                                                    <a href="mailto:emma.indahl@gmail.com"><i className="fa fa-envelope" aria-hidden="true"></i></a>
+                                                    <a href="https://www.linkedin.com/in/emma-indal/"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a>
                                                 </div>
                                             </span>
 
+                                        </div>
+                                        <div className="card-reveal">
+                                            <span className="card-title grey-text text-darken-4"><h5>Emma Indal</h5><i className="material-icons right">close</i></span>
+                                            <p>Here is some more information about this product that is only revealed once clicked on.</p>
                                         </div>
                                     </div>
 
@@ -78,39 +88,51 @@ export default class AboutComponent extends React.Component {
                                 <div className="col s12 m3 l3">
                                     <div className="card card-avatar">
                                         <div className="waves-effect waves-block waves-light">
-                                            <p><i className="material-icons person">person</i></p>
+                                            <img className="profile-picture" src="https://static.pexels.com/photos/91227/pexels-photo-91227.jpeg" alt="profile-picture"/>
                                         </div>
                                         <div className="card-content">
-                                            <span className="card-title activator grey-text text-darken-4">Mikael
-                                                <h6>Chief Programmer</h6>
+                                            <span className="card-title activator grey-text text-darken-4">Mikael<i className="material-icons right">more_vert</i></span>
+                                            <span>
+                                                <h6 className="team-position">Chief Programmer</h6>
                                                 <div className="contact-icons">
-                                                    <a href="#"><i className="fa fa-envelope" aria-hidden="true"></i></a>
-                                                    <a href="#"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                                                    <a href="mailto:mikael.carlstein@gmail.com"><i className="fa fa-envelope" aria-hidden="true"></i></a>
+                                                    <a href="https://se.linkedin.com/in/mikael-carlstein-79904249"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a>
                                                 </div>
                                             </span>
 
+                                        </div>
+                                        <div className="card-reveal">
+                                            <span className="card-title grey-text text-darken-4"><h5>Mikael Carlstein</h5><i className="material-icons right">close</i></span>
+                                            <p>Here is some more information about this product that is only revealed once clicked on.</p>
                                         </div>
                                     </div>
 
                                 </div>
                                 <div className="col s12 m3 l3">
                                     <div className="card card-avatar">
-                                        <div className="waves-effect waves-block waves-light">
-                                            <p><i className="material-icons person">person</i></p>
+                                        <div className="card-image waves-effect waves-block waves-light">
+                                            <img className="profile-picture" src="https://static.pexels.com/photos/91227/pexels-photo-91227.jpeg" alt="profile-picture"/>
                                         </div>
                                         <div className="card-content">
-                                            <span className="card-title activator grey-text text-darken-4">Alexander
-                                                <h6>Developer/Designer</h6>
+                                            <span className="card-title activator grey-text text-darken-4">Alexander<i className="material-icons right">more_vert</i></span>
+                                            <span>
+                                                <h6 className="team-position">Developer/Designer</h6>
                                                 <div className="contact-icons">
-                                                    <a href="#"><i className="fa fa-envelope" aria-hidden="true"></i></a>
-                                                    <a href="#"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                                                    <a href="mailto:alex.loofet@gmail.com"><i className="fa fa-envelope" aria-hidden="true"></i></a>
+                                                    <a href="https://se.linkedin.com/in/alexander-l%C3%B6%C3%B6f-854436115"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a>
                                                 </div>
                                             </span>
-
                                         </div>
+                                        <div className="card-reveal">
+                                            <span className="card-title grey-text text-darken-4"><h5>Alexander Lööf</h5><i className="material-icons right">close</i></span>
+                                            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                                        </div>
+
                                     </div>
 
                                 </div>
+
+
                             </section>
                         </div>
                     </div>
