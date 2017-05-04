@@ -44,7 +44,9 @@ export default class Content extends React.Component {
                             </div>
                         </nav>
                         <div className="welcome">
-                        <h4 className="slogan">Welcome to PrintBuddy</h4>
+                        <h4 className="slogan">BECOME A PRINTBUDDY. OR FIND ONE.</h4>
+
+
                         <a onClick={this.popRegisterModal} className="waves-effect waves-light btn-large sign-up">SIGN UP</a>
                         <h6><a onClick={this.popLoginModal}><strong>Already have an account? Sign in here.</strong></a></h6>
 
@@ -59,7 +61,7 @@ export default class Content extends React.Component {
                         <div className="col m6 s12 grid-example content-second left" id="second-row">
                             <div className="text-wrapper left">
                                 <h4>Get your document delivered</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <h5>Don’t have a car? Need your document quickly? Find a PrintBuddy who have specified that he/she can deliver your document. </h5>
                             </div>
                         </div>
                         <div className="col m6 s12 grid-example content-second right ">
@@ -80,7 +82,7 @@ export default class Content extends React.Component {
                         <div className="col m6 s12 grid-example content-second right">
                             <div className="text-wrapper right">
                                 <h4>All over the world</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <h5>It’s possible to use our service all over the world. Our integration with Google Maps make it possible to find PrintBuddies/Requestors where ever you are.</h5>
                             </div>
                         </div>
                         <div className="col m6 s12 grid-example content-second hide-on-large-only " id="third-row">
@@ -94,8 +96,8 @@ export default class Content extends React.Component {
                         <div className="col m6 s12 grid-example content-second left" id="fourth-row">
                             <div className="text-wrapper left">
                                 <h4>Responsive design</h4>
-                                <p>Nowadays it's becoming more and more common to use different devices to handle your ”ärenden” on Internet.
-                                PrintBuddy is therefore developed as a responsive website to make it possible for you to use our service regardless of which device you are using.</p>
+                                <h5>Nowadays it's becoming more and more common to use different devices to handle your ”ärenden” on Internet.
+                                PrintBuddy is therefore developed as a responsive website to make it possible for you to use our service regardless of which device you are using.</h5>
                             <br/>
                             <br/>
                             </div>

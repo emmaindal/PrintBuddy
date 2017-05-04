@@ -12,19 +12,19 @@
 
     .col.grid-example.about-content.first{
         background: linear-gradient(
-        rgba(#0592e2, 0.69),
-        rgba(#0592e2, 0.69)
+        rgba(#2a2f32, 0.69),
+        rgba(#2a2f32, 0.69)
         ), url("https://static.pexels.com/photos/7096/people-woman-coffee-meeting.jpg");
         background-size: 100%;
         background-repeat: no-repeat;
         border: none;
         height: 80%;
         padding-bottom: 12%;
+        padding-top: 10%;
 
         h1{
-            color: white;
-            padding: 5% 0 0 0;
-            text-shadow: 4px 2px 4px #044e78;
+            color: $color-primary-details;
+            text-shadow: 4px 2px 4px #0f1011;
             @media screen and (max-width: $break-medium){
                 font-size: 3rem;
             }
@@ -65,15 +65,25 @@
     .col.grid-example.about-content.third{
         background: darken($color-primary-details, 5%);
 
+
         .our-team-heading {
             color: white;
             text-align: center;
-            padding-bottom: 1%;
-            padding-top: 2%;
+            padding-bottom: 4%;
+            padding-top: 3%;
+        }
+        .card{
+            text-align: left !important;
         }
 
-
-
+        .team-position{
+            color: $text-secondary;
+            font-style: oblique;
+        }
+        .profile-picture{
+            height: 100%;
+            width: 100%;
+        }
         .material-icons.person {
             font-size: 10rem;
             color: #ff9800;
@@ -87,7 +97,7 @@
 
         .contact-icons{
             i{
-                padding-left: 3%;
+                padding-right: 3%;
             }
             a{
                 font-size: 2rem;
@@ -141,5 +151,7 @@
         }
 
 
+
     }
+
 }

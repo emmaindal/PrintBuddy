@@ -114,9 +114,9 @@
         border: 0;
         padding-bottom: 2%;
         background: linear-gradient(
-        rgba(#0592e2, 0.69),
-        rgba(#0592e2, 0.69)
-        ), url("https://static.pexels.com/photos/7075/people-office-group-team.jpg");
+        rgba(#2a2f32, 0.69),
+        rgba(#2a2f32, 0.69)
+        ), url("https://static.pexels.com/photos/97899/pexels-photo-97899.jpeg");
         background-size: 100%;
         background-repeat: no-repeat;
         @media screen and (max-width: $break-medium){
@@ -145,8 +145,8 @@
             margin-left: 1%;
             @media only screen and (max-width: 992px){
                 left: 0;
-                -webkit-transform: none; 
-                transform: none; 
+                -webkit-transform: none;
+                transform: none;
             }
         }
 
@@ -157,7 +157,7 @@
                 padding-top: 11%;
                 padding-bottom: 3%;
                 color: $text-tertiary;
-                text-shadow: 4px 2px 4px #044e78;
+                text-shadow: 4px 2px 4px #313b40;
 
 
                 @media screen and (max-width: $break-small){
@@ -168,21 +168,23 @@
             }
 
             .sign-up {
-                border: 1px $color-primary-details solid;
-                border-radius: 4px;
+                border: 1px darken($color-primary-details, 30%) solid;
+                border-radius: 5%;
                 padding-bottom: 2%;
-                background: white !important;
-                color: rgb(94, 94, 94);
+                background: $color-primary-details !important;
+                color: white;
+                font-size: 1.5rem;
 
 
                 a{
-                    font-size: 1.3rem;
+                    paddin-top: 5%;
                     color: white !important;
 
                     @media screen and (max-width: $break-small){
                         font-size: 1rem;
                     }
                 }
+
             }
 
         }
@@ -198,7 +200,7 @@
         @media screen and (max-width: $break-medium){
             width: 100%;
 
-            
+
         }
     }
 
@@ -237,10 +239,13 @@
     }
 
     .text-wrapper{
-        padding: 6%;
-
+        padding: 12%;
+        @media screen and (max-width: $break-medium){
+            padding: 2%;
+        }
 
         h4{
+            color: $color-primary-details;
             padding-bottom: 6%;
         }
     }
