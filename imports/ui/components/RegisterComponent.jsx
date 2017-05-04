@@ -24,7 +24,7 @@ class RegisterComponent extends React.Component {
         if (this.refs.password.value == this.refs.confirmpassword.value) {
             if (this.refs.password.value.length < 6)
             {
-                displayError("Whoops!", 'Your password must at least 6 characters');
+                displayError("Whoops!", 'Your password must be at least 6 characters');
             }else{
                 const user = {
                     email: this.refs.email.value,
