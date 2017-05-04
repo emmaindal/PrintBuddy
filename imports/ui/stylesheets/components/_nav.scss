@@ -1,6 +1,6 @@
 @import "../variables";
 
-nav {
+nav.main-nav {
     background: linear-gradient(90deg, $color-primary-btn,#3198e6); //$color-primary-details; // $color-navbar-two
     letter-spacing: 2px;
     z-index: 9999999999;
