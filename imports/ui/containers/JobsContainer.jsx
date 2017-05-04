@@ -27,6 +27,22 @@ class Jobs extends React.Component {
         }
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (!nextProps.isBuddy) {
+            browserHistory.replace('/request');
+        } else {
+            if (nextProps.userposition.lat != this.props.userposition.lat &&
+                nextProps.userposition.lng != this.props.userposition.lng)
+            {
+                this.setState({
+                    defaultCenter: nextProps.userposition,
+                    defaultPosition: nextProps.userposition,
+                    clickedJobId: ''
+                });
+            }
+        }
+    }
+
     onApply(clickedId) {
         const req = {requestId: clickedId}
         applyRequest.call(req, (err, res) => {
@@ -58,11 +74,13 @@ class Jobs extends React.Component {
             <div id="jobslistcontainer">
                 <div className="row">
                     <div className="col s12 m12 l6">
-                        <JobList userId={this.props.userId} listofjobs={this.props.jobs} onApply={this.onApply} onView={this.onViewLocation}/>
+                        <JobList userId={this.props.userId} listofjobs={this.props.jobs} onApply={this.onApply}
+                                 onView={this.onViewLocation}/>
                     </div>
                     <div className="col s12 m12 l6" id="map-column">
                         <MapContainer isBuddy={true} clickedId={this.state.clickedJobId} markers={this.props.jobs}
-                                      defaultCenter={this.state.defaultCenter} defaultPosition={this.state.defaultPosition}/>
+                                      defaultCenter={this.state.defaultCenter}
+                                      defaultPosition={this.state.defaultPosition}/>
                     </div>
                 </div>
             </div>
@@ -75,7 +93,7 @@ const JobsContainer = createContainer(() => {
     const jobsRequestDeliverySub = Meteor.subscribe('jobs-request-delivery', Meteor.user().position.coordinates[1], Meteor.user().position.coordinates[0]);
     const isReady = jobsRequestDeliverySub.ready() && jobsRequestSub.ready();
     return {
-        jobs: isReady ? Request.find({ distance: {$exists: true}}, {
+        jobs: isReady ? Request.find({distance: {$exists: true}}, {
             sort: {distance: 1}
         }).fetch() : [],
         userposition: {lat: Meteor.user().position.coordinates[1], lng: Meteor.user().position.coordinates[0]}

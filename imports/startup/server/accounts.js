@@ -61,7 +61,6 @@ Accounts.urls.verifyEmail = function (token) {
     return Meteor.absoluteUrl("verified?token=" + token)
 }
 
-
 Meteor.users._ensureIndex({ 'position': '2dsphere'});
 
 // So we can access field on client

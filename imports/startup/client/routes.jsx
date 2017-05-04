@@ -9,9 +9,6 @@ import { PrintBuddy } from '../../api/printbuddy/printbuddy';
 
 // route components
 import RedirectContainer from '../../ui/containers/RedirectContainer';
-import ProfileContainer from '../../ui/containers/ProfileContainer';
-import LoginContainer from '../../ui/containers/LoginContainer';
-import RegisterContainer from '../../ui/containers/RegisterContainer';
 import StartContainer from '../../ui/containers/StartContainer';
 import AboutContainer from '../../ui/containers/AboutContainer';
 import AppContainer from '../../ui/containers/AppContainer';
@@ -22,6 +19,7 @@ import JobsContainer from '../../ui/containers/JobsContainer';
 import MyJobsContainer from '../../ui/containers/MyJobsContainer';
 import MyJobListContainer from '../../ui/containers/MyJobListContainer';
 import VerifiedContainer from '../../ui/containers/VerifiedContainer';
+
 import TestContainer from '../../ui/containers/TestContainer';
 
 
@@ -51,7 +49,6 @@ function requireAuth(nextState, replace) {
 
 export const renderRoutes = () => (
     <Router history={browserHistory}>
-        <Route path="/profile" component={ProfileContainer} />
         <Route path="/start" component={StartContainer} />
         <Route path="/about" component={AboutContainer} />
         <Route path="/verified" component={VerifiedContainer} />

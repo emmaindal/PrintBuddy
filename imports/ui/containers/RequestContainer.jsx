@@ -1,5 +1,4 @@
 import { Meteor } from 'meteor/meteor';
-import { Tracker } from 'meteor/tracker'
 import { createContainer } from 'meteor/react-meteor-data';
 import React from 'react';
 import { browserHistory } from 'react-router';
@@ -25,7 +24,12 @@ class RequestComp extends React.Component {
         if (this.props.isBuddy) {
             browserHistory.replace('/jobs');
         }
-    }     
+    }
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.isBuddy) {
+            browserHistory.replace('/jobs');
+        }
+    }
     getActiveStep(){
          if (this.props.loading) {
              return 0;

@@ -21,12 +21,22 @@ class MyJobList extends React.Component {
         this.onChatClicked = this.onChatClicked.bind(this);
         this.onViewLocation = this.onViewLocation.bind(this);
         this.onCancel = this.onCancel.bind(this);
-
     }
 
-    // TODO onClick handlers för click på markers
-    // TODO onClick handlers för VIEW knapp (när den e skapad)
-    // TODO - Kanske borde filtrera vilka jobb som skickas in som markers i kartan?? Så det bara är pending och active.
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.userposition.lat != this.props.userposition.lat &&
+            nextProps.userposition.lng != this.props.userposition.lng)
+        {
+            this.setState({
+                defaultCenter: nextProps.userposition,
+                defaultPosition: nextProps.userposition,
+                clickedJobId: ''
+            });
+        }
+    }
+
+
 
     onChatClicked(id) {
         browserHistory.push('/myjobs/chat/' + id);

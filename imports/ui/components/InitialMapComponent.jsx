@@ -12,7 +12,7 @@ export const InitialMap = withGoogleMap(props => {
 		<GoogleMap
 			ref={props.onMapLoad}
 			defaultZoom={14}
-			center={{ lat: props.defaultCenter.lat, lng: props.defaultCenter.lng }}
+			defaultCenter={{ lat: props.defaultCenter.lat, lng: props.defaultCenter.lng }}
 		>
         <Marker
             position={{lat: props.defaultPosition.lat, lng:props.defaultPosition.lng}}

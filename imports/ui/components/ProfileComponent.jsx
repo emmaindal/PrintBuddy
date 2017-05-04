@@ -2,7 +2,7 @@ import React from 'react';
 
 import GeoCoder from '../containers/GeoCodeContainer';
 
-export class ProfileComponent extends React.Component {
+class ProfileComponent extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -32,14 +32,19 @@ export class ProfileComponent extends React.Component {
     onSubmit(e) {
         e.preventDefault();
         const updatedUser = {
-                position: { type: "Point", coordinates: [ this.state.lng, this.state.lat ] },
-                address: this.state.address,
-                printBuddy: {
-                    canColor: this.state.canColor,
-                    isActive: this.state.isBuddy
-                }
+            position: {type: "Point", coordinates: [this.state.lng, this.state.lat]},
+            address: this.state.address,
+            printBuddy: {
+                canColor: this.state.canColor,
+                isActive: this.state.isBuddy
             }
-        console.log("THIS SHOULD BE SENT FOR UPDATE: ", updatedUser); // TODO Metod för att uppdatera currentUsers info!
+        }
+
+        this.props.onSubmit(updatedUser);
+        $('#profile-modal').closeModal({
+            inDuration: 0.9,
+            outDuration: 0.9,
+        });
     }
 
     handleChange(e) {
@@ -78,95 +83,82 @@ export class ProfileComponent extends React.Component {
     render() {
         return (
             <div id="profile">
-                    <form className="col s10 offset-s1" onSubmit={(this.onSubmit)}>
-                        <div className="row" style={{marginBottom: 0, marginTop: "20px"}}>
-                            <label htmlFor="email">
-                                <i className="small material-icons">email</i>
-                            </label>
-                            <div className="input-field col s10 offset-s1 m10 offset-m1">
-                                <input id="email" type="email" className="validate" ref="email" value={this.state.currentUser.emails[0].address} disabled/>
+                <form className="col s10 offset-s1" onSubmit={(this.onSubmit)}>
+                    <div className="row" style={{marginBottom: 0}}>
+                        <label htmlFor="email">
+                            <i className="small material-icons">email</i>
+                        </label>
+                        <div className="input-field col s10 offset-s1 m10 offset-m1">
+                            <input id="email" type="email" className="validate" ref="email"
+                                   value={this.state.currentUser.emails[0].address} disabled/>
+
+                        </div>
+                    </div>
+                    <div className="row">
+                        <label htmlFor="userId">
+                            <i className="small material-icons">perm_identity</i>
+                        </label>
+                        <div className="input-field col s10 offset-s1 m10 offset-m1">
+                            <input id="userId" type="text" className="validate" ref="username"
+                                   value={this.state.currentUser.username} disabled/>
+                        </div>
+                    </div>
+                    <div id="test-geocode" className="row">
+                        <div className="col s10 offset-s1 m10 offset-m1">
+                            <p>Set your home address</p>
+                            <p><strong>{this.state.address}</strong></p>
+                            <GeoCoder onPickAdress={(address) => {
+                                this.onPickAdress(address)
+                            }}/>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="switch text-center" id="role-switcher">
+                            <div className="col s12">
+                                <label>
+                                    Requestor
+                                    <input type="checkbox" checked={this.state.isBuddy}
+                                           onChange={(e) => this.handleChange(e)}/>
+                                    <span className="lever"></span>
+                                    PrintBuddy
+                                </label>
                             </div>
                         </div>
+                    </div>
+
+                    {this.state.isBuddy ? (
                         <div className="row">
-                            <label htmlFor="userId">
-                                <i className="small material-icons">perm_identity</i>
-                            </label>
-                            <div className="input-field col s10 offset-s1 m10 offset-m1">
-                                <input id="userId" type="text" className="validate" ref="username" value={this.state.currentUser.username} disabled/>
-                            </div>
-                        </div>
-                        <div id="test-geocode" className="row">
-                            <div className="col s10 offset-s1 m10 offset-m1">
-                                <p>Set your home address</p>
-                                <p><strong>{this.state.address}</strong></p>
-                                <GeoCoder onPickAdress={(address) => {
-                                    this.onPickAdress(address)
-                                }}/>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="switch text-center" id="role-switcher">
+                            <div className="switch text-center" id="color-switcher">
                                 <div className="col s12">
                                     <label>
-                                        Requestor
-                                        <input type="checkbox" checked={this.state.isBuddy}
-                                               onChange={(e) => this.handleChange(e)}/>
+                                        Black / White
+                                        <input type="checkbox" checked={this.state.canColor}
+                                               onChange={(e) => this.colorChange(e)}/>
                                         <span className="lever"></span>
-                                        PrintBuddy
+                                        Color
                                     </label>
                                 </div>
                             </div>
                         </div>
+                    ) : (null)}
 
-                            {this.state.isBuddy ? (
-                                <div className="row">
-                                    <div className="switch text-center" id="color-switcher">
-                                        <div className="col s12">
-                                            <label>
-                                                Black / White
-                                                <input type="checkbox" checked={this.state.canColor}
-                                                    onChange={(e) => this.colorChange(e)}/>
-                                                <span className="lever"></span>
-                                                Color
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            ) : (null)}
-
-                        <div className="row profile-modal-row">
-                            <button className="col s10 offset-s1 waves-effect waves-light btn">SAVE CHANGES</button>
-                        </div>
-                    </form>
+                    <div className="row profile-modal-row">
+                        <button className="col s10 offset-s1 waves-effect waves-light btn">SAVE CHANGES</button>
+                    </div>
+                </form>
+                <div className="row profile-modal-row">
+                    <button  onClick={this.props.onLogout} className="col s10 offset-s1 waves-effect waves-light btn">LOGOUT</button>
+                </div>
             </div>
         );
     }
 }
-    export default ProfileComponent
 
+ProfileComponent.propTypes = {
+    currentUser: React.PropTypes.object,
+    onSubmit: React.PropTypes.func,
+    onLogout: React.PropTypes.func
+}
 
+export default ProfileComponent;
 
-                            // {this.state.isBuddy ? (
-                            //     <div className="switch text-center" id="color-switcher">
-                            //         <div className="col s12">
-                            //             <label>
-                            //                 Black / White
-                            //                 <input type="checkbox" checked={this.state.canColor}
-                            //                     onChange={(e) => this.colorChange(e)}/>
-                            //                 <span className="lever"></span>
-                            //                 Color
-                            //             </label>
-                            //         </div>
-                            //     </div>
-                            // ) : (null)}
-
-                            // {this.state.isBuddy ? (
-                            //     <div ref="buddySelectBox" className="input-field col s6 offset-s3">
-                            //         <i className="small material-icons printer">print</i>
-                            //         <p>Set your printer settings if you want to be a Budddy!</p>
-                            //         <select id="mySelectBox" multiple>
-                            //             <option value="qwe" data-type="text-type" disabled> Set here</option>
-                            //             <option value="color" data-type="text-type"> Color printer</option>
-                            //         </select>
-                            //     </div>
-                            // ) : (null)}

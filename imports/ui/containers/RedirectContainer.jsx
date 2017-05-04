@@ -11,13 +11,15 @@ class RedirectContainer extends React.Component {
     componentWillMount() {
 
     }
+
     componentDidMount() {
-        let currentUser = Meteor.user().isBuddy();
-        if (!currentUser) {
+        let isBuddy = this.props.isBuddy;
+        if (!isBuddy) {
             browserHistory.replace("/request");
         } else {
             browserHistory.replace("/jobs");
         }
+
     }
     render() {
         return (
