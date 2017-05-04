@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link, IndexLink } from 'react-router';
-import { Meteor } from 'meteor/meteor';
-import { browserHistory } from 'react-router';
+import {Link, IndexLink} from 'react-router';
+import {Meteor} from 'meteor/meteor';
+import {browserHistory} from 'react-router';
 
 import ProfileContainer from '../containers/ProfileContainer';
 
@@ -9,7 +9,6 @@ class Nav extends React.Component {
     constructor(props) {
         super(props)
 
-        this.onLogout = this.onLogout.bind(this);
         this.popProfileModal = this.popProfileModal.bind(this);
     }
 
@@ -29,22 +28,22 @@ class Nav extends React.Component {
         );
     }
 
-    onLogout() {
-        Meteor.logout(function () {
-            $('.button-collapse').sideNav('hide');
-            browserHistory.replace('/start');
-        })
-    }
-
     popProfileModal() {
         $('#profile-modal').openModal({
-            inDuration: 0.9, 
-            outDuration: 0.9,  
+            inDuration: 0.9,
+            outDuration: 0.9,
         });
     }
 
     render() {
-        const { isBuddy } = this.props;
+        const {isBuddy} = this.props;
+
+        const profileModal = <div id="profile-modal" className="modal profile-modal">
+            <div className="modal-content">
+                <i className="material-icons modal-close modal-action cancel-icon">clear</i>
+                <ProfileContainer/>
+            </div>
+        </div>;
 
         if (isBuddy) {
             return (
@@ -52,35 +51,30 @@ class Nav extends React.Component {
                     <nav>
                         <div className="nav-wrapper nav-container">
                             <a href="" className="brand-logo">PrintBuddy</a>
-                            <a href="" data-activates="mobile-nav" className="button-collapse"><i className="material-icons">menu</i></a>
+                            <a href="" data-activates="mobile-nav" className="button-collapse"><i
+                                className="material-icons">menu</i></a>
                             <ul className="right hide-on-med-and-down desktop-nav">
-                                <li><IndexLink id="mainindexlink" to="/jobs" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Jobs</IndexLink></li>
-                                <li><Link id="myjobslink" to="/myjobs" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>My Jobs</Link></li>
-                                <li><Link className='dropdown-button' data-activates='dropdown1'><i className="material-icons">&#xE7FD;</i></Link></li>
-
-                                <ul id='dropdown1' className='dropdown-content'>
-                                    <li><Link id="btn-settingsmodal" onClick={this.popProfileModal}>Settings</Link></li>
-                                    <li className="divider"></li>
-                                    <li><Link id="btn-onlogout" onClick={this.onLogout}>Log out</Link></li>
-                                </ul>
+                                <li><IndexLink id="mainindexlink" to="/jobs" activeClassName="active"
+                                               activeStyle={{fontWeight: 'bold'}}>Jobs</IndexLink></li>
+                                <li><Link id="myjobslink" to="/myjobs" activeClassName="active"
+                                          activeStyle={{fontWeight: 'bold'}}>My Jobs</Link></li>
+                                <li><Link  onClick={this.popProfileModal}  className='dropdown-button' data-activates='dropdown1'><i
+                                    className="material-icons">&#xE7FD;</i></Link></li>
                             </ul>
                             <ul className="side-nav" id="mobile-nav">
-                                <li><IndexLink to="/jobs" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Jobs</IndexLink></li>
-                                <li><Link to="/myjobs" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>My Jobs</Link></li>
-
-                                <li><Link className="mobile-nav-icon" onClick={this.popProfileModal}><i className="material-icons">settings</i></Link></li>
-                                <li><Link onClick={this.onLogout} className="mobile-nav-icon"><i className="material-icons">&#xE8AC;</i></Link></li>
-
+                                <li><IndexLink to="/jobs" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Jobs</IndexLink>
+                                </li>
+                                <li><Link to="/myjobs" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>My
+                                    Jobs</Link></li>
+                                <li><Link className="mobile-nav-icon" onClick={this.popProfileModal}><i
+                                    className="material-icons">settings</i></Link></li>
+                                <li><Link onClick={this.onLogout} className="mobile-nav-icon"><i
+                                    className="material-icons">&#xE8AC;</i></Link></li>
                             </ul>
                         </div>
                     </nav>
 
-                    <div id="profile-modal" className="modal profile-modal">
-                        <div className="modal-content">
-                            <i className="material-icons modal-close modal-action cancel-icon">clear</i>
-                            <ProfileContainer/>
-                        </div>
-                    </div>
+                    {profileModal}
                 </div>
             );
 
@@ -90,33 +84,31 @@ class Nav extends React.Component {
                     <nav>
                         <div className="nav-wrapper nav-container">
                             <a href="" className="brand-logo">PrintBuddy</a>
-                            <a href="" data-activates="mobile-nav" className="button-collapse"><i className="material-icons">menu</i></a>
+                            <a href="" data-activates="mobile-nav" className="button-collapse"><i
+                                className="material-icons">menu</i></a>
                             <ul className="right hide-on-med-and-down desktop-nav">
-                                <li><IndexLink id="mainindexlink" to="/request" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Requests</IndexLink></li>
+                                <li><IndexLink id="mainindexlink" to="/request" activeClassName="active"
+                                               activeStyle={{fontWeight: 'bold'}}>Requests</IndexLink></li>
 
-                                <li><Link className='dropdown-button' data-activates='dropdown1'><i className="material-icons">&#xE7FD;</i></Link></li>
+                                <li><Link onClick={this.popProfileModal} className='dropdown-button' data-activates='dropdown1'><i
+                                    className="material-icons">&#xE7FD;</i></Link></li>
 
-                                <ul id='dropdown1' className='dropdown-content'>
-                                    <li><Link onClick={this.popProfileModal}>Settings</Link></li>
-                                    <li className="divider"></li>
-                                    <li><Link onClick={this.onLogout}>Log out</Link></li>
-                                </ul>
                             </ul>
                             <ul className="side-nav" id="mobile-nav">
-                                <li><IndexLink to="/request" activeClassName="active" activeStyle={{ fontWeight: 'bold' }}>Requests</IndexLink></li>
-                                <li><Link className="mobile-nav-icon" id="requestor-profile" onClick={this.popProfileModal}><i className="material-icons">settings</i></Link></li>
-                                <li><Link onClick={this.onLogout} className="mobile-nav-icon"><i className="material-icons">&#xE8AC;</i></Link></li>
+                                <li><IndexLink to="/request" activeClassName="active"
+                                               activeStyle={{fontWeight: 'bold'}}>Requests</IndexLink></li>
+                                <li><Link className="mobile-nav-icon" id="requestor-profile"
+                                          onClick={this.popProfileModal}><i
+                                    className="material-icons">settings</i></Link></li>
+                                <li><Link onClick={this.onLogout} className="mobile-nav-icon"><i
+                                    className="material-icons">&#xE8AC;</i></Link></li>
 
                             </ul>
                         </div>
                     </nav>
 
-                    <div id="profile-modal" className="modal profile-modal">
-                        <div className="modal-content">
-                            <i className="material-icons modal-action modal-close cancel-icon">clear</i>
-                            <ProfileContainer/>
-                        </div>
-                    </div>
+                    {profileModal}
+
                 </div>
             );
         }
