@@ -7,6 +7,9 @@ import {DDPRateLimiter} from 'meteor/ddp-rate-limiter';
 import {Request, positionSchema} from './request.js';
 import {Chat} from  '../chat/chat';
 
+
+import {sendNewRequestPush} from '../push';
+
 export const insert = new ValidatedMethod({
     name: 'request.insert',
     validate: new SimpleSchema({
@@ -50,6 +53,13 @@ export const insert = new ValidatedMethod({
             possibleOnes: [],
             position: position,
             docURL:docURL
+        }
+
+
+        if(Meteor.isServer){
+            if (!delivery) {
+                sendNewRequestPush(this.userId, title, position.coordinates[1], position.coordinates[0], radius);
+            }
         }
 
         return Request.insert(req);

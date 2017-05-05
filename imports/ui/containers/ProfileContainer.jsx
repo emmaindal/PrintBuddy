@@ -7,6 +7,7 @@ import {updateUser} from '../../api/user/methods';
 import {displayError} from '../helpers/errors';
 import {displayAlert} from '../helpers/alerts';
 import { browserHistory } from 'react-router';
+import {removePushId} from '../helpers/pushhelper';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -17,13 +18,15 @@ class Profile extends React.Component {
     }
 
     onLogout() {
-        Meteor.logout(function () {
-            $('#profile-modal').closeModal({
-                inDuration: 0.9,
-                outDuration: 0.9,
-            });
-            browserHistory.replace('/start');
-        })
+        removePushId(() =>{
+            Meteor.logout(function () {
+                $('#profile-modal').closeModal({
+                    inDuration: 0.9,
+                    outDuration: 0.9,
+                });
+                browserHistory.replace('/start');
+            })
+        });
     }
 
     onSubmit(user) {

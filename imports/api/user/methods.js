@@ -43,9 +43,44 @@ export const updateUser = new ValidatedMethod({
     }
 });
 
+export const updateUserPushId = new ValidatedMethod({
+    name: 'user.updateUserPushId',
+    validate: new SimpleSchema({
+        pushId: {type: String},
+    }).validator(),
+    run({pushId}){
+        if (!this.userId) {
+            throw new Meteor.Error('user.updateUserPushId.unauthorized',
+                'Must be logged in to update user.');
+        }
+        const user = Meteor.users.findOne(this.userId);
+        if(!user.pushIds.includes(pushId)){
+            Meteor.users.update(this.userId, {$push: {pushIds: pushId}});
+        }
+    }
+});
+
+export const removeUserPushId = new ValidatedMethod({
+    name: 'user.removeUserPushId',
+    validate: new SimpleSchema({
+        pushId: {type: String},
+    }).validator(),
+    run({pushId}){
+        if (!this.userId) {
+            throw new Meteor.Error('user.removeUserPushId.unauthorized',
+                'Must be logged in to update user.');
+        }
+        const user = Meteor.users.findOne(this.userId);
+        console.log(pushId);
+        if(user.pushIds.includes(pushId)){
+            Meteor.users.update(this.userId, {$pull: {pushIds: pushId}});
+        }
+    }
+});
+
 
 const REQUEST_METHODS = _.pluck([
-    updateUser
+    updateUser, updateUserPushId, removeUserPushId
 ], 'name');
 
 if (Meteor.isServer) {

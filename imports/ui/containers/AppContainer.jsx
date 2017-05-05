@@ -3,17 +3,30 @@ import { createContainer } from 'meteor/react-meteor-data';
 import React from 'react';
 
 import Nav from '../components/Nav';
-import { browserHistory } from 'react-router';
 import { PrintBuddy } from '../../api/printbuddy/printbuddy';
+import {subscriptionToPushIdChange} from '../helpers/pushhelper';
+import {removePushId} from '../helpers/pushhelper';
+
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
+        this.onLogout = this.onLogout.bind(this);
     }
     componentDidMount() {
-        $("#prepage").fadeOut(200);          
+        $("#prepage").fadeOut(200);
+        subscriptionToPushIdChange();
     }
+
+    onLogout(){
+        removePushId(() =>{
+            Meteor.logout(function () {
+                browserHistory.replace('/start');
+            })
+        });
+    }
+
     render() {
         if (this.props.loading) {
             return (
@@ -38,7 +51,7 @@ class App extends React.Component {
         }
         return (
             <div>
-                <Nav isBuddy={currentUser.isBuddy()} />
+                <Nav onLogout={this.onLogout} isBuddy={currentUser.isBuddy()} />
                 <main>
                     {child}
                 </main>

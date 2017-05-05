@@ -29,7 +29,8 @@ Accounts.validateNewUser((user) => {
             type: positionSchema,
             optional: false
         },
-        address: {type: String, optional: false}
+        address: {type: String, optional: false},
+        pushIds: {type:[String], optional:false}
     }).validate(user);
 
 
@@ -47,6 +48,7 @@ Accounts.onCreateUser((options, user) => {
 
     user.position = options.position;
     user.address = options.address;
+    user.pushIds = [];
 
     PrintBuddy.insert({
         userId: user._id,
@@ -65,6 +67,6 @@ Meteor.users._ensureIndex({ 'position': '2dsphere'});
 
 // So we can access field on client
 Meteor.publish('userData', function () {
-    return Meteor.users.find({}, {fields: {position: 1, username: 1, address: 1}});
+    return Meteor.users.find({}, {fields: {position: 1, username: 1, address: 1,pushIds:1}});
 });
 
