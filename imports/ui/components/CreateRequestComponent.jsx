@@ -98,7 +98,7 @@ class CreateRequest extends React.Component {
                 <div className="row upload-row">
                     <div className="center-align">
                         {this.props.isLoading ?
-                            <div className="sk-circle">
+                            <div id="createRequest-sk-circle" className="sk-circle">
                                 <div className="sk-circle1 sk-child"></div>
                                 <div className="sk-circle2 sk-child"></div>
                                 <div className="sk-circle3 sk-child"></div>

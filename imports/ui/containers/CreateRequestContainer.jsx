@@ -27,8 +27,10 @@ class CreateRequest extends React.Component {
             this.setState({ isLoading: true });
             checkLogin().then((isSignId) => {
                 if (!isSignId) {
-                    gapi.auth2.getAuthInstance().signIn();
-                    this.setState({ isLoading: false });
+                    gapi.auth2.getAuthInstance().signIn().then(() =>{
+                        this.setState({ isLoading: false });
+                        this.onFileSubmit();
+                    });
                 } else {
                     insertFile(this.state.file).then((url) => {
                         console.log(url)
