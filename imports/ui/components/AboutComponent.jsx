@@ -1,6 +1,21 @@
 import React from 'react';
 
-export default class AboutComponent extends React.Component {
+class AboutComponent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { emailSuccess: ""};
+    }
+    onSubmitEmail(e){
+        e.preventDefault();
+        const message = {
+            email: this.refs.email.value,
+            name: this.refs.name.value,
+            text: this.refs.text.value
+        }
+
+        this.props.onSubmitEmail(message);
+        this.setState({emailSuccess: "Sending success"});
+    }
     render() {
         return(
             <div id="about-content">
@@ -151,26 +166,27 @@ export default class AboutComponent extends React.Component {
                             </section>
                             <section className="col s12 m6 l6 section-about-content fourth two">
                                 <div className="formContainer">
-                                    <form action="">
+                                    <form action="" onSubmit={this.onSubmitEmail.bind(this)}>
                                         <div className="row">
                                             <div className="input-field col s12">
-                                                <input id="name" type="text" className="validate"/>
+                                                <input id="name" type="text" className="validate" required ref="name"/>
                                                 <label htmlFor="name">Name:</label>
                                             </div>
                                         </div>
                                         <div className="row">
                                             <div className="input-field col s12">
-                                                <input id="email" type="email" className="validate"/>
+                                                <input id="email" type="email" className="validate" required ref="email"/>
                                                 <label htmlFor="email">Email:</label>
                                             </div>
                                         </div>
                                         <div className="row">
                                             <div className="input-field col s12">
-                                                <textarea id="textarea1" className="materialize-textarea"/>
+                                                <textarea id="textarea1" className="materialize-textarea" required ref="text"/>
                                                 <label htmlFor="textarea1">Write your message:</label>
                                             </div>
                                         </div>
-                                        <a className="waves-effect waves-light btn">Send</a>
+                                        <button className="waves-effect waves-light btn" type="submit">Send</button>
+                                        <p id="about-formContainer-success">{this.state.emailSuccess}</p>
                                     </form>
                                 </div>
                             </section>
@@ -181,3 +197,10 @@ export default class AboutComponent extends React.Component {
         )
     }
 }
+
+AboutComponent.propTypes = {
+    onSubmitEmail: React.PropTypes.func
+};
+
+export default AboutComponent;
+

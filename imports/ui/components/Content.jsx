@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { Link, IndexLink } from 'react-router';
 import LoginContainer from "../containers/LoginContainer";
 import RegisterContainer from "../containers/RegisterContainer";
 

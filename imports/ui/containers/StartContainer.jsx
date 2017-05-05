@@ -12,6 +12,7 @@ class Start extends React.Component {
 	constructor(props) {
         super(props);
         this.state = {};
+        this.onSubmitEmail = this.onSubmitEmail.bind(this);
     }
 	componentDidMount(){
 		const $$ = window.$;
@@ -34,11 +35,23 @@ class Start extends React.Component {
 		})
         $("#prepage").fadeOut(200);
 	}
+
+	onSubmitEmail(form){
+		console.log(form);
+        Meteor.call(
+            'sendEmail',
+            '<mikael.carlstein@gmail.com>',
+            form.email,
+            'From about form name:' + form.name,
+            form.text
+        );
+	}
+
 	render() {
 		return (
 			<div>
 				<Content/>
-				<AboutComponent/>
+				<AboutComponent onSubmitEmail={this.onSubmitEmail}/>
 				<Footer/>
 			</div>
 		);

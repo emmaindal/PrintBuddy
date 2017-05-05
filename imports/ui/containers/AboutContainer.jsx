@@ -1,9 +1,7 @@
 import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
 
-import Nav from '../components/Nav';
 import AboutComponent from '../components/AboutComponent';
-
 
 class About extends React.Component {
     constructor(props) {
@@ -13,7 +11,7 @@ class About extends React.Component {
     render() {
         return (
            <div>
-               <AboutComponent/>
+               <AboutComponent onSubmitEmail={this.props.onSubmitEmail}/>
            </div>
        );
     }
@@ -24,5 +22,9 @@ const AboutContainer = createContainer(() =>{
     return{
     };
 }, About);
+
+AboutContainer.propTypes = {
+    onSubmitEmail: React.PropTypes.func
+};
 
 export default AboutContainer;
