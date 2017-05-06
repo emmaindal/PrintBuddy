@@ -61,8 +61,10 @@ class AboutComponent extends React.Component {
                                         <img src="http://tympanus.net/Development/HoverEffectIdeas/img/12.jpg" alt="img12"></img>
                                         <figcaption>
                                             <h2>Simon <span>Holm</span></h2>
-                                            <p>Each and every friend is special. Lexi won't hide a single cookie.</p>
-                                            <a href="#">View more</a>
+                                            <p>
+                                                <a href="mailto:simon.holm@se.issworld.com" target="_blank"><i className="fa fa-envelope" aria-hidden="true"></i></a>
+                                                <a href="https://se.linkedin.com/in/simon-holm-50769aa6" target="_blank"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                                            </p>
                                         </figcaption>
                                     </figure>
                                 </div>
@@ -71,8 +73,10 @@ class AboutComponent extends React.Component {
                                         <img src="http://tympanus.net/Development/HoverEffectIdeas/img/12.jpg" alt="img12"></img>
                                         <figcaption>
                                             <h2>Emma <span>Indahl</span></h2>
-                                            <p>Each and every friend is special. Lexi won't hide a single cookie.</p>
-                                            <a href="#">View more</a>
+                                            <p>
+                                                <a href="mailto:emma.indahl@gmail.com" target="_blank"><i className="fa fa-envelope" aria-hidden="true"></i></a>
+                                                <a href="https://www.linkedin.com/in/emma-indal/" target="_blank"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                                            </p>
                                         </figcaption>
                                     </figure>
                                 </div>
@@ -81,8 +85,10 @@ class AboutComponent extends React.Component {
                                         <img src="http://tympanus.net/Development/HoverEffectIdeas/img/12.jpg" alt="img12"></img>
                                         <figcaption>
                                             <h2>Mikael <span>Carlstein</span></h2>
-                                            <p>Each and every friend is special. Lexi won't hide a single cookie.</p>
-                                            <a href="#">View more</a>
+                                            <p>
+                                                <a href="mailto:mikael.carlstein@gmail.com" target="_blank"><i className="fa fa-envelope" aria-hidden="true"></i></a>
+                                                <a href="https://se.linkedin.com/in/mikael-carlstein-79904249" target="_blank"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                                            </p>
                                         </figcaption>
                                     </figure>
                                 </div>
@@ -91,8 +97,9 @@ class AboutComponent extends React.Component {
                                         <img src="http://tympanus.net/Development/HoverEffectIdeas/img/12.jpg" alt="img12"></img>
                                         <figcaption>
                                             <h2>Alexander <span>Lööf</span></h2>
-                                            <p>Each and every friend is special. Lexi won't hide a single cookie.</p>
-                                            <a href="#">View more</a>
+                                            <p> <a href="mailto:alex.loofet@gmail.com" target="_blank"><i className="fa fa-envelope" aria-hidden="true"></i></a>
+                                                <a href="https://se.linkedin.com/in/alexander-l%C3%B6%C3%B6f-854436115" target="_blank"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                                            </p>
                                         </figcaption>
                                     </figure>
                                 </div>
@@ -141,7 +148,7 @@ class AboutComponent extends React.Component {
                     </div>
                 </div>
             </div>
-            </div >
+        </div>         
         )
     }
 }
@@ -151,4 +158,3 @@ AboutComponent.propTypes = {
 };
 
 export default AboutComponent;
-
