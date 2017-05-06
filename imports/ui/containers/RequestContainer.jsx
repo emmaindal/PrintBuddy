@@ -85,18 +85,16 @@ class RequestComp extends React.Component {
     render() {
         return (
             <div>
-                <div className="step-banner">
-                    <div className="step-by-step container">
-                        <Stepper steps={[
-                            { title: "Request" },
-                            { title: "Pending" },
-                            { title: "Chat" },
-                            { title: "Done" }]}
-                            activeStep={this.getActiveStep()} size={36} completeColor="#0592e2" activeColor="#0592e2"
-                            completeTitleColor="#0592e2" activeTitleColor="#0592e2"
-                            defaultTitleColor="rgba(0, 0, 0, 0.1)" defaultColor="rgba(0, 0, 0, 0.1)"
-                            titleFontSize={14} />
-                    </div>
+                <div className="step-by-step container">
+                    <Stepper steps={[
+                        { title: "Request" },
+                        { title: "Pending" },
+                        { title: "Chat" },
+                        { title: "Done" }]}
+                        activeStep={this.getActiveStep()} size={36} completeColor="#0592e2" activeColor="#0592e2"
+                        completeTitleColor="#0592e2" activeTitleColor="#0592e2"
+                        defaultTitleColor="rgba(0, 0, 0, 0.1)" defaultColor="rgba(0, 0, 0, 0.1)"
+                        titleFontSize={14} />
                 </div>
                 {this.renderRightContainer()}
             </div>
