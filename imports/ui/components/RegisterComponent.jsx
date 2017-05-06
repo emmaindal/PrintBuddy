@@ -81,7 +81,7 @@ class RegisterComponent extends React.Component {
                         </label>
                         <div className="input-field col s10 offset-s1 m10 offset-m1">
                             <input id="email" type="email" className="validate" ref="email" required />
-                            <label htmlFor="email">E-mail</label>
+                            <label htmlFor="email">E-mail *</label>
                         </div>
                     </div>
                     <div className="row">
@@ -90,7 +90,7 @@ class RegisterComponent extends React.Component {
                         </label>
                         <div className="input-field col s10 offset-s1 m10 offset-m1">
                             <input id="userId" type="text" className="validate" ref="username" required />
-                            <label htmlFor="userId">Username</label>
+                            <label htmlFor="userId">Username *</label>
                         </div>
                     </div>
                     <div className="row">
@@ -99,7 +99,7 @@ class RegisterComponent extends React.Component {
                         </label>
                         <div className="input-field col s10 offset-s1 m10 offset-m1">
                             <input id="password" type="password" className="validate" ref="password" required />
-                            <label htmlFor="password">Password</label>
+                            <label htmlFor="password">Password *</label>
                         </div>
                     </div>
                     <div className="row" style={{ marginBottom: 0 }}>
@@ -109,7 +109,7 @@ class RegisterComponent extends React.Component {
                         <div className="input-field col s10 offset-s1 m10 offset-m1">
                             <input id="confirmpassword" type="password" className="validate" ref="confirmpassword"
                                 required />
-                            <label htmlFor="confirmpassword">Confirm password</label>
+                            <label htmlFor="confirmpassword">Confirm password *</label>
                         </div>
                     </div>
                     {this.state.passwordNotEqual ?
@@ -121,7 +121,7 @@ class RegisterComponent extends React.Component {
                         : null}
                     <div id="test-geocode" style={{ marginTop: "10px", marginBottom: "15px" }} className="row">
                         <div className="col s10 offset-s1 m10 offset-m1">
-                            <p>Home address</p>
+                            <p>Home address *</p>
                             <p><strong>{this.state.address}</strong></p>
                             <GeoCoder onPickAdress={(address) => {
                                 this.onPickAdress(address)

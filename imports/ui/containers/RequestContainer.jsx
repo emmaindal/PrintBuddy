@@ -30,9 +30,9 @@ class RequestComp extends React.Component {
             browserHistory.replace('/jobs');
         }
     }
-    getActiveStep(){
-         if (this.props.loading) {
-             return 0;
+    getActiveStep() {
+        if (this.props.loading) {
+            return 0;
         }
 
         if (!this.props.request) {
@@ -79,22 +79,24 @@ class RequestComp extends React.Component {
         }
         // pending
         return (
-                <PendingRequestContainer request={this.props.request} />
+            <PendingRequestContainer request={this.props.request} />
         );
     }
     render() {
         return (
             <div>
-                <div className="step-by-step container">
-                    <Stepper steps={[
-                        { title: "Request" },
-                        { title: "Pending" },
-                        { title: "Chat" },
-                        { title: "Done" }]}
-                        activeStep={this.getActiveStep()} size={36} completeColor="#0592e2" activeColor="#0592e2" 
-                        completeTitleColor="#0592e2" activeTitleColor="#0592e2" 
-                        defaultTitleColor="rgba(0, 0, 0, 0.1)" defaultColor="rgba(0, 0, 0, 0.1)"
-                        titleFontSize={14}/>
+                <div className="step-banner">
+                    <div className="step-by-step container">
+                        <Stepper steps={[
+                            { title: "Request" },
+                            { title: "Pending" },
+                            { title: "Chat" },
+                            { title: "Done" }]}
+                            activeStep={this.getActiveStep()} size={36} completeColor="#0592e2" activeColor="#0592e2"
+                            completeTitleColor="#0592e2" activeTitleColor="#0592e2"
+                            defaultTitleColor="rgba(0, 0, 0, 0.1)" defaultColor="rgba(0, 0, 0, 0.1)"
+                            titleFontSize={14} />
+                    </div>
                 </div>
                 {this.renderRightContainer()}
             </div>
@@ -106,7 +108,7 @@ class RequestComp extends React.Component {
 const RequestContainer = createContainer(() => {
     const requestHandle = Meteor.subscribe('user-request');
     const loading = !requestHandle.ready();
-    const req = Request.find({ userReqId: Meteor.userId(), isCancel: false ,finishAt: {$exists: false}});
+    const req = Request.find({ userReqId: Meteor.userId(), isCancel: false, finishAt: { $exists: false } });
     const reqExists = !loading && !!req;
 
     return {
