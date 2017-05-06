@@ -62,8 +62,17 @@
         min-height: 45px;
         min-width: 100px;
         overflow: auto;
+        transition: all 0.35s ease !important;
+        &:hover {
+            transform: translateX(10px);
+        }
         p {
+            white-space: pre-wrap;
+            word-break: break-all;
             font-size: 1rem;
+            padding-top: 5px;
+            padding-bottom: 3px;
+            word-break: break-word;
         }
         .message-username {
             font-weight: bold;
@@ -78,6 +87,7 @@
             color: #34bdff;
         }
         
+        
     }
     .message-user-two {
         background: $color-message-two;
@@ -91,6 +101,10 @@
         min-width: 100px;
         overflow: auto;
         color: white;
+        transition: all 0.35s ease !important;
+        &:hover {
+            transform: translateX(-10px);
+        }
         p {
             font-size: 1rem;
         }
@@ -109,6 +123,8 @@
             padding-right: 10px;
         }
         p {
+            white-space: pre-wrap;
+            word-break: break-all;
             word-break: break-word;
             position: relative;
             line-height: 20px;

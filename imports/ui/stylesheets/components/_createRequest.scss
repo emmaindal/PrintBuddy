@@ -56,11 +56,11 @@
         padding: 0;
     }
     .file-row {
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
         margin-top: 1rem;
     }
     .switch {
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
         .first-switch {
             margin-right: 30px;
         }
@@ -92,7 +92,7 @@
     input[type=range] + .thumb.active .value {
     color: #fff;
     margin-left: -1px;
-    margin-top: 1px;
+    margin-top: 7px;
     }
     .range-field {
         padding: 0 !important;
@@ -120,7 +120,7 @@
 }
 
 .upload-row {
-    margin-top: 60px !important;
+    margin-top: 50px !important;
     margin-bottom: 30px;
 }
 

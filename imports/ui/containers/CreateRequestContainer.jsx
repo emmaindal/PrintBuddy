@@ -24,30 +24,38 @@ class CreateRequest extends React.Component {
 
     onFileSubmit() {
         if (this.state.file.name) {
-            this.setState({ isLoading: true });
-            checkLogin().then((isSignId) => {
-                if (!isSignId) {
-                    gapi.auth2.getAuthInstance().signIn().then(() =>{
-                        this.setState({ isLoading: false });
-                        this.onFileSubmit();
+            if ($(".copies")[0].value > 0) {
+                if ($(".pages")[0].value > 0) {
+                    this.setState({ isLoading: true });
+                    checkLogin().then((isSignId) => {
+                        if (!isSignId) {
+                            gapi.auth2.getAuthInstance().signIn().then(() => {
+                                this.setState({ isLoading: false });
+                                this.onFileSubmit();
+                            });
+                        } else {
+                            insertFile(this.state.file).then((url) => {
+                                console.log(url)
+                                this.setState({ googleStatus: "Uploaded" });
+                                this.setState({ downloadUrl: url });
+                                this.setState({ isLoading: false });
+                                $(".the-spec").removeClass("disabled");
+                                $('ul.tabs').tabs('select_tab', 'specification');
+                            }, (err) => {
+                                // todo maybe better error. Just log out the user now and then need try again
+                                console.log(err);
+                                gapi.auth2.getAuthInstance().signOut();
+                                this.setState({ isLoading: false });
+                                this.setState({ googleStatus: "something went wrong, Try sign in again" });
+                            });
+                        }
                     });
                 } else {
-                    insertFile(this.state.file).then((url) => {
-                        console.log(url)
-                        this.setState({ googleStatus: "Uploaded" });
-                        this.setState({ downloadUrl: url });
-                        this.setState({ isLoading: false });
-                        $(".the-spec").removeClass("disabled");
-                        $('ul.tabs').tabs('select_tab', 'specification');
-                    }, (err) => {
-                        // todo maybe better error. Just log out the user now and then need try again
-                        console.log(err);
-                        gapi.auth2.getAuthInstance().signOut();
-                        this.setState({ isLoading: false });
-                        this.setState({ googleStatus: "something went wrong, Try sign in again" });
-                    });
+                    displayError("Whoops!", 'You need to enter how many pages you want before you can upload!');
                 }
-            });
+            } else {
+                displayError("Whoops!", 'You need to enter how many copies you want before you can upload!');
+            }
         } else {
             displayError("Whoops!", 'You need to pick a document before you can upload!');
         }

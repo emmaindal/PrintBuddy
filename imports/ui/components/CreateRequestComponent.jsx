@@ -79,11 +79,11 @@ class CreateRequest extends React.Component {
 
                 <div className="row margin-bottom-after">
                     <div className="input-field inline col s3 offset-s2">
-                        <input id="number" type="number" ref="pages" className="validate" required />
+                        <input id="number" type="number" ref="pages" className="validate pages" required />
                         <label htmlFor="number">Nr of Pages</label>
                     </div>
                     <div className="input-field inline col s3 offset-s2">
-                        <input id="number" type="number" ref="copies" className="validate" required />
+                        <input id="number" type="number" ref="copies" className="validate copies" required />
                         <label htmlFor="number">Nr of Copies</label>
                     </div>
                 </div>
@@ -169,7 +169,7 @@ class CreateRequest extends React.Component {
                     </div>
                 ) : (null)}
                 <p className="center-align">Set a last Date & Time for {this.state.delivery ? "delivery" : "pick-up"}</p>
-                <div className="row" style={{marginBottom: "20px"}}>
+                <div className="row" style={{marginBottom: "15px"}}>
                     <div className="col s3 offset-s2 input-field inline">
                         <input id="date set-date" type="date" ref="lastDate" className={this.state.dateClassName}
                             required />
