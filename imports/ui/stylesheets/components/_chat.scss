@@ -143,9 +143,6 @@
     
 }
 
-/*.margin-top-4 {
-    margin-top: 4%;
-}*/
 
 .chat-holder {
     #modal1 {
@@ -213,7 +210,7 @@
         height: calc(100vh - 173px);
     }
     @media screen and (min-width: 451px) {
-        height: calc(100vh - 288px);
+        height: calc(100vh - 173px);
     }
     @media screen and (min-width: 600px) {
         height: calc(100vh - 24rem);
@@ -223,9 +220,6 @@
     }
 }
 .chat-buddy {
-    @media screen and (max-width: 600px) {
-        height: calc(100vh - 181px);
-    }
     @media screen and (min-width: 601px) {
         height: calc(100vh - 18rem);
     }
@@ -240,7 +234,7 @@
         }
     }
     @media screen and (min-width: 601px) {
-        margin-top: 26px;
+        margin-top: 11.5px;
     }
 }
 // Chat form
@@ -255,6 +249,12 @@
 
 // Chat info komponent
 .chat-info {
+    h6 {
+        margin-top: 7.5px;
+        font-weight: bold;
+        font-size: 18px;
+        text-align: center;
+    }
     .chat-info-wrapper-buddy {
         height: calc(100vh - 8.9rem) !important;
         overflow-y: hidden !important;
@@ -270,9 +270,7 @@
         border: none;
         background: white;
         border-radius: 5px;
-        position: relative; 
-        padding-left: 5%;  
-        padding-right: 5%;
+        position: relative;
         margin: 0;
         box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 17px 0 rgba(0, 0, 0, 0.12);
         height: calc(100vh - 14.9rem);
@@ -286,7 +284,8 @@
         .collection-item {
             padding-bottom: 12px;
             padding-top: 12px;
-            padding-left: 12px;
+            padding-left: 6%;  
+            padding-right: 6%;
             border-bottom: 0;
             font-size: 1.1rem;
             span {
@@ -302,7 +301,7 @@
 }
 .chat-info-buddy {
     @media screen and (min-width: 601px) {
-        margin-top: 35px;
+        margin-top: 21px;
         
     } 
 }
