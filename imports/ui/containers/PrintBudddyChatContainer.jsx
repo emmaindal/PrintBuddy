@@ -1,6 +1,7 @@
 import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
+import { browserHistory } from 'react-router';
 
 import ChatContainer from './ChatContainer';
 import {Request} from '../../api/request/request.js';
@@ -10,27 +11,42 @@ class PrintBuddyChat extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
+        this.onClick = this.onClick.bind(this);
     }
 
+    onClick(){
+        {browserHistory.replace("/jobs")};
+    }
 
+    renderRightContainer(){
+        if (this.props.request.isDone) {
+            return <div className="done-page">
+                        <div className="done">
+                            <h2>This request is done!</h2>
+                            <p className="done-icon"><i className="fa fa-check-circle" aria-hidden="true"></i></p>
+                            <button onClick={this.onClick} className="waves-effect waves-light btn-large">FIND A NEW JOB</button>
+                        </div>
+                    </div>;
+        } else if (this.props.request.isCancel) {
+            return <div className="cancel-page">
+                        <div className="cancel">
+                            <h2>This request is canceled!</h2>
+                            <p className="cancel-icon"><i className="fa fa-times-circle" aria-hidden="true"></i></p>
+                            <button onClick={this.onClick} className="waves-effect waves-light btn-large">FIND A NEW JOB</button>
+                        </div>
+                    </div>;
+        } else {
+            return <ChatContainer request={this.props.request}/>
+        }
+
+    }
     render() {
         if (this.props.loading) {
             return (<div></div>); // or show loading icon
         }
-        let isDone =  null;
-        let isCancel =  null;
-
-        if (this.props.request.isDone) {
-            isDone = <div><h1>This request is done!</h1></div>; // or show loading icon
-        }
-        if (this.props.request.isCancel) {
-            isDone = <div><h1>This request is cancel!</h1></div>; // or show loading icon
-        }
         return (
             <div className="margin-top-4">
-                {isDone}
-                {isCancel}
-                <ChatContainer request={this.props.request}/>
+                {this.renderRightContainer()}
             </div>
         );
     }

@@ -18,3 +18,22 @@
         }
     }
 }
+
+.cancel-page{
+    .cancel{
+        margin: auto;
+        text-align: center;
+        display: block;
+        width: 80%;
+        height: 50%;
+        color: rgb(214, 58, 58);
+        text-shadow: 3px 2px 2px grey;
+        padding-top: 2%;
+
+        .cancel-icon{
+            font-size: 18rem !important;
+            text-shadow: 3px 2px 2px grey;
+
+        }
+    }
+}
