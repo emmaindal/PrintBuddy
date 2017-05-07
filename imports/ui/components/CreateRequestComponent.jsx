@@ -1,4 +1,5 @@
 import React from 'react';
+import TimeKeeper from 'react-timekeeper';
 
 class CreateRequest extends React.Component {
     constructor(props) {
@@ -7,6 +8,7 @@ class CreateRequest extends React.Component {
             range: "500",
             dateClassName: "datepicker",
             delivery: true,
+            time: "12:00"
         }
     }
 
@@ -37,7 +39,6 @@ class CreateRequest extends React.Component {
             this.setState({ delivery: true });
         }
     }
-
     onSubmit(e) {
         e.preventDefault();
 
@@ -49,7 +50,7 @@ class CreateRequest extends React.Component {
                 needColor: this.refs.needColor.checked,
                 radius: parseInt(this.state.range),
                 lastDate: new Date(this.refs.lastDate.value),
-                lastTime: this.refs.lastTime.value.trim(),
+                lastTime: this.refs.lastTime.value,
                 reward: parseInt(this.refs.reward.value),
                 pages: parseInt(this.refs.pages.value),
                 copies: parseInt(this.refs.copies.value),
@@ -124,14 +125,14 @@ class CreateRequest extends React.Component {
     renderSecondSection() {
         return (
             <div>
-                <div className="row" style={{marginBottom: "20px"}}>
+                <div className="row" style={{ marginBottom: "20px" }}>
                     <div className="input-field col s8 offset-s2">
                         <input ref="title" className="validate" id="input-text" type="text" maxLength="40"
                             required />
                         <label htmlFor="input-text">Job Description</label>
                     </div>
                 </div>
-                <div className="row" style={{marginBottom: "30px"}}>
+                <div className="row" style={{ marginBottom: "30px" }}>
                     <div className="input-field col s3 offset-s2">
                         <input id="number" type="number" ref="reward" className="validate" required />
                         <label htmlFor="number">Reward</label>
@@ -157,7 +158,7 @@ class CreateRequest extends React.Component {
                             </label>
                 </div>
                 {!this.state.delivery ? (
-                    <div style={{marginBottom: "20px"}}>
+                    <div style={{ marginBottom: "20px" }}>
                         <p className="center-align">How far are you willing to travel for a pickup?</p>
                         <div className="row">
                             <p className="center-align col s2">{this.state.range} m</p>
@@ -169,14 +170,14 @@ class CreateRequest extends React.Component {
                     </div>
                 ) : (null)}
                 <p className="center-align">Set a last Date & Time for {this.state.delivery ? "delivery" : "pick-up"}</p>
-                <div className="row" style={{marginBottom: "15px"}}>
+                <div className="row" style={{ marginBottom: "15px" }}>
                     <div className="col s3 offset-s2 input-field inline">
                         <input id="date set-date" type="date" ref="lastDate" className={this.state.dateClassName}
                             required />
                         <label htmlFor="date">Date</label>
                     </div>
-                    <div className="input-field col s3 offset-s2">
-                        <input id="timepicker" ref="lastTime" type="time" required />
+                    <div onClick={() => $('#modal-time').openModal({in_duration: 100, starting_top: '20%'})} className="input-field col s3 offset-s2">
+                        <input id="timepicker" ref="lastTime" value={this.state.time} required />
                         <label htmlFor="timepicker"></label>
                     </div>
                 </div>
@@ -186,13 +187,25 @@ class CreateRequest extends React.Component {
                         name="action">Submit
                             </button>
                 </div>
+                <div id="modal-time" className="modal">
+                    <div className="modal-content">
+                        <TimeKeeper
+                                time={this.state.time}
+                                onChange={(e) => this.setState({ time: e.formatted })}
+                                switchToMinuteOnHourSelect={true}
+                            />
+                    </div>
+                    <div className="modal-footer">
+                        <a style={{cursor: "pointer"}} className="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+                    </div>
+                </div>
             </div>
         );
     }
     render() {
         return (
             <div className="row">
-                <div className="col s12 m8 l4 offset-m2 offset-l4 create-request" style={{padding: "0px"}}>
+                <div className="col s12 m8 l4 offset-m2 offset-l4 create-request" style={{ padding: "0px" }}>
                     <form id="request-form" onSubmit={this.onSubmit.bind(this)}>
                         <ul id="request-tabs" className="tabs row">
                             <li className="tab col s3"><a className="active" href="#documentation">{this.props.googleUrl ? (<i className='material-icons small'>done</i>) : null}
