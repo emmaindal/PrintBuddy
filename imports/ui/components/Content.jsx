@@ -59,8 +59,9 @@ export default class Content extends React.Component {
                     <div className="row two">
                         <div className="col m6 s12 grid-example content-second left" id="second-row">
                             <div className="text-wrapper left">
-                                <h4>Get your document delivered</h4>
-                                <h5>Don’t have a car? Need your document quickly? Find a PrintBuddy who have specified that he/she can deliver your document. </h5>
+                                <h4>Get your printout delivered</h4>
+                                <h5>Need your documents quickly? Let a PrintBuddy print and deliver your printout for you.</h5>
+                                <h5><br/>If you feel like some excercise you can always choose to jump on your bike and pick it up yourself. </h5>
                             </div>
                         </div>
                         <div className="col m6 s12 grid-example content-second right ">
@@ -80,8 +81,9 @@ export default class Content extends React.Component {
                         </div>
                         <div className="col m6 s12 grid-example content-second right">
                             <div className="text-wrapper right">
-                                <h4>All over the world</h4>
-                                <h5>It’s possible to use our service all over the world. Our integration with Google Maps make it possible to find PrintBuddies/Requestors where ever you are.</h5>
+                                <h4>Have a printer?</h4>
+                                <h5>Become the neighborhood hero and PrintBuddy!</h5>
+                                <h5><br/>Scoop up all printjobs and make some money while your at it.</h5>
                             </div>
                         </div>
                         <div className="col m6 s12 grid-example content-second hide-on-large-only " id="third-row">
@@ -94,9 +96,8 @@ export default class Content extends React.Component {
                     <div className="row two">
                         <div className="col m6 s12 grid-example content-second left" id="fourth-row">
                             <div className="text-wrapper left">
-                                <h4>Responsive design</h4>
-                                <h5>Nowadays it's becoming more and more common to use different devices to handle your ”ärenden” on Internet.
-                                PrintBuddy is therefore developed as a responsive website to make it possible for you to use our service regardless of which device you are using.</h5>
+                                <h4>Responsive Design</h4>
+                                <h5>PrintBuddy is a responsive web application that works like a dream on any device.</h5>
                             <br/>
                             <br/>
                             </div>
