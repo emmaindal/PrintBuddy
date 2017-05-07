@@ -122,3 +122,14 @@ input[type=password].valid, input[type=text].valid, input[type=email].valid, inp
     display: none;
 }
 
+//REACT_SHARE
+.SocialMediaShareButton {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 9px;
+    cursor: pointer;
+    transition: ease-in-out 100ms;
+    &:hover {
+        transform: scale(1.08);
+    }
+}
