@@ -14,7 +14,7 @@ class AboutComponent extends React.Component {
         }
 
         this.props.onSubmitEmail(message);
-        this.setState({ emailSuccess: "Sending success" });
+        this.setState({ emailSuccess: "Thanks! We will answer your message as soon as possible!" });
     }
     render() {
         return (
@@ -58,7 +58,7 @@ class AboutComponent extends React.Component {
                                         <img src="http://tympanus.net/Development/HoverEffectIdeas/img/12.jpg" alt="img12"></img>
                                         <figcaption>
                                             <h2>Simon <span>Holm</span></h2>
-                                            <p>
+                                            <p> 
                                                 <a href="mailto:s_simon_s@hotmail.com" target="_blank"><i className="fa fa-envelope" aria-hidden="true"></i></a>
                                                 <a href="https://se.linkedin.com/in/simon-holm-50769aa6" target="_blank"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a>
                                             </p>
@@ -69,7 +69,7 @@ class AboutComponent extends React.Component {
                                     <figure className="effect-lexi z-depth-2">
                                         <img src="http://tympanus.net/Development/HoverEffectIdeas/img/12.jpg" alt="img12"></img>
                                         <figcaption>
-                                            <h2>Emma <span>Indahl</span></h2>
+                                            <h2>Emma <span>Indal</span></h2>
                                             <p>
                                                 <a href="mailto:emma.indahl@gmail.com" target="_blank"><i className="fa fa-envelope" aria-hidden="true"></i></a>
                                                 <a href="https://www.linkedin.com/in/emma-indal/" target="_blank"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a>
@@ -145,7 +145,7 @@ class AboutComponent extends React.Component {
                     </div>
                 </div>
             </div>
-        </div>         
+        </div>
         )
     }
 }
