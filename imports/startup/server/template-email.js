@@ -6,15 +6,15 @@ Accounts.emailTemplates.from = 'NOREPLY <noreply@printbuddy.se>';
 
 Accounts.emailTemplates.resetPassword = {
     subject() {
-        return 'Reset your password on Meteor Todos';
+        return 'Reset your password - PrintBuddy';
     },
     text(user, url) {
         return `Hello!
-Click the link below to reset your password on Meteor Todos.
+Click the link below to reset your password on PrintBuddy.
 ${url}
 If you didn't request this email, please ignore it.
 Thanks,
-The Meteor Todos team
+The PrintBuddy team
 `;
     },
 //   html(user, url) {

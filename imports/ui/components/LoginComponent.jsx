@@ -10,6 +10,8 @@ class LoginComponent extends React.Component {
         this.onSubmit = this.onSubmit.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.handleEmailChange = this.handleEmailChange.bind(this);
+        this.onForgotPassword = this.onForgotPassword.bind(this);
+
     }
 
     componentDidMount() {
@@ -22,6 +24,13 @@ class LoginComponent extends React.Component {
             password: this.state.password,
         };
         this.props.submit(user);
+    }
+
+    onForgotPassword(e) {
+        e.preventDefault();
+        if(this.state.email.length > 1){
+            this.props.onForgotPassword(this.state.email);
+        }
     }
 
     handlePasswordChange(e){
@@ -53,6 +62,12 @@ class LoginComponent extends React.Component {
                                 <label htmlFor="password">Password</label>
                             </div>
                         </div>
+                        <div className="row">
+                            <div className="col s10 offset-s1" style={{ marginTop: "-25px" }}>
+                                <a onClick={this.onForgotPassword}>Forgot password</a>
+                                <p>{this.props.forgotPasswordStatus}</p>
+                            </div>
+                        </div>
                         <div className="row login-modal-row">
                             <button className="col offset-s1 s10 waves-effect waves-light btn btn-block">Login</button>
                         </div>
@@ -66,6 +81,7 @@ class LoginComponent extends React.Component {
 
 LoginComponent.propTypes = {
     submit: React.PropTypes.func,
+    onForgotPassword: React.PropTypes.func
 }
 
 export default LoginComponent;
