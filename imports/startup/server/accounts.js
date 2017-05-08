@@ -60,6 +60,9 @@ Accounts.onCreateUser((options, user) => {
 Accounts.urls.verifyEmail = function (token) {
     return Meteor.absoluteUrl("verified?token=" + token)
 }
+Accounts.urls.resetPassword = function (token) {
+    return Meteor.absoluteUrl("resetpassword?token=" + token)
+}
 
 Meteor.users._ensureIndex({ 'position': '2dsphere'});
 

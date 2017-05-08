@@ -19,8 +19,7 @@ import JobsContainer from '../../ui/containers/JobsContainer';
 import MyJobsContainer from '../../ui/containers/MyJobsContainer';
 import MyJobListContainer from '../../ui/containers/MyJobListContainer';
 import VerifiedContainer from '../../ui/containers/VerifiedContainer';
-
-import TestContainer from '../../ui/containers/TestContainer';
+import ResetPasswordContainer from '../../ui/containers/ResetPasswordContainer';
 
 
 import '../../api/user/user.js';
@@ -52,6 +51,7 @@ export const renderRoutes = () => (
         <Route path="/start" component={StartContainer} />
         <Route path="/about" component={AboutContainer} />
         <Route path="/verified" component={VerifiedContainer} />
+        <Route path="/resetpassword" component={ResetPasswordContainer} />
         <Route onEnter={requireAuth} path="/" component={AppContainer}>
             <IndexRoute component={RedirectContainer} />
             <Route path="request" component={RequestContainer}>
@@ -62,7 +62,6 @@ export const renderRoutes = () => (
                 <Route path="chat/:id" component={PrintBudddyChatContainer} />
                 <Route path="done" component={DoneContainer} />
             </Route>
-            <Route path="test" component={TestContainer} />
         </Route>
     </Router>
 );
