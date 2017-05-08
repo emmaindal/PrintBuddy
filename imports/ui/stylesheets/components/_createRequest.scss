@@ -56,11 +56,11 @@
         padding: 0;
     }
     .file-row {
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
         margin-top: 1rem;
     }
     .switch {
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
         .first-switch {
             margin-right: 30px;
         }
@@ -92,7 +92,7 @@
     input[type=range] + .thumb.active .value {
     color: #fff;
     margin-left: -1px;
-    margin-top: 1px;
+    margin-top: 7px;
     }
     .range-field {
         padding: 0 !important;
@@ -103,6 +103,7 @@
         margin-left: 10px!important;
         margin-bottom: 20px;
         width: 96% !important;
+        overflow-x: hidden;
     }
     .tabs .tab a {
         color: darken($color-primary-btn, 10%)!important;
@@ -120,7 +121,7 @@
 }
 
 .upload-row {
-    margin-top: 60px !important;
+    margin-top: 50px !important;
     margin-bottom: 30px;
 }
 
@@ -264,4 +265,15 @@ background-color: $color-primary-btn;
     -webkit-transform: scale(1);
             transform: scale(1);
   }
+}
+
+.react-timekeeper {
+    box-shadow: none!important;
+}
+
+#modal-time {
+    width: 264px;
+    .modal-content {
+        padding: 0;
+    }
 }

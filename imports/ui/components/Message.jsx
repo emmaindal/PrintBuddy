@@ -3,11 +3,11 @@ import moment from "moment";
 
 class Message extends React.Component {
     render() {
-        let messageClassName = `message-user-one z-depth-1`;
+        let messageClassName = `message-user-one`;
         let listClassName = `list-user-one collection-item avatar`;
 
         if(this.props.userId == this.props.message.userId){
-            messageClassName = `message-user-two z-depth-1`;
+            messageClassName = `message-user-two`;
             listClassName = `list-user-two collection-item avatar`;
         }
 

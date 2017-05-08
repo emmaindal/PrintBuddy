@@ -26,7 +26,7 @@ class ChatInfo extends React.Component {
         return (
             <div className="chat-info">
                 <ul className={this.chatInfoWrapperStyle()}>
-                    <li className="collection-header"><h4>Job info</h4></li>
+                    <li className="collection-header"><h6>Job info</h6></li>
                     <li className="collection-item"><span>Title:</span> {request.title} </li>
                     <li className="collection-item">
                         <span>Adress:</span> {request.delivery ? request.requestorAddress() : request.printBuddyAdress()}</li>
