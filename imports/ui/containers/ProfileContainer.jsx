@@ -34,7 +34,8 @@ class Profile extends React.Component {
             isActive: user.printBuddy.isActive,
             canColor: user.printBuddy.canColor,
             position:user.position,
-            address: user.address
+            address: user.address,
+            emailNotification: user.emailNotification
         }, (err, res) => {
             if (err) {
                 console.log(err);

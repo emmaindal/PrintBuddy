@@ -13,9 +13,10 @@ export const updateUser = new ValidatedMethod({
         isActive: {type: Boolean},
         canColor: {type: Boolean},
         position: {type: positionSchema},
-        address: {type: String}
+        address: {type: String},
+        emailNotification:{type: Boolean}
     }).validator(),
-    run({isActive, canColor, position, address}){
+    run({isActive, canColor, position, address,emailNotification}){
         if (!this.userId) {
             throw new Meteor.Error('user.updateUser.unauthorized',
                 'Must be logged in to update user.');
@@ -39,7 +40,7 @@ export const updateUser = new ValidatedMethod({
 
 
         PrintBuddy.update({userId: this.userId}, {$set: {isActive: isActive, canColor: canColor}});
-        Meteor.users.update(this.userId, {$set: {position: position, address: address}});
+        Meteor.users.update(this.userId, {$set: {position: position, address: address,emailNotification:emailNotification}});
     }
 });
 

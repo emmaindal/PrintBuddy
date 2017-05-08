@@ -4,14 +4,15 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1, minimal-ui, maximum-scale=1, minimum-scale=1" />
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
     <script>
         var OneSignal = window.OneSignal || [];
         OneSignal.push(["init", {
             appId: "33b7f7cb-34e0-4172-8a94-db58be5f8106",
+            safari_web_id: 'web.onesignal.auto.34cabfa2-ddd9-46d0-b8b2-6fad793020e0',
             autoRegister: false, /* Set to true to automatically prompt visitors */
             subdomainName: 'printbuddy',
+            persistNotification: false,
             /*
             subdomainName: Use the value you entered in step 1.4: http://imgur.com/a/f6hqN
             */
@@ -25,10 +26,10 @@
                 enable: true, /* Required to use the notify button */
                 size: 'medium', /* One of 'small', 'medium', or 'large' */
                 theme: 'default', /* One of 'default' (red-white) or 'inverse" (white-red) */
-                position: 'bottom-right', /* Either 'bottom-left' or 'bottom-right' */
+                position: 'bottom-left', /* Either 'bottom-left' or 'bottom-right' */
                 offset: {
                     bottom: '10px',
-                    left: '0px', /* Only applied if bottom-left */
+                    left: '10px', /* Only applied if bottom-left */
                     right: '10px' /* Only applied if bottom-right */
                 },
                 prenotify: true, /* Show an icon with 1 unread message for first-time site visitors */
@@ -61,9 +62,7 @@
                 }
             }
         }]);
-
     </script>
-
     <script>
         window.gapiCallbacks = [];
         function gapiLoaded() {
@@ -83,11 +82,8 @@
             }
         }
     </script>
-
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJcXFZ9PEnnF22z0bGqd1eLDmYdoSCB9A" type="text/javascript"></script>
     <script src="https://apis.google.com/js/client.js?onload=gapiLoaded"></script>
-   
-
 </head>
 
 <body>

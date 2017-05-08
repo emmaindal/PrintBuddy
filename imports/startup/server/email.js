@@ -26,3 +26,5 @@ Meteor.methods({
         Email.send({ to, from, subject, text });
     }
 });
+
+

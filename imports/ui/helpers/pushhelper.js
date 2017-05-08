@@ -12,7 +12,6 @@ export function removePushId(callback) {
                     if (err) {
                         console.log(err);
                     } else {
-                        console.log("Success", "removed push id");
                         callback();
                     }
                 });
@@ -34,7 +33,6 @@ export function subscriptionToPushIdChange() {
         // Occurs when the user's subscription changes to a new value.
         if (!isSub) {
             OneSignal.on('subscriptionChange', function (isSubscribed) {
-                console.log("The user's subscription state is now:", isSubscribed);
                 if (isSubscribed) {
                     OneSignal.getUserId(function (userId) {
                         if (userId) {

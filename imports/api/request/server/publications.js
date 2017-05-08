@@ -2,10 +2,10 @@ import {Meteor} from 'meteor/meteor';
 import {SimpleSchema} from 'meteor/aldeed:simple-schema';
 import  {Request} from '../request.js';
 
-Meteor.publish('jobs-request', function request(lat, lng) {
+Meteor.publish('jobs-request', function request(lat, lng, canColor) {
     check(lat, Number);
     check(lng, Number);
-
+    check(canColor, Boolean);
     const start = new Date();
     start.setHours(0, 0, 0, 0);
     ReactiveAggregate(this, Request, [
@@ -18,11 +18,21 @@ Meteor.publish('jobs-request', function request(lat, lng) {
                 "distanceField": "distance",
                 "spherical": true,
                 "query": {
-                    delivery: false,
-                    isCancel: false,
-                    isDone: false,
-                    chosenOne: {$exists: false},
-                    lastDate: {$gte: start}
+                    $or: [{
+                        delivery: false,
+                        isCancel: false,
+                        isDone: false,
+                        needColor: false,
+                        chosenOne: {$exists: false},
+                        lastDate: {$gte: start}
+                    }, {
+                        delivery: false,
+                        isCancel: false,
+                        isDone: false,
+                        needColor: canColor,
+                        chosenOne: {$exists: false},
+                        lastDate: {$gte: start}
+                    }]
                 }
             }
         },
@@ -38,10 +48,10 @@ Meteor.publish('jobs-request', function request(lat, lng) {
     ]);
 });
 
-Meteor.publish('jobs-request-delivery', function request(lat, lng) {
+Meteor.publish('jobs-request-delivery', function request(lat, lng, canColor) {
     check(lat, Number);
     check(lng, Number);
-
+    check(canColor, Boolean);
     const start = new Date();
     start.setHours(0, 0, 0, 0);
 
@@ -56,11 +66,21 @@ Meteor.publish('jobs-request-delivery', function request(lat, lng) {
                 "spherical": true,
                 "maxDistance": 100000,
                 "query": {
-                    delivery: true,
-                    isCancel: false,
-                    isDone: false,
-                    chosenOne: {$exists: false},
-                    lastDate: {$gte: start}
+                    $or: [{
+                        delivery: true,
+                        isCancel: false,
+                        isDone: false,
+                        needColor: false,
+                        chosenOne: {$exists: false},
+                        lastDate: {$gte: start}
+                    }, {
+                        delivery: true,
+                        isCancel: false,
+                        isDone: false,
+                        needColor: canColor,
+                        chosenOne: {$exists: false},
+                        lastDate: {$gte: start}
+                    }]
                 }
             }
         }
