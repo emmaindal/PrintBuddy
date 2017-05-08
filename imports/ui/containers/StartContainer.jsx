@@ -37,10 +37,9 @@ class Start extends React.Component {
 	}
 
 	onSubmitEmail(form){
-		console.log(form);
-        Meteor.call(
+		Meteor.call(
             'sendEmail',
-            '<mikael.carlstein@gmail.com>',
+            '<info@printbuddy.se>',
             form.email,
             'From about form name:' + form.name,
             form.text

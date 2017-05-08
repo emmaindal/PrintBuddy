@@ -103,7 +103,7 @@ Request.helpers({
     },
     printBuddyAdress() {
         return Meteor.users.findOne(this.chosenOne).address
-    },
+    }
 });
 
 

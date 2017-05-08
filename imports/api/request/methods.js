@@ -7,6 +7,9 @@ import {DDPRateLimiter} from 'meteor/ddp-rate-limiter';
 import {Request, positionSchema} from './request.js';
 import {Chat} from  '../chat/chat';
 
+
+import {sendNewRequestNotificationPickUp,sendNewRequestNotificationDelivery,sendAppliedNotification, sendAcceptNotification} from '../helpers/notifications';
+
 export const insert = new ValidatedMethod({
     name: 'request.insert',
     validate: new SimpleSchema({
@@ -52,6 +55,25 @@ export const insert = new ValidatedMethod({
             docURL:docURL
         }
 
+
+        if(Meteor.isServer){
+            if (!delivery) {
+                try {
+                    sendNewRequestNotificationPickUp(this.userId, title, position.coordinates[1], position.coordinates[0], radius, needColor);
+                }
+                catch(err) {
+                    console.log(err);
+                }
+            }else{
+                try {
+                    sendNewRequestNotificationDelivery(this.userId, title, position.coordinates[1], position.coordinates[0], needColor);
+                }
+                catch(err) {
+                    console.log(err);
+                }
+            }
+        }
+
         return Request.insert(req);
     },
 });
@@ -72,8 +94,17 @@ export const applyRequest = new ValidatedMethod({
                 'You already applied for this job!');
         }
 
-        // Todo begränsa det till 3?
         Request.update(requestId, {$push: {possibleOnes: this.userId}});
+
+        if(Meteor.isServer){
+            try{
+
+                sendAppliedNotification(requestId);
+            }
+            catch(err)  {
+                console.log(err);
+            }
+        }
     }
 });
 
@@ -119,6 +150,14 @@ export const acceptBuddy = new ValidatedMethod({
         Chat.insert(chat, (err) => {
             if (!err) {
                 Request.update(requestId, {$set: {chosenOne: buddyId}});
+                if(Meteor.isServer){
+                    try{
+                        sendAcceptNotification(buddyId);
+                    }
+                    catch(err)  {
+                        console.log(err);
+                    }
+                }
             }
         });
     }

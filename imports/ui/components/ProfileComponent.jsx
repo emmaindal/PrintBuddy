@@ -11,11 +11,13 @@ class ProfileComponent extends React.Component {
             lat: props.currentUser.position.coordinates[1],
             lng: props.currentUser.position.coordinates[0],
             isBuddy: props.currentUser.isBuddy(),
-            canColor: props.currentUser.canColor()
+            canColor: props.currentUser.canColor(),
+            emailNotification: props.currentUser.emailNotification
         };
 
         this.onSubmit = this.onSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.onEmailNotification = this.onEmailNotification.bind(this);
     }
 
     componentWillReceiveProps(props) {
@@ -25,7 +27,8 @@ class ProfileComponent extends React.Component {
             lat: props.currentUser.position.coordinates[1],
             lng: props.currentUser.position.coordinates[0],
             isBuddy: props.currentUser.isBuddy(),
-            canColor: props.currentUser.canColor()
+            canColor: props.currentUser.canColor(),
+            emailNotification: props.currentUser.emailNotification
         })
     }
 
@@ -37,7 +40,8 @@ class ProfileComponent extends React.Component {
             printBuddy: {
                 canColor: this.state.canColor,
                 isActive: this.state.isBuddy
-            }
+            },
+            emailNotification:this.state.emailNotification
         }
 
         this.props.onSubmit(updatedUser);
@@ -68,6 +72,18 @@ class ProfileComponent extends React.Component {
         } else {
             this.setState({
                 canColor: true
+            });
+        }
+    }
+
+    onEmailNotification(e) {
+        if (this.state.emailNotification) {
+            this.setState({
+                emailNotification: false
+            });
+        } else {
+            this.setState({
+                emailNotification: true
             });
         }
     }
@@ -114,6 +130,24 @@ class ProfileComponent extends React.Component {
                     </div>
                     <div className="row">
                         <div className="switch text-center" id="role-switcher">
+                            <label>
+                                Email notifications
+                            </label>
+                            <div className="col s12">
+
+                                <label>
+                                    No
+                                    <input type="checkbox" checked={this.state.emailNotification}
+                                           onChange={(e) => this.onEmailNotification(e)}/>
+                                    <span className="lever"></span>
+                                    Yes
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="switch text-center" id="role-switcher">
                             <div className="col s12">
                                 <label>
                                     Requestor
@@ -125,6 +159,7 @@ class ProfileComponent extends React.Component {
                             </div>
                         </div>
                     </div>
+
 
                     {this.state.isBuddy ? (
                         <div className="row">
@@ -147,7 +182,9 @@ class ProfileComponent extends React.Component {
                     </div>
                 </form>
                 <div className="row profile-modal-row">
-                    <button  onClick={this.props.onLogout} className="col s10 offset-s1 waves-effect waves-light btn">LOGOUT</button>
+                    <button onClick={this.props.onLogout} className="col s10 offset-s1 waves-effect waves-light btn">
+                        LOGOUT
+                    </button>
                 </div>
             </div>
         );

@@ -13,9 +13,10 @@ export const updateUser = new ValidatedMethod({
         isActive: {type: Boolean},
         canColor: {type: Boolean},
         position: {type: positionSchema},
-        address: {type: String}
+        address: {type: String},
+        emailNotification:{type: Boolean}
     }).validator(),
-    run({isActive, canColor, position, address}){
+    run({isActive, canColor, position, address,emailNotification}){
         if (!this.userId) {
             throw new Meteor.Error('user.updateUser.unauthorized',
                 'Must be logged in to update user.');
@@ -39,13 +40,48 @@ export const updateUser = new ValidatedMethod({
 
 
         PrintBuddy.update({userId: this.userId}, {$set: {isActive: isActive, canColor: canColor}});
-        Meteor.users.update(this.userId, {$set: {position: position, address: address}});
+        Meteor.users.update(this.userId, {$set: {position: position, address: address,emailNotification:emailNotification}});
+    }
+});
+
+export const updateUserPushId = new ValidatedMethod({
+    name: 'user.updateUserPushId',
+    validate: new SimpleSchema({
+        pushId: {type: String},
+    }).validator(),
+    run({pushId}){
+        if (!this.userId) {
+            throw new Meteor.Error('user.updateUserPushId.unauthorized',
+                'Must be logged in to update user.');
+        }
+        const user = Meteor.users.findOne(this.userId);
+        if(!user.pushIds.includes(pushId)){
+            Meteor.users.update(this.userId, {$push: {pushIds: pushId}});
+        }
+    }
+});
+
+export const removeUserPushId = new ValidatedMethod({
+    name: 'user.removeUserPushId',
+    validate: new SimpleSchema({
+        pushId: {type: String},
+    }).validator(),
+    run({pushId}){
+        if (!this.userId) {
+            throw new Meteor.Error('user.removeUserPushId.unauthorized',
+                'Must be logged in to update user.');
+        }
+        const user = Meteor.users.findOne(this.userId);
+        console.log(pushId);
+        if(user.pushIds.includes(pushId)){
+            Meteor.users.update(this.userId, {$pull: {pushIds: pushId}});
+        }
     }
 });
 
 
 const REQUEST_METHODS = _.pluck([
-    updateUser
+    updateUser, updateUserPushId, removeUserPushId
 ], 'name');
 
 if (Meteor.isServer) {

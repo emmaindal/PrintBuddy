@@ -4,6 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import { browserHistory } from 'react-router';
 
 import ProfileContainer from '../containers/ProfileContainer';
+import {removeUserPushId} from '../../api/user/methods';
 
 class Nav extends React.Component {
     constructor(props) {
@@ -37,10 +38,8 @@ class Nav extends React.Component {
     }
 
     onLogout() {
-        Meteor.logout(function () {
-            $('.button-collapse').sideNav('hide');
-            browserHistory.replace('/start');
-        })
+        $('.button-collapse').sideNav('hide');
+        this.props.onLogout();
     }
 
 
@@ -114,6 +113,7 @@ class Nav extends React.Component {
 
 Nav.propTypes = {
     isBuddy: React.PropTypes.bool,
+    onLogout: React.PropTypes.func
 };
 
 export default Nav;

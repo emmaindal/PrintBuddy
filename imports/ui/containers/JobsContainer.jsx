@@ -32,8 +32,7 @@ class Jobs extends React.Component {
             browserHistory.replace('/request');
         } else {
             if (nextProps.userposition.lat != this.props.userposition.lat &&
-                nextProps.userposition.lng != this.props.userposition.lng)
-            {
+                nextProps.userposition.lng != this.props.userposition.lng) {
                 this.setState({
                     defaultCenter: nextProps.userposition,
                     defaultPosition: nextProps.userposition,
@@ -89,8 +88,18 @@ class Jobs extends React.Component {
 }
 
 const JobsContainer = createContainer(() => {
-    const jobsRequestSub = Meteor.subscribe('jobs-request', Meteor.user().position.coordinates[1], Meteor.user().position.coordinates[0]);
-    const jobsRequestDeliverySub = Meteor.subscribe('jobs-request-delivery', Meteor.user().position.coordinates[1], Meteor.user().position.coordinates[0]);
+    const jobsRequestSub = Meteor.subscribe(
+        'jobs-request',
+        Meteor.user().position.coordinates[1],
+        Meteor.user().position.coordinates[0],
+        Meteor.user().canColor()
+    );
+    const jobsRequestDeliverySub = Meteor.subscribe(
+        'jobs-request-delivery',
+        Meteor.user().position.coordinates[1],
+        Meteor.user().position.coordinates[0],
+        Meteor.user().canColor()
+    );
     const isReady = jobsRequestDeliverySub.ready() && jobsRequestSub.ready();
     return {
         jobs: isReady ? Request.find({distance: {$exists: true}}, {
