@@ -26,6 +26,8 @@
         color: $color-primary-details;
     }
 
+
+
     .login-modal {
         width: 500px;
         top: 20vh !important;
@@ -114,15 +116,17 @@
         border: 0;
         padding-bottom: 2%;
         background: linear-gradient(
-        rgba(#2a2f32, 0.69),
-        rgba(#2a2f32, 0.69)
-        ), url("https://static.pexels.com/photos/97899/pexels-photo-97899.jpeg");
-        background-size: 100%;
+        rgba(#2a2f32, 0.3),
+        rgba(#2a2f32, 0.3)
+        ), url("/assets/images/pexels-photo-97899.png");
         background-repeat: no-repeat;
+        webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
         @media screen and (max-width: $break-medium){
             height: auto;
         }
-
         nav.start-nav{
             background-color: transparent;
             box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.11), 0 0px 0px 0 rgba(0, 0, 0, 0.12);
@@ -151,11 +155,15 @@
         }
 
         .welcome{
-            text-align: center;
+            text-align: left;
+            padding-top: 5%;
+            padding-left: 5%;
+            height: 30%;
+            width: 45%;
             .slogan {
-                font-size: 3.5rem;
-                padding-top: 11%;
-                padding-bottom: 3%;
+                text-align: left;
+                font-size: 4rem;
+                padding-bottom: 8%;
                 color: $text-tertiary;
                 text-shadow: 4px 2px 4px #313b40;
 
@@ -166,32 +174,109 @@
 
                 }
             }
+            .slogan-smaller{
+                font-size: 2.5rem;
+                @media screen and (max-width: $break-small){
+                    font-size: 1.5rem;
+
+                }
+            }
+
+            .arrow {
+                padding-top: 20%;
+            }
 
             .sign-up {
-                border: 1px darken($color-primary-details, 30%) solid;
-                border-radius: 5%;
+                border-radius: 2%;
                 padding-bottom: 2%;
-                background: $color-primary-details !important;
-                color: white;
-                font-size: 1.5rem;
-
-
+                background: none !important;
                 a{
-                    paddin-top: 5%;
+                    padding-top: 5%;
                     color: white !important;
-
                     @media screen and (max-width: $break-small){
                         font-size: 1rem;
                     }
                 }
+            }
+            //default button
+            .btn {
+                color: white;
+                cursor: pointer;
+                display: block;
+                font-size: 1.3rem;
+                box-shadow: none;
+                font-weight: 400;
+                line-height: 45px;
+                margin: 0 auto 1em;
+                max-width: 160px;
+                position: relative;
+                text-decoration: none;
+                text-transform: uppercase;
+                vertical-align: middle;
+                width: 100%;
+
+                @media(min-width: 400px) {
+                    display: inline-block;
+                    margin-right: 2.5em;
+
+                    &:nth-of-type(even) {
+                        margin-right: 0;
+                    }
+                }
+
+                @media(min-width: 600px) {
+
+                    &:nth-of-type(even) {
+                        margin-right: 2.5em;
+                    }
+
+                    &:nth-of-type(5) {
+                        margin-right: 0;
+                    }
+
+                }
+
+                &:hover { text-decoration: none; }
 
             }
 
-        }
-    }
+            /////////////////////////////////
+            //button one
+            ///////////////////////////////
+            .btn-1 {
+                background: none;
+                font-weight: 100;
 
-    .btn-floating:hover{
-        background-color: $scroll-btn-background;
+                svg {
+                    height: 45px;
+                    left: 0;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                }
+
+                rect {
+                    fill: none;
+                    stroke: #fff;
+                    stroke-width: 2;
+                    stroke-dasharray: 422, 0;
+                }
+            }
+
+            .btn-1:hover {
+                font-weight: 900;
+                letter-spacing: 1px;
+
+                rect {
+                    stroke-width: 5;
+                    stroke-dasharray: 15, 310;
+                    stroke-dashoffset: 48;
+                    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+                }
+            }
+
+
+        }
     }
 
     .col.grid-example.content-second{
@@ -251,7 +336,7 @@
     }
 
     .arrow {
-        text-align: center;
+        text-align: left;
     }
     .bounce {
         -moz-animation: bounce 6s infinite;
