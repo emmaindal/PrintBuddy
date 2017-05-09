@@ -3,13 +3,27 @@
 
 #joblist, #pending-joblist, #active-joblist {
 	background: white;
+	.collection-header {
+		border-bottom: none;
+		h5 {
+			text-align: center;
+		}
+	}
 	.content-for-li {
 		display: inline-flex;
 		justify-content: space-between;
-		width: 100%;
         padding-top: 0;
         padding-bottom: 0;
         padding-left: 6px;
+		margin-left: 5%;
+		margin-right: auto;
+		margin-top: 10px;
+		margin-bottom: 5px;
+		border: 1px solid #0e549c;
+		border-radius: 6px;
+		width: 90%;
+		background: #f6f6f6;
+
         p:first-child {
             margin-top:5px;
         }
@@ -128,8 +142,12 @@
     
     .collection-header {
         padding-left: 15px;
-        padding-bottom: 15px;
-        padding-top: 15px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+
+		h5 {
+			font-size: 1.4rem!important;
+		}
     } 
     
 }

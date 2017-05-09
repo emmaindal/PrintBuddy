@@ -45,8 +45,12 @@
     }
     .collection-header {
         padding-left: 15px;
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+
+		h5 {
+			font-size: 1.4rem;
+		}
     }
     .list-item-delivery {
         border-bottom: 1px solid #2196F3;
