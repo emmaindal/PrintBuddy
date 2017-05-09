@@ -44,19 +44,21 @@ const ActiveJobList = ({ listofjobs, onChatClicked, onView}) => {
                         <li className="collection-item">
                             <div className="content-for-li">
                                 <p id="noapplicationmessage"><em>You have no active jobs at the moment.<br/> Let your network know you are a PrintBuddy!</em></p>
-                                <FacebookShareButton 
-                                    url="https://www.printbuddy.se" 
-                                    title="I'm a PrintBuddy!" 
-                                    description="Need something printed? Join PrintBuddy and let a local PrintBuddy print for you!" 
-                                    picture="https://blogs.which.co.uk/technology/wp-content/uploads/2012/11/Printer-Ink-Waste2.jpg">
-                                    <FacebookIcon size={36} round/>
-                                </FacebookShareButton>
-                                <TwitterShareButton
-                                    url="https://www.printbuddy.se" 
-                                    title="Need something printed? Join PrintBuddy and let a local PrintBuddy print for you!" 
-                                    hashtags={["PrintBuddy", "PrintForYou"]}>
-                                    <TwitterIcon size={36} round/>
-                                </TwitterShareButton>
+                                <div style={{ display: 'inherit'}}>
+									<FacebookShareButton 
+										url="https://www.printbuddy.se" 
+										title="I'm a PrintBuddy!" 
+										description="Need something printed? Join PrintBuddy and let a local PrintBuddy print for you!" 
+										picture="https://blogs.which.co.uk/technology/wp-content/uploads/2012/11/Printer-Ink-Waste2.jpg">
+										<FacebookIcon size={36} round/>
+									</FacebookShareButton>
+									<TwitterShareButton
+										url="https://www.printbuddy.se" 
+										title="Need something printed? Join PrintBuddy and let a local PrintBuddy print for you!" 
+										hashtags={["PrintBuddy", "PrintForYou"]}>
+										<TwitterIcon size={36} round/>
+									</TwitterShareButton>
+								</div>
                             </div>
                         </li>
                     )}
