@@ -55,10 +55,10 @@ class AboutComponent extends React.Component {
                                 <h4 className="our-team-heading">OUR TEAM</h4>
                                 <div className="col s12 m6 l3">
                                     <figure className="effect-lexi z-depth-2">
-                                        <img src="http://tympanus.net/Development/HoverEffectIdeas/img/12.jpg" alt="img12"></img>
+                                        <img src="/assets/images/simon.jpg" alt="img12"></img>
                                         <figcaption>
                                             <h2>Simon <span>Holm</span></h2>
-                                            <p> 
+                                            <p>
                                                 <a href="mailto:s_simon_s@hotmail.com" target="_blank"><i className="fa fa-envelope" aria-hidden="true"></i></a>
                                                 <a href="https://se.linkedin.com/in/simon-holm-50769aa6" target="_blank"><i className="fa fa-linkedin-square" aria-hidden="true"></i></a>
                                             </p>
@@ -67,7 +67,7 @@ class AboutComponent extends React.Component {
                                 </div>
                                 <div className="col s12 m6 l3">
                                     <figure className="effect-lexi z-depth-2">
-                                        <img src="http://tympanus.net/Development/HoverEffectIdeas/img/12.jpg" alt="img12"></img>
+                                        <img src="/assets/images/emma.jpg" alt="img12"></img>
                                         <figcaption>
                                             <h2>Emma <span>Indal</span></h2>
                                             <p>
@@ -79,7 +79,7 @@ class AboutComponent extends React.Component {
                                 </div>
                                 <div className="col s12 m6 l3">
                                     <figure className="effect-lexi z-depth-2">
-                                        <img src="http://tympanus.net/Development/HoverEffectIdeas/img/12.jpg" alt="img12"></img>
+                                        <img src="/assets/images/mikael.jpg" alt="img12"></img>
                                         <figcaption>
                                             <h2>Mikael <span>Carlstein</span></h2>
                                             <p>
@@ -91,7 +91,7 @@ class AboutComponent extends React.Component {
                                 </div>
                                 <div className="col s12 m6 l3">
                                     <figure className="effect-lexi z-depth-2">
-                                        <img src="http://tympanus.net/Development/HoverEffectIdeas/img/12.jpg" alt="img12"></img>
+                                        <img src="/assets/images/alexander.jpg" alt="img12"></img>
                                         <figcaption>
                                             <h2>Alexander <span>Lööf</span></h2>
                                             <p> <a href="mailto:alex.loofet@gmail.com" target="_blank"><i className="fa fa-envelope" aria-hidden="true"></i></a>
