@@ -1,5 +1,6 @@
 @import "../variables";
 
+
 #about-content {
     .row{
         margin-bottom: 5px;
@@ -72,12 +73,12 @@
             background: #3085a3;
             text-align: center;
             cursor: pointer;
+
             img {
                 position: relative;
                 display: block;
-                min-height: 110%;
-                max-width: 110%;
-                opacity: 0.8;
+                opacity: 0.9;
+
             }
             h2 {
                 letter-spacing: 2px;

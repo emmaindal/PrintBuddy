@@ -2,14 +2,84 @@
 
 
 .error-component{
-    background-color: $color-primary;
+    background-color: $color-primary-details;
+    color: white;
 
     .start-nav{
-        background-color: $color-primary-details;
+        background-color: transparent;
     }
 
     .error-container{
-        height: 100vh;
+        height: 50vh;
+        position: relative;
+
+
+        h1{
+            text-align: center;
+            padding-top: 5%;
+        }
+
+        h5, h6{
+            text-align: center;
+        }
+
+    }
+
+    .error-message{
+        height: 50vh;
+        width: 100%;
+        position: absolute;
+
+        .hero2
+        {
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            margin: auto;
+            border-width: 90px 58px 0 58px;
+            border-color: $color-primary-details transparent transparent transparent;
+            line-height: 0px;
+            _border-color: $color-primary-details #000000 #000000 #000000;
+            _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000')
+        }
+        .error-btn{
+            margin:0 auto;
+            border-radius: 100%;
+
+            i{
+                font-size: 6.5rem;
+                padding-top: 20%;
+            }
+            .fa-envelope{
+                font-size: 5.5rem;
+            }
+
+        }
+        .btn-one{
+            width: 50%;
+            margin: auto;
+            padding-left: 5%;
+            float: right;
+            display: block;
+            text-align:left;
+        }
+
+        .btn-two{
+            float: left;
+            width: 50%;
+            margin: auto;
+            padding-right: 5%;
+            padding-left: 5%;
+            display: block;
+            text-align:right;
+        }
+
+        .btn-floating.btn-large{
+            width: 100px;
+            height: 100px;
+        }
+
+
     }
 
 }

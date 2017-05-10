@@ -38,7 +38,7 @@ export default class Content extends React.Component {
                             <div className="nav-wrapper nav-container">
                                 <a href="/start" className="brand-logo">PRINTBUDDY</a>
                                 <ul className="right">
-                                    <li><a  onClick={this.popLoginModal}>LOG IN</a></li>
+                                    <li><a onClick={this.popLoginModal}>LOG IN</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -72,7 +72,7 @@ export default class Content extends React.Component {
                                     <h5>PrintBuddy is a platform connecting people in need of printouts with people that have printers.</h5>
                                     <h5><br/>If you are in need of a printout you simply create a 'Request' on PrintBuddy.</h5>
                                     <h5><br/>
-                                        Nearby PrintBuddies will be notified and can choose to apply for it - if your reward is tempting enough! 
+                                        Nearby PrintBuddies will be notified and can choose to apply for it - if your reward is tempting enough!
                                     </h5>
                                 </div>
                             </div>
