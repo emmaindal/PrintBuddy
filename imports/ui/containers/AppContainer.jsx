@@ -8,6 +8,7 @@ import { PrintBuddy } from '../../api/printbuddy/printbuddy';
 import {subscriptionToPushIdChange} from '../helpers/pushhelper';
 import {removePushId} from '../helpers/pushhelper';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import { browserHistory } from 'react-router';
 
 
 class App extends React.Component {
