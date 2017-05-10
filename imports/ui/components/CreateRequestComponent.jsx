@@ -1,6 +1,7 @@
 import React from 'react';
 import TimePicker from 'material-ui/TimePicker';
 import moment from "moment";
+import { displayError } from '../helpers/errors';
 
 class CreateRequest extends React.Component {
     constructor(props) {
@@ -8,7 +9,7 @@ class CreateRequest extends React.Component {
         this.state = {
             range: "500",
             dateClassName: "datepicker",
-            delivery: true,
+            delivery: null,
             time: null
         }
     }
@@ -44,15 +45,38 @@ class CreateRequest extends React.Component {
             this.setState({ delivery: true });
         }
     }
+    handleRadioChange(e) {
+        if (e.target.id === "test5") {
+            this.setState({
+                delivery: true
+            });
+        } else {
+            this.setState({
+                delivery: false
+            });
+        }
+    }
     onSubmit(e) {
         e.preventDefault();
         const tid = this.state.time;
         const lastTime = (moment(tid).format().slice(11,-9));
+        if (this.state.delivery === null) {
+            displayError("Whoops!", 'You have to choose Delivery or Pickup m8');
+            return;
+        }
+        if (!this.state.time) {
+            displayError("Whoops!", 'You have to set a date mate');
+            return;
+        }
+        if (!this.state.time) {
+            displayError("Whoops!", 'You have to set a time mate');
+            return;
+        }
         if (!this.refs.lastDate.value) {
             this.setState({ dateClassName: "datepicker invalid" });
         } else {
             const request = {
-                delivery: !this.refs.delivery.checked,
+                delivery: this.state.delivery,
                 needColor: this.refs.needColor.checked,
                 radius: parseInt(this.state.range),
                 lastDate: new Date(this.refs.lastDate.value),
@@ -138,7 +162,7 @@ class CreateRequest extends React.Component {
                         <label htmlFor="input-text">Job Description</label>
                     </div>
                 </div>
-                <div className="row" style={{ marginBottom: "30px" }}>
+                <div className="row" style={{ marginBottom: "25px" }}>
                     <div className="input-field col s3 offset-s2">
                         <input id="number" type="number" ref="reward" className="validate" required />
                         <label htmlFor="number">Reward</label>
@@ -152,20 +176,19 @@ class CreateRequest extends React.Component {
                         <label>Currency</label>
                     </div>
                 </div>
-                <div className="switch center-align">
-                    <label className="second-switch">
-                        Request Delivery
-                                <input type="checkbox" ref="delivery"
-                            checked={!this.state.delivery}
-                            onChange={(e) => this.handleDeliveryChange(e)}
-                        />
-                        <span className="lever"></span>
-                        Pickup Yourself
-                            </label>
-                </div>
-                {!this.state.delivery ? (
-                    <div style={{ marginBottom: "20px" }}>
-                        <p className="center-align">How far are you willing to travel for a pickup?</p>
+                <div className="row" style={{textAlign: "center", marginBottom: "15px"}}>                
+                        <div className="col s4 offset-s2">
+                            <input onChange={(e) => this.handleRadioChange(e)} className="with-gap" name="group2" type="radio" id="test5"  />
+                            <label style={{marginLeft: "-20px"}} htmlFor="test5">I want delivery</label>
+                        </div>
+                        <div className="col s5">
+                            <input onChange={(e) => this.handleRadioChange(e)} ref="buddyCheck" className="with-gap" name="group2" type="radio" id="test6"  />
+                            <label htmlFor="test6">I want to pick-up</label>
+                        </div>
+                    </div>
+                {this.state.delivery === false ? (
+                    <div style={{ marginBottom: "25px" }}>
+                        <p className="center-align">How far are you willing to travel for a pick-up?</p>
                         <div className="row">
                             <p className="center-align col s2">{this.state.range} m</p>
                             <p className="range-field col s8">
@@ -175,18 +198,16 @@ class CreateRequest extends React.Component {
                         </div>
                     </div>
                 ) : (null)}
-                <p className="center-align">Set a last Date & Time for {this.state.delivery ? "delivery" : "pick-up"}</p>
+                <p style={{marginTop: "25px"}} className="center-align">Set a last Date & Time for</p>
                 <div className="row" style={{ marginBottom: "15px" }}>
-                    <div className="col s3 offset-s2 input-field inline">
-                        <input id="date set-date" type="date" ref="lastDate" className={this.state.dateClassName}
-                            required />
-                        <label htmlFor="date">Last Date</label>
+                    <div className="col s3 offset-s2 input-field inline" style={{marginTop: "0"}}>
+                        <input id="date set-date" type="date" ref="lastDate" placeholder="Last Date" className={this.state.dateClassName} required /> 
                     </div>
-                    <div className="input-field col s3 offset-s2">
+                    <div className="input-field col s3 offset-s2" style={{marginTop: "0"}}>
                         <TimePicker id="timepicker" format="24hr" hintText="Last Time" ref="lastTime"
                         value={this.state.time} onChange={this.handleTimeChange.bind(this)} 
-                        textFieldStyle={{width: "100%", fontSize: "1rem", color: "#9e9e9e!important", borderBottom: "1px solid #9e9e9e", height: "38px", lineHeight: "12px"}}
-                        dialogStyle={{paddingTop: "8vh"}} />
+                        textFieldStyle={{width: "100%", fontSize: "1rem", color: "#9e9e9e!important", borderBottom: "1px solid #9e9e9e", height: "39px", lineHeight: "12px"}}
+                        dialogStyle={{paddingTop: "5vh"}} />
                     </div>
                 </div>
 
