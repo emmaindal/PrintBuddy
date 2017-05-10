@@ -1,5 +1,5 @@
 import React from 'react';
-import { IndexRoute, Router, Route, browserHistory } from 'react-router';
+import { IndexRoute, Router, Route, Redirect, browserHistory } from 'react-router';
 import i18n from 'meteor/universe:i18n';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import { Meteor } from 'meteor/meteor';
@@ -12,6 +12,7 @@ import RedirectContainer from '../../ui/containers/RedirectContainer';
 import StartContainer from '../../ui/containers/StartContainer';
 import AboutContainer from '../../ui/containers/AboutContainer';
 import AppContainer from '../../ui/containers/AppContainer';
+import ErrorContainer from '../../ui/containers/ErrorContainer';
 import RequestContainer from '../../ui/containers/RequestContainer';
 import PrintBudddyChatContainer from '../../ui/containers/PrintBudddyChatContainer';
 import DoneContainer from '../../ui/containers/DoneContainer';
@@ -48,6 +49,7 @@ function requireAuth(nextState, replace) {
 
 export const renderRoutes = () => (
     <Router history={browserHistory}>
+
         <Route path="/start" component={StartContainer} />
         <Route path="/about" component={AboutContainer} />
         <Route path="/verified" component={VerifiedContainer} />
@@ -63,5 +65,8 @@ export const renderRoutes = () => (
                 <Route path="done" component={DoneContainer} />
             </Route>
         </Route>
+        <Route path='/404' component={ErrorContainer} />
+        <Redirect from='*' to='/404' />
+
     </Router>
 );

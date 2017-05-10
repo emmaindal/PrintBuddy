@@ -1,0 +1,15 @@
+@import "../variables";
+
+
+.error-component{
+    background-color: $color-primary;
+
+    .start-nav{
+        background-color: $color-primary-details;
+    }
+
+    .error-container{
+        height: 100vh;
+    }
+
+}
