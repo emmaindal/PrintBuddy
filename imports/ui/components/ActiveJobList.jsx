@@ -49,7 +49,7 @@ const ActiveJobList = ({ listofjobs, onChatClicked, onView}) => {
 										url="https://www.printbuddy.se" 
 										title="I'm a PrintBuddy!" 
 										description="Need something printed? Join PrintBuddy and let a local PrintBuddy print for you!" 
-										picture="https://blogs.which.co.uk/technology/wp-content/uploads/2012/11/Printer-Ink-Waste2.jpg">
+										picture="https://printbuddy.se/assets/images/PrintBuddyFacebook.jpg">
 										<FacebookIcon size={36} round/>
 									</FacebookShareButton>
 									<TwitterShareButton
