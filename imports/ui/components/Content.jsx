@@ -43,7 +43,7 @@ export default class Content extends React.Component {
                             </div>
                         </nav>
                         <div className="welcome">
-                            <h4 className="slogan">FIND A PRINTBUDDY.<h4 className="slogan-smaller">OR BECOME ONE.</h4></h4>
+                            <h4 className="slogan">FIND A PRINTBUDDY.<br/><span className="slogan-smaller">OR BECOME ONE.</span></h4>
 
                             <a onClick={this.popRegisterModal} className="btn btn-1 sign-up">
                                 <svg>
