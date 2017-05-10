@@ -50,13 +50,15 @@ export const updateUserPushId = new ValidatedMethod({
         pushId: {type: String},
     }).validator(),
     run({pushId}){
-        if (!this.userId) {
-            throw new Meteor.Error('user.updateUserPushId.unauthorized',
-                'Must be logged in to update user.');
-        }
-        const user = Meteor.users.findOne(this.userId);
-        if(!user.pushIds.includes(pushId)){
-            Meteor.users.update(this.userId, {$push: {pushIds: pushId}});
+        if(Meteor.isServer) {
+            if (!this.userId) {
+                throw new Meteor.Error('user.updateUserPushId.unauthorized',
+                    'Must be logged in to update user.');
+            }
+            const user = Meteor.users.findOne(this.userId);
+            if (!user.pushIds.includes(pushId)) {
+                Meteor.users.update(this.userId, {$push: {pushIds: pushId}});
+            }
         }
     }
 });

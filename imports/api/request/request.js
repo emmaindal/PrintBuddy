@@ -1,7 +1,7 @@
 
 import { Mongo } from 'meteor/mongo';
 import { SimpleSchema, SchemaHelpers } from 'meteor/aldeed:simple-schema';
-
+import {Meteor} from 'meteor/meteor';
 
 class RequestCollection extends Mongo.Collection {
     insert(doc, callback) {
