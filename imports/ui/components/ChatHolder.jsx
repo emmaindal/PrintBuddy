@@ -8,6 +8,14 @@ import ChatInfo from "./ChatInfo";
 class ChatHolder extends React.Component {
     componentDidMount() {
         $('.modal-trigger').leanModal();
+        //dölja notification klockan
+        setTimeout(() => {
+            $('#onesignal-bell-launcher').css('display', 'none');
+        }, 200);
+    }
+    componentWillUnmount() {
+        //visa notification klockan när man lämnar chatten
+        $('#onesignal-bell-launcher').css('display', '');
     }
     showChatInfo() {
         $('#modal1').openModal('open');
