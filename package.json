@@ -14,7 +14,7 @@
     "emoji-mart": "^0.5.0",
     "faker": "^3.1.0",
     "gapi-client": "0.0.3",
-    "materialize-clockpicker": "^1.0.1",
+    "material-ui": "^0.18.0",
     "moment": "^2.18.1",
     "react": "^15.4.2",
     "react-addons-css-transition-group": "^15.4.2",
@@ -26,8 +26,7 @@
     "react-router": "^2.8.1",
     "react-share": "^1.13.2",
     "react-stepper-horizontal": "^1.0.6",
-    "react-tap-event-plugin": "^2.0.1",
-    "react-timekeeper": "^1.0.2"
+    "react-tap-event-plugin": "^2.0.1"
   },
   "devDependencies": {
     "enzyme": "^2.7.1",
