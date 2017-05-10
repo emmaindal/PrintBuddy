@@ -43,7 +43,7 @@ export default class Content extends React.Component {
                             </div>
                         </nav>
                         <div className="welcome">
-                            <h4 className="slogan">FIND A PRINTBUDDY.<h4 className="slogan-smaller">OR BECOME ONE.</h4></h4>
+                            <h4 className="slogan">FIND A PRINTBUDDY.<br/><span className="slogan-smaller">OR BECOME ONE.</span></h4>
 
                             <a onClick={this.popRegisterModal} className="btn btn-1 sign-up">
                                 <svg>
@@ -60,6 +60,28 @@ export default class Content extends React.Component {
 
                     </div>
                     <div className="info-wrapper">
+                        <div className="row two">
+                            <div className="col m6 s12 grid-example content-second left " id="third-row">
+                                <div className="img-wrapper left hide-on-med-and-down">
+                                    <img src="https://static.pexels.com/photos/48734/pexels-photo-48734.jpeg" />
+                                </div>
+                            </div>
+                            <div className="col m6 s12 grid-example content-second right">
+                                <div className="text-wrapper right">
+                                    <h4>What is PrintBuddy?</h4>
+                                    <h5>PrintBuddy is platform connecting people in need of a printout with people that have printers.</h5>
+                                    <h5><br/>If you are in need of a printout you simply create a 'Request' on PrintBuddy.</h5>
+                                    <h5><br/>
+                                        Nearby PrintBuddies will be notified and can choose to apply for it - if your reward is tempting enough! 
+                                    </h5>
+                                </div>
+                            </div>
+                            <div className="col m6 s12 grid-example content-second hide-on-large-only " id="third-row">
+                                <div className="img-wrapper ">
+                                    <img src="https://static.pexels.com/photos/48734/pexels-photo-48734.jpeg" />
+                                </div>
+                            </div>
+                        </div>
                         <div className="row two">
                             <div className="col m6 s12 grid-example content-second left" id="second-row">
                                 <div className="text-wrapper left">
@@ -95,23 +117,6 @@ export default class Content extends React.Component {
                                     <img src="https://static.pexels.com/photos/48734/pexels-photo-48734.jpeg" />
                                 </div>
                             </div>
-
-                        </div>
-                        <div className="row two">
-                            <div className="col m6 s12 grid-example content-second left" id="fourth-row">
-                                <div className="text-wrapper left">
-                                    <h4>Responsive Design</h4>
-                                    <h5>PrintBuddy is a responsive web application that works like a dream on any device.</h5>
-                                    <br/>
-                                    <br/>
-                                </div>
-                            </div>
-                            <div className="col m6 s12 grid-example content-second right ">
-                                <div className="img-wrapper right" >
-                                    <img src="https://static.pexels.com/photos/6508/nature-laptop-outside-macbook.jpg" />
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
