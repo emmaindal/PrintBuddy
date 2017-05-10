@@ -51,7 +51,7 @@ export default class Content extends React.Component {
                                 </svg>
                                 SIGN UP
                             </a>
-                            <h6><a onClick={this.popLoginModal}><strong>Already have an account? Sign in here.</strong></a></h6>
+                            <h6><div onClick={this.popLoginModal}><a >Already have an account? Sign in here.</a></div></h6>
 
                             <div className="arrow bounce">
                                 <a className="fa fa-arrow-down fa-2x" href="#second-row"></a>

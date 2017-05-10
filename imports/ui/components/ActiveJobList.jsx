@@ -25,7 +25,7 @@ const ActiveJobList = ({ listofjobs, onChatClicked, onView}) => {
                                 </p>
                                 <div className="buttongroup">
                                     <button className="btn waves-effect waves-light location-btn" onClick={() => {onView(job)}}><i className="small material-icons">location_on</i></button>
-                                    <button className="btn waves-effect waves-light" onClick={() => onChatClicked(job._id)}>Chat</button>
+                                    <button className="btn waves-effect waves-light apply-btn" onClick={() => onChatClicked(job._id)}>Chat</button>
                                 </div>
                             </div>
                         </li>

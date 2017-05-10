@@ -72,8 +72,8 @@
     }
     .register-modal {
         width: 500px;
-        top: 10vh !important;
-        max-height: 80vh;
+        top: 5vh !important;
+        max-height: 90vh;
         @media screen and (max-height: 80vh) {
             overflow-y: scroll !important;
         }

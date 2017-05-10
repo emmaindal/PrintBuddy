@@ -77,7 +77,7 @@ class AboutComponent extends React.Component {
                                         </figcaption>
                                     </figure>
                                 </div>
-                                <div className="col s12 m6 l3">
+                                <div className="col s12 m6 l3" style={{float: "right"}}>
                                     <figure className="effect-lexi z-depth-2">
                                         <img src="/assets/images/mikael.jpg" alt="img12"></img>
                                         <figcaption>
