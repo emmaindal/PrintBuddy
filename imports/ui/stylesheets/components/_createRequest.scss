@@ -277,3 +277,10 @@ background-color: $color-primary-btn;
         padding: 0;
     }
 }
+#timepicker + div {
+    display:none;
+}
+
+div[style="max-width: 768px"] {
+    color: green !important;
+}

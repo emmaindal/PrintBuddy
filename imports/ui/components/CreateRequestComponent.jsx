@@ -1,5 +1,6 @@
 import React from 'react';
-import TimeKeeper from 'react-timekeeper';
+import TimePicker from 'material-ui/TimePicker';
+import moment from "moment";
 
 class CreateRequest extends React.Component {
     constructor(props) {
@@ -8,7 +9,7 @@ class CreateRequest extends React.Component {
             range: "500",
             dateClassName: "datepicker",
             delivery: true,
-            time: "12:00"
+            time: null
         }
     }
 
@@ -31,7 +32,11 @@ class CreateRequest extends React.Component {
             range
         });
     }
-
+    handleTimeChange(e, date) {
+        this.setState({
+            time: date
+        });
+    }
     handleDeliveryChange(e) {
         if (this.state.delivery) {
             this.setState({ delivery: false });
@@ -41,7 +46,8 @@ class CreateRequest extends React.Component {
     }
     onSubmit(e) {
         e.preventDefault();
-
+        const tid = this.state.time;
+        const lastTime = (moment(tid).format().slice(11,-9));
         if (!this.refs.lastDate.value) {
             this.setState({ dateClassName: "datepicker invalid" });
         } else {
@@ -50,7 +56,7 @@ class CreateRequest extends React.Component {
                 needColor: this.refs.needColor.checked,
                 radius: parseInt(this.state.range),
                 lastDate: new Date(this.refs.lastDate.value),
-                lastTime: this.refs.lastTime.value,
+                lastTime: lastTime,
                 reward: parseInt(this.refs.reward.value),
                 pages: parseInt(this.refs.pages.value),
                 copies: parseInt(this.refs.copies.value),
@@ -174,31 +180,22 @@ class CreateRequest extends React.Component {
                     <div className="col s3 offset-s2 input-field inline">
                         <input id="date set-date" type="date" ref="lastDate" className={this.state.dateClassName}
                             required />
-                        <label htmlFor="date">Date</label>
+                        <label htmlFor="date">Last Date</label>
                     </div>
-                    <div onClick={() => $('#modal-time').openModal({in_duration: 100, starting_top: '20%'})} className="input-field col s3 offset-s2">
-                        <input id="timepicker" ref="lastTime" value={this.state.time} required />
-                        <label htmlFor="timepicker"></label>
+                    <div className="input-field col s3 offset-s2">
+                        <TimePicker id="timepicker" format="24hr" hintText="Last Time" ref="lastTime"
+                        value={this.state.time} onChange={this.handleTimeChange.bind(this)} 
+                        textFieldStyle={{width: "100%", fontSize: "1rem", color: "#9e9e9e!important", borderBottom: "1px solid #9e9e9e", height: "38px", lineHeight: "12px"}}
+                        dialogStyle={{paddingTop: "8vh"}} />
                     </div>
                 </div>
 
                 <div className="center-align">
                     <button className="btn-large waves-effect waves-light margin-bottom-after btn-upload" type="submit"
                         name="action">Submit
-                            </button>
+                    </button>
                 </div>
-                <div id="modal-time" className="modal">
-                    <div className="modal-content">
-                        <TimeKeeper
-                                time={this.state.time}
-                                onChange={(e) => this.setState({ time: e.formatted })}
-                                switchToMinuteOnHourSelect={true}
-                            />
-                    </div>
-                    <div className="modal-footer">
-                        <a style={{cursor: "pointer"}} className="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-                    </div>
-                </div>
+                
             </div>
         );
     }

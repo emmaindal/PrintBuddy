@@ -119,7 +119,7 @@ class ProfileComponent extends React.Component {
                                    value={this.state.currentUser.username} disabled/>
                         </div>
                     </div>
-                    <div id="test-geocode" className="row">
+                    <div id="test-geocode" style={{marginBottom: "0"}} className="row">
                         <div className="col s10 offset-s1 m10 offset-m1">
                             <p>Set your home address</p>
                             <p><strong>{this.state.address}</strong></p>

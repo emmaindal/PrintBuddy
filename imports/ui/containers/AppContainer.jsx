@@ -1,11 +1,13 @@
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 import React from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import Nav from '../components/Nav';
 import { PrintBuddy } from '../../api/printbuddy/printbuddy';
 import {subscriptionToPushIdChange} from '../helpers/pushhelper';
 import {removePushId} from '../helpers/pushhelper';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 
 class App extends React.Component {
@@ -28,6 +30,17 @@ class App extends React.Component {
     }
 
     render() {
+        const muiTheme = getMuiTheme({
+            timePicker: {
+                textColor: "white",
+                headerColor: "#0592e2",
+                color: "#0592e2",
+                accentColor: "#0592e2",
+            },
+            flatButton: {
+                primaryTextColor: "#0592e2"
+            }
+        });
         if (this.props.loading) {
             return (
                 <div>
@@ -52,9 +65,11 @@ class App extends React.Component {
         return (
             <div>
                 <Nav onLogout={this.onLogout} isBuddy={currentUser.isBuddy()} />
-                <main>
-                    {child}
-                </main>
+                <MuiThemeProvider muiTheme={muiTheme}>
+                    <main>
+                        {child}
+                    </main>
+                </MuiThemeProvider>
             </div>
         );
     }

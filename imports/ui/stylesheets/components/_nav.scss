@@ -16,6 +16,10 @@ nav.main-nav {
         letter-spacing: 2px;
         text-transform: uppercase;
         font-weight: 100;
+        @media only screen and (min-width: 992px) {
+            margin-left: 20px;
+        }
+        
     }
     .desktop-nav {
         padding-bottom: 2px;
@@ -26,9 +30,6 @@ nav.main-nav {
     }
 
     @media only screen and (min-width: 992px) {
-        .nav-container {
-            padding-left: 10px;
-        }
         ul li a {
             padding-left: 39px;
             padding-right: 35px;

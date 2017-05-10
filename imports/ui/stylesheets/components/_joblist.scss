@@ -7,11 +7,12 @@
 		border-bottom: none;
 		h5 {
 			text-align: center;
+            letter-spacing: 1px;
 		}
 	}
-	.collection-item {
-		text-align: center;
-	}
+    .collection-item {
+        border-bottom: none;
+    }
 	.content-for-li:first-child {
 		margin-top: 10px;
 	}
@@ -25,14 +26,14 @@
         padding-bottom: 0;
         padding-left: 10px;
 		padding-right: 10px;
-		margin-left: 5%;
 		margin-right: auto;
 		//margin-top: 10px;
 		margin-bottom: 10px;
-		box-shadow: 0px 2px 5px 0 rgba(95, 95, 95, 0.42), 0 2px 10px 0px rgba(95, 95, 95, 0.42);
-		border-radius: 6px;
+		box-shadow: 0px 2px 3px 0 rgba(95, 95, 95, 0.15), 0 2px 5px 0px rgba(95, 95, 95, 0.12);
+		border-radius: 5px;
 		width: 90%;
 		background: #f6f6f6;
+        margin-left: 5%;
 
         p:first-child {
             margin-top:5px;
@@ -48,32 +49,36 @@
         .apply-btn {
             color: white!important;
             padding: 0;
-            width: 77px;
+            width: 100px;
         }
         .apply-btn.disabled {
             opacity: 0.3;
             padding: 0;
-            width: 77px;
         }
 		
         @media only screen and (min-width: 601px) { //breakpoint för stacked buttons i list stor skärm
             .buttongroup {
-                display: inline-flex;
-                margin-top: auto;
-                margin-bottom: auto;
+                display: inline-grid;
+                padding-top: 18px;
+                button {
+                    height: 40px;
+                }
             }
             p {
                 margin: 0.5em 0 0.5em 0;
                 padding-right: 1em;
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
         }
         @media only screen and (max-width: 600px) { //breakpoint för stacked buttons i list liten skärm
-            padding-left: 30px;
+
             .buttongroup {
                 display: inline-grid;
                 padding-top: 18px;
-                padding-bottom: 10px;
+                button {
+                    height: 40px;
+                    width: 80px;
+                }
                 .btn:first-of-type {
                     margin: 0;
                 }
@@ -84,7 +89,6 @@
                 }
                 max-width: 80%;
                 margin: 0 0 0 0;
-                margin-left: -25px;
                 padding-right: 0;
                 font-size: 1.1rem;
             }
@@ -98,10 +102,7 @@
 		}
 		.location-btn {
 				background:$color-location-btn !important;
-                box-shadow: 0 2px 5px 0 rgba($color-location-btn, 0.26), 0 2px 10px 0 rgba($color-location-btn, 0.22);
-                &:hover {
-                    box-shadow: 2px 5px 15px 2px rgba($color-location-btn, 0.30), 2px 5px 15px 2px rgba($color-location-btn, 0.25);
-                }		
+                width: 100px;		
 		}
         .round-icon-green {
             color: white;

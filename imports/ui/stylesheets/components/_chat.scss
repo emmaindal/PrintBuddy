@@ -17,7 +17,6 @@
         border-bottom: 0;
         border: none;
         border-radius: 0;
-        border-top: 1px solid #e0e0e0;
     }
     .collection .collection-item {
         padding: 7px 10px;
@@ -189,6 +188,7 @@
     z-index: 1;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid #e0e0e0;
     h6 {
         margin-top: 17px;
         font-weight: bold;
@@ -241,7 +241,6 @@
 .chat-form {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    border-top: 1px solid #e0e0e0;
     input[type=text] {
         padding-top: 10px;
     }
@@ -307,11 +306,13 @@
 }
 .job-info-buttons {
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     left: 0;
     right: 0;
-    border-top: 1px solid #e0e0e0;
     text-align: center;
+    @media screen and (max-width: 601px) {
+        bottom: 0;
+    }
     .collection-item {
         display: flex;
         justify-content: space-around;
