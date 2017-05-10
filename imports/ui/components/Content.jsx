@@ -63,7 +63,7 @@ export default class Content extends React.Component {
                         <div className="row two">
                             <div className="col m6 s12 grid-example content-second left " id="third-row">
                                 <div className="img-wrapper left hide-on-med-and-down">
-                                    <img src="https://static.pexels.com/photos/48734/pexels-photo-48734.jpeg" />
+                                    <img src="/assets/images/comp.jpg" />
                                 </div>
                             </div>
                             <div className="col m6 s12 grid-example content-second right">
@@ -78,7 +78,7 @@ export default class Content extends React.Component {
                             </div>
                             <div className="col m6 s12 grid-example content-second hide-on-large-only " id="third-row">
                                 <div className="img-wrapper ">
-                                    <img src="https://static.pexels.com/photos/48734/pexels-photo-48734.jpeg" />
+                                    <img src="/assets/images/comp.jpg" />
                                 </div>
                             </div>
                         </div>
@@ -92,17 +92,17 @@ export default class Content extends React.Component {
                             </div>
                             <div className="col m6 s12 grid-example content-second right ">
                                 <div className="img-wrapper right hide-on-med-and-down">
-                                    <img src="https://static.pexels.com/photos/33488/navigation-car-drive-road.jpg" />
+                                    <img src="/assets/images/bike.jpg" />
                                 </div>
                                 <div className="img-wrapper hide-on-large-only">
-                                    <img src="https://static.pexels.com/photos/33488/navigation-car-drive-road.jpg" />
+                                    <img src="/assets/images/bike.jpg" />
                                 </div>
                             </div>
                         </div>
                         <div className="row two">
                             <div className="col m6 s12 grid-example content-second left " id="third-row">
                                 <div className="img-wrapper left hide-on-med-and-down">
-                                    <img src="https://static.pexels.com/photos/48734/pexels-photo-48734.jpeg" />
+                                    <img src="/assets/images/run.jpg" />
                                 </div>
                             </div>
                             <div className="col m6 s12 grid-example content-second right">
@@ -114,7 +114,7 @@ export default class Content extends React.Component {
                             </div>
                             <div className="col m6 s12 grid-example content-second hide-on-large-only " id="third-row">
                                 <div className="img-wrapper ">
-                                    <img src="https://static.pexels.com/photos/48734/pexels-photo-48734.jpeg" />
+                                    <img src="/assets/images/run.jpg" />
                                 </div>
                             </div>
                         </div>

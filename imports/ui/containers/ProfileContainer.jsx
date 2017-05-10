@@ -14,18 +14,16 @@ class Profile extends React.Component {
         super(props);
         this.onSubmit = this.onSubmit.bind(this);
         this.onLogout = this.onLogout.bind(this);
-
     }
 
     onLogout() {
-        removePushId(() =>{
-            Meteor.logout(function () {
-                $('#profile-modal').closeModal({
-                    inDuration: 0.9,
-                    outDuration: 0.9,
-                });
-                browserHistory.replace('/start');
-            })
+        removePushId(Meteor.userId());
+        Meteor.logout(function () {
+            $('#profile-modal').closeModal({
+                inDuration: 0.9,
+                outDuration: 0.9,
+            });
+            browserHistory.replace('/start');
         });
     }
 

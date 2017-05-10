@@ -22,10 +22,9 @@ class App extends React.Component {
     }
 
     onLogout(){
-        removePushId(() =>{
-            Meteor.logout(function () {
-                browserHistory.replace('/start');
-            })
+        removePushId(Meteor.userId());
+        Meteor.logout(function () {
+            browserHistory.replace('/start');
         });
     }
 

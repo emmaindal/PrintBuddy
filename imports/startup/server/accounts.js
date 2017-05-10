@@ -1,5 +1,6 @@
 import {Accounts} from 'meteor/accounts-base';
 import {PrintBuddy} from '../../api/printbuddy/printbuddy';
+import {Meteor} from 'meteor/meteor';
 
 Accounts.validateNewUser((user) => {
     var positionSchema = new SimpleSchema({
@@ -72,4 +73,3 @@ Meteor.users._ensureIndex({ 'position': '2dsphere'});
 Meteor.publish('userData', function () {
     return Meteor.users.find({}, {fields: {position: 1, username: 1, address: 1,pushIds:1,emailNotification:1}});
 });
-

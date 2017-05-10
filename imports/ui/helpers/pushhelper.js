@@ -2,17 +2,17 @@ import {updateUserPushId, removeUserPushId} from '../../api/user/methods';
 
 let isSub = false
 
-export function removePushId(callback) {
+export function removePushId(userId) {
     OneSignal.push(function () {
         OneSignal.getUserId(function (pushId) {
             if (pushId) {
                 removeUserPushId.call({
                     pushId: pushId,
+                    userId: userId
                 }, (err, res) => {
+
                     if (err) {
                         console.log(err);
-                    } else {
-                        callback();
                     }
                 });
             }
@@ -54,7 +54,6 @@ function updateUserOnServer(pushId) {
         if (err) {
             console.log(err);
         } else {
-            console.log("Success", "addded push id");
         }
     });
 }
