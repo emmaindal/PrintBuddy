@@ -15,7 +15,7 @@ export default class ErrorComponent extends React.Component {
                     </nav>
                     <h1>Oops...error 404 </h1>
                     <h5>Looks like something went wrong.</h5>
-                    <h6>Go back to start or send us a message</h6>
+                    <h6>Go back to start or send us a message if you have problem</h6>
                 </div>
 
                 <div className="error-message">
