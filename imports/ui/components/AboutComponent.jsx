@@ -52,7 +52,7 @@ class AboutComponent extends React.Component {
                     <div className="row about-row">
                         <div className="col s12 m12 l12 grid-example about-content third">
                             <section className="section-about-content third">
-                                <h4 className="our-team-heading">OUR TEAM</h4>
+                                <h4 className="our-team-heading">THE TEAM</h4>
                                 <div className="col s12 m6 l3">
                                     <figure className="effect-lexi z-depth-2">
                                         <img src="/assets/images/simon.jpg" alt="img12"></img>
@@ -107,7 +107,7 @@ class AboutComponent extends React.Component {
                     <div className="col s12 m12 l12 grid-example about content fourth">
                         <section className="col s12 m6 l6 section-about-content fourth one">
                             <h4>Say Hello!</h4>
-                            <p>We are happy to answer any and all of your
+                            <p style={{marginTop: '10px'}}>We are happy to answer any and all of your
                                     questions concerning PrintBuddy.
                                     Just fill out the form and we will get back to you
                                     as soon as possible. Have a great day!
