@@ -159,7 +159,6 @@ function send(data) {
     const https = require('https');
     const req = https.request(options, function (res) {
         res.on('data', function (data) {
-            console.log("Response:");
             console.log(JSON.parse(data));
         });
     });

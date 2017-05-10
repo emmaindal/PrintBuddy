@@ -35,7 +35,6 @@ class CreateRequest extends React.Component {
                             });
                         } else {
                             insertFile(this.state.file).then((url) => {
-                                console.log(url)
                                 this.setState({ googleStatus: "Uploaded" });
                                 this.setState({ downloadUrl: url });
                                 this.setState({ isLoading: false });

@@ -54,7 +54,6 @@ function updateUserOnServer(pushId) {
         if (err) {
             console.log(err);
         } else {
-            console.log("Success", "addded push id");
         }
     });
 }

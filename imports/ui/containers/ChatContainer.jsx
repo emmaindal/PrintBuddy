@@ -48,7 +48,6 @@ class ChatHolder extends React.Component {
     }
 
     handleJobDone() {
-        console.log("Job Done");
         if (Meteor.userId() === this.props.request.userReqId) {
             doneRequest.call({requestId: this.props.request._id}, (err, res) => {
                 if (err) {
