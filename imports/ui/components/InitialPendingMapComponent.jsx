@@ -8,6 +8,8 @@ import {
 
 
 export const InitialPendingMap = withGoogleMap(props => {
+    console.log("InitialPendingMap");
+    console.log(props);
     return (
         <GoogleMap
             ref={props.onMapLoad}

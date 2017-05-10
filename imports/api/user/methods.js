@@ -67,16 +67,14 @@ export const removeUserPushId = new ValidatedMethod({
     name: 'user.removeUserPushId',
     validate: new SimpleSchema({
         pushId: {type: String},
+        userId: {type: String}
     }).validator(),
-    run({pushId}){
-        if (!this.userId) {
-            throw new Meteor.Error('user.removeUserPushId.unauthorized',
-                'Must be logged in to update user.');
-        }
-        const user = Meteor.users.findOne(this.userId);
+    run({pushId, userId}){
+
+        const user = Meteor.users.findOne(userId);
         console.log(pushId);
         if(user.pushIds.includes(pushId)){
-            Meteor.users.update(this.userId, {$pull: {pushIds: pushId}});
+            Meteor.users.update(userId, {$pull: {pushIds: pushId}});
         }
     }
 });

@@ -27,6 +27,7 @@ class MapContainer extends React.Component {
                 } else {
                     marker.showInfo = false;
                 }
+                return marker;
             });
         }
         this.setState({
@@ -67,6 +68,7 @@ class MapContainer extends React.Component {
             }
         }
         return (
+
             <div className="collection" id="google-maps-inject" style={{height: mapHeight()}}>
                 <div style={{height: mapHeight()}}>
                     {this.props.isBuddy ?
