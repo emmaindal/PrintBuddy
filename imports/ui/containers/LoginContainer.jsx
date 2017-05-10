@@ -22,7 +22,7 @@ class Login extends React.Component {
             if (e) {
                 this.setState({forgotPasswordStatus:"Error :("});
             } else {
-                this.setState({forgotPasswordStatus:"Sent :)"});
+                this.setState({forgotPasswordStatus:"Check your email - we sent instructions! :)"});
             }
         });
     }
