@@ -43,7 +43,7 @@ export class PendingBuddiesList extends React.Component {
                                             url="https://www.printbuddy.se" 
                                             title="PrintBuddy needed!" 
                                             description="Have a printer? We have a job for you!" 
-                                            picture="https://blogs.which.co.uk/technology/wp-content/uploads/2012/11/Printer-Ink-Waste2.jpg">
+                                            picture="https://printbuddy.se/assets/images/PrintBuddyFacebook.jpg">
                                             <FacebookIcon size={36} round/>
                                         </FacebookShareButton>
                                         <TwitterShareButton
