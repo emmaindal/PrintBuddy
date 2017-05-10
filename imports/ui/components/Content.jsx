@@ -51,7 +51,7 @@ export default class Content extends React.Component {
                                 </svg>
                                 SIGN UP
                             </a>
-                            <h6><a onClick={this.popLoginModal}><strong>Already have an account? Sign in here.</strong></a></h6>
+                            <h6><div onClick={this.popLoginModal}><a >Already have an account? Sign in here.</a></div></h6>
 
                             <div className="arrow bounce">
                                 <a className="fa fa-arrow-down fa-2x" href="#second-row"></a>
@@ -69,7 +69,7 @@ export default class Content extends React.Component {
                             <div className="col m6 s12 grid-example content-second right">
                                 <div className="text-wrapper right">
                                     <h4>What is PrintBuddy?</h4>
-                                    <h5>PrintBuddy is platform connecting people in need of a printout with people that have printers.</h5>
+                                    <h5>PrintBuddy is a platform connecting people in need of printouts with people that have printers.</h5>
                                     <h5><br/>If you are in need of a printout you simply create a 'Request' on PrintBuddy.</h5>
                                     <h5><br/>
                                         Nearby PrintBuddies will be notified and can choose to apply for it - if your reward is tempting enough! 

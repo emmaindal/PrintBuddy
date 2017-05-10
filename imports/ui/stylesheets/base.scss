@@ -87,12 +87,20 @@ input:not([type]).invalid, input:not([type]):focus.invalid, input[type=text].inv
     box-shadow: none;
 }
 
-input[type=text]:focus:not([readonly]) + label, input[type=password]:focus:not([readonly]) + label, input[type=email]:focus:not([readonly]) + label, input[type=number]:focus:not([readonly]) + label  {
+input[type=text]:focus:not([readonly]) + label, input[type=password]:focus:not([readonly]) + label ,input[type=textarea2]:focus:not([readonly]) + label, input[type=email]:focus:not([readonly]) + label, input[type=number]:focus:not([readonly]) + label  {
     color: $color-primary-btn;
 }
 
 input[type=password].valid, input[type=text].valid, input[type=email].valid, input[type=number].valid  {
     border-bottom: 1px solid #9e9e9e;
+}
+
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:before, [type="radio"].with-gap:checked + label:after {
+    border: 2px solid $color-primary-btn;
+}
+
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:before, [type="radio"].with-gap:checked + label:after {
+    border: 2px solid $color-primary-btn;
 }
 
 .btn, .btn-large {

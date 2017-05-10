@@ -10,17 +10,20 @@ class RegisterComponent extends React.Component {
             address: "",
             lat: 0,
             lng: 0,
-            isBuddy: false,
+            isBuddy: null,
             canColor: false,
         }
     }
     onSubmit(e) {
         e.preventDefault();
-        if (this.state.lng == 0) {
-            this.setState({ address: "You need to set home address" });
+        if (this.state.lng === 0) {
+            displayError("Whoops!", "You need to set your home address");
             return;
         }
-
+        if (this.state.isBuddy === null) {
+            displayError("Whoops!", 'You have to choose a role');
+            return;
+        }
         if (this.refs.password.value == this.refs.confirmpassword.value) {
             if (this.refs.password.value.length < 6)
             {
@@ -54,12 +57,15 @@ class RegisterComponent extends React.Component {
         });
     }
 
-    handleBuddyChange(event) {
-        if (this.state.isBuddy) {
-            this.setState({ isBuddy: false });
-        }
-        else {
-            this.setState({ isBuddy: true });
+    handleBuddyChange(e) {
+        if (e.target.id === "test4") {
+            this.setState({
+                isBuddy: true
+            });
+        } else {
+            this.setState({
+                isBuddy: false
+            });
         }
     }
     handleColorChange(event) {
@@ -70,7 +76,9 @@ class RegisterComponent extends React.Component {
             this.setState({ canColor: true });
         }
     }
-
+    componentDidMount() {
+        $('select').material_select();
+    }
     render() {
         return (
             <div id="registerback">
@@ -119,7 +127,7 @@ class RegisterComponent extends React.Component {
                             </div>
                         </div>
                         : null}
-                    <div id="test-geocode" style={{ marginTop: "10px", marginBottom: "15px" }} className="row">
+                    <div id="test-geocode" style={{ marginTop: "10px", marginBottom: "0px" }} className="row">
                         <div className="col s10 offset-s1 m10 offset-m1">
                             <p>Home address *</p>
                             <p><strong>{this.state.address}</strong></p>
@@ -128,17 +136,15 @@ class RegisterComponent extends React.Component {
                             }} />
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="switch center-align">
-                            <div className="col s12">
-                                <label>
-                                    Requestor
-                                            <input type="checkbox" checked={this.state.isBuddy}
-                                        onChange={(e) => this.handleBuddyChange(e)} />
-                                    <span className="lever"></span>
-                                    PrintBuddy
-                                        </label>
-                            </div>
+                    <div className="row" style={{textAlign: "center"}}>
+                        <p style={{textAlign: "center"}}>Choose your role</p>
+                        <div className="col s6">
+                            <input onChange={(e) => this.handleBuddyChange(e)} className="with-gap" name="group1" type="radio" id="test3"  />
+                            <label htmlFor="test3">Requestor</label>
+                        </div>
+                        <div className="col s6">
+                            <input onChange={(e) => this.handleBuddyChange(e)} ref="buddyCheck" className="with-gap" name="group1" type="radio" id="test4"  />
+                            <label htmlFor="test4">PrintBuddy</label>
                         </div>
                     </div>
                     {this.state.isBuddy ?

@@ -5,18 +5,14 @@ footer.page-footer{
     background-color: darken($color-primary-details, 5%);
     width: 100%;
 
-    .container{
-        width: 90%;
-        margin-left: 10%;
-    }
-
     .row{
         margin-left: -0.75rem;
         margin-right: 4rem;
     }
 
     .footer-copyright{
-        background-color: $color-navbar;
+        text-align: center;
+        background-color: darken($color-primary-details, 5%);
     }
 
 }
