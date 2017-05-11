@@ -1,22 +1,36 @@
+import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
 
 import ErrorComponent from '../components/ErrorComponent';
-import Nav from '../components/Nav';
 
 class Error404 extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
+        this.onSubmitEmail = this.onSubmitEmail.bind(this);
     }
     componentDidMount(){
-        $("#prepage").fadeOut(200);
+        $(document).ready(function(){
+            $("#prepage").fadeOut(200);
+            $('.modal-trigger').leanModal();
+        });
     }
+
+    onSubmitEmail(form){
+		Meteor.call(
+            'sendEmail',
+            '<info@printbuddy.se>',
+            form.email,
+            'From about form name:' + form.name,
+            form.text
+        );
+	}
 
     render() {
         return (
            <div>
-               <ErrorComponent/>
+               <ErrorComponent onSubmitEmail={this.onSubmitEmail}/>
            </div>
        );
     }
@@ -29,7 +43,7 @@ const ErrorContainer = createContainer(() =>{
 }, Error404);
 
 ErrorContainer.propTypes = {
-
+    onSubmitEmail: React.PropTypes.func
 };
 
 export default ErrorContainer;

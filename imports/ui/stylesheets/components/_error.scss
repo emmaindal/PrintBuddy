@@ -82,4 +82,24 @@
 
     }
 
+    .modal {
+        max-height: 80%;
+        color: grey;
+        
+        h4{
+            padding-left: 2%;
+            padding-bottom: 2%;
+            color: $color-primary-details;
+        }
+        button{
+            color: white;
+        }
+
+    }
+
+    #error-formContainer-success{
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
 }
