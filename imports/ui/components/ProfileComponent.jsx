@@ -177,14 +177,15 @@ class ProfileComponent extends React.Component {
                         </div>
                     ) : (null)}
 
-                    <div className="row profile-modal-row">
+                    <div style={{marginBottom: "20px"}} className="row profile-modal-row">
                         <button className="col s10 offset-s1 waves-effect waves-light btn">SAVE CHANGES</button>
                     </div>
                 </form>
-                <div className="row profile-modal-row">
-                    <button onClick={this.props.onLogout} className="col s10 offset-s1 waves-effect waves-light btn">
-                        LOGOUT
-                    </button>
+                <div className="row">
+                    <a onClick={this.props.onLogout} className="col s2 offset-s9">
+                        <span>LOGOUT</span>
+                    </a>
+                    <i onClick={this.props.onLogout} style={{marginTop: "-3px", marginLeft: "-25px", color: "#039be5", cursor: "pointer"}} className="col s1 material-icons">power_settings_new</i>
                 </div>
             </div>
         );
