@@ -1,8 +1,18 @@
+import { browserHistory } from 'react-router';
 import React from 'react';
 
 
 
 export default class ErrorComponent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
+        this.onClick = this.onClick.bind(this);
+    }
+
+    onClick(){
+        {browserHistory.replace("/start")};
+    }
 
     render() {
         return(
@@ -21,7 +31,7 @@ export default class ErrorComponent extends React.Component {
                 <div className="error-message">
                     <div className="hero2"></div>
                     <div className="btn-one">
-                        <a onClick={this.onClick} className="btn-floating btn-large waves-effect waves-light blue error-btn"><i className="fa fa-envelope" aria-hidden="true"></i></a>
+                        <a className="btn-floating btn-large waves-effect waves-light blue error-btn"><i className="fa fa-envelope" aria-hidden="true"></i></a>
 
                     </div>
 
@@ -38,3 +48,7 @@ export default class ErrorComponent extends React.Component {
         );
     }
 }
+
+ErrorComponent.propTypes = {
+    request: React.PropTypes.object
+};
