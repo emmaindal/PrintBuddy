@@ -1,14 +1,11 @@
 @import "../variables";
 
-
 .switch label input[type=checkbox]:checked + .lever:after{
     background-color: $scroll-btn-background;
 }
-
 .switch label input[type=checkbox]:checked + .lever{
     background-color: lighten($scroll-btn-background, 40%);
 }
-
 #profile {
     background-color: transparent;
     .row .col {
@@ -41,7 +38,6 @@
 #passwordNotEqual{
     color: red;
 }
-
 .profile-modal {
     width: 500px;
     top: 15vh !important;

@@ -4,15 +4,12 @@
 footer.page-footer{
     background-color: darken($color-primary-details, 5%);
     width: 100%;
-
     .row{
         margin-left: -0.75rem;
         margin-right: 4rem;
     }
-
     .footer-copyright{
         text-align: center;
         background-color: darken($color-primary-details, 5%);
     }
-
 }

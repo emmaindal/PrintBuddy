@@ -49,7 +49,8 @@
             letter-spacing: 4px;
         }
     }
-    
+
+    // Style för meddelandet för användare "ett" i chatten
     .message-user-one {
         background: $color-message-one;
         padding-left: 15px;
@@ -85,9 +86,8 @@
             padding-left: 11px;
             color: #34bdff;
         }
-        
-        
     }
+    // Style för meddelandet för användare "två" i chatten
     .message-user-two {
         background: $color-message-two;
         padding-left: 13px;
@@ -139,10 +139,7 @@
     .list-user-two {
         float: right;
     }
-    
 }
-
-
 .chat-holder {
     #modal1 {
         .cancel-icon {
@@ -176,10 +173,8 @@
                 }
             }
         }   
-    }
-    
+    }   
 }
-
 // Chat header
 .chat-header {
     background: white;
@@ -225,7 +220,6 @@
         height: calc(100vh - 18rem);
     }
 }
-
 .chat-holder-buddy {
     .chat-header {
         @media screen and (max-width: 993px) {
@@ -238,7 +232,6 @@
         margin-top: 11.5px;
     }
 }
-// Chat form
 .chat-form {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -246,7 +239,6 @@
         padding-top: 10px;
     }
 }
-
 // Chat info komponent
 .chat-info {
     h6 {
@@ -329,7 +321,6 @@
     }
 }
 
-
 // download document button
 .button-doc {
     margin: 0px auto;
@@ -339,14 +330,12 @@
     width: 90%;
 }
 
-// mobile document download button
 .mobile-download-btn {
     margin-right: 10px;
     margin-top: 7px;
     padding: 0;
     width: 30%;
 }
-
 .info-icon {
     font-size: 2.3rem !important;
     padding-left: 10px;
@@ -354,12 +343,10 @@
     line-height: 1.8 !important;
     cursor: pointer;
 }
-
 .chat-title {
     margin-left: auto;
     margin-right: auto;
 }
-
 .smiley-pop {
     margin-top: 16px;
     margin-right: 12px;
@@ -369,7 +356,6 @@
         transform: scale(1.1);
     }
 }
-
 .collection {
     margin: 0.0rem 0 1rem 0; 
 }
@@ -379,14 +365,11 @@
         padding: 0 0 0rem !important;
     }
 }
-
-
 @media only screen and (max-width: 450px) {
     .step-by-step {
         display: none;
     }
 }
-
 @media only screen and (min-width: 992px) {
     .chat-holder {
         margin-right: 5%;

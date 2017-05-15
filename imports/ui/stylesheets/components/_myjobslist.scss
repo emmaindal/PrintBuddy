@@ -50,7 +50,6 @@
         padding-left: 15px;
         padding-top: 5px;
         padding-bottom: 5px;
-
 		h5 {
 			font-size: 1.4rem;
 		}
@@ -65,16 +64,7 @@
         border-bottom: none;
         border-top: none;
         .content-for-li {
-            padding-left: 10px; // behövs kanske inte? se jobslist.scss
+            padding-left: 10px;
         }
-    }
-    
-    #pending-joblist {
-        div {
-            .collection-item {
-                //background: gray; // Styla om pendings på nått sätt?
-            }
-        }
-        
     }
 }

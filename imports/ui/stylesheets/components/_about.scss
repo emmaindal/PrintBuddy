@@ -1,16 +1,13 @@
 @import "../variables";
 
-
 #about-content {
     .row{
         margin-bottom: 5px;
     }
-
     .col.grid-example.about-content{
         text-align: center;
         margin-bottom: 1%;
     }
-
     .col.grid-example.about-content.first{
         background: linear-gradient(
         rgba(#2a2f32, 0.69),
@@ -22,27 +19,23 @@
         height: 80%;
         padding-bottom: 12%;
         padding-top: 10%;
-
-        h1{
+        h1 {
             color: $color-primary-details;
             text-shadow: 4px 2px 4px #0f1011;
             @media screen and (max-width: $break-medium){
                 font-size: 3rem;
             }
         }
-
-        p{
+        p {
             color: white;
             padding: 2% 0 0 0;
             font-size: 1.14rem;
         }
     }
-
     .row.about-row{
         background-color: $color-primary;
 
     }
-
     section.section-about-content.second{
         background-color: white;
         border: 1px lightgrey solid;
@@ -52,17 +45,14 @@
         width: 70%;
         margin-right: auto;
         margin-left: auto;
-
         @media screen and (max-width: $break-medium) {
             width: 99%;
             padding: 2% 2% 2% 2%;
         }
-
         h4{
             padding-bottom: 3%;
         }
     }
-
     .col.grid-example.about-content.third{
         background: darken($color-primary-details, 5%);
         padding-bottom: 5%;
@@ -73,12 +63,10 @@
             background: #3085a3;
             text-align: center;
             cursor: pointer;
-
             img {
                 position: relative;
                 display: block;
                 opacity: 0.9;
-
             }
             h2 {
                 letter-spacing: 2px;
@@ -91,9 +79,7 @@
                 margin: 3%;
             }
             a {
-
                 padding-left: 5%;
-
             }
             h2 span {
                 font-weight: 800;
@@ -120,7 +106,6 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-
                 &:after {
                     pointer-events: none;
                 }
@@ -129,7 +114,6 @@
                 }
             }
         }
-
         .our-team-heading {
             color: white;
             text-align: center;
@@ -140,7 +124,6 @@
         .card{
             text-align: left !important;
         }
-
         .team-position{
             color: $text-secondary;
             font-style: oblique;
@@ -153,13 +136,10 @@
             font-size: 10rem;
             color: #ff9800;
         }
-
-
         .is-hidden,
         .is-visible {
             opacity: 1;
         }
-
         .contact-icons{
             i{
                 padding-right: 3%;
@@ -168,57 +148,41 @@
                 font-size: 2rem;
             }
         }
-
     }
-
     .col.s12.m6.l6.section-about-content.fourth.one{
         text-align: left;
         padding: 5%;
-
         ul{
             padding-top: 6%;
         }
-
         li{
             font-size: 1rem;
         }
-
         a{
             color: inherit;
         }
-
     }
-
     .col.s12.m6.l6.section-about-content.fourth.two{
         text-align: left;
         padding: 5%;
-
         .formContainer{
             background-color: white;
             border: 1px lightgrey solid;
             border-radius: 5px;
             padding: 3%;
         }
-
-
         label.active{
             transform: translateY(-50%);
         }
-
         .btn{
             border-radius: 3px;
             height: 30px;
             line-height: 30px;
         }
-
         .btn, btn:hover, .btn-large:hover{
             background-color: $color-primary-details;
         }
-
-
-
     }
-
     #about-formContainer-success{
         font-weight: bold;
         margin-top: 10px;
@@ -226,13 +190,11 @@
 
 }
 
-
-
+//Animationer för "THE TEAM"
 figure.effect-lexi {
 	background: -webkit-linear-gradient(-45deg, #000 0%,#fff 100%);
 	background: linear-gradient(-45deg, #000 0%,#fff 100%);
 }
-
 figure.effect-lexi img {
 	margin: -10px 0 0 -10px;
 	max-width: none;
@@ -246,13 +208,11 @@ figure.effect-lexi img {
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
-
 figure.effect-lexi figcaption::before,
 figure.effect-lexi p {
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
 }
-
 figure.effect-lexi figcaption::before {
 	position: absolute;
 	right: -100px;
@@ -269,13 +229,11 @@ figure.effect-lexi figcaption::before {
 	-webkit-transform-origin: 50% 50%;
 	transform-origin: 50% 50%;
 }
-
 figure.effect-lexi:hover img {
 	opacity: 0.6;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
-
 figure.effect-lexi h2 {
 	text-align: left;
 	-webkit-transition: -webkit-transform 0.35s;
@@ -283,7 +241,6 @@ figure.effect-lexi h2 {
 	-webkit-transform: translate3d(5px,5px,0);
 	transform: translate3d(5px,5px,0);
 }
-
 figure.effect-lexi p{
 	position: absolute;
 	right: 0;
@@ -295,13 +252,11 @@ figure.effect-lexi p{
 	-webkit-transform: translate3d(20px,20px,0);
 	transform: translate3d(20px,20px,0);
 }
-
 figure.effect-lexi:hover figcaption::before {
 	opacity: 1;
 	-webkit-transform: scale3d(1,1,1);
 	transform: scale3d(1,1,1);
 }
-
 figure.effect-lexi:hover h2,
 figure.effect-lexi:hover p {
 	opacity: 1;

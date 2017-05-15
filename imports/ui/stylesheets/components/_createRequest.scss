@@ -15,6 +15,7 @@
     -moz-box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
     box-shadow: 0px 2px 41px -7px rgba(0,0,0,0.43);
     margin-top: 6vh;
+
      @media only screen and (max-width: 450px) {
          margin-top: 0;
          width: 100vw !important;
@@ -71,6 +72,7 @@
             margin-right: 10px;
         }
     }
+    //Datepicker style
     .picker__date-display {
         background-color: $color-primary-btn !important; 
     }
@@ -127,8 +129,7 @@
     margin-top: 50px !important;
     margin-bottom: 30px;
 }
-
-
+//style för slidern 
 input[type=range]::-webkit-slider-thumb {
 background-color: $color-primary-btn;
 }
@@ -142,11 +143,9 @@ background-color: $color-primary-btn;
 .form-input-error {
     border-bottom: 1px solid #ff2200 !important; 
 }
-
 #createRequest-sk-circle{
   margin-bottom: 20px;
 }
-
 // Loading icon 
 .sk-circle {
   margin: 0px auto;
@@ -249,7 +248,6 @@ background-color: $color-primary-btn;
 .sk-circle .sk-circle12:before {
   -webkit-animation-delay: -0.1s;
           animation-delay: -0.1s; }
-
 @-webkit-keyframes sk-circleBounceDelay {
   0%, 80%, 100% {
     -webkit-transform: scale(0);
@@ -259,7 +257,6 @@ background-color: $color-primary-btn;
             transform: scale(1);
   }
 }
-
 @keyframes sk-circleBounceDelay {
   0%, 80%, 100% {
     -webkit-transform: scale(0);
@@ -273,7 +270,6 @@ background-color: $color-primary-btn;
 .react-timekeeper {
     box-shadow: none!important;
 }
-
 #modal-time {
     width: 264px;
     .modal-content {
@@ -283,7 +279,6 @@ background-color: $color-primary-btn;
 #timepicker + div {
     display:none;
 }
-
 div[style="max-width: 768px"] {
     color: green !important;
 }
