@@ -174,7 +174,6 @@
     a{
         color: $text-primary;
     }
-
     .login-modal {
         top: 20vh !important;
 
@@ -190,6 +189,7 @@
             width: 100%;
             height: 100vh;
             max-height: none !important;
+
         }
         a{
             color: $details-grey;
@@ -291,7 +291,6 @@
             background-color: transparent;
             box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.11), 0 0px 0px 0 rgba(0, 0, 0, 0.12);
         }
-
         .brand-logo{
             position: relative;
 
@@ -331,20 +330,15 @@
             color: $color-primary-details;
         }
     }
-
     .info-wrapper{
         background-color: #f0f0f0; //ändrade - var white innan. Med lätt grå så får vi sektioner på startsidan .sh
     }
-
     .row.two{
         background-color: $text-primary;
     }
-
     .card-panel.teal{
         padding: 5% 1% 1% 1%;
-
         text-align: center;
-
         background-color: $color-primary !important;
         h5{
             color: $color-primary-details
@@ -361,7 +355,6 @@
             max-height: 100%;
         }
     }
-
     .text-wrapper{
         padding: 12%;
         @media screen and (max-width: $break-medium){

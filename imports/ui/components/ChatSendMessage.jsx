@@ -10,6 +10,13 @@ class ChatSendMessage extends React.Component {
                 scrollTop: $("#chatbox").prop("scrollHeight")
             }, 0);
         }, 100);
+
+        $(".mobile-emoji").hide();
+        $(document).click(function (e) {
+            if (!$(e.target).hasClass("smiley-pop")) {
+                $("#mobile-emoji").hide();
+            }
+        });
     }
     onSubmit(e) {
         $('.form-input').focus();

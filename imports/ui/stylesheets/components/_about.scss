@@ -1,6 +1,5 @@
 @import "../variables";
 
-
 #about-content {
     .row{
         margin-bottom: 5px;
@@ -49,6 +48,7 @@
             cursor: pointer;
             text-align: center;
             background: #3085a3;
+
             img {
                 position: relative;
                 display: block;
@@ -139,7 +139,6 @@
             color: inherit;
         }
     }
-
     .col.s12.m6.l6.section-about-content.fourth.two{
         padding: 5%;
         text-align: left;
@@ -161,7 +160,6 @@
             background-color: $color-primary-details;
         }
     }
-
     #about-formContainer-success{
         margin-top: 10px;
         font-weight: bold;
@@ -185,13 +183,11 @@ figure.effect-lexi img {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
-
 figure.effect-lexi figcaption::before,
 figure.effect-lexi p {
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
     transition: opacity 0.35s, transform 0.35s;
 }
-
 figure.effect-lexi figcaption::before {
     position: absolute;
     right: -100px;
@@ -208,13 +204,11 @@ figure.effect-lexi figcaption::before {
     border-radius: 50%;
     box-shadow: 0 0 0 900px rgba(255,255,255,0.2);
 }
-
 figure.effect-lexi:hover img {
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
     opacity: 0.6;
 }
-
 figure.effect-lexi h2 {
     -webkit-transition: -webkit-transform 0.35s;
     transition: transform 0.35s;
@@ -222,7 +216,6 @@ figure.effect-lexi h2 {
     transform: translate3d(5px,5px,0);
     text-align: left;
 }
-
 figure.effect-lexi p{
     position: absolute;
     right: 0;
@@ -234,16 +227,15 @@ figure.effect-lexi p{
     text-align: right;
     opacity: 0;
 }
-
 figure.effect-lexi:hover figcaption::before {
     -webkit-transform: scale3d(1,1,1);
     transform: scale3d(1,1,1);
     opacity: 1;
 }
-
 figure.effect-lexi:hover h2,
 figure.effect-lexi:hover p {
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
     opacity: 1;
 }
+

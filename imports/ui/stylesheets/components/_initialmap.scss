@@ -2,10 +2,8 @@
 
 #infowindow {
     width: auto;
-    //max-width: 190px;
     height: 100%;
     overflow: hidden;
-    
 	.collection-item.avatar {
 		min-height: 0px!important;
 		position: relative;
@@ -18,7 +16,6 @@
         .material-icons {
             left: 0%;
         }
-        
         .title {
             font-size: 15px
         }

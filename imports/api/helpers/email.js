@@ -54,8 +54,8 @@ export function sendNewRequestEmailPickUp(userId, title, lat, lng, radius, needC
                 'sendEmail',
                 email,
                 '<noreply@printbuddy.se>',
-                'New print jobs in your area',
-                'New print jobs in your area. Go to https://printbuddy.se'
+                'Someone need a printout in your area!',
+                'Checkout the joblist for more details. Go to https://printbuddy.se'
             );
         });
     }
@@ -114,8 +114,8 @@ export function sendNewRequestEmailDelivery(userId, title, lat, lng, needColor) 
                 'sendEmail',
                 email,
                 '<noreply@printbuddy.se>',
-                'New print jobs for delivery in your area',
-                'New print jobs for delivery in your area. Go to https://printbuddy.se'
+                'Someone need a printout delivered in your area!',
+                'New print jobs for delivery in your area. Checkout the joblist. Go to https://printbuddy.se'
             );
         });
     }
@@ -128,8 +128,8 @@ export  function sendAppliedEmail(user) {
             'sendEmail',
             user.emails[0].address,
             '<noreply@printbuddy.se>',
-            'Someone applied for your request',
-            'Someone applied for your request. Go to https://printbuddy.se'
+            'Someone offered to print for you!',
+            'Someone offered to print for you. Take a look at your request on https://printbuddy.se'
         );
     }
 }
@@ -141,8 +141,8 @@ export  function sendAcceptEmail(user) {
             'sendEmail',
             user.emails[0].address,
             '<noreply@printbuddy.se>',
-            'You got accepted for a job',
-            'You got accepted for a job. Go to https://printbuddy.se'
+            'You have been choosen for a printjob!',
+            'Go to "My Jobs" and check the active joblist. Go to https://printbuddy.se'
         );
     }
 }

@@ -3,24 +3,16 @@
 .text-center {
     text-align: center;
 }
-
 #registerback {
     background-color: white;
 	margin-top: 1.2rem;
 }
-
-#passwordNotEqual{
-    color: red;
-}
-
 .switch label input[type=checkbox]:checked + .lever:after{
     background-color: $scroll-btn-background;
 }
-
 .switch label input[type=checkbox]:checked + .lever{
     background-color: lighten($scroll-btn-background, 40%);
 }
-
 #registerback {
     background-color: transparent;
     .row .col {

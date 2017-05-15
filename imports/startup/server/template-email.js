@@ -2,7 +2,7 @@ import { Accounts } from 'meteor/accounts-base';
 
 
 Accounts.emailTemplates.siteName = 'PrintBuddy';
-Accounts.emailTemplates.from = 'NOREPLY <noreply@printbuddy.se>';
+Accounts.emailTemplates.from = 'PrintBuddy <noreply@printbuddy.se>';
 
 Accounts.emailTemplates.resetPassword = {
     subject() {

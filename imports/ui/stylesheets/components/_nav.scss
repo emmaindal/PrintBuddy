@@ -9,7 +9,6 @@ nav.main-nav {
         text-transform: uppercase;
         transition: all 0.5s cubic-bezier(.26,.24,.39,1.82) !important;
     }
-
     .brand-logo {
         color: $text-primary;
         font-size: 2rem;
@@ -19,16 +18,13 @@ nav.main-nav {
         @media only screen and (min-width: 992px) {
             margin-left: 20px;
         }
-        
     }
     .desktop-nav {
         padding-bottom: 2px;
     }
-
     .button-collapse {
         padding-left: 4px;
     }
-
     @media only screen and (min-width: 992px) {
         ul li a {
             padding-left: 39px;
@@ -39,17 +35,13 @@ nav.main-nav {
         color: $text-secondary;
         font-size: 0.8rem!important;
     }
-
     .dropdown-content{
         margin-top: 64px;
     }
-
     .mobile-nav-icon{
         float: left;
     }
-
     .side-nav a{
         padding: 0 25px;
     }
-
 }

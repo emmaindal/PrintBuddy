@@ -15,7 +15,7 @@ class AboutComponent extends React.Component {
         }
 
         this.props.onSubmitEmail(message);
-        this.setState({ emailSuccess: "Thanks! We will answer your message as soon as possible!" });
+        this.setState({ emailSuccess: "Thanks! We will get back to you as soon as possible!" });
     }
     render() {
         return (
@@ -43,6 +43,7 @@ class AboutComponent extends React.Component {
 
 
                                 <span className="about-article-first">
+
                                     <h6>We are four information architecht students at Malmö University.
                                         During our first year we were tasked with a project - to come up with an idea and bring it to life in 2 months time.</h6>
 

@@ -30,11 +30,11 @@ class Verified extends React.Component {
         e.preventDefault();
         if (this.state.password === this.state.confirmPassword) {
             if (this.refs.password.value.length < 6) {
-                displayError("Whoops!", 'Your password must be at least 6 characters');
+                displayError("Too Short!", 'Your password must be at least 6 characters long');
             } else {
                 Accounts.resetPassword(this.props.location.query.token, this.state.password, ( error ) =>{
                     if (error){
-                        displayError( "Error", "oops something went wrong.");
+                        displayError( "Whoops!", "Something went wrong. Please try again.");
 
                     }else {
                         displayAlert('Success', "Password saved!");
@@ -46,7 +46,7 @@ class Verified extends React.Component {
 
             }
         }else {
-            displayError("Whoops!", 'Your password must match!');
+            displayError("Whoops!", 'Your passwords did not match!');
         }
     }
 

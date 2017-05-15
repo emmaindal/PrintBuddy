@@ -28,7 +28,6 @@ class Register extends React.Component {
             } else {
                 Meteor.call('sendVerificationLink', (error, response) => {
                     if (error) {
-                        displayError("Error", error);
                         console.log(error);
                     } else {
                         browserHistory.push('/');

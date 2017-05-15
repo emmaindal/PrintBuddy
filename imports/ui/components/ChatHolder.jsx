@@ -59,7 +59,7 @@ class ChatHolder extends React.Component {
                 </div>
                 <div id="cancelModal" className="modal">
                     <div className="modal-content">
-                        <h5>Are you sure?</h5>
+                        <h5>Cancel?</h5>
                         <br />
                         <p>Are you absolutely sure you want to Cancel this request?</p>
                     </div>
@@ -70,7 +70,7 @@ class ChatHolder extends React.Component {
                 </div>
                 <div id="doneModal" className="modal">
                     <div className="modal-content">
-                        <h5>Are you sure?</h5>
+                        <h5>Done?</h5>
                         <p>Are you absolutely sure this job is Done?</p>
                     </div>
                     <div className="modal-footer">

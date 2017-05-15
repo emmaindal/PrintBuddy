@@ -52,7 +52,7 @@ class MyJobList extends React.Component {
     onCancel(clickedJob) {
         removeApplyRequest.call({requestId: clickedJob._id}, (err, res) => {
             if (err) {
-                displayError("Error!", 'Something went wrong :( ');
+                displayError("Error!", 'Something went wrong :(');
             }
         });
     }

@@ -38,14 +38,14 @@ class Profile extends React.Component {
             if (err) {
                 console.log(err);
                 if (err.error === 'user.updateUser.unauthorized') {
-                    displayError("Wrong!", 'You need to login to update');
+                    displayError("Whoops!", 'You need to be logged in to update your settings!');
                 }else if (err.error === 'user.updateUser.pendingexist') {
-                    displayError("Wrong!", 'You need to cancel all you pending jobs');
+                    displayError("Whoops!", 'You cant change your settings while you have active or pending jobs');
                 }else if (err.error === 'user.updateUser.jobactive') {
-                    displayError("Wrong!", 'You need to cancel your current request');
+                    displayError("Wrong!", 'You cant change your settings while you have an active request');
                 }
             }else{
-                displayAlert("Success","Your profile changes was saved");
+                displayAlert("Saved","Your profile changes was saved");
             }
         });
     }
