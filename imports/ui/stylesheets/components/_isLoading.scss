@@ -1,3 +1,4 @@
+//Kod för pre page loading icon och loading icon
 
 .containerOne{
   position:absolute;
@@ -45,7 +46,6 @@
   width:10px;
   margin:-5px;
 }
-
 .color1 { color : darken($color-primary-btn, 10%); }
 .color2 { color : darken($color-primary-btn, 5%); }
 .color3 { color : $color-primary-btn; }
@@ -91,18 +91,15 @@
   font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
   color : darken($color-primary-btn, 10%);
 }
-
 .f a {
   color : #DDCA7D;
 }
-
 .msg {
   padding-top : 150px;
   font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
   color : darken($color-primary-btn, 10%);
   font-size: 18px !important;
 }
-
 h1.msg{
   font-size : 5em;
   animation:fadeInDown2 5s infinite;

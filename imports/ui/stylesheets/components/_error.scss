@@ -1,37 +1,27 @@
 @import "../variables";
 
-
 .error-component{
     background-color: $color-primary-details;
     color: white;
-
     .start-nav{
         background-color: transparent;
     }
-
     .error-container{
         height: 50vh;
         position: relative;
-
-
         h1{
             text-align: center;
             padding-top: 5%;
         }
-
         h5, h6{
             text-align: center;
         }
-
     }
-
     .error-message{
         height: 50vh;
         width: 100%;
         position: absolute;
-
-        .hero2
-        {
+        .hero2 {
             width: 0px;
             height: 0px;
             border-style: solid;
@@ -45,7 +35,6 @@
         .error-btn{
             margin:0 auto;
             border-radius: 100%;
-
             i{
                 font-size: 6.5rem;
                 padding-top: 20%;
@@ -53,7 +42,6 @@
             .fa-envelope{
                 font-size: 5.5rem;
             }
-
         }
         .btn-one{
             width: 50%;
@@ -63,7 +51,6 @@
             display: block;
             text-align:left;
         }
-
         .btn-two{
             float: left;
             width: 50%;
@@ -73,19 +60,14 @@
             display: block;
             text-align:right;
         }
-
         .btn-floating.btn-large{
             width: 100px;
             height: 100px;
         }
-
-
     }
-
     .modal {
         max-height: 80%;
         color: grey;
-        
         h4{
             padding-left: 2%;
             padding-bottom: 2%;
@@ -94,12 +76,9 @@
         button{
             color: white;
         }
-
     }
-
     #error-formContainer-success{
         font-weight: bold;
         margin-top: 10px;
     }
-
 }
