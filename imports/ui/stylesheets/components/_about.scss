@@ -5,122 +5,93 @@
     .row{
         margin-bottom: 5px;
     }
-
-    .col.grid-example.about-content{
+    .about-content{
         text-align: center;
-        margin-bottom: 1%;
     }
-
-    .col.grid-example.about-content.first{
+    .about-content.first{
+        padding: 10%;
+        border: none;
         background: linear-gradient(
         rgba(#2a2f32, 0.69),
         rgba(#2a2f32, 0.69)
-        ), url("/assets/images/people-coffee-notes-tea.jpg");
-        background-size: 100%;
-        background-repeat: no-repeat;
-        border: none;
-        height: 80%;
-        padding-bottom: 12%;
-        padding-top: 10%;
-
+        );
         h1{
-            color: $color-primary-details;
+            color: $color-primary-details !important;
             text-shadow: 4px 2px 4px #0f1011;
             @media screen and (max-width: $break-medium){
+                padding-top: 40%;
                 font-size: 3rem;
             }
         }
-
-        p{
-            color: white;
-            padding: 2% 0 0 0;
-            font-size: 1.14rem;
+        .header.col.s12.light{
+            color: $color-primary !important;
         }
     }
-
-    .row.about-row{
-        background-color: $color-primary;
-
-    }
-
     section.section-about-content.second{
-        background-color: white;
-        border: 1px lightgrey solid;
-        border-radius: 5px;
-        padding: 2% 5% 5% 5%;
-        height: 100%;
         width: 70%;
         margin-right: auto;
         margin-left: auto;
-
+        padding: 0% 5% 3% 3%;
+        color: black;
+        border-radius: 5px;
         @media screen and (max-width: $break-medium) {
             width: 99%;
             padding: 2% 2% 2% 2%;
         }
-
-        h4{
-            padding-bottom: 3%;
-        }
     }
-
     .col.grid-example.about-content.third{
-        background: darken($color-primary-details, 5%);
         padding-bottom: 5%;
+        background: $color-primary-details;
         figure {
             position: relative;
             overflow: hidden;
             margin-bottom: 5%;
-            background: #3085a3;
-            text-align: center;
             cursor: pointer;
-
+            text-align: center;
+            background: #3085a3;
             img {
                 position: relative;
                 display: block;
                 opacity: 0.9;
-
             }
             h2 {
-                letter-spacing: 2px;
-                font-weight: 300;
                 margin: 0;
+                letter-spacing: 2px;
                 font-size: 2rem;
+                font-weight: 300;
             }
             p, a {
-                letter-spacing: 0px;
                 margin: 3%;
+                letter-spacing: 0px;
             }
             a {
-
                 padding-left: 5%;
-
             }
             h2 span {
-                font-weight: 800;
                 letter-spacing: 0px;
+                font-weight: 800;
             }
             i {
-                font-size: 2rem;
-                color: white;
                 transition: all 0.3s ease;
+                color: $color-primary;
+                font-size: 2rem;
                 &:hover {
                     transform: scale(1.2);
                     color: $color-primary-btn;
                 }
             }
             figcaption {
-                padding: 5%;
-                color: #545454;
-                text-transform: uppercase;
-                font-size: 1em;
-                -webkit-backface-visibility: hidden;
-                backface-visibility: hidden;
                 position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 100%;
-
+                padding: 5%;
+                text-transform: uppercase;
+                color: $details-grey;
+                font-size: 1em;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
                 &:after {
                     pointer-events: none;
                 }
@@ -129,37 +100,23 @@
                 }
             }
         }
-
         .our-team-heading {
-            color: white;
-            text-align: center;
-            padding-bottom: 4%;
             padding-top: 3%;
+            padding-bottom: 1%;
+            text-align: center;
             letter-spacing: 2px;
+            color: $color-primary;
         }
-        .card{
-            text-align: left !important;
+        .about-article-first{
+            width: 60%;
+            h6{
+                color: $color-primary;
+            }
         }
-
-        .team-position{
-            color: $text-secondary;
-            font-style: oblique;
-        }
-        .profile-picture{
-            height: 100%;
-            width: 100%;
-        }
-        .material-icons.person {
-            font-size: 10rem;
-            color: #ff9800;
-        }
-
-
         .is-hidden,
         .is-visible {
             opacity: 1;
         }
-
         .contact-icons{
             i{
                 padding-right: 3%;
@@ -168,143 +125,125 @@
                 font-size: 2rem;
             }
         }
-
     }
-
     .col.s12.m6.l6.section-about-content.fourth.one{
-        text-align: left;
         padding: 5%;
-
+        text-align: left;
         ul{
             padding-top: 6%;
         }
-
         li{
             font-size: 1rem;
         }
-
         a{
             color: inherit;
         }
-
     }
 
     .col.s12.m6.l6.section-about-content.fourth.two{
-        text-align: left;
         padding: 5%;
-
+        text-align: left;
         .formContainer{
-            background-color: white;
+            padding: 3%;
             border: 1px lightgrey solid;
             border-radius: 5px;
-            padding: 3%;
+            background-color: $color-primary;
         }
-
-
         label.active{
             transform: translateY(-50%);
         }
-
         .btn{
-            border-radius: 3px;
             height: 30px;
+            border-radius: 3px;
             line-height: 30px;
         }
-
         .btn, btn:hover, .btn-large:hover{
             background-color: $color-primary-details;
         }
-
-
-
     }
 
     #about-formContainer-success{
-        font-weight: bold;
         margin-top: 10px;
+        font-weight: bold;
     }
-
 }
-
-
 
 figure.effect-lexi {
-	background: -webkit-linear-gradient(-45deg, #000 0%,#fff 100%);
-	background: linear-gradient(-45deg, #000 0%,#fff 100%);
+    background: -webkit-linear-gradient(-45deg, #000 0%,#fff 100%);
+    background: linear-gradient(-45deg, #000 0%,#fff 100%);
 }
-
 figure.effect-lexi img {
-	margin: -10px 0 0 -10px;
-	max-width: none;
-	width: -webkit-calc(100% + 10px);
-	width: calc(100% + 10px);
-	opacity: 0.9;
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
-	-webkit-transform: translate3d(10px,10px,0);
-	transform: translate3d(10px,10px,0);
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
+    width: -webkit-calc(100% + 10px);
+    width: calc(100% + 10px);
+    max-width: none;
+    margin: -10px 0 0 -10px;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(10px,10px,0);
+    transform: translate3d(10px,10px,0);
+    opacity: 0.9;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 figure.effect-lexi figcaption::before,
 figure.effect-lexi p {
-	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-	transition: opacity 0.35s, transform 0.35s;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
 }
 
 figure.effect-lexi figcaption::before {
-	position: absolute;
-	right: -100px;
-	bottom: -100px;
-	width: 20rem;
-	height: 20rem;
-	border: 2px solid #fff;
-	border-radius: 50%;
-	box-shadow: 0 0 0 900px rgba(255,255,255,0.2);
-	content: '';
-	opacity: 0;
-	-webkit-transform: scale3d(0.5,0.5,1);
-	transform: scale3d(0.5,0.5,1);
-	-webkit-transform-origin: 50% 50%;
-	transform-origin: 50% 50%;
+    position: absolute;
+    right: -100px;
+    bottom: -100px;
+    width: 20rem;
+    height: 20rem;
+    content: '';
+    -webkit-transform: scale3d(0.5,0.5,1);
+    transform: scale3d(0.5,0.5,1);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    opacity: 0;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 900px rgba(255,255,255,0.2);
 }
 
 figure.effect-lexi:hover img {
-	opacity: 0.6;
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    opacity: 0.6;
 }
 
 figure.effect-lexi h2 {
-	text-align: left;
-	-webkit-transition: -webkit-transform 0.35s;
-	transition: transform 0.35s;
-	-webkit-transform: translate3d(5px,5px,0);
-	transform: translate3d(5px,5px,0);
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    -webkit-transform: translate3d(5px,5px,0);
+    transform: translate3d(5px,5px,0);
+    text-align: left;
 }
 
 figure.effect-lexi p{
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	padding: 0 1.5em 1.5em 0;
-	width: 140px;
-	text-align: right;
-	opacity: 0;
-	-webkit-transform: translate3d(20px,20px,0);
-	transform: translate3d(20px,20px,0);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 140px;
+    padding: 0 1.5em 1.5em 0;
+    -webkit-transform: translate3d(20px,20px,0);
+    transform: translate3d(20px,20px,0);
+    text-align: right;
+    opacity: 0;
 }
 
 figure.effect-lexi:hover figcaption::before {
-	opacity: 1;
-	-webkit-transform: scale3d(1,1,1);
-	transform: scale3d(1,1,1);
+    -webkit-transform: scale3d(1,1,1);
+    transform: scale3d(1,1,1);
+    opacity: 1;
 }
 
 figure.effect-lexi:hover h2,
 figure.effect-lexi:hover p {
-	opacity: 1;
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    opacity: 1;
 }
