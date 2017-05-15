@@ -6,9 +6,7 @@ import Message from "./Message";
 class ChatMessageList extends React.Component {
     renderMessages() {
         const users = this.props.users;
-
         const { userId, chat } = this.props;
-
         if (!chat.messages || chat.messages.length == 0) {
             return (
                 <div className="collection-header">

@@ -8,13 +8,7 @@ import ChatInfo from "./ChatInfo";
 
 class ChatComponent extends React.Component {
     componentDidMount() {
-        $(".mobile-emoji").hide();
-        $(document).click(function (e) {
-            if (!$(e.target).hasClass("smiley-pop")
-                && $(e.target).parents(".mobile-emoji").length === 0) {
-                $("#mobile-emoji").hide();
-            }
-        });
+        
     }
 
     chatInfoStyle() {
