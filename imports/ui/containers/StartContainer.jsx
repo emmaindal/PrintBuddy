@@ -10,40 +10,42 @@ import Footer from '../components/Footer';
 
 class Start extends React.Component {
 	constructor(props) {
-        super(props);
-        this.state = {};
-        this.onSubmitEmail = this.onSubmitEmail.bind(this);
-    }
+		super(props);
+		this.state = {};
+		this.onSubmitEmail = this.onSubmitEmail.bind(this);
+	}
 	componentDidMount(){
 		const $$ = window.$;
 
 		$$(document).ready(function () {
-		    $$(function() {
-		      $$('a[href*="#"]:not([href="#"])').click(function() {
-		        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-		          var target = $$(this.hash);
-		          target = target.length ? target : $$('[name=' + this.hash.slice(1) +']');
-		          if (target.length) {
-		            $$('html, body').animate({
-		              scrollTop: target.offset().top
-		            }, 1000);
-		            return false;
-		          }
-		        }
-		      });
-		    });
+			$$(function() {
+				$$('a[href*="#"]:not([href="#"])').click(function() {
+					if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+						var target = $$(this.hash);
+						target = target.length ? target : $$('[name=' + this.hash.slice(1) +']');
+						if (target.length) {
+							$$('html, body').animate({
+								scrollTop: target.offset().top
+							}, 1000);
+							return false;
+						}
+					}
+				});
+			});
 		})
-        $("#prepage").fadeOut(200);
+		$(".button-collapse").sideNav();
+		$("#prepage").fadeOut(200);
+		$('.parallax').parallax();
 	}
 
 	onSubmitEmail(form){
 		Meteor.call(
-            'sendEmail',
-            '<info@printbuddy.se>',
-            form.email,
-            'From about form name:' + form.name,
-            form.text
-        );
+			'sendEmail',
+			'<info@printbuddy.se>',
+			form.email,
+			'From about form name:' + form.name,
+			form.text
+		);
 	}
 
 	render() {
@@ -59,8 +61,8 @@ class Start extends React.Component {
 
 const StartContainer = createContainer(() => {
 
-    return {
-    };
+	return {
+	};
 }, Start);
 
 
