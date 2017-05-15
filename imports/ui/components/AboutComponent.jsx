@@ -14,7 +14,7 @@ class AboutComponent extends React.Component {
         }
 
         this.props.onSubmitEmail(message);
-        this.setState({ emailSuccess: "Thanks! We will answer your message as soon as possible!" });
+        this.setState({ emailSuccess: "Thanks! We will get back to you as soon as possible!" });
     }
     render() {
         return (
@@ -33,18 +33,15 @@ class AboutComponent extends React.Component {
                             <section className="section-about-content second">
                                 <span className="about-article-first">
                                     <h4>How everything started</h4>
-                                    <p>PrintBuddy is a school project that started in Mars 2017.
-                                        <br/>
-                                        Our goal with this project was to create a fun platform for connecting people in need of a printout, with people that have printers.
-                                        <br/>Imagine your printer is out of ink, or you dont even own a printer, and desperatly need a printout! Wouldn't it be nice if you could
-                                            just upload the document and have someone deliver the printout for you?
-                                            <br/>
-                                            Your printout is just a few clicks away - if there is a PrintBuddy in your neighborhood.
-                                        </p>
-                                        <br/>
-                                        <p>We saw this project as an opportunity to learn more about modern web technologies, tools and frameworks.<br/> Therefore we decided to use React, SASS, MongoDB and Meteor
-                                            to bring you PrintBuddy.
-                                        </p>
+                                    <p>
+                                        We are four information architecht students at Malmö University.<br/>
+                                        During our first year we were tasked with a project - to come up with an idea and bring it to life in 2 months time.
+                                        <br/><br/>
+                                        We came up with PrintBuddy, a platform for connecting people in need of printouts with people that have printers.
+                                        <br/><br/>
+                                        We saw this project as an opportunity to learn more about modern web technologies, tools and frameworks.
+                                        Therefore we decided to use React, SASS, MongoDB and Meteor to bring you PrintBuddy.
+                                    </p>
                                     </span>
                                 </section>
                             </div>
