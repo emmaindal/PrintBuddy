@@ -45,7 +45,7 @@ class ChatSendMessage extends React.Component {
                 <form className="form" onSubmit={this.onSubmit.bind(this)}>
                     <input className="form-input" ref="text" type="text" name="message" placeholder="Type a message..." autoFocus autoComplete="off" />
                     <div onClick={this.popEmojiPicker} className="smiley-pop">
-                        <Emoji emoji='smiley' size={30} />
+                        <Emoji onClick={this.popEmojiPicker} emoji='smiley' size={30} />
                     </div>
                     <button className="btn-large waves-effect waves-light" type="submit" name="action">SEND</button>
                 </form>

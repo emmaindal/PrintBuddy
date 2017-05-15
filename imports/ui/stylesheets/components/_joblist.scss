@@ -14,7 +14,9 @@
         border-bottom: none;
     }
 	.content-for-li {
-		display: inline-flex;
+        display: inline-flex;
+		display: -webkit-inline-box;
+        
 		justify-content: space-between;
         padding-top: 0;
         padding-bottom: 0;
@@ -75,6 +77,8 @@
                 }
                 .btn:first-of-type {
                     margin: 0;
+                    margin-bottom: 15%;
+
                 }
             }
             p {
@@ -89,6 +93,7 @@
         }
 		.btn:first-of-type {
 			margin-right: 0.5rem;
+            margin-bottom: 15%;
 		}
 		.btn {
 			padding-left: 1rem;
