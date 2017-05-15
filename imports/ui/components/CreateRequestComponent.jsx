@@ -61,15 +61,15 @@ class CreateRequest extends React.Component {
         const tid = this.state.time;
         const lastTime = (moment(tid).format().slice(11,-9));
         if (this.state.delivery === null) {
-            displayError("Whoops!", 'You have to choose Delivery or Pickup m8');
+            displayError("Whoops!", 'You have to choose Delivery or Pickup');
             return;
         }
         if (!this.state.time) {
-            displayError("Whoops!", 'You have to set a date mate');
+            displayError("Whoops!", 'You have to set a date');
             return;
         }
         if (!this.state.time) {
-            displayError("Whoops!", 'You have to set a time mate');
+            displayError("Whoops!", 'You have to set a time');
             return;
         }
         if (!this.refs.lastDate.value) {

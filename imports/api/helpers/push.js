@@ -48,7 +48,7 @@ export function sendNewRequestPushPickUp(userId, title, lat, lng, radius,needCol
         var message = {
             app_id: "33b7f7cb-34e0-4172-8a94-db58be5f8106",
             contents: {
-                "en": "New job in your area!"
+                "en": "Someone need a printout in your area!"
             },
             include_player_ids: pushIds
         };
@@ -104,7 +104,7 @@ export function sendNewRequestPushDelivery(userId, title, lat, lng,needColor) {
         var message = {
             app_id: "33b7f7cb-34e0-4172-8a94-db58be5f8106",
             contents: {
-                "en": "New job for delivery in your area!"
+                "en": "Someone need a printout delivered in your area!"
             },
             include_player_ids: pushIds
         };
@@ -118,7 +118,7 @@ export function sendAppliedPush(user) {
         var message = {
             app_id: "33b7f7cb-34e0-4172-8a94-db58be5f8106",
             contents: {
-                "en": "Someone applied for your request!"
+                "en": "Someone offered to print for you!"
             },
             include_player_ids: user.pushIds
         };
@@ -133,7 +133,7 @@ export function sendAcceptPush(user) {
         var message = {
             app_id: "33b7f7cb-34e0-4172-8a94-db58be5f8106",
             contents: {
-                "en": "You got accepted for a job!"
+                "en": "You have been choosen for a printjob!"
             },
             include_player_ids: user.pushIds
         };

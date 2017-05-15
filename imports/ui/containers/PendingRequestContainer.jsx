@@ -31,7 +31,7 @@ class PendingRequest extends React.Component {
         acceptBuddy.call({requestId :this.props.request._id, buddyId:buddyId}, (err, res) => {
             if (err) {
                 if (err.error === 'request.acceptBuddy.exist') {
-                    displayError("Error!", 'You already accepted this job!');
+                    displayError("Whoops!", 'You already accepted this job!');
                 } else {
                     displayError("Error!", 'Something went wrong :( ');
                 }

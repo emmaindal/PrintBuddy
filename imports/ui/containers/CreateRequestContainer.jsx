@@ -50,10 +50,10 @@ class CreateRequest extends React.Component {
                         }
                     });
                 } else {
-                    displayError("Whoops!", 'You need to enter how many pages you want before you can upload!');
+                    displayError("Whoops!", 'You need to set how many pages your prinout is before you can upload!');
                 }
             } else {
-                displayError("Whoops!", 'You need to enter how many copies you want before you can upload!');
+                displayError("Whoops!", 'You need to set how many copies of your printout you want before you can upload!');
             }
         } else {
             displayError("Whoops!", 'You need to pick a document before you can upload!');
@@ -70,17 +70,17 @@ class CreateRequest extends React.Component {
             insert.call(request, (err, res) => {
                 if (err) {
                     if (err.error === 'request.insert.unauthorized') {
-                        displayError("Wrong!", 'You need to login to add request');
+                        displayError("Whoops!", 'You need to login to create a request');
                     } else if (err.error === 'request.insert.invalidDate') {
-                        displayError("Back to the Future!", "You need to select 'Today' or a future date!");
+                        displayError("Date was in the past", "You need to select 'Today' or a future date!");
                     } else {
                         // Unexpected error, handle it in the UI somehow
-                        displayError("Error!", 'Something completely unexpected went terribly wrong :( ');
+                        displayError("Critical Malfunction!", 'Something completely unexpected went terribly wrong :( ');
                     }
                 }
             });
         } else {
-            displayError("No No!", "You need to upload file to google drive!");
+            displayError("No No!", "You need to upload a file to your google drive!");
         }
     }
 

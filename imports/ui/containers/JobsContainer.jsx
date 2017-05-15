@@ -47,18 +47,14 @@ class Jobs extends React.Component {
         applyRequest.call(req, (err, res) => {
             if (err) {
                 if (err.error === 'request.applyRequest.exist') {
-                    displayError("Error!", 'You already applied for this job!');
+                    displayError("Whoops!", 'You already applied for this job!');
                 } else {
-                    displayError("Error!", 'Something went wrong :( ');
+                    displayError("Whoops!", 'Something went wrong :( ');
                 }
             } else {
-                displayAlert("Gooood!", `You applied for a new job`);
+                displayAlert("Nice!", `You applied for a new printjob`);
             }
         });
-    }
-
-    onChoose(clickedId) {
-        alert(`You clicked onChoose for buddy: ${clickedId}`);
     }
 
     onViewLocation(clickedJob) {

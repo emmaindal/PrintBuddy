@@ -61,19 +61,19 @@ class ErrorComponent extends React.Component {
                                 <div className="row modal-form-row">
                                     <div className="input-field col s12">
                                         <input id="name" type="text" className="validate" required ref="name" />
-                                        <label htmlFor="name">Name:</label>
+                                        <label htmlFor="name">Name</label>
                                     </div>
                                 </div>
                                 <div className="row modal-form-row">
                                     <div className="input-field col s12">
                                         <input id="email" type="email" className="validate" required ref="email" />
-                                        <label htmlFor="email">Email:</label>
+                                        <label htmlFor="email">Email</label>
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="input-field col s12">
                                         <textarea id="textarea1" className="materialize-textarea" required ref="text" />
-                                        <label htmlFor="textarea1">Write your message:</label>
+                                        <label htmlFor="textarea1">Write your message</label>
                                     </div>
                                 </div>
                                 <button className="waves-effect waves-light btn" type="submit">Send</button>
