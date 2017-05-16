@@ -6,6 +6,7 @@
     "test": "meteor test --driver-package=practicalmeteor:mocha --port 3100"
   },
   "dependencies": {
+    "animate.css": "^3.5.2",
     "autoprefixer": "^6.4.1",
     "axios": "^0.16.0",
     "babel-runtime": "^6.18.0",

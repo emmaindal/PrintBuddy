@@ -1,74 +1,126 @@
 @import "../variables";
 
 .start-page {
-    .parallax.three{
-        background-color: $color-primary-details;
-    }
-
-    .parallax.two{
-        background-color: orange;
-    }
-    .nav-wrapper{
-        @media only screen and (min-width: 601px){
-            width: 100%;
-        }
-    }
-    .parallax-container {
-        background: linear-gradient(
-        rgba(#2a2f32, 0.19),
-        rgba(#2a2f32, 0.19)
-        );
-        height: 75vh;
+    background: linear-gradient(rgba(0, 114, 255, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/images/city-view3.jpg");
+    background-attachment: fixed;
         img{
-            max-width: 100vh;
+            max-width: 50vw;
         }
-
+        nav {
+            background: rgba(84,84,84, 0.0);
+            box-shadow: none;
+            border-bottom: 2px solid rgba(250,250,250, 0.4);
+        }
+        #index-banner {
+            height: 80vh;
+        }
         .info-two{
-            background: orange !important;
+            background: white !important;
+        }
+        .mobile-start {
+            position: absolute;
+            //transform: translateY(-33vw)!important;
+            right: 5%;
+            top: 28vh;
+            animation-duration: 2s;
+            img {
+               width: 450px;
+            }
+        }
+        .arrow-btn {
+            color: white;
+            transform: scale(2.2);
+            margin-top: 20vh;
+            margin-right: 4vh;
+            cursor: pointer;
+        }
+        .sub-title {
+            letter-spacing: 10px;
+            color: #848484;
+            padding-top: 10%;
+            padding-bottom: 2%;
+            font-size: 3rem;
+        }
+        .mobile-overlay {
+            position: absolute;
+            height: 485px;
+            width: 293.1px;
+            top: 49px;
+            right: 84.8px;
+            //background: url("/assets/images/chatpb4.PNG");
+            border-radius: 2px;
+        }
+        .slider .slides li {
+            &:first-child {
+                background-image: -ms-linear-gradient(left, #5e54ec 1%, #54abfb 100%);
+                background-image: -moz-linear-gradient(left, #5e54ec 1%, #54abfb 100%);
+                background-image: -o-linear-gradient(left, #5e54ec 1%, #54abfb 100%);
+                background-image: -webkit-gradient(linear, left top, right top, color-stop(1, #5e54ec), color-stop(100, #54abfb));
+                background-image: -webkit-linear-gradient(left, #5e54ec 1%, #54abfb 100%);
+                background-image: linear-gradient(to right, #5e54ec 1%, #54abfb 100%);
+            }
+            &:nth-child(2) {
+                background-image: -ms-linear-gradient(left, #6B91FA 1%, #13AFD6 100%);
+                background-image: -moz-linear-gradient(left, #6B91FA 1%, #13AFD6 100%);
+                background-image: -o-linear-gradient(left, #6B91FA 1%, #13AFD6 100%);
+                background-image: -webkit-gradient(linear, left top, right top, color-stop(1, #6B91FA), color-stop(100, #13AFD6));
+                background-image: -webkit-linear-gradient(left, #6B91FA 1%, #13AFD6 100%);
+                background-image: linear-gradient(to right, #6B91FA 1%, #13AFD6 100%);
+            }
+            &:nth-child(3) {
+                background-image: -ms-linear-gradient(left, #3186E8 1%, #1CA4D6 100%);
+                background-image: -moz-linear-gradient(left, #3186E8 1%, #1CA4D6 100%);
+                background-image: -o-linear-gradient(left, #3186E8 1%, #1CA4D6 100%);
+                background-image: -webkit-gradient(linear, left top, right top, color-stop(1, #3186E8), color-stop(100, #1CA4D6));
+                background-image: -webkit-linear-gradient(left, #3186E8 1%, #1CA4D6 100%);
+                background-image: linear-gradient(to right, #3186E8 1%, #1CA4D6 100%);
+            }
         }
         .welcome{
-            width: 45%;
-            height: 30%;
-            padding-top: 5%;
-            padding-left: 5%;
-
-            text-align: left;
+            text-align: center;
+            padding-top: 7%;
             .slogan {
                 padding-bottom: 8%;
-
-                text-align: left;
-
-                color: $details-grey;
-                text-shadow: 4px 2px 4px #313b40;
-
-                font-size: 4rem;
+                letter-spacing: 6px;
+                text-align: center;
+                color: white;
+                font-size: 5rem;
+                text-shadow: 0px 4px 7px rgba(0, 0, 0, 0.57);
+                animation-duration: 1.5s;
+                animation-delay: 1s;
                 @media screen and (max-width: $break-small){
                     padding-top: 5%;
 
                     font-size: 3.5rem;
                 }
             }
+            .main-slogan {
+                font-size: 6rem;
+                opacity: 0.8;
+            }
             .slogan-smaller{
-                color: $details-grey;
-
+                color: white; //$details-grey;
+                letter-spacing: 12px;
                 font-size: 2.5rem;
+                opacity: 0.8;
                 @media screen and (max-width: $break-small){
                     font-size: 2.0rem;
                 }
             }
+            
             .arrow {
                 padding-top: 20%;
             }
             .sign-up {
                 padding-bottom: 2%;
-
                 border-radius: 2%;
                 background: none !important;
+                opacity: 0.9;
             }
             a{
-                text-decoration: bold;
-
-                color: $details-grey !important;
+                font-size: 1.1rem;
+                margin-top: 5%;
+                color: white; //$details-grey !important;
                 @media screen and (max-width: $break-small){
                     font-size: 1rem;
                 }
@@ -88,12 +140,12 @@
                 text-decoration: none;
                 text-transform: uppercase;
 
-                color: $details-grey;
+                color: white; //$details-grey;
                 box-shadow: none;
-
-                font-size: 1.3rem;
+                letter-spacing: 3px;
+                font-size: 1.4rem;
                 font-weight: 400;
-                line-height: 45px;
+                line-height: 55px;
                 @media(min-width: 500px) {
                     display: inline-block;
 
@@ -118,21 +170,20 @@
             ///////////////////////////////
             .btn-1 {
                 background: none;
-
+                margin-bottom: 40px;
                 font-weight: 100;
-
                 svg {
                     position: absolute;
                     top: 0;
                     left: 0;
 
                     width: 100%;
-                    height: 45px;
+                    height: 55px;
                 }
 
                 rect {
                     fill: none;
-                    stroke: $details-grey;
+                    stroke: white; //$details-grey;
                     stroke-width: 2;
                     stroke-dasharray: 422, 0;
                 }
@@ -150,7 +201,15 @@
                 }
             }
         }
+    #second-row {
+        margin-top: 2%;
+        :first-child {
+            @media screen and (min-width: 990px) {
+                margin-left: 3% !important;
+            }
+        }
     }
+
     .col.grid-example {
         padding: 2%;
 
@@ -168,8 +227,8 @@
         padding: 0;
     }
     p {
-        font-size: 1rem;
-        line-height: 30px;
+        font-size: 1.2rem;
+        line-height: 25px;
     }
     a{
         color: $text-primary;
@@ -192,7 +251,7 @@
 
         }
         a{
-            color: $details-grey;
+            color: $color-primary-btn;
         }
         .modal-content {
             padding-top: 20px;
@@ -238,6 +297,9 @@
             height: 100vh;
             max-height: none !important;
         }
+        a{
+            color: $color-primary-btn;
+        }
         .modal-content {
             padding-top: 0px;
             padding-right: 0;
@@ -274,7 +336,7 @@
         background: linear-gradient(
         rgba(#2a2f32, 0.2),
         rgba(#2a2f32, 0.2)
-        ), url("/assets/images/hand.jpg");
+        ), url("/assets/images/material-image.jpg");
         background-repeat: no-repeat;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -319,15 +381,9 @@
         text-align: center !important;
 
         font-size: 5rem !important;
-        i{
-            padding-top: 5%;
-
-            color: $color-primary-details;
-
-            font-size: 5rem;
-        }
         h5{
-            color: $color-primary-details;
+            color: #006ead;
+            padding-bottom: 5%;
         }
     }
     .info-wrapper{

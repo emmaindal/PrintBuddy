@@ -104,13 +104,15 @@
             padding-top: 3%;
             padding-bottom: 1%;
             text-align: center;
-            letter-spacing: 2px;
+            letter-spacing: 5px;
             color: $color-primary;
         }
         .about-article-first{
             width: 60%;
             h6{
                 color: $color-primary;
+                font-size: 1.2rem !important;
+                line-height: 25px;
             }
         }
         .is-hidden,
@@ -127,8 +129,11 @@
         }
     }
     .col.s12.m6.l6.section-about-content.fourth.one{
-        padding: 5%;
+        padding: 10%;
         text-align: left;
+        h4 {
+            letter-spacing: 5px;
+        }
         ul{
             padding-top: 6%;
         }

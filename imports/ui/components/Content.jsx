@@ -10,7 +10,12 @@ export default class Content extends React.Component {
         this.popLoginModal = this.popLoginModal.bind(this);
         this.popRegisterModal = this.popRegisterModal.bind(this);
     }
-
+    componentDidMount() {
+        $('.slider').slider({
+            indicators: false,
+            height: "inherit"
+        });
+    }
     popLoginModal() {
         $('#register-modal').closeModal();
         $('#login-modal').openModal({
@@ -32,8 +37,8 @@ export default class Content extends React.Component {
     render() {
         return (
             <div className="start-page">
-                <nav className="blue" role="navigation">
-                    <div className="nav-wrapper container">
+                <nav role="navigation">
+                    <div style={{ marginLeft: "5%", marginRight: "5%" }} className="nav-wrapper">
                         <a id="logo-container" href="/start" className="brand-logo">PRINTBUDDY</a>
                         <ul className="right hide-on-med-and-down">
                             <li><a href="#about">ABOUT</a></li>
@@ -53,44 +58,74 @@ export default class Content extends React.Component {
                         <a href="#" data-activates="mobile-nav" className="button-collapse"><i className="material-icons">menu</i></a>
                     </div>
                 </nav>
-
-                <div id="index-banner" className="parallax-container">
+                <div id="index-banner">
                     <div id="start" className="section no-pad-bot">
                         <div className="container">
                             <h1 className="header center teal-text text-lighten-2"></h1>
                             <div className="row center">
-
                                 <h5 className="header col s12 light"></h5>
                             </div>
 
                         </div>
                     </div>
-                    <div className="welcome">
-                        <h4 className="slogan">FIND A PRINTBUDDY.<br/><span className="slogan-smaller">OR BECOME ONE.</span></h4>
+                    <div className="row">
+                        <div className="welcome col s12 m12 l10">
+                            <h4 className="slogan animated fadeInDownBig"><span className="main-slogan">FIND A PRINTBUDDY.</span><br /><span className="slogan-smaller">OR BECOME <span>ONE</span>.</span></h4>
 
-                        <a onClick={this.popRegisterModal} className="btn btn-1 sign-up">
-                            <svg>
-                                <rect x="0" y="0" fill="none" width="100%" height="100%"/>
-                            </svg>
-                            SIGN UP
-                        </a>
-                        <h6><div onClick={this.popLoginModal}><a >Already have an account? Sign in here.</a></div></h6>
-
-                        <div className="arrow bounce">
-                            <a className="fa fa-arrow-down fa-2x" href="#second-row"></a>
+                            <a onClick={this.popRegisterModal} className="btn btn-1 sign-up animated fadeIn">
+                                <svg>
+                                    <rect x="0" y="0" fill="none" width="100%" height="100%" />
+                                </svg>
+                                JOIN
+                            </a>
+                            <h6 className="animated fadeIn"><div onClick={this.popLoginModal}><a style={{ paddingRight: "40px", opacity: "0.9" }} >Already have an account? Log in here.</a></div></h6>
+                            <i className="arrow-btn material-icons">keyboard_arrow_down</i>
                         </div>
                     </div>
-                    <div className="parallax"><img src="/assets/images/hand.jpg" alt="Unsplashed background img 1" />
 
                 </div>
-            </div>
+                <div className="mobile-start animated fadeInUpBig hide-on-med-and-down">
+                    <div className="mobile-overlay">
+                        <div className="slider">
+                            <ul className="slides">
+                                <li className="first-slider-section">
+                                    <div className="caption center-align">
+                                        <h3>Left Aligned Caption</h3>
+                                        <h5 className="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="caption center-align">
+                                        <h3>This is our big Tagline!</h3>
+                                        <h5 className="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="caption center-align">
+                                        <h3>This is our big Tagline!</h3>
+                                        <h5 className="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <img src="/assets/images/mobile-device.png" alt="mobile-device" />
+                </div>
 
-            <div className="container info-two">
-                <div id="about" className="section">
+                <div className="info-two">
+                    <div className="row">
+                        <div className="col s12 center-align">
+                            <h4 className="sub-title">FIND THE CLOSEST PRINTER.</h4>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col s12 center-align">
+                            <img src="/assets/images/computer.jpg" alt="computer display printbuddy app" />
+                        </div>
+                    </div>
                     <div className="row" id="second-row">
-                        <div className="col s12 m4">
+                        <div style={{ marginBottom: "5%" }} className="col s12 m10 l3 offset-m1 offset-l1">
                             <div className="icon-block">
-                                <h1 className="center"><i className="material-icons">&#xE838;</i></h1>
                                 <h5 className="center">What is PrintBuddy?</h5>
 
                                 <p className="light">PrintBuddy is a platform connecting people in need of printouts with people that have printers.
@@ -99,18 +134,16 @@ export default class Content extends React.Component {
                             </div>
                         </div>
 
-                        <div className="col s12 m4">
+                        <div style={{ marginBottom: "5%" }} className="col s12 m10 l3 offset-m1 offset-l1">
                             <div className="icon-block">
-                                <h1 className="center"><i className="material-icons">&#xE8AD;</i></h1>
                                 <h5 className="center">Have a printer?</h5>
                                 <p className="light">Become the neighborhood hero and PrintBuddy!
                                     Scoop up all printjobs and make some money while your at it.</p>
                             </div>
                         </div>
 
-                        <div className="col s12 m4">
+                        <div style={{ marginBottom: "5%" }} className="col s12 m10 l3 offset-m1 offset-l1">
                             <div className="icon-block">
-                                <h1 className="center"><i className="material-icons">&#xE566;</i></h1>
                                 <h5 className="center">Get your document delivered.</h5>
 
                                 <p className="light">Need your documents quickly? Let a PrintBuddy print and deliver your printout for you.
@@ -118,44 +151,78 @@ export default class Content extends React.Component {
                             </div>
                         </div>
                     </div>
-
                 </div>
-            </div>
+                <div className="info-three">
+                    <div id="about" className="section">
+                        <div className="row" id="second-row">
+                            <div className="col s12 m4">
+                                <div className="icon-block">
+                                    <h1 className="center"><i className="material-icons">&#xE838;</i></h1>
+                                    <h5 className="center">What is PrintBuddy?</h5>
 
+                                    <p className="light">PrintBuddy is a platform connecting people in need of printouts with people that have printers.
+                                    If you are in need of a printout you simply create a 'Request' on PrintBuddy.
+                                    Nearby PrintBuddies will be notified and can choose to apply for it - if your reward is tempting enough!</p>
+                                </div>
+                            </div>
 
-            <div id="login-modal" className="modal login-modal">
-                <div className="modal-content">
-                    <i className="material-icons cancel-icon modal-action modal-close ">clear</i>
-                    <LoginContainer />
-                    <div className="breakit row">
-                        <div className="line-break col s10 offset-s1"></div>
-                    </div>
-                    <div className="row">
-                        <div className="col s10 offset-s1" style={{ display: "flex", justifyContent: "space-between", marginBottom: "15px" }}>
-                            <div>Don't have an Account?</div>
-                            <a onClick={this.popRegisterModal}>Register</a>
+                            <div className="col s12 m4">
+                                <div className="icon-block">
+                                    <h1 className="center"><i className="material-icons">&#xE8AD;</i></h1>
+                                    <h5 className="center">Have a printer?</h5>
+                                    <p className="light">Become the neighborhood hero and PrintBuddy!
+                                    Scoop up all printjobs and make some money while your at it.</p>
+                                </div>
+                            </div>
+
+                            <div className="col s12 m4">
+                                <div className="icon-block">
+                                    <h1 className="center"><i className="material-icons">&#xE566;</i></h1>
+                                    <h5 className="center">Get your document delivered.</h5>
+
+                                    <p className="light">Need your documents quickly? Let a PrintBuddy print and deliver your printout for you.
+                                    If you feel like some excercise you can always choose to jump on your bike and pick it up yourself.</p>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
+
                 </div>
-            </div>
-            <div id="register-modal" className="modal register-modal ">
-                <div id="scrollbar">
+
+                <div id="login-modal" className="modal login-modal">
                     <div className="modal-content">
                         <i className="material-icons cancel-icon modal-action modal-close ">clear</i>
-                        <RegisterContainer />
+                        <LoginContainer />
                         <div className="breakit row">
                             <div className="line-break col s10 offset-s1"></div>
                         </div>
                         <div className="row">
                             <div className="col s10 offset-s1" style={{ display: "flex", justifyContent: "space-between", marginBottom: "15px" }}>
-                                <div>Already have an Account?</div>
-                                <a onClick={this.popLoginModal}>Login</a>
+                                <div>Don't have an Account?</div>
+                                <a onClick={this.popRegisterModal}>Register</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="register-modal" className="modal register-modal ">
+                    <div id="scrollbar">
+                        <div className="modal-content">
+                            <i className="material-icons cancel-icon modal-action modal-close ">clear</i>
+                            <RegisterContainer />
+                            <div className="breakit row">
+                                <div className="line-break col s10 offset-s1"></div>
+                            </div>
+                            <div className="row">
+                                <div className="col s10 offset-s1" style={{ display: "flex", justifyContent: "space-between", marginBottom: "15px" }}>
+                                    <div>Already have an Account?</div>
+                                    <a onClick={this.popLoginModal}>Login</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    );
-}
+        );
+    }
 }

@@ -2,8 +2,10 @@
 
 
 footer.page-footer{
-    background-color: darken($color-primary-details, 5%);
+    background-color: transparent !important;
     width: 100%;
+    margin: 0;
+    padding: 0;
     .row{
         margin-left: -0.75rem;
         margin-right: 4rem;
