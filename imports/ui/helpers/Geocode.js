@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const googleAPIKey = "&key=AIzaSyBeXwR494uVClwYMh6ITP7Pjid-MiPOWzQ";
+const googleAPIKey = "&key=AIzaSyDn-JLIOMFNAiNrcarL8_7k0ArCEA8HEGc";
 const geocodeURL = "https://maps.googleapis.com/maps/api/geocode/json?address=";
 
 const prepAdressForAPI = (adress) => {
