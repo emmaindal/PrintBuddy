@@ -111,7 +111,7 @@ export default class Content extends React.Component {
                 <div className="info-two section scrollspy" id="info-two">
                     <div className="row">
                         <div className="col s12 center-align">
-                            <h4 className="sub-title">THE UBER FOR PRINTOUTS.</h4>
+                            <h4 className="sub-title">CROWDSOURCED PRINTOUTS.</h4>
                         </div>
                     </div>
                     <div className="row">
