@@ -24,20 +24,27 @@ class AboutComponent extends React.Component {
                 <div className="row about-row">
                     <div className="col s12 m12 l12 grid-example about-content third">
                         <section id="theteam" className="section-about-content third">
-                            <h4 className="our-team-heading">THE TEAM</h4>
                             <section className="section-about-content second">
-
-
-                                <span className="about-article-first">
-
-                                    <h6>We are four information architecht students at Malmö University.
-                                        During our first year we were tasked with a project - to come up with an idea and bring it to life in 2 months time.</h6>
-
-                                    <h6>We came up with PrintBuddy, a platform for connecting people in need of printouts with people that have printers.</h6>
-
-                                    <h6>We saw this project as an opportunity to learn more about modern web technologies, tools and frameworks.
-                                        Therefore we decided to use React, SASS, MongoDB and Meteor to bring you PrintBuddy.</h6>
-                                </span>
+                                <div className="row" style={{marginTop: '4%'}}>
+                                    <div className="col s12 m6 l6 about-article-first">
+                                        <h4 className="our-team-heading">WHY</h4>
+                                        <p>
+                                        We are four information architecht students at Malmö University.<br/>
+                                        During our first year we were tasked with a project - to come up with an idea and bring it to life in 2 months time.
+                                        Our idea was PrintBuddy and your looking at it right now!
+                                        </p>
+                                    </div>
+                                    <div className="col s12 m6 l6 about-article-first">
+                                        <h4 className="our-team-heading">HOW</h4>
+                                        <p>
+                                        With this project we took the opportunity to learn more about modern web technologies, tools and frameworks.
+                                        Therefore we decided to use Materialize, Meteor, MongoDB, React and SASS to bring you PrintBuddy.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <h4 className="our-team-heading">THE TEAM</h4>
+                                </div>
                             </section>
                             <div className="col s12 m6 l3">
                                 <figure className="effect-lexi z-depth-2">

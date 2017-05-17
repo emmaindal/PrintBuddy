@@ -85,21 +85,21 @@ export default class Content extends React.Component {
                             <ul className="slides">
                                 <li>
                                     <img />
+                                    <div className="caption center-align">
+                                        <h3>PrintBuddy<br/> is Live!</h3>
+                                        <h5 className="light grey-text text-lighten-3" style={{paddingTop: '10%', lineHeight: '1.4'}}>A brand new way to get your documents printed.<br/><br/> #PrintBuddy</h5>
+                                    </div>
+                                </li>
+                                <li>
                                     <div className="caption left-align">
-                                        <h3>Left Aligned Caption</h3>
-                                        <h5 className="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                                        <h3>Print for Money</h3>
+                                        <h5 className="light grey-text text-lighten-3" style={{paddingTop: '10%', lineHeight: '1.4'}}>Join PrintBuddy and start making money by printing!<br/><br/> #PrintBuddy</h5>
                                     </div>
                                 </li>
                                 <li>
-                                    <div className="caption center-align">
-                                        <h3>This is our big Tagline!</h3>
-                                        <h5 className="light grey-text text-lighten-3">Here's our small slogan.</h5>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="caption center-align">
-                                        <h3>This is our big Tagline!</h3>
-                                        <h5 className="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                                    <div className="caption right-align">
+                                        <h3>Need a Printout?</h3>
+                                        <h5 className="light grey-text text-lighten-3" style={{paddingTop: '10%', lineHeight: '1.4'}}>Request a printout and decide when you want it. Delivered or pick-up and how much you want to pay.</h5>
                                     </div>
                                 </li>
                             </ul>
@@ -171,7 +171,7 @@ export default class Content extends React.Component {
                         </div>
                         <div className="row">
                             <div className="col s12 center-align">
-                                <h4 className="sub-title-two">WHAT DOES PRINTBUDDY LOOK LIKE?</h4>
+                                <h4 className="sub-title-two">A GLIMPSE OF PRINTBUDDY.</h4>
                             </div>
                         </div>
                     </div>
