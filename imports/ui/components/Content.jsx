@@ -41,17 +41,12 @@ export default class Content extends React.Component {
                     <div style={{ marginLeft: "5%", marginRight: "5%" }} className="nav-wrapper">
                         <a id="logo-container" href="/start" className="brand-logo">PRINTBUDDY</a>
                         <ul className="right hide-on-med-and-down">
-                            <li><a href="#about">ABOUT</a></li>
-                            <li><a href="#theteam">THE TEAM</a></li>
                             <li><a href="#contact">CONTACT</a></li>
                             <li><a onClick={this.popLoginModal}>LOG IN</a></li>
 
                         </ul>
 
                         <ul id="mobile-nav" className="side-nav">
-                            <li><a href="#start">START</a></li>
-                            <li><a href="#about">ABOUT</a></li>
-                            <li><a href="#theteam">THE TEAM</a></li>
                             <li><a href="#contact">CONTACT</a></li>
                             <li><a onClick={this.popLoginModal}>LOG IN</a></li>
                         </ul>
@@ -78,8 +73,8 @@ export default class Content extends React.Component {
                                 </svg>
                                 JOIN
                             </a>
-                            <h6 className="animated fadeIn"><div onClick={this.popLoginModal}><a style={{ paddingRight: "40px", opacity: "0.9" }} >Already have an account? Log in here.</a></div></h6>
-                            <i className="arrow-btn material-icons">keyboard_arrow_down</i>
+                            <h6 className="animated fadeIn"><div onClick={this.popLoginModal}><a style={{ opacity: "0.9" }} >Already have an account? Log in here.</a></div></h6>
+                            <a href="#info-two"><i className="arrow-btn material-icons">keyboard_arrow_down</i></a>
                         </div>
                     </div>
 
@@ -88,8 +83,9 @@ export default class Content extends React.Component {
                     <div className="mobile-overlay">
                         <div className="slider">
                             <ul className="slides">
-                                <li className="first-slider-section">
-                                    <div className="caption center-align">
+                                <li>
+                                    <img />
+                                    <div className="caption left-align">
                                         <h3>Left Aligned Caption</h3>
                                         <h5 className="light grey-text text-lighten-3">Here's our small slogan.</h5>
                                     </div>
@@ -112,37 +108,34 @@ export default class Content extends React.Component {
                     <img src="/assets/images/mobile-device.png" alt="mobile-device" />
                 </div>
 
-                <div className="info-two">
+                <div className="info-two section scrollspy" id="info-two">
                     <div className="row">
                         <div className="col s12 center-align">
-                            <h4 className="sub-title">FIND THE CLOSEST PRINTER.</h4>
+                            <h4 className="sub-title">THE UBER FOR PRINTOUTS.</h4>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col s12 center-align">
-                            <img src="/assets/images/computer.jpg" alt="computer display printbuddy app" />
+                            <img className="img-info-two" src="/assets/images/computer.jpg" alt="computer display printbuddy app" />
                         </div>
                     </div>
-                    <div className="row" id="second-row">
-                        <div style={{ marginBottom: "5%" }} className="col s12 m10 l3 offset-m1 offset-l1">
-                            <div className="icon-block">
-                                <h5 className="center">What is PrintBuddy?</h5>
-
-                                <p className="light">PrintBuddy is a platform connecting people in need of printouts with people that have printers.
-                                    If you are in need of a printout you simply create a 'Request' on PrintBuddy.
-                                    Nearby PrintBuddies will be notified and can choose to apply for it - if your reward is tempting enough!</p>
-                            </div>
-                        </div>
-
-                        <div style={{ marginBottom: "5%" }} className="col s12 m10 l3 offset-m1 offset-l1">
+                    <div style={{ marginBottom: "0" }} className="row" id="second-row">
+                        <div style={{ marginBottom: "7%" }} className="col s12 m10 l3 offset-m1 offset-l1">
                             <div className="icon-block">
                                 <h5 className="center">Have a printer?</h5>
                                 <p className="light">Become the neighborhood hero and PrintBuddy!
                                     Scoop up all printjobs and make some money while your at it.</p>
                             </div>
                         </div>
-
-                        <div style={{ marginBottom: "5%" }} className="col s12 m10 l3 offset-m1 offset-l1">
+                        <div style={{ marginBottom: "7%" }} className="col s12 m10 l3 offset-m1 offset-l1">
+                            <div className="icon-block">
+                                <h5 className="center">What is PrintBuddy?</h5>
+                                <p className="light">PrintBuddy is a platform connecting people in need of printouts with people that have printers.
+                                    If you are in need of a printout you simply create a 'Request' on PrintBuddy.
+                                    Nearby PrintBuddies will be notified and can choose to apply for it - if your reward is tempting enough!</p>
+                            </div>
+                        </div>
+                        <div style={{ marginBottom: "7%" }} className="col s12 m10 l3 offset-m1 offset-l1">
                             <div className="icon-block">
                                 <h5 className="center">Get your document delivered.</h5>
 
@@ -154,40 +147,34 @@ export default class Content extends React.Component {
                 </div>
                 <div className="info-three">
                     <div id="about" className="section">
-                        <div className="row" id="second-row">
-                            <div className="col s12 m4">
-                                <div className="icon-block">
-                                    <h1 className="center"><i className="material-icons">&#xE838;</i></h1>
-                                    <h5 className="center">What is PrintBuddy?</h5>
-
-                                    <p className="light">PrintBuddy is a platform connecting people in need of printouts with people that have printers.
-                                    If you are in need of a printout you simply create a 'Request' on PrintBuddy.
-                                    Nearby PrintBuddies will be notified and can choose to apply for it - if your reward is tempting enough!</p>
-                                </div>
-                            </div>
-
-                            <div className="col s12 m4">
-                                <div className="icon-block">
-                                    <h1 className="center"><i className="material-icons">&#xE8AD;</i></h1>
-                                    <h5 className="center">Have a printer?</h5>
-                                    <p className="light">Become the neighborhood hero and PrintBuddy!
-                                    Scoop up all printjobs and make some money while your at it.</p>
-                                </div>
-                            </div>
-
-                            <div className="col s12 m4">
-                                <div className="icon-block">
-                                    <h1 className="center"><i className="material-icons">&#xE566;</i></h1>
-                                    <h5 className="center">Get your document delivered.</h5>
-
-                                    <p className="light">Need your documents quickly? Let a PrintBuddy print and deliver your printout for you.
-                                    If you feel like some excercise you can always choose to jump on your bike and pick it up yourself.</p>
+                        <div className="row">
+                            <div className="laptop-row">
+                                <div style={{ textAlign: "center" }} className="laptop-start">
+                                    <div className="laptop-overlay">
+                                        <div className="slider">
+                                            <ul className="slides">
+                                                <li>
+                                                    <img src="/assets/images/laptop-view2.png" alt="Printout delivery service via PrintBuddy"/>
+                                                </li>
+                                                <li>
+                                                    <img src="/assets/images/hand.jpg" alt="Amazing chat conversation with a Printbuddy"/>
+                                                </li>
+                                                <li>
+                                                    <img src="/assets/images/laptop-view3.png" alt="List of printjobs provided via PrintBuddy"/>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <img src="/assets/images/laptop.png" alt="laptop showing PrintBuddy website" />
                                 </div>
                             </div>
                         </div>
-
+                        <div className="row">
+                            <div className="col s12 center-align">
+                                <h4 className="sub-title-two">WHAT DOES PRINTBUDDY LOOK LIKE?</h4>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
 
                 <div id="login-modal" className="modal login-modal">
