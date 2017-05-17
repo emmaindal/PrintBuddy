@@ -27,7 +27,7 @@
         }
     }
     section.section-about-content.second{
-        width: 70%;
+        width: 90%;
         margin-right: auto;
         margin-left: auto;
         padding: 0% 5% 3% 3%;
@@ -101,18 +101,19 @@
             }
         }
         .our-team-heading {
-            padding-top: 6%;
-            padding-bottom: 1%;
+            padding-top: 4%;
             text-align: center;
             letter-spacing: 5px;
             color: $color-primary;
         }
         .about-article-first{
-            width: 60%;
-            h6{
+            margin: 0 auto;
+            p{
                 color: $color-primary;
                 font-size: 1.2rem !important;
                 line-height: 25px;
+                padding: 0 5%;
+                padding-top: 2%;
             }
         }
         .is-hidden,
@@ -143,6 +144,9 @@
         a{
             color: inherit;
         }
+        p {
+            font-size: 1.2rem;
+        }
     }
     .col.s12.m6.l6.section-about-content.fourth.two{
         padding: 5%;
@@ -151,10 +155,14 @@
             padding: 3%;
             border: 1px lightgrey solid;
             border-radius: 5px;
-            background-color: $color-primary;
+            background-color: white;
+            font-size: 1.2rem;
         }
         label.active{
             transform: translateY(-50%);
+        }
+        label {
+            top: 0;
         }
         .btn{
             height: 30px;
