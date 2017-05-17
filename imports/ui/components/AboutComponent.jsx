@@ -21,20 +21,6 @@ class AboutComponent extends React.Component {
         return (
             <div id="about-content">
 
-                <div id="index-banner" className="parallax-container about-content first">
-                    <div className="section no-pad-bot">
-                        <div className="container">
-                            <h1 className="header center teal-text">WHO ARE WE?</h1>
-                            <div className="row center">
-                                <h5 className="header col s12 light">Read about the team behind PrintBuddy and contact us if you have any questions.</h5>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="parallax"><img src="/assets/images/people-coffee-notes-tea.jpg" alt="Unsplashed background img 1"/></div>
-                </div>
-
-
                 <div className="row about-row">
                     <div className="col s12 m12 l12 grid-example about-content third">
                         <section id="theteam" className="section-about-content third">
