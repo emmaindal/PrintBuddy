@@ -3,6 +3,21 @@
 .start-page {
     background: linear-gradient(rgba(0, 114, 255, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/images/city-view3.jpg");
     background-attachment: fixed;
+        #scrollToTop {
+            display: block-inline;
+            padding: 10px;
+            font-size: 50px;
+            border-radius: 200%;
+            color: #676767;
+            transition: 0.3s;
+            cursor: pointer;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            border: 0;
+            background: transparent !important;
+            }
         img{
             max-width: 50vw;
         }
@@ -19,18 +34,24 @@
         }
         .mobile-start {
             position: absolute;
-            //transform: translateY(-33vw)!important;
+            zoom: 0.8;
             right: 5%;
-            top: 28vh;
+            margin-top: -570px;
             animation-duration: 2s;
             img {
                width: 450px;
+            }
+            @media screen and (min-height: 1000px) {
+                zoom: 0.9;
+            }
+            @media screen and (min-height: 1100px) {
+                zoom: 1;
             }
         }
         .arrow-btn {
             color: white;
             transform: scale(2.2);
-            margin-top: 20vh;
+            margin-top: 7vh;
             cursor: pointer;
         }
         .sub-title {
@@ -50,10 +71,14 @@
             padding-top: 2%;
             padding-left: 2%;
             font-size: 2.5rem;
-            margin-top: 50vh;
+            margin-top: 450px;
             @media screen and (max-width: 700px) {
                 letter-spacing: 2px;
                 font-size: 1.7rem;
+                margin-top: 400px;
+            }
+            @media screen and (max-width: 500px) {
+                margin-top: 250px;
             }
         }
         .mobile-overlay {
@@ -146,7 +171,7 @@
                 }
             }
             .main-slogan {
-                font-size: 6rem;
+                font-size: 5.3rem;
                 opacity: 0.8;
                 @media screen and (max-width: 700px) {
                     font-size: 3rem;

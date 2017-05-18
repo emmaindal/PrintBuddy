@@ -15,6 +15,22 @@ export default class Content extends React.Component {
             indicators: false,
             height: "inherit"
         });
+
+        $('#scrollToTop').hide();
+
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > 200) {
+                $('#scrollToTop').fadeIn("slow");
+            } else {
+                $('#scrollToTop').fadeOut("fast");
+            }
+        });
+        
+        //Click event to scroll to top
+        $('#scrollToTop').click(function(){
+            $('html, body').animate({scrollTop : 0},800);
+            return false;
+        });
     }
     popLoginModal() {
         $('#register-modal').closeModal();
@@ -37,6 +53,9 @@ export default class Content extends React.Component {
     render() {
         return (
             <div className="start-page">
+                <div>
+                    <i className="fa fa-angle-double-up" id="scrollToTop" aria-hidden="true"></i>
+                </div>
                 <nav role="navigation">
                     <div style={{ marginLeft: "5%", marginRight: "5%" }} className="nav-wrapper">
                         <a id="logo-container" href="/start" className="brand-logo">PRINTBUDDY</a>
