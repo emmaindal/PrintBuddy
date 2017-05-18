@@ -25,7 +25,7 @@ class AboutComponent extends React.Component {
                     <div className="col s12 m12 l12 grid-example about-content third">
                         <section id="theteam" className="section-about-content third">
                             <section className="section-about-content second">
-                                <div className="row" style={{marginTop: '4%'}}>
+                                <div className="row" style={{marginTop: '4%', width: "92%"}}>
                                     <div className="col s12 m6 l6 about-article-first">
                                         <h4 className="our-team-heading">WHY</h4>
                                         <p>
@@ -42,6 +42,23 @@ class AboutComponent extends React.Component {
                                         </p>
                                     </div>
                                 </div>
+								<div className="row" id="tech-logos">
+									<div className="col s12 m6 l2 valign-wrapper tech1">
+										<img className="responsive-img" src="/assets/images/Materialize-logo.png" alt="Materialize CSS Logo"/>
+									</div>
+									<div className="col s12 m6 l2 valign-wrapper tech2">
+										<img className="responsive-img" src="/assets/images/meteor-logo.png" alt="Meteor.js Logo"/>
+									</div>
+									<div className="col s12 m6 l2 valign-wrapper tech3">
+										<img className="responsive-img" src="/assets/images/mongo-logo.png" alt="MongoDB Logo"/>
+									</div>
+									<div className="col s12 m6 l2 valign-wrapper tech4">
+										<img className="responsive-img" src="/assets/images/react-logo.png" alt="React.js Logo"/>
+									</div>
+									<div className="col s12 m6 l2 valign-wrapper tech5">
+										<img className="responsive-img" src="/assets/images/sass-logo.svg" alt="SASS Logo"/>
+									</div>
+								</div>
                                 <div className="row">
                                     <h4 className="our-team-heading">THE TEAM</h4>
                                 </div>

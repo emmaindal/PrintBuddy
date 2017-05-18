@@ -110,7 +110,7 @@ export default class Content extends React.Component {
                                     </div>
                                 </li>
                                 <li>
-                                    <div className="caption left-align">
+                                    <div className="caption center-align">
                                         <h3>Print for Money</h3>
                                         <h5 className="light grey-text text-lighten-3" style={{paddingTop: '10%', lineHeight: '1.4'}}>Join PrintBuddy and start making money by printing!<br/><br/> #PrintBuddy</h5>
                                     </div>
