@@ -27,7 +27,6 @@
         }
     }
     section.section-about-content.second{
-        width: 90%;
         margin-right: auto;
         margin-left: auto;
         padding: 0% 5% 3% 3%;
@@ -252,3 +251,45 @@ figure.effect-lexi:hover p {
     opacity: 1;
 }
 
+#tech-logos {
+	margin-top: 2%;
+	.tech2 {
+		@media screen and (max-width: 599px) {
+			margin-top: -10%;
+		}
+	}
+	.tech4 {
+		@media screen and (max-width: 599px) {
+			margin-top: 15%;
+		}
+	}
+	.tech5 {
+		@media screen and (max-width: 599px) {
+			margin-top: 15%;
+		}
+	}
+	div {
+		height: 180px;
+		margin-left: 3%;
+		@media screen and (max-width: 992px) {
+			margin-left: 0;
+			margin-top: 5%;
+    		margin-bottom: 5%;
+		}
+		img {
+			@media screen and (min-width: 992px) {
+				padding: 0 10px;
+			}
+			@media screen and (max-width: 992px) {
+				transform: scale(0.7);
+				margin: 0 auto;
+			}
+			-webkit-filter: grayscale(1);
+  			filter: grayscale(1);
+			&:hover {
+				-webkit-filter: none;
+  				filter: none;
+			}
+		}
+	}
+}
