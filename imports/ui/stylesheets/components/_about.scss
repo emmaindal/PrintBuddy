@@ -104,6 +104,7 @@
             text-align: center;
             letter-spacing: 5px;
             color: $color-primary;
+            animation-duration: 1.5s !important;
         }
         .about-article-first{
             margin: 0 auto;
@@ -251,8 +252,15 @@ figure.effect-lexi:hover p {
     opacity: 1;
 }
 
+.team-photos {
+    animation-duration: 1.5s !important;
+}
+.tech-info {
+    animation-duration: 1.5s !important;
+}
 #tech-logos {
 	margin-top: 2%;
+    animation-duration: 1.5s !important;
 	.tech2 {
 		@media screen and (max-width: 599px) {
 			margin-top: -10%;
