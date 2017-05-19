@@ -125,9 +125,9 @@ input[type=password].valid, input[type=text].valid, input[type=email].valid, inp
 
 //REACT_SHARE
 .SocialMediaShareButton {
-    margin-top: 7%;
+    margin-top: 8%;
     margin-bottom: auto;
-    margin-right: 9px;
+    margin-right: 1vh;
     cursor: pointer;
     transition: ease-in-out 100ms;
     &:hover {

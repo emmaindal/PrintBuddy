@@ -44,7 +44,7 @@ const ActiveJobList = ({ listofjobs, onChatClicked, onView}) => {
                         <li className="collection-item">
                             <div className="content-for-li">
                                 <p id="noapplicationmessage"><em>You have no active jobs at the moment.<br/> Let your network know you are a PrintBuddy!</em></p>
-                                <div style={{ display: 'inherit'}}>
+                                <div style={{marginLeft: "-10%"}}>
 									<FacebookShareButton 
 										url="https://www.printbuddy.se" 
 										title="I'm a PrintBuddy!" 

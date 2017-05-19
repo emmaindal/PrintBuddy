@@ -12,8 +12,8 @@
             transition: 0.3s;
             cursor: pointer;
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 1%;
+            right: 1%;
             z-index: 99;
             border: 0;
             background: transparent !important;
@@ -37,7 +37,8 @@
             zoom: 0.8;
             right: 5%;
             margin-top: -570px;
-            animation-duration: 2s;
+            animation-duration: 2s !important;
+            animation-delay: 1s !important;
             img {
                width: 450px;
             }
@@ -60,6 +61,7 @@
             padding-top: 7%;
             padding-bottom: 2%;
             font-size: 2.5rem;
+            animation-duration: 2s !important;
             @media screen and (max-width: 700px) {
                 letter-spacing: 2px;
                 font-size: 1.7rem;
@@ -71,6 +73,7 @@
             padding-top: 2%;
             font-size: 2.5rem;
             margin-top: 450px;
+            animation-duration: 2s !important;
             @media screen and (max-width: 700px) {
                 letter-spacing: 2px;
                 font-size: 1.7rem;
@@ -161,8 +164,7 @@
                 color: white;
                 font-size: 5rem;
                 text-shadow: 0px 4px 7px rgba(0, 0, 0, 0.57);
-                animation-duration: 1.5s;
-                animation-delay: 1s;
+                animation-duration: 1.5s !important;
                 @media screen and (max-width: $break-small){
                     padding-top: 5%;
 
@@ -282,6 +284,12 @@
         }
     #second-row {
         margin-top: 2%;
+        animation-duration: 2s !important;
+        h2 {
+            font-size: 1.8rem;
+            padding-bottom: 5%;
+            color: #022c71;
+        }
         :first-child {
             @media screen and (min-width: 990px) {
                 margin-left: 3% !important;
@@ -291,6 +299,7 @@
     .img-info-two {
         width: 78vw;
         max-width: none;
+        animation-duration: 2s !important;
         @media screen and (min-width: 1000px) {
             width: 60rem;
         }
@@ -306,6 +315,7 @@
                 margin-top: -20vw;
             }
             .laptop-start {
+                animation-duration: 2s;
                 left: calc(30vw + 220px);
                 @media screen and (max-width: 2738px) {
                     left: calc(30vw + 130px);
@@ -565,30 +575,6 @@
             padding-bottom: 6%;
 
             color: $color-primary-details;
-        }
-    }
-    .arrow {
-        text-align: left;
-    }
-    .bounce {
-        padding-top: 5%;
-
-        -webkit-animation: bounce 6s infinite;
-        -moz-animation: bounce 6s infinite;
-        animation: bounce 6s infinite;
-        @media screen and (max-width: $break-small){
-            padding-top: 0%;
-        }
-    }
-    @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% {
-            transform: translateY(0);
-        }
-        60% {
-            transform: translateY(-20px);
-        }
-        60% {
-            transform: translateY(-15px);
         }
     }
 }

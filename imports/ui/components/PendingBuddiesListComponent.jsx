@@ -1,8 +1,8 @@
 import React from 'react';
 import FlipMove from 'react-flip-move';
-import {ShareButtons, generateShareIcon} from 'react-share';
+import { ShareButtons, generateShareIcon } from 'react-share';
 
-const {FacebookShareButton, TwitterShareButton} = ShareButtons;
+const { FacebookShareButton, TwitterShareButton } = ShareButtons;
 const FacebookIcon = generateShareIcon('facebook');
 const TwitterIcon = generateShareIcon('twitter');
 
@@ -25,7 +25,7 @@ export class PendingBuddiesList extends React.Component {
                                                 <i className="round-icon-blue material-icons z-depth-1">sentiment_very_satisfied</i>
                                             </div>
                                             <p className="valign-wrapper">
-                                                {buddy.username} have offered to print for you!<br/>
+                                                {buddy.username} have offered to print for you!<br />
                                             </p>
                                             <div className="buttongroup">
                                                 <button className="btn waves-effect waves-light location-btn" onClick={() => { this.props.onView(buddy) }}><i className="small material-icons">location_on</i></button>
@@ -38,20 +38,22 @@ export class PendingBuddiesList extends React.Component {
                         ) : (
                                 <li className="collection-item">
                                     <div className="content-for-li">
-                                        <p id="noapplicationmessage"><em>No one have applied for your job yet.<br/> Let your network know you need a PrintBuddy!</em></p>
-                                        <FacebookShareButton 
-                                            url="https://www.printbuddy.se" 
-                                            title="PrintBuddy needed!" 
-                                            description="Have a printer? We have a job for you!" 
-                                            picture="https://printbuddy.se/assets/images/PrintBuddyFacebook.jpg">
-                                            <FacebookIcon size={36} round/>
-                                        </FacebookShareButton>
-                                        <TwitterShareButton
-                                            url="https://www.printbuddy.se" 
-                                            title="Looking for a PrintBuddy to print for me!" 
-                                            hashtags={["PrintBuddy", "PrintForMe"]}>
-                                            <TwitterIcon size={36} round/>
-                                        </TwitterShareButton>
+                                        <p id="noapplicationmessage"><em>No one have applied for your job yet.<br /> Let your network know you need a PrintBuddy!</em></p>
+                                        <div>
+                                            <FacebookShareButton
+                                                url="https://www.printbuddy.se"
+                                                title="PrintBuddy needed!"
+                                                description="Have a printer? We have a job for you!"
+                                                picture="https://printbuddy.se/assets/images/PrintBuddyFacebook.jpg">
+                                                <FacebookIcon size={36} round />
+                                            </FacebookShareButton>
+                                            <TwitterShareButton
+                                                url="https://www.printbuddy.se"
+                                                title="Looking for a PrintBuddy to print for me!"
+                                                hashtags={["PrintBuddy", "PrintForMe"]}>
+                                                <TwitterIcon size={36} round />
+                                            </TwitterShareButton>
+                                        </div>
                                     </div>
                                 </li>
                             )

@@ -15,9 +15,11 @@ export default class Content extends React.Component {
             indicators: false,
             height: "inherit"
         });
+        
+        //start at top on refresh page
 
+        //hide scrollToTopp icon at top of page
         $('#scrollToTop').hide();
-
         $(window).scroll(function(){
             if ($(this).scrollTop() > 200) {
                 $('#scrollToTop').fadeIn("slow");
@@ -31,6 +33,64 @@ export default class Content extends React.Component {
             $('html, body').animate({scrollTop : 0},800);
             return false;
         });
+
+        //Infite animation for arrow bounce
+        setInterval(() => {
+            $(".bounce-arrow").addClass("animated bounce");
+        }, 5000);
+        setInterval(() => {
+            $(".bounce-arrow").removeClass("animated bounce");
+        }, 6000);
+
+        //animation-in on scroll
+        $(".sub-title").css('opacity', '0');
+        $(".img-info-two").css('opacity', '0');
+        $("#second-row").css('opacity', '0');
+        $(".laptop-start").css('opacity', '0');
+        $(".sub-title-two").css('opacity', '0');
+        $(".tech-info").css('opacity', '0');
+        $("#tech-logos").css('opacity', '0');
+        $(".our-team-heading").css('opacity', '0');
+        $(".team-photos").css('opacity', '0');
+        var options = [
+            {selector: '.sub-title', offset: 100, callback: function() {
+                $(".sub-title").show();
+                $(".sub-title").addClass("animated fadeInUp");
+            } },
+            {selector: '.img-info-two', offset: 100, callback: function() {
+                $(".img-info-two").show();
+                $(".img-info-two").addClass("animated fadeInUp");
+            } },
+            {selector: '#second-row', offset: 100, callback: function() {
+                $("#second-row").show();
+                $("#second-row").addClass("animated fadeInUp");
+            } },
+            {selector: '.laptop-start', offset: 350, callback: function() {
+                $(".laptop-start").show();
+                $(".laptop-start").addClass("animated fadeIn");
+            } },
+            {selector: '.sub-title-two', offset: 100, callback: function() {
+                $(".sub-title-two").show();
+                $(".sub-title-two").addClass("animated fadeIn");
+            } },
+            {selector: '.tech-info', offset: 100, callback: function() {
+                $(".tech-info").show();
+                $(".tech-info").addClass("animated fadeIn");
+            } },
+            {selector: '#tech-logos', offset: 100, callback: function() {
+                $("#tech-logos").show();
+                $("#tech-logos").addClass("animated fadeIn");
+            } },
+            {selector: '.our-team-heading', offset: 100, callback: function() {
+                $(".our-team-heading").show();
+                $(".our-team-heading").addClass("animated fadeIn");
+            } },
+            {selector: '.team-photos', offset: 100, callback: function() {
+                $(".team-photos").show();
+                $(".team-photos").addClass("animated fadeIn");
+            } },
+        ];
+        Materialize.scrollFire(options);
     }
     popLoginModal() {
         $('#register-modal').closeModal();
@@ -84,7 +144,7 @@ export default class Content extends React.Component {
                     </div>
                     <div className="row">
                         <div className="welcome col s12 m12 l10">
-                            <h4 className="slogan animated fadeInDownBig"><span className="main-slogan">FIND A PRINTBUDDY.</span><br /><span className="slogan-smaller">OR BECOME <span>ONE</span>.</span></h4>
+                            <h1 className="slogan animated fadeInDownBig"><span className="main-slogan">FIND A PRINTBUDDY.</span><br /><span className="slogan-smaller">OR BECOME <span>ONE</span>.</span></h1>
 
                             <a onClick={this.popRegisterModal} className="btn btn-1 sign-up animated fadeIn">
                                 <svg>
@@ -93,12 +153,12 @@ export default class Content extends React.Component {
                                 JOIN
                             </a>
                             <h6 className="animated fadeIn"><div onClick={this.popLoginModal}><a style={{ opacity: "0.9" }} >Already have an account? Log in here.</a></div></h6>
-                            <a href="#info-two"><i className="arrow-btn material-icons">keyboard_arrow_down</i></a>
+                            <div className="bounce-arrow"><a href="#info-two"><i className="arrow-btn material-icons">keyboard_arrow_down</i></a></div>
                         </div>
                     </div>
 
                 </div>
-                <div className="mobile-start animated fadeInUpBig hide-on-med-and-down">
+                <div className="mobile-start animated fadeInUp hide-on-med-and-down">
                     <div className="mobile-overlay">
                         <div className="slider">
                             <ul className="slides">
@@ -116,7 +176,7 @@ export default class Content extends React.Component {
                                     </div>
                                 </li>
                                 <li>
-                                    <div className="caption right-align">
+                                    <div className="caption left-align">
                                         <h3>Need a Printout?</h3>
                                         <h5 className="light grey-text text-lighten-3" style={{paddingTop: '10%', lineHeight: '1.4'}}>Request a printout and decide when you want it. Delivered or pick-up and how much you want to pay.</h5>
                                     </div>
@@ -130,7 +190,7 @@ export default class Content extends React.Component {
                 <div className="info-two section scrollspy" id="info-two">
                     <div className="row">
                         <div className="col s12 center-align">
-                            <h4 className="sub-title">CROWDSOURCED PRINTOUTS.</h4>
+                            <h2 className="sub-title">CROWDSOURCED PRINTOUTS.</h2>
                         </div>
                     </div>
                     <div className="row">
@@ -141,14 +201,14 @@ export default class Content extends React.Component {
                     <div style={{ marginBottom: "0" }} className="row" id="second-row">
                         <div style={{ marginBottom: "7%" }} className="col s12 m10 l3 offset-m1 offset-l1">
                             <div className="icon-block">
-                                <h5 className="center">Have a printer?</h5>
+                                <h2 className="center">Have a printer?</h2>
                                 <p className="light">Become the neighborhood hero and PrintBuddy!
-                                    Scoop up all printjobs and make some money while your at it.</p>
+                                    Scoop up all printjobs and make some money while you're at it.</p>
                             </div>
                         </div>
                         <div style={{ marginBottom: "7%" }} className="col s12 m10 l3 offset-m1 offset-l1">
                             <div className="icon-block">
-                                <h5 className="center">What is PrintBuddy?</h5>
+                                <h2 className="center">What is PrintBuddy?</h2>
                                 <p className="light">PrintBuddy is a platform connecting people in need of printouts with people that have printers.
                                     If you are in need of a printout you simply create a 'Request' on PrintBuddy.
                                     Nearby PrintBuddies will be notified and can choose to apply for it - if your reward is tempting enough!</p>
@@ -156,8 +216,7 @@ export default class Content extends React.Component {
                         </div>
                         <div style={{ marginBottom: "7%" }} className="col s12 m10 l3 offset-m1 offset-l1">
                             <div className="icon-block">
-                                <h5 className="center">Get your document delivered.</h5>
-
+                                <h2 className="center">Get your document delivered.</h2>
                                 <p className="light">Need your documents quickly? Let a PrintBuddy print and deliver your printout for you.
                                     If you feel like some excercise you can always choose to jump on your bike and pick it up yourself.</p>
                             </div>
@@ -190,7 +249,7 @@ export default class Content extends React.Component {
                         </div>
                         <div className="row">
                             <div className="col s12 center-align">
-                                <h4 className="sub-title-two">A GLIMPSE OF PRINTBUDDY.</h4>
+                                <h3 className="sub-title-two">A GLIMPSE OF PRINTBUDDY.</h3>
                             </div>
                         </div>
                     </div>

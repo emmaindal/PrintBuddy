@@ -21,7 +21,7 @@ class ErrorComponent extends React.Component {
     }
     
     onClick(){
-        {browserHistory.replace("/start")};
+        {browserHistory.replace("/")};
     }
 
 
