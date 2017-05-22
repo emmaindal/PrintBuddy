@@ -64,7 +64,7 @@ class Nav extends React.Component {
                             <ul className="right hide-on-med-and-down desktop-nav">
                                 <li><IndexLink id="mainindexlink" to="/jobs" activeClassName="active">Jobs</IndexLink></li>
                                 <li><Link id="myjobslink" to="/myjobs" activeClassName="active">My Jobs</Link></li>
-                                <li><Link onClick={this.popProfileModal} className='dropdown-button' data-activates='dropdown1'><i
+                                <li><Link id="btn-settingsmodal" onClick={this.popProfileModal} className='dropdown-button' data-activates='dropdown1'><i
                                     className="material-icons">&#xE7FD;</i></Link></li>
                             </ul>
                             <ul className="side-nav" id="mobile-nav">
@@ -72,7 +72,7 @@ class Nav extends React.Component {
                                 <li><Link to="/myjobs" activeClassName="active">My Jobs</Link></li>
                                 <li><Link className="mobile-nav-icon" onClick={this.popProfileModal}><i
                                     className="material-icons">settings</i></Link></li>
-                                <li><Link onClick={this.onLogout} className="mobile-nav-icon"><i
+                                <li><Link id="btn-onlogout" onClick={this.onLogout} className="mobile-nav-icon"><i
                                     className="material-icons">&#xE8AC;</i></Link></li>
                             </ul>
                         </div>
@@ -90,7 +90,7 @@ class Nav extends React.Component {
                             <a href="" data-activates="mobile-nav" className="button-collapse"><i className="material-icons">menu</i></a>
                             <ul className="right hide-on-med-and-down desktop-nav">
                                 <li><IndexLink id="mainindexlink" to="/request" activeClassName="active">Requests</IndexLink></li>
-                                <li><Link onClick={this.popProfileModal} className='dropdown-button' data-activates='dropdown1'>
+                                <li><Link id="btn-settingsmodal" onClick={this.popProfileModal} className='dropdown-button' data-activates='dropdown1'>
                                     <i className="material-icons">&#xE7FD;</i></Link></li>
                             </ul>
                             <ul className="side-nav" id="mobile-nav">
@@ -98,7 +98,7 @@ class Nav extends React.Component {
                                 <li><Link className="mobile-nav-icon" id="requestor-profile" onClick={this.popProfileModal}>
                                     <i className="material-icons">settings</i></Link>
                                 </li>
-                                <li><Link onClick={this.onLogout} className="mobile-nav-icon">
+                                <li><Link id="btn-onlogout" onClick={this.onLogout} className="mobile-nav-icon">
                                     <i className="material-icons">&#xE8AC;</i></Link>
                                 </li>
                             </ul>

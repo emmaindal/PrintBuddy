@@ -121,7 +121,7 @@ export default class Content extends React.Component {
                         <a id="logo-container" href="/start" className="brand-logo">PRINTBUDDY</a>
                         <ul className="right hide-on-med-and-down">
                             <li><a href="#contact">CONTACT</a></li>
-                            <li><a onClick={this.popLoginModal}>LOG IN</a></li>
+                            <li><a id="btn-poploginmodal"  onClick={this.popLoginModal}>LOG IN</a></li>
 
                         </ul>
 
@@ -146,7 +146,7 @@ export default class Content extends React.Component {
                         <div className="welcome col s12 m12 l10">
                             <h1 className="slogan animated fadeInDownBig"><span className="main-slogan">FIND A PRINTBUDDY.</span><br /><span className="slogan-smaller">OR BECOME <span>ONE</span>.</span></h1>
 
-                            <a onClick={this.popRegisterModal} className="btn btn-1 sign-up animated fadeIn">
+                            <a id="btn-popregistermodal" onClick={this.popRegisterModal} className="btn btn-1 sign-up animated fadeIn">
                                 <svg>
                                     <rect x="0" y="0" fill="none" width="100%" height="100%" />
                                 </svg>

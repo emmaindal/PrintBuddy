@@ -183,7 +183,7 @@ describe('Request publication', () => {
             position: {type: "Point", coordinates: [12.920604, 55.572084]}
         });
         const collector = new PublicationCollector();
-        collector.collect('jobs-request', 55.605492, 13.024297, (collections) => {
+        collector.collect('jobs-request', 55.605492, 13.024297, true, (collections) => {
             expect(collections.request.length).toEqual(1);
             done();
         });
@@ -210,7 +210,7 @@ describe('Request publication', () => {
         });
 
         const collector = new PublicationCollector();
-        collector.collect('jobs-request-delivery', 55.605492, 13.024297, (collections) => {
+        collector.collect('jobs-request-delivery', 55.605492, 13.024297,true, (collections) => {
             expect(collections.request.length).toEqual(2);
             done();
         });
