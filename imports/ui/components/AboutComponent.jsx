@@ -1,4 +1,5 @@
 import React from 'react';
+import i18n from 'meteor/universe:i18n';
 
 class AboutComponent extends React.Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class AboutComponent extends React.Component {
         }
 
         this.props.onSubmitEmail(message);
-        this.setState({ emailSuccess: "Thanks! We will get back to you as soon as possible!" });
+        this.setState({ emailSuccess: i18n.__('components.about.contactFormSuccess') });
     }
     render() {
         return (
@@ -27,18 +28,17 @@ class AboutComponent extends React.Component {
                             <section className="section-about-content second">
                                 <div className="row tech-info" style={{ marginTop: '4%', width: "92%" }}>
                                     <div className="col s12 m6 l6 about-article-first">
-                                        <h4 className="our-team-heading">WHY</h4>
+                                        <h4 className="our-team-heading">{i18n.__('components.about.ourTeamTitle')}</h4>
                                         <p>
-                                            We are four information architecht students at Malmö University.<br />
-                                            During our first year we were tasked with a project - to come up with an idea and bring it to life in 2 months time.
-                                        Our idea was PrintBuddy and you're looking at it right now!
+                                            {i18n.__('components.about.ourTeamInfo1')}
+                                            <br />
+                                            {i18n.__('components.about.ourTeamInfo2')}
                                         </p>
                                     </div>
                                     <div className="col s12 m6 l6 about-article-first">
-                                        <h4 className="our-team-heading">HOW</h4>
+                                        <h4 className="our-team-heading">{i18n.__('components.about.ourTeamTitleHow')}</h4>
                                         <p>
-                                            With this project we took the opportunity to learn more about modern web technologies, tools and frameworks.
-                                        Therefore we decided to use Materialize, Meteor, MongoDB, React and SASS to bring you PrintBuddy.
+                                            {i18n.__('components.about.ourTeamInfoHow')}
                                         </p>
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@ class AboutComponent extends React.Component {
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <h4 className="our-team-heading">THE TEAM</h4>
+                                    <h4 className="our-team-heading">  {i18n.__('components.about.theteamTitle')}</h4>
                                 </div>
                             </section>
                             <div className="team-photos">
@@ -118,11 +118,9 @@ class AboutComponent extends React.Component {
                 <div className="row about-row">
                     <div className="col s12 m12 l12 grid-example about content fourth">
                         <section id="contact" className="col s12 m6 l6 section-about-content fourth one">
-                            <h4>Say Hello!</h4>
-                            <p style={{ marginTop: '10px' }}>We are happy to answer any and all of your
-                            questions concerning PrintBuddy.
-                            Just fill out the form and we will get back to you
-                            as soon as possible. Have a great day!
+                            <h4>{i18n.__('components.about.contactFormTitle')}</h4>
+                            <p style={{ marginTop: '10px' }}>
+                                {i18n.__('components.about.contactInfo')}
                         </p>
                             <ul>
                                 <li><a href="mailto:info@printbuddy.se"><i className="material-icons">email</i> info@printbuddy.se</a></li>
@@ -134,22 +132,22 @@ class AboutComponent extends React.Component {
                                     <div className="row">
                                         <div className="input-field col s12">
                                             <input id="name" type="text" className="validate" required ref="name" />
-                                            <label htmlFor="name">Name</label>
+                                            <label htmlFor="name">{i18n.__('components.about.contactFormName')}</label>
                                         </div>
                                     </div>
                                     <div className="row">
                                         <div className="input-field col s12">
                                             <input id="email" type="email" className="validate" required ref="email" />
-                                            <label htmlFor="email">Email</label>
+                                            <label htmlFor="email">{i18n.__('components.about.contactFormEmail')}</label>
                                         </div>
                                     </div>
                                     <div className="row">
                                         <div className="input-field col s12">
                                             <textarea id="textarea1" className="materialize-textarea" required ref="text" />
-                                            <label htmlFor="textarea1">Write your message</label>
+                                            <label htmlFor="textarea1">{i18n.__('components.about.contactFormTextArea')}</label>
                                         </div>
                                     </div>
-                                    <button className="waves-effect waves-light btn" type="submit">Send</button>
+                                    <button className="waves-effect waves-light btn" type="submit">{i18n.__('components.about.contactFormSend')}</button>
                                     <p id="about-formContainer-success">{this.state.emailSuccess}</p>
                                 </form>
                             </div>

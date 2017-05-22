@@ -25,7 +25,18 @@ import ResetPasswordContainer from '../../ui/containers/ResetPasswordContainer';
 
 import '../../api/user/user.js';
 
-i18n.setLocale('en');
+
+getBrowserLanguage = function() {
+    return (navigator.language || navigator.browserLanguage).split('-')[0];
+};
+
+console.log(getBrowserLanguage());
+
+if(getBrowserLanguage() === "sv"){
+    i18n.setLocale('se');
+}else {
+    i18n.setLocale('en');
+}
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941

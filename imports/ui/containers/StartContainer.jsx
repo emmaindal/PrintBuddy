@@ -2,7 +2,6 @@ import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
 
-import Nav from '../components/Nav';
 import Content from '../components/Content';
 import AboutComponent from '../components/AboutComponent';
 import Footer from '../components/Footer';

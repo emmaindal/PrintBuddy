@@ -1,4 +1,5 @@
 import React from 'react';
+import i18n from 'meteor/universe:i18n';
 
 import LoginContainer from "../containers/LoginContainer";
 import RegisterContainer from "../containers/RegisterContainer";
@@ -120,8 +121,8 @@ export default class Content extends React.Component {
                     <div style={{ marginLeft: "5%", marginRight: "5%" }} className="nav-wrapper">
                         <a id="logo-container" href="/start" className="brand-logo">PRINTBUDDY</a>
                         <ul className="right hide-on-med-and-down">
-                            <li><a href="#contact">CONTACT</a></li>
-                            <li><a id="btn-poploginmodal"  onClick={this.popLoginModal}>LOG IN</a></li>
+                            <li><a href="#contact">   {i18n.__('components.content.contact')}</a></li>
+                            <li><a id="btn-poploginmodal"  onClick={this.popLoginModal}>   {i18n.__('components.content.login')}</a></li>
 
                         </ul>
 
@@ -144,7 +145,7 @@ export default class Content extends React.Component {
                     </div>
                     <div className="row">
                         <div className="welcome col s12 m12 l10">
-                            <h1 className="slogan animated fadeInDownBig"><span className="main-slogan">FIND A PRINTBUDDY.</span><br /><span className="slogan-smaller">OR BECOME <span>ONE</span>.</span></h1>
+                            <h1 className="slogan animated fadeInDownBig"><span className="main-slogan"> {i18n.__('components.content.mainTitle')}</span><br /><span className="slogan-smaller">{i18n.__('components.content.mainTitle2')} <span>{i18n.__('components.content.mainTitle3')}</span>.</span></h1>
 
                             <a id="btn-popregistermodal" onClick={this.popRegisterModal} className="btn btn-1 sign-up animated fadeIn">
                                 <svg>
@@ -152,7 +153,7 @@ export default class Content extends React.Component {
                                 </svg>
                                 JOIN
                             </a>
-                            <h6 className="animated fadeIn"><div onClick={this.popLoginModal}><a style={{ opacity: "0.9" }} >Already have an account? Log in here.</a></div></h6>
+                            <h6 className="animated fadeIn"><div onClick={this.popLoginModal}><a style={{ opacity: "0.9" }} >{i18n.__('components.content.AlreadyHaveAccount')}</a></div></h6>
                             <div className="bounce-arrow"><a href="#info-two"><i className="arrow-btn material-icons">keyboard_arrow_down</i></a></div>
                         </div>
                     </div>
@@ -165,20 +166,20 @@ export default class Content extends React.Component {
                                 <li>
                                     <img />
                                     <div className="caption center-align">
-                                        <h3>PrintBuddy<br/> is Live!</h3>
-                                        <h5 className="light grey-text text-lighten-3" style={{paddingTop: '10%', lineHeight: '1.4'}}>A brand new way to get your documents printed.<br/><br/> #PrintBuddy</h5>
+                                        <h3>PrintBuddy<br/> {i18n.__('components.content.mobileSlideTitle1')}</h3>
+                                        <h5 className="light grey-text text-lighten-3" style={{paddingTop: '10%', lineHeight: '1.4'}}> {i18n.__('components.content.mobileSlideInfo1')}<br/><br/> #PrintBuddy</h5>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="caption center-align">
-                                        <h3>Print for Money</h3>
-                                        <h5 className="light grey-text text-lighten-3" style={{paddingTop: '10%', lineHeight: '1.4'}}>Join PrintBuddy and start making money by printing!<br/><br/> #PrintBuddy</h5>
+                                        <h3>{i18n.__('components.content.mobileSlideTitle2')}</h3>
+                                        <h5 className="light grey-text text-lighten-3" style={{paddingTop: '10%', lineHeight: '1.4'}}>{i18n.__('components.content.mobileSlideInfo2')}<br/><br/> #PrintBuddy</h5>
                                     </div>
                                 </li>
                                 <li>
                                     <div className="caption left-align">
-                                        <h3>Need a Printout?</h3>
-                                        <h5 className="light grey-text text-lighten-3" style={{paddingTop: '10%', lineHeight: '1.4'}}>Request a printout and decide when you want it. Delivered or pick-up and how much you want to pay.</h5>
+                                        <h3>{i18n.__('components.content.mobileSlideTitle3')}</h3>
+                                        <h5 className="light grey-text text-lighten-3" style={{paddingTop: '10%', lineHeight: '1.4'}}>{i18n.__('components.content.mobileSlideInfo3')}</h5>
                                     </div>
                                 </li>
                             </ul>
