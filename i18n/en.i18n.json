@@ -1,38 +1,80 @@
 {
-  "other": {
-  },
-  "components": {
-    "footer": {
-    },
-    "about": {
-      "ourTeamTitle": "WHY",
-      "ourTeamInfo1": "We are four information architecht students at Malmö University.",
-      "ourTeamInfo2": "During our first year we were tasked with a project - to come up with an idea and bring it to life in 2 months time. Our idea was PrintBuddy and you're looking at it right now!",
-      "ourTeamTitleHow": "HOW",
-      "ourTeamInfoHow": "  With this project we took the opportunity to learn more about modern web technologies, tools and frameworks. Therefore we decided to use Materialize, Meteor, MongoDB, React and SASS to bring you PrintBuddy.",
-      "theteamTitle": "THE TEAM",
-      "contactFormTitle":"Say Hello!",
-      "contactInfo": " We are happy to answer any and all of your questions concerning PrintBuddy. Just fill out the form and we will get back to you as soon as possible. Have a great day!",
-      "contactFormName": "Name",
-      "contactFormEmail": "Email",
-      "contactFormTextArea":"Write your message",
-      "contactFormSend":"Send",
-      "contactFormSuccess":"Thanks! We will get back to you as soon as possible!"
-    },
-    "content": {
-      "contact": "CONTACT",
-      "login": "LOG IN",
-      "mainTitle":"FIND A PRINTBUDDY.",
-      "mainTitle2":"OR BECOME",
-      "mainTitle3":"ONE",
-      "AlreadyHaveAccount":"Already have an account? Log in here.",
-      "mobileSlideTitle1":"is live!",
-      "mobileSlideInfo1":"A brand new way to get your documents printed.",
-      "mobileSlideTitle2":"Print for Money",
-      "mobileSlideInfo2":"Join PrintBuddy and start making money by printing!",
-      "mobileSlideTitle3":"Need a Printout?",
-      "mobileSlideInfo3":"Request a printout and decide when you want it. Delivered or pick-up and how much you want to pay."
-
-    }
-  }
+	"other": {
+		"color": "Color",
+		"blackWhite": "Black & White",
+		"delivery": "Delivery",
+		"pickup": "Pickup",
+		"nocash": "No cash offered",
+		"chat": "Chat",
+		"cancel": "Cancel",
+		"done": "Done",
+		"no":"No",
+		"yes": "Yes"
+	},
+	"components": {
+		"footer": {},
+		"about": {
+			"ourTeamTitle": "WHY",
+			"ourTeamInfo1": "We are four information architecht students at Malmö University.",
+			"ourTeamInfo2": "During our first year we were tasked with a project - to come up with an idea and bring it to life in 2 months time. Our idea was PrintBuddy and you're looking at it right now!",
+			"ourTeamTitleHow": "HOW",
+			"ourTeamInfoHow": "  With this project we took the opportunity to learn more about modern web technologies, tools and frameworks. Therefore we decided to use Materialize, Meteor, MongoDB, React and SASS to bring you PrintBuddy.",
+			"theteamTitle": "THE TEAM",
+			"contactFormTitle": "Say Hello!",
+			"contactInfo": " We are happy to answer any and all of your questions concerning PrintBuddy. Just fill out the form and we will get back to you as soon as possible. Have a great day!",
+			"contactFormName": "Name",
+			"contactFormEmail": "Email",
+			"contactFormTextArea": "Write your message",
+			"contactFormSend": "Send",
+			"contactFormSuccess": "Thanks! We will get back to you as soon as possible!"
+		},
+		"content": {
+			"contact": "CONTACT",
+			"login": "LOG IN",
+			"join": "JOIN",
+			"mainTitle": "FIND A PRINTBUDDY.",
+			"mainTitle2": "OR BECOME",
+			"mainTitle3": "ONE",
+			"AlreadyHaveAccount": "Already have an account? Log in here.",
+			"mobileSlideTitle1": "is live!",
+			"mobileSlideInfo1": "A brand new way to get your documents printed.",
+			"mobileSlideTitle2": "Print for Money",
+			"mobileSlideInfo2": "Join PrintBuddy and start making money by printing!",
+			"mobileSlideTitle3": "Need a Printout?",
+			"mobileSlideInfo3": "Request a printout and decide when you want it. Delivered or pick-up and how much you want to pay.",
+			"sectionOneMainTitle": "CROWDSOURCED PRINTOUTS.",
+			"sectionOneLeftSubTitle": "Have a printer?",
+			"sectionOneLeftParagraph": "Become the neighborhood hero and PrintBuddy! Scoop up all printjobs and make some money while you're at it.",
+			"sectionOneCenterSubTitle": "What is PrintBuddy?",
+			"sectionOneCenterParagraph": "PrintBuddy is a platform connecting people in need of printouts with people that have printers. If you are in need of a printout you simply create a 'Request' on PrintBuddy. Nearby PrintBuddies will be notified and can choose to apply for it - if your reward is tempting enough!",
+			"sectionOneRightSubTitle": "Get your document delivered.",
+			"sectionOneRightParagraph": "Need your documents quickly? Let a PrintBuddy print and deliver your printout for you. If you feel like some excercise you can always choose to jump on your bike and pick it up yourself.",
+			"sectionTwoMainTitle": "A GLIMPSE OF PRINTBUDDY.",
+			"modalLoginMessage": "Don't have an Account?",
+			"modalLoginMessageLink": "Register",
+			"modalRegisterMessage": "Already have an Account?",
+			"modalRegisterMessageLink": "Login"
+		},
+		"activejoblist": {
+			"listTitle": "Active Printjobs",
+			"noActiveJobMessage": "You have no active jobs at the moment.",
+			"socialShareMessage": "Let your network know you are a PrintBuddy!",
+			"facebookShareTitle": "I'm a PrintBuddy!",
+			"facebookShareMessage": "Need something printed? Join PrintBuddy and let a local PrintBuddy print for you!",
+			"twitterShareMessage": "Need something printed? Join PrintBuddy and let a local PrintBuddy print for you!"
+		},
+		"chatholder": {
+			"cancel":"Cancel?",
+			"cancelMessage":"Are you absolutely sure you want to Cancel this request?",
+			"done":"Done",
+			"doneMessage":"Are you absolutely sure this job is Done?",
+			"no": "No",
+			"yes": "Yes"
+		},
+		"chatinfo": {
+			"header": "Job info",
+			"title":"Title:",
+			"address": "Address:"
+		}
+	}
 }

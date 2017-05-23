@@ -1,4 +1,5 @@
 import React from "react";
+import i18n from 'meteor/universe:i18n';
 
 import ChatMessageList from "./ChatMessageList";
 import ChatSendMessage from "./ChatSendMessage";
@@ -41,7 +42,7 @@ class ChatHolder extends React.Component {
             <div className={this.chatHolderStyle()}>
                 <div className="chat-header">
                     <a onClick={this.showChatInfo.bind(this)}><i className="info-icon material-icons hide-on-large-only">info_outline</i></a>
-                    <h6 className="chat-title center-align">Chat</h6>
+                    <h6 className="chat-title center-align">{i18n.__('other.chat')}</h6>
                 </div>
                 <div id="chatbox" className={this.chatHeight()}>
                     <ChatMessageList userId={this.props.userId} chat={this.props.chat} />
@@ -59,23 +60,23 @@ class ChatHolder extends React.Component {
                 </div>
                 <div id="cancelModal" className="modal">
                     <div className="modal-content">
-                        <h5>Cancel?</h5>
+                        <h5>{i18n.__('components.chatholder.cancel')}</h5>
                         <br />
-                        <p>Are you absolutely sure you want to Cancel this request?</p>
+                        <p>{i18n.__('components.chatholder.cancelMessage')}</p>
                     </div>
                     <div className="modal-footer">
-                        <a className="modal-action modal-close waves-effect waves-green btn-flat">No</a>
-                        <a onClick={this.props.handleJobCancel} className="modal-action modal-close waves-effect waves-green btn-flat">Yes</a>
+                        <a className="modal-action modal-close waves-effect waves-green btn-flat">{i18n.__('components.chatholder.no')}</a>
+                        <a onClick={this.props.handleJobCancel} className="modal-action modal-close waves-effect waves-green btn-flat">{i18n.__('components.chatholder.yes')}</a>
                     </div>
                 </div>
                 <div id="doneModal" className="modal">
                     <div className="modal-content">
-                        <h5>Done?</h5>
-                        <p>Are you absolutely sure this job is Done?</p>
+                        <h5>{i18n.__('components.chatholder.done')}</h5>
+                        <p>{i18n.__('components.chatholder.doneMessage')}</p>
                     </div>
                     <div className="modal-footer">
-                        <a className="modal-action modal-close waves-effect waves-green btn-flat">No</a>
-                        <a onClick={this.props.handleJobDone} className="modal-action modal-close waves-effect waves-green btn-flat">Yes</a>
+                        <a className="modal-action modal-close waves-effect waves-green btn-flat">{i18n.__('components.chatholder.no')}</a>
+                        <a onClick={this.props.handleJobDone} className="modal-action modal-close waves-effect waves-green btn-flat">{i18n.__('components.chatholder.yes')}</a>
                     </div>
                 </div>
             </div>

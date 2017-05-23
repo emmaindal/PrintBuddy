@@ -127,8 +127,8 @@ export default class Content extends React.Component {
                         </ul>
 
                         <ul id="mobile-nav" className="side-nav">
-                            <li><a href="#contact">CONTACT</a></li>
-                            <li><a onClick={this.popLoginModal}>LOG IN</a></li>
+                            <li><a href="#contact">{i18n.__('components.content.contact')}</a></li>
+                            <li><a onClick={this.popLoginModal}>{i18n.__('components.content.login')}</a></li>
                         </ul>
                         <a href="#" data-activates="mobile-nav" className="button-collapse"><i className="material-icons">menu</i></a>
                     </div>
@@ -151,7 +151,7 @@ export default class Content extends React.Component {
                                 <svg>
                                     <rect x="0" y="0" fill="none" width="100%" height="100%" />
                                 </svg>
-                                JOIN
+                                {i18n.__('components.content.join')}
                             </a>
                             <h6 className="animated fadeIn"><div onClick={this.popLoginModal}><a style={{ opacity: "0.9" }} >{i18n.__('components.content.AlreadyHaveAccount')}</a></div></h6>
                             <div className="bounce-arrow"><a href="#info-two"><i className="arrow-btn material-icons">keyboard_arrow_down</i></a></div>
@@ -191,7 +191,7 @@ export default class Content extends React.Component {
                 <div className="info-two section scrollspy" id="info-two">
                     <div className="row">
                         <div className="col s12 center-align">
-                            <h2 className="sub-title">CROWDSOURCED PRINTOUTS.</h2>
+                            <h2 className="sub-title">{i18n.__('components.content.sectionOneMainTitle')}</h2>
                         </div>
                     </div>
                     <div className="row">
@@ -202,24 +202,20 @@ export default class Content extends React.Component {
                     <div style={{ marginBottom: "0" }} className="row" id="second-row">
                         <div style={{ marginBottom: "7%" }} className="col s12 m10 l3 offset-m1 offset-l1">
                             <div className="icon-block">
-                                <h2 className="center">Have a printer?</h2>
-                                <p className="light">Become the neighborhood hero and PrintBuddy!
-                                    Scoop up all printjobs and make some money while you're at it.</p>
+                                <h2 className="center">{i18n.__('components.content.sectionOneLeftSubTitle')}</h2>
+                                <p className="light">{i18n.__('components.content.sectionOneLeftParagraph')}</p>
                             </div>
                         </div>
                         <div style={{ marginBottom: "7%" }} className="col s12 m10 l3 offset-m1 offset-l1">
                             <div className="icon-block">
-                                <h2 className="center">What is PrintBuddy?</h2>
-                                <p className="light">PrintBuddy is a platform connecting people in need of printouts with people that have printers.
-                                    If you are in need of a printout you simply create a 'Request' on PrintBuddy.
-                                    Nearby PrintBuddies will be notified and can choose to apply for it - if your reward is tempting enough!</p>
+                                <h2 className="center">{i18n.__('components.content.sectionOneCenterSubTitle')}</h2>
+                                <p className="light">{i18n.__('components.content.sectionOneCenterParagraph')}</p>
                             </div>
                         </div>
                         <div style={{ marginBottom: "7%" }} className="col s12 m10 l3 offset-m1 offset-l1">
                             <div className="icon-block">
-                                <h2 className="center">Get your document delivered.</h2>
-                                <p className="light">Need your documents quickly? Let a PrintBuddy print and deliver your printout for you.
-                                    If you feel like some excercise you can always choose to jump on your bike and pick it up yourself.</p>
+                                <h2 className="center">{i18n.__('components.content.sectionOneRightSubTitle')}</h2>
+                                <p className="light">{i18n.__('components.content.sectionOneRightParagraph')}</p>
                             </div>
                         </div>
                     </div>
@@ -250,7 +246,7 @@ export default class Content extends React.Component {
                         </div>
                         <div className="row">
                             <div className="col s12 center-align">
-                                <h3 className="sub-title-two">A GLIMPSE OF PRINTBUDDY.</h3>
+                                <h3 className="sub-title-two">{i18n.__('components.content.sectionTwoMainTitle')}</h3>
                             </div>
                         </div>
                     </div>
@@ -265,8 +261,8 @@ export default class Content extends React.Component {
                         </div>
                         <div className="row">
                             <div className="col s10 offset-s1" style={{ display: "flex", justifyContent: "space-between", marginBottom: "15px" }}>
-                                <div>Don't have an Account?</div>
-                                <a onClick={this.popRegisterModal}>Register</a>
+                                <div>{i18n.__('components.content.modalLoginMessage')}</div>
+                                <a onClick={this.popRegisterModal}>{i18n.__('components.content.modalLoginMessageLink')}</a>
                             </div>
                         </div>
                     </div>
@@ -281,8 +277,8 @@ export default class Content extends React.Component {
                             </div>
                             <div className="row">
                                 <div className="col s10 offset-s1" style={{ display: "flex", justifyContent: "space-between", marginBottom: "15px" }}>
-                                    <div>Already have an Account?</div>
-                                    <a onClick={this.popLoginModal}>Login</a>
+                                    <div>{i18n.__('components.content.modalRegisterMessage')}</div>
+                                    <a onClick={this.popLoginModal}>{i18n.__('components.content.modalRegisterMessageLink')}</a>
                                 </div>
                             </div>
                         </div>
