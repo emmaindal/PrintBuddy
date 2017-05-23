@@ -1,4 +1,5 @@
 import React from "react";
+import i18n from 'meteor/universe:i18n';
 
 import { Emoji } from 'emoji-mart';
 import { Picker } from 'emoji-mart';
@@ -50,11 +51,11 @@ class ChatSendMessage extends React.Component {
         return (
             <div>
                 <form className="form" onSubmit={this.onSubmit.bind(this)}>
-                    <input className="form-input" ref="text" type="text" name="message" placeholder="Type a message..." autoFocus autoComplete="off" />
+                    <input className="form-input" ref="text" type="text" name="message" placeholder={i18n.__('components.chatsendmessage.placeholderMessage')} autoFocus autoComplete="off" />
                     <div onClick={this.popEmojiPicker} className="smiley-pop">
                         <Emoji onClick={this.popEmojiPicker} emoji='smiley' size={30} />
                     </div>
-                    <button className="btn-large waves-effect waves-light" type="submit" name="action">SEND</button>
+                    <button className="btn-large waves-effect waves-light" type="submit" name="action">{i18n.__('components.chatsendmessage.sendButton')}</button>
                 </form>
                 <div id="mobile-emoji" className="mobile-emoji">
                     {this.emojiPickerMobile()}

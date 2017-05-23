@@ -1,5 +1,6 @@
 import { browserHistory } from 'react-router';
 import React from 'react';
+import i18n from 'meteor/universe:i18n';
 
 class ErrorComponent extends React.Component {
     constructor(props) {
@@ -17,7 +18,7 @@ class ErrorComponent extends React.Component {
         }
 
         this.props.onSubmitEmail(message);
-        this.setState({ emailSuccess: "Thanks! We will answer your message as soon as possible!" });
+        this.setState({ emailSuccess: i18n.__('components.errorcomponent.emailSuccess') });
     }
     
     onClick(){
@@ -34,9 +35,9 @@ class ErrorComponent extends React.Component {
                             <a href="/start" className="brand-logo">PRINTBUDDY</a>
                         </div>
                     </nav>
-                    <h1>Oops...error 404 </h1>
-                    <h5>Looks like something went wrong.</h5>
-                    <h6>Go back to start or send us a message if you have problem</h6>
+                    <h1>{i18n.__('components.errorcomponent.header')}</h1>
+                    <h5>{i18n.__('components.errorcomponent.errorNotice')}</h5>
+                    <h6>{i18n.__('components.errorcomponent.errorDirections')}</h6>
                 </div>
 
                 <div className="error-message">
@@ -54,29 +55,29 @@ class ErrorComponent extends React.Component {
 
                 <div id="modal1" className="modal">
                     <div className="modal-content">
-                        <h4>Contact Us</h4>
+                        <h4>{i18n.__('components.errorcomponent.contactUs')}</h4>
 
                         <div className="row">
                             <form action="" className="col s12" onSubmit={this.onSubmitEmail.bind(this)}>
                                 <div className="row modal-form-row">
                                     <div className="input-field col s12">
                                         <input id="name" type="text" className="validate" required ref="name" />
-                                        <label htmlFor="name">Name</label>
+                                        <label htmlFor="name">{i18n.__('components.errorcomponent.name')}</label>
                                     </div>
                                 </div>
                                 <div className="row modal-form-row">
                                     <div className="input-field col s12">
                                         <input id="email" type="email" className="validate" required ref="email" />
-                                        <label htmlFor="email">Email</label>
+                                        <label htmlFor="email">{i18n.__('components.errorcomponent.email')}</label>
                                     </div>
                                 </div>
                                 <div className="row">
                                     <div className="input-field col s12">
                                         <textarea id="textarea1" className="materialize-textarea" required ref="text" />
-                                        <label htmlFor="textarea1">Write your message</label>
+                                        <label htmlFor="textarea1">{i18n.__('components.errorcomponent.writeMessage')}</label>
                                     </div>
                                 </div>
-                                <button className="waves-effect waves-light btn" type="submit">Send</button>
+                                <button className="waves-effect waves-light btn" type="submit">{i18n.__('components.errorcomponent.sendButton')}</button>
                                 <p id="error-formContainer-success">{this.state.emailSuccess}</p>
                             </form>
                         </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import i18n from 'meteor/universe:i18n';
 import FlipMove from 'react-flip-move';
 
 import Message from "./Message";
@@ -10,7 +11,7 @@ class ChatMessageList extends React.Component {
         if (!chat.messages || chat.messages.length == 0) {
             return (
                 <div className="collection-header">
-                    <h5 className="center-align">Type your first message to get started!</h5>
+                    <h5 className="center-align">{i18n.__('components.chatmessagelist.headerMessage')}</h5>
                 </div>
             );
         } else {

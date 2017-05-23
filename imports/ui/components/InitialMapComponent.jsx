@@ -1,4 +1,5 @@
 import React from 'react';
+import i18n from 'meteor/universe:i18n';
 import {
 	withGoogleMap,
 	GoogleMap,
@@ -42,21 +43,19 @@ export const InitialMap = withGoogleMap(props => {
                             </li>
 							<li className="collection-item avatar">
 								<i className={marker.needColor ? "infowindow-icon material-icons round-icon-green" : "infowindow-icon material-icons round-icon-gray"}>print</i>
-								<p>Color: {marker.needColor ? 'Yes' : 'No'}<br/>
-								Pages: {marker.pages}<br/>
-								Copies: {marker.copies}<br/>
+								<p>{i18n.__('components.initialmap.color')}: {marker.needColor ? i18n.__('other.yes') : i18n.__('other.no')}<br/>
+								{i18n.__('components.initialmap.pages')}: {marker.pages}<br/>
+								{i18n.__('components.initialmap.copies')}: {marker.copies}<br/>
 								</p>
 							</li>
 							<li className="collection-item avatar">
 								<i className={marker.delivery ? "infowindow-icon material-icons round-icon-blue" : "infowindow-icon material-icons round-icon-green"}>{marker.delivery ? 'directions_run' : 'access_time'}</i>
-								
-								<p>Before {marker.lastTime} on {moment(marker.lastDate).format("ddd Do MMMM")}
+								<p>{i18n.__('components.initialmap.before')} {marker.lastTime} {i18n.__('components.initialmap.on')} {moment(marker.lastDate).format("ddd Do MMMM")}
 								</p>
 							</li>
 							<li className="collection-item avatar">
 								<i className={marker.reward > 0 ? "infowindow-icon material-icons round-icon-green" : "infowindow-icon material-icons round-icon-gray"}>{marker.reward > 0 ? 'monetization_on' : 'money_off'}</i>
-								
-								<p>{marker.reward > 0 ? `${marker.reward} ${marker.currency}` : 'No cash offered.'}
+								<p>{marker.reward > 0 ? `${marker.reward} ${marker.currency}` : i18n.__('other.nocash')}
 								</p>
 							</li>
 						</div>

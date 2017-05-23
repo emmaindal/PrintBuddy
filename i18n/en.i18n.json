@@ -73,8 +73,65 @@
 		},
 		"chatinfo": {
 			"header": "Job info",
-			"title":"Title:",
-			"address": "Address:"
-		}
+			"title":"Title",
+			"address": "Address",
+            "color": "Color",
+            "pages": "Pages",
+            "copies": "Copies",
+            "price": "Price",
+            "delivery": "Delivery",
+            "lastDate": "Last Date",
+            "lastTime": "Last Time",
+            "finishRequest": "Finish Request",
+            "cancelRequet": "Cancel Request",
+            "downloadDocument": "Download Document"
+		},
+        "chatmessagelist": {
+            "headerMessage": "Type your first message to get started!"
+        },
+        "chatsendmessage": {
+            "placeholderMessage": "Type a message...",
+            "sendButton": "SEND"
+        },
+        "createrequestcomponent": {
+            "whoops": "Whoops!",
+            "errorDelivery": "You have to choose Delivery or Pickup",
+            "errorDate": "You have to set a date",
+            "errorTime": "You have to set a time",
+            "pickADocument": "Pick a document",
+            "nrOfPages": "Nr of Pages",
+            "nrOfCopies": "Nr of Copies",
+            "blackWhite": "Black/White",
+            "jobDescription": "Job Description",
+            "reward": "Reward",
+            "SEK": "SEK",
+            "EUR": "EUR",
+            "USD": "USD",
+            "currency": "Currency",
+            "wantDelivery": "I want it delivered",
+            "wantPickup": "I want to pick-up",
+            "travelMessage": "How far are you willing to travel for a pick-up?",
+            "setLastDate": "Set a last Date & Time for",
+            "submit": "Submit",
+            "details": "Details"
+        },
+        "errorcomponent": {
+            "emailSuccess": "Thanks! We will answer your message as soon as possible!",
+            "header": "Whoops... Error 404",
+            "errorNotice": "Looks like something went wrong.",
+            "errorDirections": "Go back to start or send us a message if you have problems",
+            "contactUs": "Contact Us",
+            "name": "Name",
+            "email": "Email",
+            "writeMessage": "Write your message",
+            "sendButton": "Send"
+        },
+        "initalmap": {
+            "color": "Color",
+            "pages": "Pages",
+            "copies": "Copies",
+            "before": "Before",
+            "on": "on"
+        }
 	}
 }
