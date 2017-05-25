@@ -1,6 +1,7 @@
 import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
+import i18n from 'meteor/universe:i18n';
 
 import {Request} from '../../api/request/request.js';
 import MapContainer from './MapContainer';
@@ -47,12 +48,12 @@ class Jobs extends React.Component {
         applyRequest.call(req, (err, res) => {
             if (err) {
                 if (err.error === 'request.applyRequest.exist') {
-                    displayError("Whoops!", 'You already applied for this job!');
+                    displayError(i18n.__('other.whoops'), 'You already applied for this job!');
                 } else {
-                    displayError("Whoops!", 'Something went wrong :( ');
+                    displayError(i18n.__('other.whoops'), 'Something went wrong :( ');
                 }
             } else {
-                displayAlert("Nice!", `You applied for a new printjob`);
+                displayAlert(i18n.__('container.jobscontainer.alertNice'), i18n.__('container.jobscontainer.appliedMsg'));
             }
         });
     }

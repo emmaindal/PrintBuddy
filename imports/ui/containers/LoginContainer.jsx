@@ -3,6 +3,7 @@ import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
 import {browserHistory} from 'react-router';
 import {Accounts} from 'meteor/accounts-base';
+import i18n from 'meteor/universe:i18n';
 
 import {displayError} from '../helpers/errors';
 import LoginComponent from '../components/LoginComponent';
@@ -30,7 +31,7 @@ class Login extends React.Component {
     onSubmit(formData) {
         Meteor.loginWithPassword(formData.email, formData.password, function (error) {
             if (error) {
-                displayError("Error:", "Email and/or Password is incorrect!");
+                displayError(i18n.__('other.whoops'), i18n.__('container.logincontainer.errorLogin'));
             } else {
                 $('#login-modal').closeModal();
                 browserHistory.push('/');

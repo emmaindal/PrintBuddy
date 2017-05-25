@@ -9,7 +9,9 @@
 		"cancel": "Cancel",
 		"done": "Done",
 		"no":"No",
-		"yes": "Yes"
+		"yes": "Yes",
+        "meters": "meters",
+        "whoops": "Whoops!"
 	},
 	"components": {
 		"footer": {},
@@ -126,12 +128,124 @@
             "writeMessage": "Write your message",
             "sendButton": "Send"
         },
-        "initalmap": {
+        "initialmap": {
             "color": "Color",
             "pages": "Pages",
             "copies": "Copies",
             "before": "Before",
             "on": "on"
+        },
+        "joblistcomponent": {
+            "apply": "APPLY",
+            "applied": "APPLIED",
+            "nojobsmessage": "There are currently no jobs available :("
+        },
+        "logincomponent": {
+            "email": "E-mail",
+            "password": "Password",
+            "forgotpassword": "Forgot password",
+            "login": "Login"
+        },
+        "nav": {
+            "link-jobs": "Jobs",
+            "link-myjobs": "My Jobs",
+            "link-request": "Requests"
+        },
+        "pendingbuddies": {
+            "chooseHeader": "Choose a PrintBuddy for the job!",
+            "offeredPrint": "have offered to print for you!",
+            "choose": "CHOOSE",
+            "noappliedmsg": "No one have applied for your job yet.",
+            "socialsharemsg": "Let your network know you need a PrintBuddy!",
+            "facebookShareTitle": "PrintBuddy needed!",
+            "facebookShareMsg": "Have a printer? We have a job for you!",
+            "twitterShareMsg": "Looking for a PrintBuddy to print for me!",
+            "cancelModalHeader": "Are you sure?",
+            "cancelModalParagraph": "Are you absolutely sure you want to Cancel this request?"
+        },
+        "pendingjoblist": {
+            "header": "Pending printjobs"
+        },
+        "profilecomponent": {
+            "setHomeAddress": "Set your home address",
+            "emailNotifications": "Email notifications",
+            "requestor": "Requestor",
+            "printbuddy": "PrintBuddy",
+            "saveChanges": "SAVE CHANGES",
+            "logout": "LOGOUT"
+        },
+        "registercomponent": {
+            "errorAddress": "You need to set your home address",
+            "errorRole": "You have to choose a role",
+            "errorPassword": "Your password must be atleast 6 characters",
+            "email": "E-mail *",
+            "username": "Username *",
+            "password": "Password *",
+            "confirmPassword": "Confirm password *",
+            "homeAddress": "Home address *",
+            "chooseRole": "Choose your role",
+            "requestor": "Requestor",
+            "printbuddy": "PrintBuddy",
+            "register": "Register"
         }
-	}
+	},
+    "container": {
+        "chatcontainer": {
+            "errorWrong": "Wrong!",
+            "errorError": "Error!",
+            "errorLogin": "You need to login to chat",
+            "errorSomething": "Something went wrong :("
+        },
+        "createrequestcontainer": {
+            "errorPages": "You need to set h ow many pages your printout is before you can upload!",
+            "errorCopies": "You need to set how many copies of your printout you want before you can upload!",
+            "errorDocument": "You need to pick a document before you can upload!",
+            "errorLogin": "You need to login to create a request",
+            "errorDate": "Date was in the past",
+            "errorDateMsg": "You need to select 'Today' or a future date!",
+            "errorUpload": "No no!",
+            "errorUploadMsg": "You need to upload a file to your Google Drive!",
+            "errorUnexpect": "Unexpected Error",
+            "errorUnexpectMsg": "Something completely unexpected went wrong..."
+        },
+        "donecontainer": {
+            "errorMsg": "Something went wrong :(",
+            "doneHeader": "You are now done!",
+            "doneNewUploadBtn": "UPLOAD A NEW JOB"
+        },
+        "jobscontainer": {
+            "alertNice": "Nice!",
+            "appliedMsg": "You applied for a new printjob"
+        },
+        "logincontainer": {
+            "errorLogin": "Email and/or Password is incorrect!"
+        },
+        "myjoblistcontainer": {
+            "errorMsg": "Something went wrong :("
+        },
+        "pendingrequestcontainer": {
+            "errorAcceptedMsg": "You already accepted this job!",
+            "errorMsg": "Something went wrong :("
+        },
+        "pendingchatcontainer": {
+            "doneHeader": "This request is done!",
+            "cancelHeader": "This request is canceled!",
+            "findNewJobBtn": "FIND A NEW JOB"
+        },
+        "profilecontainer": {
+            "errorLoggedIn": "You need to be logged in to update your settings!",
+            "errorPendingJob": "You cant change your settings while you have active or pending jobs",
+            "errorActiveRequest": "You cant change your settings while you have an active request",
+            "alertSaved": "Saved",
+            "alertSavedMsg": "Your profile changes was saved"
+        },
+        "resetpasswordcontainer": {
+            "errorShort": "Too Short!",
+            "errorShortMsg": "Your password must be atleast 6 characters long",
+            "errorMsg": "Something went wrong. Please try again.",
+            "alertSuccess": "Success!",
+            "alertSuccessMsg": "Password saved",
+            "errorMissmatch": "Your passwords did not match"
+        }
+    }
 }

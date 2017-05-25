@@ -2,6 +2,7 @@ import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
 import {browserHistory} from 'react-router';
+import i18n from 'meteor/universe:i18n';
 
 import ChatComponent from "../components/ChatComponent";
 import {Chat} from '../../api/chat/chat';
@@ -23,9 +24,9 @@ class ChatHolder extends React.Component {
             if (err) {
                 console.log(err);
                 if (err.error === 'chat.addMessageToRequest.unauthorized') {
-                    displayError("Wrong!", 'You need to login to chat');
+                    displayError(i18n.__('container.chatcontainer.errorWrong'), i18n.__('container.chatcontainer.errorLogin'));
                 } else {
-                    displayError("Error!", 'Something went wrong :( ');
+                    displayError(i18n.__('container.chatcontainer.errorError'), i18n.__('container.chatcontainer.errorSomething'));
                 }
             }
         });
@@ -39,7 +40,7 @@ class ChatHolder extends React.Component {
         if (Meteor.userId() === this.props.request.userReqId) {
             cancelRequest.call({requestId: this.props.request._id}, (err, res) => {
                 if (err) {
-                    displayError("Error!", 'Something went wrong :( ');
+                    displayError(i18n.__('container.chatcontainer.errorError'), i18n.__('container.chatcontainer.errorSomething'));
                 } else {
                     browserHistory.replace("/request");
                 }
@@ -51,7 +52,7 @@ class ChatHolder extends React.Component {
         if (Meteor.userId() === this.props.request.userReqId) {
             doneRequest.call({requestId: this.props.request._id}, (err, res) => {
                 if (err) {
-                    displayError("Error!", 'Something went wrong :( ');
+                    displayError(i18n.__('container.chatcontainer.errorError'), i18n.__('container.chatcontainer.errorSomething'));
                 } else {
                     browserHistory.replace("/request");
                 }

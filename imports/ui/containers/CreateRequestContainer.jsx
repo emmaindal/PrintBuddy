@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 import React from 'react';
 import { browserHistory } from 'react-router';
+import i18n from 'meteor/universe:i18n';
 
 import CreateRequestComponent from "../components/CreateRequestComponent";
 import { insert } from '../../api/request/methods';
@@ -50,13 +51,13 @@ class CreateRequest extends React.Component {
                         }
                     });
                 } else {
-                    displayError("Whoops!", 'You need to set how many pages your prinout is before you can upload!');
+                    displayError(i18n.__('other.whoops'), i18n.__('container.createrequestcontainer.errorPages'));
                 }
             } else {
-                displayError("Whoops!", 'You need to set how many copies of your printout you want before you can upload!');
+                displayError(i18n.__('other.whoops'), i18n.__('container.createrequestcontainer.errorCopies'));
             }
         } else {
-            displayError("Whoops!", 'You need to pick a document before you can upload!');
+            displayError(i18n.__('other.whoops'), i18n.__('container.createrequestcontainer.errorDocument'));
         }
     }
 
@@ -70,17 +71,17 @@ class CreateRequest extends React.Component {
             insert.call(request, (err, res) => {
                 if (err) {
                     if (err.error === 'request.insert.unauthorized') {
-                        displayError("Whoops!", 'You need to login to create a request');
+                        displayError(i18n.__('other.whoops'), i18n.__('container.createrequestcontainer.errorLogin'));
                     } else if (err.error === 'request.insert.invalidDate') {
-                        displayError("Date was in the past", "You need to select 'Today' or a future date!");
+                        displayError(i18n.__('container.createrequestcontainer.errorDate'), i18n.__('container.createrequestcontainer.errorDateMsg'));
                     } else {
                         // Unexpected error, handle it in the UI somehow
-                        displayError("Critical Malfunction!", 'Something completely unexpected went terribly wrong :( ');
+                        displayError(i18n.__('container.createrequestcontainer.errorUnexpect'), i18n.__('container.createrequestcontainer.errorUnexpectMsg'));
                     }
                 }
             });
         } else {
-            displayError("No No!", "You need to upload a file to your google drive!");
+            displayError(i18n.__('container.createrequestcontainer.errorUpload'), i18n.__('container.createrequestcontainer.errorUploadMsg'));
         }
     }
 

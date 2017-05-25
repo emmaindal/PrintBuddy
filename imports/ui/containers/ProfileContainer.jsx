@@ -1,6 +1,7 @@
 import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
+import i18n from 'meteor/universe:i18n';
 
 import ProfileComponent from '../components/ProfileComponent';
 import {updateUser} from '../../api/user/methods';
@@ -38,14 +39,14 @@ class Profile extends React.Component {
             if (err) {
                 console.log(err);
                 if (err.error === 'user.updateUser.unauthorized') {
-                    displayError("Whoops!", 'You need to be logged in to update your settings!');
+                    displayError(i18n.__('other.whoops'), i18n.__('container.profilecontainer.errorLoggedIn'));
                 }else if (err.error === 'user.updateUser.pendingexist') {
-                    displayError("Whoops!", 'You cant change your settings while you have active or pending jobs');
+                    displayError(i18n.__('other.whoops'), i18n.__('container.profilecontainer.errorPendingJob'));
                 }else if (err.error === 'user.updateUser.jobactive') {
-                    displayError("Wrong!", 'You cant change your settings while you have an active request');
+                    displayError(i18n.__('other.whoops'), i18n.__('container.profilecontainer.errorActiveRequest'));
                 }
             }else{
-                displayAlert("Saved","Your profile changes was saved");
+                displayAlert(i18n.__('container.profilecontainer.alertSaved'), i18n.__('container.profilecontainer.alertSavedMsg'));
             }
         });
     }

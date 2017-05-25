@@ -1,4 +1,5 @@
 import React from 'react';
+import i18n from 'meteor/universe:i18n';
 
 import GeoCoder from '../containers/GeoCodeContainer';
 
@@ -121,7 +122,7 @@ class ProfileComponent extends React.Component {
                     </div>
                     <div id="test-geocode" style={{marginBottom: "0"}} className="row">
                         <div className="col s10 offset-s1 m10 offset-m1">
-                            <p>Set your home address</p>
+                            <p>{i18n.__('components.profilecomponent.setHomeAddress')}</p>
                             <p><strong>{this.state.address}</strong></p>
                             <GeoCoder onPickAdress={(address) => {
                                 this.onPickAdress(address)
@@ -131,16 +132,16 @@ class ProfileComponent extends React.Component {
                     <div className="row">
                         <div className="switch text-center" id="role-switcher">
                             <label>
-                                Email notifications
+                                {i18n.__('components.profilecomponent.emailNotifications')}
                             </label>
                             <div className="col s12">
 
                                 <label>
-                                    No
+                                    {i18n.__('other.no')}
                                     <input type="checkbox" checked={this.state.emailNotification}
                                            onChange={(e) => this.onEmailNotification(e)}/>
                                     <span className="lever"></span>
-                                    Yes
+                                    {i18n.__('other.yes')}
                                 </label>
                             </div>
                         </div>
@@ -150,11 +151,11 @@ class ProfileComponent extends React.Component {
                         <div className="switch text-center" id="role-switcher">
                             <div className="col s12">
                                 <label>
-                                    Requestor
+                                    {i18n.__('components.profilecomponent.requestor')}
                                     <input type="checkbox" checked={this.state.isBuddy}
                                            onChange={(e) => this.handleChange(e)}/>
                                     <span className="lever"></span>
-                                    PrintBuddy
+                                    {i18n.__('components.profilecomponent.printbuddy')}
                                 </label>
                             </div>
                         </div>
@@ -166,11 +167,11 @@ class ProfileComponent extends React.Component {
                             <div className="switch text-center" id="color-switcher">
                                 <div className="col s12">
                                     <label>
-                                        Black / White
+                                        {i18n.__('other.blackWhite')}
                                         <input type="checkbox" checked={this.state.canColor}
                                                onChange={(e) => this.colorChange(e)}/>
                                         <span className="lever"></span>
-                                        Color
+                                        {i18n.__('other.color')}
                                     </label>
                                 </div>
                             </div>
@@ -178,12 +179,12 @@ class ProfileComponent extends React.Component {
                     ) : (null)}
 
                     <div style={{marginBottom: "20px"}} className="row profile-modal-row">
-                        <button className="col s10 offset-s1 waves-effect waves-light btn">SAVE CHANGES</button>
+                        <button className="col s10 offset-s1 waves-effect waves-light btn">{i18n.__('components.profilecomponent.saveChanges')}</button>
                     </div>
                 </form>
                 <div className="row">
                     <a onClick={this.props.onLogout} className="col s2 offset-s9">
-                        <span>LOGOUT</span>
+                        <span>{i18n.__('components.profilecomponent.logout')}</span>
                     </a>
                     <i onClick={this.props.onLogout} style={{marginTop: "-3px", marginLeft: "-25px", color: "#039be5", cursor: "pointer"}} className="col s1 material-icons">power_settings_new</i>
                 </div>

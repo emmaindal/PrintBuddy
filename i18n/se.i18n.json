@@ -1,0 +1,251 @@
+{
+	"other": {
+		"color": "Färg",
+		"blackWhite": "Svartvitt",
+		"delivery": "Leverans",
+		"pickup": "Hämtning",
+		"nocash": "Ingen betalning",
+		"chat": "Chatt",
+		"cancel": "Avbryt",
+		"done": "Klar",
+		"no":"Nej",
+		"yes": "Ja",
+        "meters": "meter",
+        "whoops": "Hoppsan!"
+	},
+	"components": {
+		"footer": {},
+		"about": {
+			"ourTeamTitle": "VARFÖR",
+			"ourTeamInfo1": "Vi är fyra informationsarkitektstudenter på Malmö Universitet",
+			"ourTeamInfo2": "During our first year we were tasked with a project - to come up with an idea and bring it to life in 2 months time. Our idea was PrintBuddy and you're looking at it right now!",
+			"ourTeamTitleHow": "HUR",
+			"ourTeamInfoHow": "Med detta projektet tog vi chansen att lära oss mer om moderna webbutvecklingsteknologier, verktyg and ramverk. Därför bestämde vi oss att använda Materialize, Meteor, MongoDB, React och SASS för att skapa PrintBuddy.",
+			"theteamTitle": "TEAMET",
+			"contactFormTitle": "Säg Hej!",
+			"contactInfo": "Vi svarar mer än gärna på dina frågor kring PrintBuddy. Fyll bara i formuläret så hör vi av oss så snart som möjligt. Ha en fin dag!",
+			"contactFormName": "Namn",
+			"contactFormEmail": "Email",
+			"contactFormTextArea": "Skriv ditt meddelande",
+			"contactFormSend": "Skicka",
+			"contactFormSuccess": "Tack! Vi hör av oss så snart vi kan!"
+		},
+		"content": {
+			"contact": "KONTAKT",
+			"login": "LOGGA IN",
+			"join": "GÅ MED",
+			"mainTitle": "HITTA EN PRINTBUDDY.",
+			"mainTitle2": "ELLER BLI",
+			"mainTitle3": "EN",
+			"AlreadyHaveAccount": "Har du redan ett konto? Logga in här.",
+			"mobileSlideTitle1": "är live!",
+			"mobileSlideInfo1": "Ett helt nytt sätt att få dina dokument utskrivna.",
+			"mobileSlideTitle2": "Tjäna Pengar",
+			"mobileSlideInfo2": "Bli en PrintBuddy och börja tjäna pengar på att skriva ut!",
+			"mobileSlideTitle3": "Behöver du en utskrift?",
+			"mobileSlideInfo3": "Begär en utskrift och bestäm när du vill ha det. Levererat eller hämta och hur mycket du vill betala.",
+			"sectionOneMainTitle": "CROWDSOURCED PRINTOUTS.",
+			"sectionOneLeftSubTitle": "Har du en skrivare?",
+			"sectionOneLeftParagraph": "Bli kvarterets hjälte och PrintBuddy! Ta alla utskriftsjobb och tjäna pengar på det.",
+			"sectionOneCenterSubTitle": "Vad är PrintBuddy?",
+			"sectionOneCenterParagraph": "PrintBuddy is a platform connecting people in need of printouts with people that have printers. If you are in need of a printout you simply create a 'Request' on PrintBuddy. Nearby PrintBuddies will be notified and can choose to apply for it - if your reward is tempting enough!",
+			"sectionOneRightSubTitle": "Get your document delivered.",
+			"sectionOneRightParagraph": "Need your documents quickly? Let a PrintBuddy print and deliver your printout for you. If you feel like some excercise you can always choose to jump on your bike and pick it up yourself.",
+			"sectionTwoMainTitle": "A GLIMPSE OF PRINTBUDDY.",
+			"modalLoginMessage": "Don't have an Account?",
+			"modalLoginMessageLink": "Register",
+			"modalRegisterMessage": "Already have an Account?",
+			"modalRegisterMessageLink": "Login"
+		},
+		"activejoblist": {
+			"listTitle": "Active Printjobs",
+			"noActiveJobMessage": "You have no active jobs at the moment.",
+			"socialShareMessage": "Let your network know you are a PrintBuddy!",
+			"facebookShareTitle": "I'm a PrintBuddy!",
+			"facebookShareMessage": "Need something printed? Join PrintBuddy and let a local PrintBuddy print for you!",
+			"twitterShareMessage": "Need something printed? Join PrintBuddy and let a local PrintBuddy print for you!"
+		},
+		"chatholder": {
+			"cancel":"Cancel?",
+			"cancelMessage":"Are you absolutely sure you want to Cancel this request?",
+			"done":"Done",
+			"doneMessage":"Are you absolutely sure this job is Done?",
+			"no": "No",
+			"yes": "Yes"
+		},
+		"chatinfo": {
+			"header": "Job info",
+			"title":"Title",
+			"address": "Address",
+            "color": "Color",
+            "pages": "Pages",
+            "copies": "Copies",
+            "price": "Price",
+            "delivery": "Delivery",
+            "lastDate": "Last Date",
+            "lastTime": "Last Time",
+            "finishRequest": "Finish Request",
+            "cancelRequet": "Cancel Request",
+            "downloadDocument": "Download Document"
+		},
+        "chatmessagelist": {
+            "headerMessage": "Type your first message to get started!"
+        },
+        "chatsendmessage": {
+            "placeholderMessage": "Type a message...",
+            "sendButton": "SEND"
+        },
+        "createrequestcomponent": {
+            "whoops": "Whoops!",
+            "errorDelivery": "You have to choose Delivery or Pickup",
+            "errorDate": "You have to set a date",
+            "errorTime": "You have to set a time",
+            "pickADocument": "Pick a document",
+            "nrOfPages": "Nr of Pages",
+            "nrOfCopies": "Nr of Copies",
+            "blackWhite": "Black/White",
+            "jobDescription": "Job Description",
+            "reward": "Reward",
+            "SEK": "SEK",
+            "EUR": "EUR",
+            "USD": "USD",
+            "currency": "Currency",
+            "wantDelivery": "I want it delivered",
+            "wantPickup": "I want to pick-up",
+            "travelMessage": "How far are you willing to travel for a pick-up?",
+            "setLastDate": "Set a last Date & Time for",
+            "submit": "Submit",
+            "details": "Details"
+        },
+        "errorcomponent": {
+            "emailSuccess": "Thanks! We will answer your message as soon as possible!",
+            "header": "Whoops... Error 404",
+            "errorNotice": "Looks like something went wrong.",
+            "errorDirections": "Go back to start or send us a message if you have problems",
+            "contactUs": "Contact Us",
+            "name": "Name",
+            "email": "Email",
+            "writeMessage": "Write your message",
+            "sendButton": "Send"
+        },
+        "initialmap": {
+            "color": "Color",
+            "pages": "Pages",
+            "copies": "Copies",
+            "before": "Before",
+            "on": "on"
+        },
+        "joblistcomponent": {
+            "apply": "APPLY",
+            "applied": "APPLIED",
+            "nojobsmessage": "There are currently no jobs available :("
+        },
+        "logincomponent": {
+            "email": "E-mail",
+            "password": "Password",
+            "forgotpassword": "Forgot password",
+            "login": "Login"
+        },
+        "nav": {
+            "link-jobs": "Jobs",
+            "link-myjobs": "My Jobs",
+            "link-request": "Requests"
+        },
+        "pendingbuddies": {
+            "chooseHeader": "Choose a PrintBuddy for the job!",
+            "offeredPrint": "have offered to print for you!",
+            "choose": "CHOOSE",
+            "noappliedmsg": "No one have applied for your job yet.",
+            "socialsharemsg": "Let your network know you need a PrintBuddy!",
+            "facebookShareTitle": "PrintBuddy needed!",
+            "facebookShareMsg": "Have a printer? We have a job for you!",
+            "twitterShareMsg": "Looking for a PrintBuddy to print for me!",
+            "cancelModalHeader": "Are you sure?",
+            "cancelModalParagraph": "Are you absolutely sure you want to Cancel this request?"
+        },
+        "pendingjoblist": {
+            "header": "Pending printjobs"
+        },
+        "profilecomponent": {
+            "setHomeAddress": "Set your home address",
+            "emailNotifications": "Email notifications",
+            "requestor": "Requestor",
+            "printbuddy": "PrintBuddy",
+            "saveChanges": "SAVE CHANGES",
+            "logout": "LOGOUT"
+        },
+        "registercomponent": {
+            "errorAddress": "You need to set your home address",
+            "errorRole": "You have to choose a role",
+            "errorPassword": "Your password must be atleast 6 characters",
+            "email": "E-mail *",
+            "username": "Username *",
+            "password": "Password *",
+            "confirmPassword": "Confirm password *",
+            "homeAddress": "Home address *",
+            "chooseRole": "Choose your role",
+            "requestor": "Requestor",
+            "printbuddy": "PrintBuddy",
+            "register": "Register"
+        }
+	},
+    "container": {
+        "chatcontainer": {
+            "errorWrong": "Wrong!",
+            "errorError": "Error!",
+            "errorLogin": "You need to login to chat",
+            "errorSomething": "Something went wrong :("
+        },
+        "createrequestcontainer": {
+            "errorPages": "You need to set h ow many pages your printout is before you can upload!",
+            "errorCopies": "You need to set how many copies of your printout you want before you can upload!",
+            "errorDocument": "You need to pick a document before you can upload!",
+            "errorLogin": "You need to login to create a request",
+            "errorDate": "Date was in the past",
+            "errorDateMsg": "You need to select 'Today' or a future date!",
+            "errorUpload": "No no!",
+            "errorUploadMsg": "You need to upload a file to your Google Drive!",
+            "errorUnexpect": "Unexpected Error",
+            "errorUnexpectMsg": "Something completely unexpected went wrong..."
+        },
+        "donecontainer": {
+            "errorMsg": "Something went wrong :(",
+            "doneHeader": "You are now done!",
+            "doneNewUploadBtn": "UPLOAD A NEW JOB"
+        },
+        "jobscontainer": {
+            "alertNice": "Nice!",
+            "appliedMsg": "You applied for a new printjob"
+        },
+        "logincontainer": {
+            "errorLogin": "Email and/or Password is incorrect!"
+        },
+        "myjoblistcontainer": {
+            "errorMsg": "Something went wrong :("
+        },
+        "pendingrequestcontainer": {
+            "errorAcceptedMsg": "You already accepted this job!",
+            "errorMsg": "Something went wrong :("
+        },
+        "pendingchatcontainer": {
+            "doneHeader": "This request is done!",
+            "cancelHeader": "This request is canceled!",
+            "findNewJobBtn": "FIND A NEW JOB"
+        },
+        "profilecontainer": {
+            "errorLoggedIn": "You need to be logged in to update your settings!",
+            "errorPendingJob": "You cant change your settings while you have active or pending jobs",
+            "errorActiveRequest": "You cant change your settings while you have an active request",
+            "alertSaved": "Saved",
+            "alertSavedMsg": "Your profile changes was saved"
+        },
+        "resetpasswordcontainer": {
+            "errorShort": "Too Short!",
+            "errorShortMsg": "Your password must be atleast 6 characters long",
+            "errorMsg": "Something went wrong. Please try again.",
+            "alertSuccess": "Success!",
+            "alertSuccessMsg": "Password saved",
+            "errorMissmatch": "Your passwords did not match"
+        }
+    }
+}

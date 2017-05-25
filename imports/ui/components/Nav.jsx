@@ -1,4 +1,5 @@
 import React from 'react';
+import i18n from 'meteor/universe:i18n';
 import { Link, IndexLink } from 'react-router';
 import { Meteor } from 'meteor/meteor';
 import { browserHistory } from 'react-router';
@@ -62,14 +63,14 @@ class Nav extends React.Component {
                             <a href="" className="brand-logo">PRINTBUDDY</a>
                             <a href="" data-activates="mobile-nav" className="button-collapse"><i className="material-icons">menu</i></a>
                             <ul className="right hide-on-med-and-down desktop-nav">
-                                <li><IndexLink id="mainindexlink" to="/jobs" activeClassName="active">Jobs</IndexLink></li>
-                                <li><Link id="myjobslink" to="/myjobs" activeClassName="active">My Jobs</Link></li>
+                                <li><IndexLink id="mainindexlink" to="/jobs" activeClassName="active">{i18n.__('components.nav.link-jobs')}</IndexLink></li>
+                                <li><Link id="myjobslink" to="/myjobs" activeClassName="active">{i18n.__('components.nav.link-myjobs')}</Link></li>
                                 <li><Link id="btn-settingsmodal" onClick={this.popProfileModal} className='dropdown-button' data-activates='dropdown1'><i
                                     className="material-icons">&#xE7FD;</i></Link></li>
                             </ul>
                             <ul className="side-nav" id="mobile-nav">
-                                <li><IndexLink to="/jobs" activeClassName="active">Jobs</IndexLink></li>
-                                <li><Link to="/myjobs" activeClassName="active">My Jobs</Link></li>
+                                <li><IndexLink to="/jobs" activeClassName="active">{i18n.__('components.nav.link-jobs')}</IndexLink></li>
+                                <li><Link to="/myjobs" activeClassName="active">{i18n.__('components.nav.link-myjobs')}</Link></li>
                                 <li><Link className="mobile-nav-icon" onClick={this.popProfileModal}><i
                                     className="material-icons">settings</i></Link></li>
                                 <li><Link id="btn-onlogout" onClick={this.onLogout} className="mobile-nav-icon"><i
@@ -89,12 +90,12 @@ class Nav extends React.Component {
                             <a href="" className="brand-logo">PRINTBUDDY</a>
                             <a href="" data-activates="mobile-nav" className="button-collapse"><i className="material-icons">menu</i></a>
                             <ul className="right hide-on-med-and-down desktop-nav">
-                                <li><IndexLink id="mainindexlink" to="/request" activeClassName="active">Requests</IndexLink></li>
+                                <li><IndexLink id="mainindexlink" to="/request" activeClassName="active">{i18n.__('components.nav.link-request')}</IndexLink></li>
                                 <li><Link id="btn-settingsmodal" onClick={this.popProfileModal} className='dropdown-button' data-activates='dropdown1'>
                                     <i className="material-icons">&#xE7FD;</i></Link></li>
                             </ul>
                             <ul className="side-nav" id="mobile-nav">
-                                <li><IndexLink to="/request" activeClassName="active">Requests</IndexLink></li>
+                                <li><IndexLink to="/request" activeClassName="active">{i18n.__('components.nav.link-request')}</IndexLink></li>
                                 <li><Link className="mobile-nav-icon" id="requestor-profile" onClick={this.popProfileModal}>
                                     <i className="material-icons">settings</i></Link>
                                 </li>

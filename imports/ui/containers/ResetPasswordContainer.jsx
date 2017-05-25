@@ -2,6 +2,7 @@ import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
 import {Accounts} from 'meteor/accounts-base';
 import {browserHistory} from 'react-router'
+import i18n from 'meteor/universe:i18n';
 
 import {displayError} from  '../helpers/errors';
 import {displayAlert} from  '../helpers/alerts';
@@ -30,14 +31,14 @@ class Verified extends React.Component {
         e.preventDefault();
         if (this.state.password === this.state.confirmPassword) {
             if (this.refs.password.value.length < 6) {
-                displayError("Too Short!", 'Your password must be at least 6 characters long');
+                displayError(i18n.__('container.resetpasswordcontainer.errorShort'), i18n.__('container.resetpasswordcontainer.errorShortMsg'));
             } else {
                 Accounts.resetPassword(this.props.location.query.token, this.state.password, ( error ) =>{
                     if (error){
-                        displayError( "Whoops!", "Something went wrong. Please try again.");
+                        displayError(i18n.__('other.whoops'), i18n.__('container.resetpasswordcontainer.errorMsg'));
 
                     }else {
-                        displayAlert('Success', "Password saved!");
+                        displayAlert(i18n.__('container.resetpasswordcontainer.alertSuccess'), i18n.__('container.resetpasswordcontainer.alertSuccessMsg'));
                         setTimeout(function() {
                             browserHistory.replace('/');
                         }, 4000);
@@ -46,7 +47,7 @@ class Verified extends React.Component {
 
             }
         }else {
-            displayError("Whoops!", 'Your passwords did not match!');
+            displayError(i18n.__('other.whoops'), i18n.__('container.resetpasswordcontainer.errorMissmatch'));
         }
     }
 

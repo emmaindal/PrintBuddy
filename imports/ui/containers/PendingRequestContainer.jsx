@@ -2,6 +2,7 @@ import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
 import {browserHistory} from  'react-router';
+import i18n from 'meteor/universe:i18n';
 
 import {PendingBuddiesList} from '../components/PendingBuddiesListComponent';
 import MapContainer from './MapContainer';
@@ -31,9 +32,9 @@ class PendingRequest extends React.Component {
         acceptBuddy.call({requestId :this.props.request._id, buddyId:buddyId}, (err, res) => {
             if (err) {
                 if (err.error === 'request.acceptBuddy.exist') {
-                    displayError("Whoops!", 'You already accepted this job!');
+                    displayError(i18n.__('other.whoops'), i18n.__('container.pendingrequestcontainer.errorAcceptedMsg'));
                 } else {
-                    displayError("Error!", 'Something went wrong :( ');
+                    displayError(i18n.__('other.whoops'), i18n.__('container.pendingrequestcontainer.errorMsg'));
                 }
             }
         });
@@ -41,7 +42,7 @@ class PendingRequest extends React.Component {
     handleJobCancel() {
         cancelRequest.call({requestId:this.props.request._id}, (err, res) => {
             if (err) {
-                displayError("Error!", 'Something went wrong :( ');
+                displayError(i18n.__('other.whoops'), i18n.__('container.pendingrequestcontainer.errorMsg'));
             }else {
                 browserHistory.push("/request");
             }

@@ -11,10 +11,6 @@ class LoginComponent extends React.Component {
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.onForgotPassword = this.onForgotPassword.bind(this);
-
-    }
-
-    componentDidMount() {
     }
 
     onSubmit(e) {
@@ -52,24 +48,24 @@ class LoginComponent extends React.Component {
                             </label>
                             <div className="input-field col offset-s1 s10">
                                 <input value={this.state.email} onChange={this.handleEmailChange} id="email" type="email" className="validate" required ref="email"/>
-                                <label htmlFor="email">E-mail</label>
+                                <label htmlFor="email">{i18n.__('components.logincomponent.email')}</label>
                             </div>
                         </div>
                         <div className="row margin-bottom-after">
                             <i className="small material-icons">lock</i>
                             <div className="input-field col offset-s1 s10">
                                 <input value={this.state.password} onChange={this.handlePasswordChange} id="password" type="password" className="validate" required ref="password"/>
-                                <label htmlFor="password">Password</label>
+                                <label htmlFor="password">{i18n.__('components.logincomponent.password')}</label>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col s10 offset-s1" style={{ marginTop: "-25px" }}>
-                                <a onClick={this.onForgotPassword}>Forgot password</a>
+                                <a onClick={this.onForgotPassword}>{i18n.__('components.logincomponent.forgotpassword')}</a>
                                 <p>{this.props.forgotPasswordStatus}</p>
                             </div>
                         </div>
                         <div className="row login-modal-row">
-                            <button className="col offset-s1 s10 waves-effect waves-light btn btn-block">Login</button>
+                            <button className="col offset-s1 s10 waves-effect waves-light btn btn-block">{i18n.__('components.logincomponent.login')}</button>
                         </div>
                     </form>
                     

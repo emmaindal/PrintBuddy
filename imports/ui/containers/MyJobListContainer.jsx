@@ -1,7 +1,8 @@
 import {Meteor} from 'meteor/meteor';
 import {createContainer} from 'meteor/react-meteor-data';
 import React from 'react';
-import {browserHistory} from 'react-router'
+import {browserHistory} from 'react-router';
+import i18n from 'meteor/universe:i18n';
 
 import {Request} from '../../api/request/request.js';
 import {removeApplyRequest} from '../../api/request/methods';
@@ -52,7 +53,7 @@ class MyJobList extends React.Component {
     onCancel(clickedJob) {
         removeApplyRequest.call({requestId: clickedJob._id}, (err, res) => {
             if (err) {
-                displayError("Error!", 'Something went wrong :(');
+                displayError(i18n.__('other.whoops'), i18n.__('container.myjoblistcontainer.errorMsg'));
             }
         });
     }
